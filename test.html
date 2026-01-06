@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio X AI - Professional AI Video Production Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-purple: #6B46C1;
+            --primary-blue: #3B82F6;
+            --dark-bg: #0F172A;
+            --light-bg: #F8FAFC;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-demo {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            color: white;
+            padding: 0.7rem 2rem;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-demo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(107, 70, 193, 0.3);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            padding: 5rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(107, 70, 193, 0.2) 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            border-radius: 50%;
+        }
+
+        .pre-headline {
+            color: var(--primary-blue);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-headline {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subheadline {
+            font-size: 1.2rem;
+            color: #CBD5E1;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .value-prop {
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .value-prop i {
+            color: #10B981;
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .trust-text {
+            color: #94A3B8;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .form-header {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            border: none;
+            font-weight: 700;
+            width: 100%;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(107, 70, 193, 0.3);
+        }
+
+        .form-microcopy {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .section-headline {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary-purple);
+        }
+
+        .comparison-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .comparison-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .comparison-text {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #F8FAFC 0%, #EEF2FF 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            height: 100%;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-purple);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-text {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Location Section */
+        .location-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            color: white;
+        }
+
+        .location-section .section-headline {
+            color: white;
+        }
+
+        .location-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .location-feature i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #FCD34D;
+        }
+
+        .location-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            padding: 4rem 0;
+            background: var(--dark-bg);
+            text-align: center;
+            color: white;
+        }
+
+        .footer-cta h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+        }
+
+        .btn-cta {
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            border: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(107, 70, 193, 0.4);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0A0F1E;
+            padding: 3rem 0 2rem;
+            color: #94A3B8;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Video Showcase Section */
+        .video-showcase-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .video-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(107, 70, 193, 0.2);
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: #000;
+        }
+
+        .video-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 1.5rem 1rem 1rem;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .video-label i {
+            margin-right: 0.5rem;
+            color: var(--primary-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-headline {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: 3rem 0 4rem;
+            }
+
+            .form-card {
+                margin-top: 3rem;
+            }
+
+            .section-headline {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-video"></i> Studio X AI
+            </a>
+            <button class="btn btn-demo">Book a Demo</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="margin-top: 76px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="pre-headline">For Brands, Startups & Marketing Teams in India</div>
+                    <h1 class="hero-headline">Stop Struggling With AI Tools. We Produce Studio-Quality Videos For You.</h1>
+                    <p class="hero-subheadline">Get the speed of AI with the quality of a production house. From script to final edit, we deliver cinematic Brand Films, AI Avatars, and Training Videos 10x faster than traditional agencies.</p>
+                    
+                    <div class="value-prop">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Done-For-You Service</strong> (No software or learning required)</span>
+                    </div>
+                    <div class="value-prop">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Cinematic Quality</strong> (Professional scripts & editing)</span>
+                    </div>
+                    <div class="value-prop">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Global Scale</strong> (AI Avatars in 60+ languages)</span>
+                    </div>
+                    
+                    <p class="trust-text"><i class="fas fa-shield-alt"></i> Trusted by businesses in Hyderabad, Bangalore & Pan-India</p>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="form-card">
+                        <h3 class="form-header">Get Your Free Video Strategy Roadmap</h3>
+                        <p style="color: #64748B; margin-bottom: 1.5rem; font-size: 0.95rem;">Includes Pricing & Timeline</p>
+                        
+                        <form>
+                            <select class="form-select" required>
+                                <option selected disabled>I need a video for...</option>
+                                <option>Brand Film</option>
+                                <option>Corporate Training</option>
+                                <option>YouTube Content</option>
+                                <option>AI Avatar</option>
+                                <option>Motion Graphics</option>
+                            </select>
+                            
+                            <input type="text" class="form-control" placeholder="Your Name *" required>
+                            <input type="text" class="form-control" placeholder="Company Name *" required>
+                            <input type="tel" class="form-control" placeholder="Phone / WhatsApp *" required>
+                            <input type="email" class="form-control" placeholder="Work Email *" required>
+                            
+                            <select class="form-select" required>
+                                <option selected disabled>Budget Estimate</option>
+                                <option>Under ₹50k</option>
+                                <option>₹50k - ₹1 Lakh</option>
+                                <option>₹1 Lakh+</option>
+                            </select>
+                            
+                            <button type="submit" class="btn btn-submit">GET MY FREE STRATEGY & QUOTE</button>
+                            <p class="form-microcopy">100% Free. Fast Response. No Obligation.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section class="video-showcase-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-headline" style="color: var(--text-dark);">See Our Work in Action</h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Professional video production that combines human creativity with AI efficiency</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="video-container">
+                        <video controls poster="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800">
+                            <source src="your-brand-film.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-label">
+                            <i class="fas fa-film"></i> Brand Film Example
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="video-container">
+                        <video controls poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800">
+                            <source src="your-ai-avatar.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-label">
+                            <i class="fas fa-user-circle"></i> AI Avatar Demo
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4 mt-2">
+                <div class="col-lg-4">
+                    <div class="video-container">
+                        <video controls poster="https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=600">
+                            <source src="your-training-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-label">
+                            <i class="fas fa-graduation-cap"></i> Training Video
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="video-container">
+                        <video controls poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600">
+                            <source src="your-social-content.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-label">
+                            <i class="fas fa-thumbs-up"></i> Social Media
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="video-container">
+                        <video controls poster="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600">
+                            <source src="your-motion-graphics.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-label">
+                            <i class="fas fa-magic"></i> Motion Graphics
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-headline">Why Choose Studio X vs. An AI Tool?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="comparison-card">
+                        <div class="comparison-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="comparison-title">Real Human Strategy</h3>
+                        <p class="comparison-text">AI tools make generic content. We provide expert scriptwriting, storyboard planning, and professional editing to ensure your brand looks premium, not robotic.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="comparison-card">
+                        <div class="comparison-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="comparison-title">AI-Powered Efficiency</h3>
+                        <p class="comparison-text">We use advanced AI for avatars, voiceovers, and editing to cut production costs by 50% and delivery time by 70%.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="comparison-card">
+                        <div class="comparison-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="comparison-title">Multilingual Scale</h3>
+                        <p class="comparison-text">Need your training video in Hindi, Telugu, and German? We create realistic AI avatar videos in 60+ languages instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-headline">Video Solutions for Every Goal</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h4 class="service-title">Brand Films & Corporate Videos</h4>
+                        <p class="service-text">High-impact cinematic videos for your website, ads, and investor pitches. Available for on-location shoots in Hyderabad, Bangalore & AP.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h4 class="service-title">AI Training & Explainer Videos</h4>
+                        <p class="service-text">Scalable L&D content. Turn boring text PDFs into engaging AI-presented video courses for employee onboarding and training.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h4 class="service-title">YouTube & Social Media Content</h4>
+                        <p class="service-text">End-to-end management. We handle the script, production, SEO titles, and captions to grow your channel and engagement.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h4 class="service-title">Motion Graphics & Visuals</h4>
+                        <p class="service-text">Stunning 2D/3D animation and motion graphics to simplify complex ideas and grab attention on social feeds.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client Testimonial Video -->
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="testimonial-video-section">
+                        <h3 class="text-center mb-4" style="font-size: 1.8rem; font-weight: 700;">What Our Clients Say</h3>
+                        <div class="video-container">
+                            <video controls poster="https://images.unsplash.com/photo-1560439514-4e9645039924?w=800">
+                                <source src="client-testimonial.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-label">
+                                <i class="fas fa-quote-left"></i> Client Success Story
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <h2 class="section-headline">Local Experts. Global Standards.</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="text-center mb-5" style="font-size: 1.15rem; opacity: 0.95;">Don't rely on faceless remote freelancers. Studio X understands the local market nuances of Telangana, Andhra Pradesh, and Karnataka.</p>
+                    
+                    <div class="location-feature">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="location-text">
+                            <strong>Hyderabad & Bangalore Hubs:</strong> Ready for on-site corporate shoots.
+                        </div>
+                    </div>
+                    
+                    <div class="location-feature">
+                        <i class="fas fa-language"></i>
+                        <div class="location-text">
+                            <strong>Regional Language Mastery:</strong> We create content that connects in Telugu, Kannada, Hindi, and English.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h3>Ready to Scale Your Video Marketing?</h3>
+            <button class="btn btn-cta">GET A QUOTE NOW</button>
+            <div class="mt-5">
+                <p><i class="fas fa-envelope"></i> hello@studiox.ai</p>
+                <p><i class="fas fa-map-marker-alt"></i> Hyderabad | Bangalore | Pan-India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-links mb-3">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p>&copy; 2025 Studio X AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
