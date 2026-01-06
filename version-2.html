@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,20 +30,21 @@
         }
 
         /* Navbar */
+        /* Navbar */
         .navbar {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
             padding: 1rem 0;
         }
 
         .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            padding: 0;
+        }
+
+        .navbar-logo {
+            max-height: 80px;
+            width: auto;
         }
 
         .btn-demo {
@@ -62,22 +64,35 @@
         }
 
         /* Hero Section */
+        /* Hero Video Background */
+        .hero-bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
         .hero-section {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            background: #000;
+            /* Fallback */
             padding: 5rem 0 6rem;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .hero-section::before {
             content: '';
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(107, 70, 193, 0.2) 0%, transparent 70%);
-            top: -200px;
-            right: -100px;
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
         }
 
         .pre-headline {
@@ -129,7 +144,7 @@
             background: white;
             border-radius: 20px;
             padding: 2.5rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
             z-index: 10;
         }
@@ -141,7 +156,8 @@
             margin-bottom: 1.5rem;
         }
 
-        .form-control, .form-select {
+        .form-control,
+        .form-select {
             border: 2px solid #E2E8F0;
             border-radius: 10px;
             padding: 0.75rem 1rem;
@@ -149,7 +165,8 @@
             transition: border-color 0.3s ease;
         }
 
-        .form-control:focus, .form-select:focus {
+        .form-control:focus,
+        .form-select:focus {
             border-color: var(--primary-purple);
             box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
         }
@@ -204,7 +221,7 @@
 
         .comparison-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             border-color: var(--primary-purple);
         }
 
@@ -364,7 +381,7 @@
             position: relative;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -385,7 +402,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
             padding: 1.5rem 1rem 1rem;
             color: white;
             font-weight: 600;
@@ -402,7 +419,7 @@
             .hero-headline {
                 font-size: 2rem;
             }
-            
+
             .hero-section {
                 padding: 3rem 0 4rem;
             }
@@ -417,12 +434,14 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-video"></i> Studio X AI
+                <img src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/Studio%20X%20AI_Logo.png"
+                    alt="Studio X AI Logo" class="navbar-logo">
             </a>
             <button class="btn btn-demo">Book a Demo</button>
         </div>
@@ -430,13 +449,19 @@
 
     <!-- Hero Section -->
     <section class="hero-section" style="margin-top: 76px;">
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/studioxaim.mp4" type="video/mp4">
+        </video>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="pre-headline">For Brands, Startups & Marketing Teams in India</div>
-                    <h1 class="hero-headline">Stop Struggling With AI Tools. We Produce Studio-Quality Videos For You.</h1>
-                    <p class="hero-subheadline">Get the speed of AI with the quality of a production house. From script to final edit, we deliver cinematic Brand Films, AI Avatars, and Training Videos 10x faster than traditional agencies.</p>
-                    
+                    <h1 class="hero-headline">Stop Struggling With AI Tools. We Produce Studio-Quality Videos For You.
+                    </h1>
+                    <p class="hero-subheadline">Get the speed of AI with the quality of a production house. From script
+                        to final edit, we deliver cinematic Brand Films, AI Avatars, and Training Videos 10x faster than
+                        traditional agencies.</p>
+
                     <div class="value-prop">
                         <i class="fas fa-check-circle"></i>
                         <span><strong>Done-For-You Service</strong> (No software or learning required)</span>
@@ -449,15 +474,17 @@
                         <i class="fas fa-check-circle"></i>
                         <span><strong>Global Scale</strong> (AI Avatars in 60+ languages)</span>
                     </div>
-                    
-                    <p class="trust-text"><i class="fas fa-shield-alt"></i> Trusted by businesses in Hyderabad, Bangalore & Pan-India</p>
+
+                    <p class="trust-text"><i class="fas fa-shield-alt"></i> Trusted by businesses in Hyderabad,
+                        Bangalore & Pan-India</p>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <div class="form-card">
                         <h3 class="form-header">Get Your Free Video Strategy Roadmap</h3>
-                        <p style="color: #64748B; margin-bottom: 1.5rem; font-size: 0.95rem;">Includes Pricing & Timeline</p>
-                        
+                        <p style="color: #64748B; margin-bottom: 1.5rem; font-size: 0.95rem;">Includes Pricing &
+                            Timeline</p>
+
                         <form>
                             <select class="form-select" required>
                                 <option selected disabled>I need a video for...</option>
@@ -467,19 +494,19 @@
                                 <option>AI Avatar</option>
                                 <option>Motion Graphics</option>
                             </select>
-                            
+
                             <input type="text" class="form-control" placeholder="Your Name *" required>
                             <input type="text" class="form-control" placeholder="Company Name *" required>
                             <input type="tel" class="form-control" placeholder="Phone / WhatsApp *" required>
                             <input type="email" class="form-control" placeholder="Work Email *" required>
-                            
+
                             <select class="form-select" required>
                                 <option selected disabled>Budget Estimate</option>
                                 <option>Under ₹50k</option>
                                 <option>₹50k - ₹1 Lakh</option>
                                 <option>₹1 Lakh+</option>
                             </select>
-                            
+
                             <button type="submit" class="btn btn-submit">GET MY FREE STRATEGY & QUOTE</button>
                             <p class="form-microcopy">100% Free. Fast Response. No Obligation.</p>
                         </form>
@@ -494,14 +521,16 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-headline" style="color: var(--text-dark);">See Our Work in Action</h2>
-                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Professional video production that combines human creativity with AI efficiency</p>
+                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Professional
+                    video production that combines human creativity with AI efficiency</p>
             </div>
-            
+
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="video-container">
-                        <video controls poster="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800">
-                            <source src="your-brand-film.mp4" type="video/mp4">
+                        <video controls>
+                            <source src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/brand.mp4"
+                                type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-label">
@@ -511,8 +540,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="video-container">
-                        <video controls poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800">
-                            <source src="your-ai-avatar.mp4" type="video/mp4">
+                        <video controls>
+                            <source src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/rose.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-label">
@@ -521,12 +550,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row g-4 mt-2">
                 <div class="col-lg-4">
                     <div class="video-container">
-                        <video controls poster="https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=600">
-                            <source src="your-training-video.mp4" type="video/mp4">
+                        <video controls>
+                            <source src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/learning.mp4"
+                                type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-label">
@@ -536,8 +566,8 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="video-container">
-                        <video controls poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600">
-                            <source src="your-social-content.mp4" type="video/mp4">
+                        <video controls>
+                            <source src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/yt.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-label">
@@ -547,8 +577,9 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="video-container">
-                        <video controls poster="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600">
-                            <source src="your-motion-graphics.mp4" type="video/mp4">
+                        <video controls>
+                            <source src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/marco.mp4"
+                                type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                         <div class="video-label">
@@ -571,7 +602,9 @@
                             <i class="fas fa-brain"></i>
                         </div>
                         <h3 class="comparison-title">Real Human Strategy</h3>
-                        <p class="comparison-text">AI tools make generic content. We provide expert scriptwriting, storyboard planning, and professional editing to ensure your brand looks premium, not robotic.</p>
+                        <p class="comparison-text">AI tools make generic content. We provide expert scriptwriting,
+                            storyboard planning, and professional editing to ensure your brand looks premium, not
+                            robotic.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -580,7 +613,8 @@
                             <i class="fas fa-rocket"></i>
                         </div>
                         <h3 class="comparison-title">AI-Powered Efficiency</h3>
-                        <p class="comparison-text">We use advanced AI for avatars, voiceovers, and editing to cut production costs by 50% and delivery time by 70%.</p>
+                        <p class="comparison-text">We use advanced AI for avatars, voiceovers, and editing to cut
+                            production costs by 50% and delivery time by 70%.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -589,7 +623,8 @@
                             <i class="fas fa-globe"></i>
                         </div>
                         <h3 class="comparison-title">Multilingual Scale</h3>
-                        <p class="comparison-text">Need your training video in Hindi, Telugu, and German? We create realistic AI avatar videos in 60+ languages instantly.</p>
+                        <p class="comparison-text">Need your training video in Hindi, Telugu, and German? We create
+                            realistic AI avatar videos in 60+ languages instantly.</p>
                     </div>
                 </div>
             </div>
@@ -607,7 +642,8 @@
                             <i class="fas fa-film"></i>
                         </div>
                         <h4 class="service-title">Brand Films & Corporate Videos</h4>
-                        <p class="service-text">High-impact cinematic videos for your website, ads, and investor pitches. Available for on-location shoots in Hyderabad, Bangalore & AP.</p>
+                        <p class="service-text">High-impact cinematic videos for your website, ads, and investor
+                            pitches. Available for on-location shoots in Hyderabad, Bangalore & AP.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -616,7 +652,8 @@
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
                         <h4 class="service-title">AI Training & Explainer Videos</h4>
-                        <p class="service-text">Scalable L&D content. Turn boring text PDFs into engaging AI-presented video courses for employee onboarding and training.</p>
+                        <p class="service-text">Scalable L&D content. Turn boring text PDFs into engaging AI-presented
+                            video courses for employee onboarding and training.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -625,7 +662,8 @@
                             <i class="fab fa-youtube"></i>
                         </div>
                         <h4 class="service-title">YouTube & Social Media Content</h4>
-                        <p class="service-text">End-to-end management. We handle the script, production, SEO titles, and captions to grow your channel and engagement.</p>
+                        <p class="service-text">End-to-end management. We handle the script, production, SEO titles, and
+                            captions to grow your channel and engagement.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
@@ -634,28 +672,13 @@
                             <i class="fas fa-magic"></i>
                         </div>
                         <h4 class="service-title">Motion Graphics & Visuals</h4>
-                        <p class="service-text">Stunning 2D/3D animation and motion graphics to simplify complex ideas and grab attention on social feeds.</p>
+                        <p class="service-text">Stunning 2D/3D animation and motion graphics to simplify complex ideas
+                            and grab attention on social feeds.</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Client Testimonial Video -->
-            <div class="row mt-5">
-                <div class="col-lg-8 mx-auto">
-                    <div class="testimonial-video-section">
-                        <h3 class="text-center mb-4" style="font-size: 1.8rem; font-weight: 700;">What Our Clients Say</h3>
-                        <div class="video-container">
-                            <video controls poster="https://images.unsplash.com/photo-1560439514-4e9645039924?w=800">
-                                <source src="client-testimonial.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="video-label">
-                                <i class="fas fa-quote-left"></i> Client Success Story
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <!-- Client Testimonial Video Removed -->
         </div>
     </section>
 
@@ -663,23 +686,32 @@
     <section class="location-section">
         <div class="container">
             <h2 class="section-headline">Local Experts. Global Standards.</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <p class="text-center mb-5" style="font-size: 1.15rem; opacity: 0.95;">Don't rely on faceless remote freelancers. Studio X understands the local market nuances of Telangana, Andhra Pradesh, and Karnataka.</p>
-                    
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <p class="mb-5" style="font-size: 1.15rem; opacity: 0.95;">Don't rely on faceless remote
+                        freelancers. Studio X understands the local market nuances of Telangana, Andhra Pradesh, and
+                        Karnataka.</p>
+
                     <div class="location-feature">
                         <i class="fas fa-map-marker-alt"></i>
                         <div class="location-text">
                             <strong>Hyderabad & Bangalore Hubs:</strong> Ready for on-site corporate shoots.
                         </div>
                     </div>
-                    
+
                     <div class="location-feature">
                         <i class="fas fa-language"></i>
                         <div class="location-text">
-                            <strong>Regional Language Mastery:</strong> We create content that connects in Telugu, Kannada, Hindi, and English.
+                            <strong>Regional Language Mastery:</strong> We create content that connects in Telugu,
+                            Kannada, Hindi, and English.
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <video class="img-fluid rounded-4 shadow-lg border border-white" style="opacity: 0.9;" autoplay
+                        muted loop playsinline>
+                        <source src="https://pub-d8add5c3ed1e4923aa87c457caea356d.r2.dev/newyt.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
@@ -709,5 +741,24 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const videoContainers = document.querySelectorAll('.video-container');
+
+            videoContainers.forEach(container => {
+                const video = container.querySelector('video');
+                if (video) {
+                    container.addEventListener('mouseenter', () => {
+                        video.play();
+                    });
+
+                    container.addEventListener('mouseleave', () => {
+                        video.pause();
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
