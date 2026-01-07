@@ -4,7 +4,7 @@
 :root {
     --bg-color: #000000;
     --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
+    --text-secondary: #CBD5E1;
     --accent-cyan: #00f2ff;
     --accent-glow: rgba(0, 242, 255, 0.2);
     --card-bg: rgba(255, 255, 255, 0.05);
@@ -164,7 +164,7 @@ h6 {
 
 /* Form Card */
 .hero-form-card {
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(20, 20, 20, 0.2);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border-color);
     border-radius: 20px;
@@ -234,12 +234,13 @@ h6 {
     font-size: 0.8rem;
     text-align: center;
     margin-top: 1rem;
-    opacity: 0.7;
+    opacity: 0.8;
+    color: var(--accent-cyan);
 }
 
 /* Sections General */
 .section-padding {
-    padding: 100px 0;
+    padding: 40px 0;
 }
 
 .section-title {
@@ -256,14 +257,13 @@ h6 {
 .comparison-card {
     padding: 2rem;
     height: 100%;
-    border-left: 1px solid var(--border-color);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     transition: 0.3s;
+    border-radius: 25px;
 }
 
-.comparison-card:hover {
-    background: var(--card-bg);
-    border-left-color: var(--accent-cyan);
-}
+
 
 .comparison-card h3 {
     color: #fff;
@@ -347,4 +347,118 @@ footer {
         border-top: 1px solid var(--border-color);
         padding: 2rem 0;
     }
+}
+
+/* Video Showcase Section */
+.video-showcase-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.video-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(107, 70, 193, 0.2);
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #000;
+}
+
+.video-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 1.5rem 1rem 1rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.video-label i {
+    margin-right: 0.5rem;
+    color: var(--primary-blue);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-headline {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        padding: 3rem 0 4rem;
+    }
+
+    .form-card {
+        margin-top: 3rem;
+    }
+
+    .section-headline {
+        font-size: 2rem;
+    }
+}
+
+/* Footer Video Background */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.footer-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 56.25vw;
+    /* 16:9 Aspect Ratio based on width */
+    min-height: 100%;
+    min-width: 177.77vh;
+    /* 16:9 Aspect Ratio based on height */
+    pointer-events: none;
+}
+
+.footer-video-bg iframe {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.footer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+}
+
+footer .container {
+    position: relative;
+    z-index: 2;
 }
