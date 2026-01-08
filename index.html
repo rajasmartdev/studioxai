@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -152,6 +153,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
+                        <i class="fas fa-chalkboard-teacher text-cyan fs-1 mb-3"></i>
                         <h3>AI Training & Explainer Videos</h3>
                         <p>Scalable L&D content. Turn boring text PDFs into engaging AI-presented video courses for
                             employee onboarding and training.</p>
@@ -166,6 +168,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
+                        <i class="fas fa-magic text-cyan fs-1 mb-3"></i>
                         <h3>Motion Graphics & Visuals</h3>
                         <p>Stunning 2D/3D animation and motion graphics to simplify complex ideas and grab attention on
                             social feeds.</p>
@@ -211,10 +214,10 @@
     </section>
 
     <!-- Video Showcase Section -->
-    <section class="video-showcase-section">
+    <section class="video-showcase-section bg-black">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-headline" style="color: var(--text-dark);">See Our Work in Action</h2>
+                <h2 class="section-headline text-white">See Our Work in Action</h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto;">Professional
                     video production that combines human creativity with AI efficiency</p>
             </div>
@@ -285,33 +288,63 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-video-container">
-            <div class="footer-video-bg">
-                <iframe
-                    src="https://www.youtube.com/embed/Wk3fGoVxGpM?autoplay=1&mute=1&loop=1&playlist=Wk3fGoVxGpM&controls=0&showinfo=0&rel=0&disablekb=1&iv_load_policy=3"
-                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <!-- Client Voices Section -->
+    <section class="client-voices-section section-padding bg-black">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-headline text-white">Client Voices</h2>
+                <p class="section-subheadline text-muted">What brands are saying about working with us</p>
             </div>
-            <div class="footer-overlay"></div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"They transformed our 3D designs into desire."</p>
+                        <p class="client-name border-top border-secondary pt-3 mt-3 d-inline-block text-cyan">— The
+                            Marque Club</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"Our pub's soul captured perfectly—now we're Williamstown's
+                            heartbeat."</p>
+                        <p class="client-name border-top border-secondary pt-3 mt-3 d-inline-block text-cyan">— Rose of
+                            Australia</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"Surgical precision, cinematically captured."</p>
+                        <p class="client-name border-top border-secondary pt-3 mt-3 d-inline-block text-cyan">— Clinic
+                            Golden Proportions</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="container text-center">
-            <h3 class="h3 mb-4">Ready to Scale Your Video Marketing?</h3>
-            <a href="#contact" class="btn btn-submit d-inline-block w-auto px-5 mb-5 rounded-pill">GET A QUOTE NOW</a>
+    </section>
 
-            <div class="row border-top border-secondary pt-4 text-start">
-                <div class="col-md-6">
-                    <p class="mb-1 text-white"><strong>STUDIO X AI</strong></p>
-                    <p>hello@studiox.ai</p>
-                    <p>Hyderabad | Bangalore | Pan-India Service</p>
-                </div>
-                <div class="col-md-6 text-md-end footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
+    <!-- Review CTA Section -->
+    <section class="cta-section section-padding position-relative d-flex align-items-center overflow-hidden">
+        <div class="cta-video-container">
+            <iframe
+                src="https://www.youtube.com/embed/Wk3fGoVxGpM?autoplay=1&mute=1&loop=1&playlist=Wk3fGoVxGpM&controls=0&showinfo=0&rel=0&disablekb=1&iv_load_policy=3"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="cta-bg-overlay"></div>
+        <div class="container position-relative z-2 text-center">
+            <h2 class="display-4 fw-bold text-white mb-4">Create Stories That Move Your<br>Audience</h2>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#contact" class="btn btn-cta-primary rounded-pill px-4 py-3">Start Your Project <i
+                        class="fas fa-arrow-right ms-2"></i></a>
+                <a href="#contact" class="btn btn-cta-outline rounded-pill px-4 py-3"><i
+                        class="fas fa-calendar-alt me-2"></i> Book Strategy Call</a>
             </div>
         </div>
-    </footer>
+    </section>
+
+
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
