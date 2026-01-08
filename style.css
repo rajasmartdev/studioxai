@@ -351,7 +351,7 @@ footer {
 
 /* Video Showcase Section */
 .video-showcase-section {
-    padding: 5rem 0;
+    padding: 2rem 0;
     background: white;
 }
 
@@ -485,7 +485,6 @@ footer .container {
 
 .quote-icon {
     font-size: 2rem;
-    color: #1a1a1a;
     margin-bottom: 1.5rem;
     display: block;
 }
@@ -573,4 +572,53 @@ footer .container {
     background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
     transform: translateY(-2px);
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #0d0d0d;
+    border: 1px solid #333;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 242, 255, 0.15);
+}
+
+.modal-cover-image {
+    background: url('https://images.unsplash.com/photo-1536240478700-b869070f9279?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') no-repeat center center/cover;
+    min-height: 100%;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+}
+
+.form-select:focus,
+.form-control:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 0.25rem rgba(0, 242, 255, 0.25);
+}
+
+.form-control::placeholder {
+    color: #666;
+}
+
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.8;
+}
+
+.btn-close-white:hover {
+    opacity: 1;
+}
+
+.hero-glass-card {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
