@@ -3,329 +3,765 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Your Visit & Study Tours</title>
+    <title>Forest Overview - Kanthavara Forest Bootcamp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            background-color: #f8f9fa;
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --forest-primary: #1a4d2e;
+            --forest-secondary: #2d5016;
+            --accent-gold: #d4af37;
+            --accent-earth: #8b6f47;
+            --text-dark: #1a1a1a;
+            --text-light: #f5f5f5;
+            --bg-cream: #faf8f3;
         }
-        
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            margin-bottom: 3rem;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-top: 4rem;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c5f2d;
-            margin-bottom: 1rem;
-        }
-        
-        .info-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-        }
-        
-        .info-row {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        .info-row:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .info-icon {
-            font-size: 1.5rem;
-            color: #2c5f2d;
-            margin-right: 1.5rem;
-            min-width: 30px;
-        }
-        
-        .info-label {
-            font-weight: 600;
-            color: #2c5f2d;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .info-content {
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .btn-primary-custom {
-            background-color: #2c5f2d;
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn-primary-custom:hover {
-            background-color: #1e4620;
-        }
-        
-        .study-tour-card {
-            background: white;
-            border-radius: 10px;
+
+        * {
+            margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1511497584788-876760111969?w=1600') center/cover fixed;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
             margin-bottom: 2rem;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            border-left: 4px solid #2c5f2d;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero-section p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .hero-divider {
+            width: 100px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 2rem auto;
+        }
+
+        /* Section Styling */
+        .content-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .content-section.light {
+            background: var(--bg-cream);
+        }
+
+        .content-section.dark {
+            background: var(--forest-primary);
+            color: var(--text-light);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--forest-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .content-section.dark .section-title {
+            color: var(--text-light);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: var(--accent-gold);
+        }
+
+        .section-intro {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .content-section.dark .section-intro {
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Wildlife Section */
+        .wildlife-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .wildlife-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .wildlife-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .wildlife-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--forest-primary), var(--forest-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .wildlife-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--forest-primary);
+        }
+
+        .wildlife-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .wildlife-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .wildlife-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Alert Box */
+        .alert-custom {
+            background: linear-gradient(135deg, #fff3cd, #ffe8a1);
+            border-left: 5px solid #ffc107;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(255, 193, 7, 0.2);
+        }
+
+        .alert-custom strong {
+            color: #856404;
+        }
+
+        /* Bamboo Section */
+        .bamboo-section {
+            background: linear-gradient(135deg, var(--forest-primary) 0%, #0d3320 100%);
+            color: white;
+            padding: 120px 0;
+            position: relative;
             overflow: hidden;
         }
-        
-        .tour-image {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+
+        .bamboo-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 60%;
+            height: 200%;
+            background: url('https://images.unsplash.com/photo-1583407723486-94c4a476c650?w=800') center/cover;
+            opacity: 0.1;
+            transform: rotate(-15deg);
         }
-        
-        .tour-content {
-            padding: 2rem;
+
+        .bamboo-content {
+            position: relative;
+            z-index: 2;
         }
-        
-        .tour-title {
+
+        .bamboo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .bamboo-card {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 15px;
+            padding: 35px;
+            transition: all 0.3s;
+        }
+
+        .bamboo-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-5px);
+        }
+
+        .bamboo-card h4 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
             font-size: 1.5rem;
-            font-weight: 700;
-            color: #2c5f2d;
-            margin-bottom: 1rem;
         }
-        
-        .tour-description {
-            color: #555;
-            line-height: 1.7;
-            margin-bottom: 1rem;
+
+        .bamboo-card ul {
+            list-style: none;
+            padding: 0;
         }
-        
-        .tour-questions {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 1rem;
+
+        .bamboo-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
         }
-        
-        .tour-questions ol {
-            margin-bottom: 0;
-            padding-left: 1.5rem;
+
+        .bamboo-card li::before {
+            content: '🎋';
+            position: absolute;
+            left: 0;
         }
-        
-        .tour-questions li {
-            color: #555;
-            margin-bottom: 0.5rem;
+
+        /* Feature Cards */
+        .feature-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
         }
-        
-        .price-highlight {
-            color: #2c5f2d;
-            font-weight: 700;
+
+        .feature-box {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 60px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--forest-primary));
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon-large {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-earth));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .feature-box h4 {
+            font-size: 1.8rem;
+            color: var(--forest-primary);
+            margin-bottom: 15px;
+        }
+
+        .feature-box .subtitle {
+            color: var(--accent-gold);
+            font-style: italic;
+            margin-bottom: 20px;
             font-size: 1.1rem;
         }
-        
-        .badge-custom {
-            background-color: #e8f5e9;
-            color: #2c5f2d;
-            padding: 0.5rem 1rem;
+
+        /* Broken Forest Section */
+        .broken-forest {
+            background: linear-gradient(to right, #f8f9fa 50%, white 50%);
+            padding: 100px 0;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+        }
+
+        .comparison-card.degraded::before {
+            background: #dc3545;
+        }
+
+        .comparison-card.regeneration::before {
+            background: #28a745;
+        }
+
+        .comparison-card.comparison::before {
+            background: #ffc107;
+        }
+
+        .comparison-card h5 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--forest-primary);
+        }
+
+        /* Cultural Section */
+        .cultural-section {
+            background: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1600') center/cover;
+            padding: 120px 0;
+            position: relative;
+            color: white;
+        }
+
+        .cultural-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(107, 68, 35, 0.85), rgba(26, 77, 46, 0.85));
+        }
+
+        .cultural-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .cultural-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .cultural-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .cultural-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: scale(1.05);
+        }
+
+        .cultural-item h5 {
+            font-size: 1.3rem;
+            margin-top: 15px;
+        }
+
+        /* Viewpoints */
+        .viewpoints-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .viewpoint-card {
+            position: relative;
+            height: 400px;
             border-radius: 20px;
-            font-weight: 600;
-            display: inline-block;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+
+        .viewpoint-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .viewpoint-card:hover img {
+            transform: scale(1.15);
+        }
+
+        .viewpoint-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 35px;
+            color: white;
+            transition: all 0.4s;
+        }
+
+        .viewpoint-card:hover .viewpoint-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.3) 60%);
+        }
+
+        .viewpoint-overlay h5 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .viewpoint-overlay p {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-row,
+            .viewpoints-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section {
+                padding: 60px 0;
+            }
+
+            .bamboo-section,
+            .cultural-section {
+                padding: 80px 0;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
         }
     </style>
 </head>
 <body>
-    <!-- Plan Your Visit Section -->
-    <section class="py-5">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>A System, Not a Setting</h1>
+            <div class="hero-divider"></div>
+            <p>The forest at Kanthavara is not a backdrop for activities. It is the subject of all learning here.</p>
+            <p>Spanning 13 acres of protected rainforest within Karnataka's Western Ghats region, this ecosystem demonstrates biodiversity, habitat interdependence, and the consequences of both degradation and regeneration.</p>
+            <p style="font-weight: 500; font-size: 1.4rem; margin-top: 2rem;">Visitors do not come here to see the forest. They come to understand it.</p>
+        </div>
+    </section>
+
+    <!-- Living Biodiversity -->
+    <section class="content-section light">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Plan Your Visit</h2>
-                <p class="lead text-muted">Essential Information</p>
-            </div>
+            <h2 class="section-title">Living Biodiversity</h2>
+            <p class="section-intro">Rainforest Ecosystem</p>
             
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=1200&h=400&fit=crop" 
-                         alt="Nature Camp Location" 
-                         class="hero-image">
-                    
-                    <div class="info-card">
-                        <div class="info-row">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="flex-grow-1">
-                                <div class="info-label">Location</div>
-                                <div class="info-content">
-                                    42 km from Mangalore | 60-90 minute drive
-                                    <a href="#" class="text-decoration-none ms-2">[Get Directions]</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-row">
-                            <div class="info-icon">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <div class="flex-grow-1">
-                                <div class="info-label">Best Time</div>
-                                <div class="info-content">
-                                    Year-round facility | Early arrival recommended for full program participation
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-row">
-                            <div class="info-icon">
-                                <i class="fas fa-ticket-alt"></i>
-                            </div>
-                            <div class="flex-grow-1">
-                                <div class="info-label">Camps</div>
-                                <div class="info-content">
-                                    <div class="mb-2">Full-Day: <span class="price-highlight">₹380 per person</span></div>
-                                    <div class="mb-2">Overnight: <span class="price-highlight">₹950 per person per day</span></div>
-                                    <div class="text-muted fst-italic">Special consideration for families — children under 10 visit free with parents</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-row">
-                            <div class="info-icon">
-                                <i class="fas fa-utensils"></i>
-                            </div>
-                            <div class="flex-grow-1">
-                                <div class="info-label">Meals</div>
-                                <div class="info-content">
-                                    Community-style vegetarian meals included in all programs
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="info-row">
-                            <div class="info-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="flex-grow-1">
-                                <div class="info-label">Ideal For</div>
-                                <div class="info-content">
-                                    <span class="badge-custom">Schools</span>
-                                    <span class="badge-custom">Colleges</span>
-                                    <span class="badge-custom">Families</span>
-                                    <span class="badge-custom">Corporate Groups</span>
-                                    <span class="badge-custom">Conservation Learners</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="text-center mt-4">
-                            <button class="btn btn-primary-custom btn-lg">
-                                <i class="fas fa-check-circle me-2"></i>Check Availability
-                            </button>
-                        </div>
+            <div class="wildlife-grid">
+                <div class="wildlife-card">
+                    <div class="wildlife-icon">
+                        <i class="fas fa-paw"></i>
                     </div>
+                    <h4>Wildlife Residents</h4>
+                    <p style="margin-bottom: 20px;">The protected habitat supports:</p>
+                    <ul>
+                        <li>Leopards (resident population, camera trap documented)</li>
+                        <li>Wild boar</li>
+                        <li>Porcupine</li>
+                        <li>Diverse bird species</li>
+                        <li>Butterfly populations</li>
+                        <li>Amphibians and reptiles</li>
+                        <li>Insect diversity</li>
+                    </ul>
+                </div>
+
+                <div class="wildlife-card">
+                    <div class="wildlife-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>Flora Diversity</h4>
+                    <p>Native rainforest species including medicinal plants, fruiting trees, and undergrowth supporting the complete food web. The arboretum preserves significant specimens as living gene bank.</p>
+                </div>
+
+                <div class="wildlife-card">
+                    <div class="wildlife-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4>Ecosystem Services</h4>
+                    <p style="margin-bottom: 20px;">The forest demonstrates:</p>
+                    <ul>
+                        <li>Water cycle function (rainfall patterns, groundwater recharge)</li>
+                        <li>Atmospheric cooling</li>
+                        <li>Carbon sequestration</li>
+                        <li>Soil stabilization</li>
+                        <li>Habitat connectivity</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="alert-custom">
+                <i class="fas fa-info-circle"></i> <strong>Wildlife sightings are not guaranteed.</strong> These are wild animals in natural habitat, not exhibits. Learning to read signs of presence is more valuable than viewing.
+            </div>
+        </div>
+    </section>
+
+    <!-- Bamboo Section -->
+    <section class="bamboo-section">
+        <div class="container bamboo-content">
+            <h2 class="section-title">68 Varieties of Green Gold</h2>
+            <p class="section-intro">Kanthavara's bambusetum contains 68 bamboo varieties — nearly half of India's 150 species. This is one of the most comprehensive bamboo collections in the region, serving both conservation and educational purposes.</p>
+            
+            <div class="bamboo-grid">
+                <div class="bamboo-card">
+                    <h4>Notable Specimens:</h4>
+                    <ul>
+                        <li>World's second-largest bamboo (reaching 100 feet in 30-40 days)</li>
+                        <li>World's smallest bamboo variety</li>
+                        <li>Black bamboo</li>
+                        <li>Blue bamboo</li>
+                        <li>Wine bamboo</li>
+                        <li>Creeper/climbing bamboo varieties</li>
+                    </ul>
+                </div>
+
+                <div class="bamboo-card">
+                    <h4>Why Bamboo Matters:</h4>
+                    <ul>
+                        <li>Generates 30% more oxygen than equivalent tree coverage</li>
+                        <li>Some species grow up to 4 feet (1.2 metres) per day</li>
+                        <li>Root systems function as water conduits</li>
+                        <li>Provides temperature cooling effect</li>
+                        <li>Sustainable material for construction, textiles, food</li>
+                        <li>Critical habitat component in Asian forests</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="margin-top: 50px; font-size: 1.2rem; text-align: center;">The bambusetum serves as primary teaching resource for understanding sustainable applications and bamboo's role in forest ecosystems.</p>
+        </div>
+    </section>
+
+    <!-- Arboretum & Water Systems -->
+    <section class="content-section">
+        <div class="container">
+            <div class="feature-row">
+                <div class="feature-box">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h4>Living Gene Bank</h4>
+                    <p class="subtitle">Arboretum</p>
+                    <p>Curated collection of native and significant tree species from the Western Ghats region. The arboretum serves dual purpose:</p>
+                    <p style="margin-top: 20px;"><strong>Conservation:</strong> Preserving genetic diversity of native species, some increasingly rare in wild populations.</p>
+                    <p style="margin-top: 15px;"><strong>Education:</strong> Living specimens for teaching tree identification, growth patterns, ecological roles, and forestry principles.</p>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h4>Understanding the Water Cycle</h4>
+                    <p class="subtitle">Water Systems</p>
+                    <p style="margin-bottom: 20px;">Kanthavara's landscape includes:</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-gold);">💧</span>
+                            Natural lakes
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-gold);">💧</span>
+                            Paddy fields (integrated agriculture demonstration)
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-gold);">💧</span>
+                            Rainwater harvesting systems
+                        </li>
+                        <li style="padding: 8px 0; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-gold);">💧</span>
+                            Forest streams and drainage patterns
+                        </li>
+                    </ul>
+                    <p style="margin-top: 20px;">These features demonstrate the forest's crucial role in water cycle function — how intact forest systems capture, store, filter, and release water versus degraded landscapes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Study Tours Section -->
-    <section class="py-5 bg-light">
+    <!-- Broken Forest -->
+    <section class="broken-forest">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Study Tours</h2>
-                <p class="lead text-muted">Observation-Driven Field Education</p>
-            </div>
+            <h2 class="section-title">Learning from Loss</h2>
+            <p class="section-intro">Not all of Kanthavara's 13 acres are intact forest. Sections demonstrate:</p>
             
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <p class="text-center mb-5 lead">
-                        Study tours are designed for deeper engagement with specific ecological and ethical themes. 
-                        Available as additions to camp programs or as standalone educational experiences.
-                    </p>
-                    
-                    <div class="study-tour-card">
-                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&h=250&fit=crop" 
-                             alt="Broken Forest" 
-                             class="tour-image">
-                        <div class="tour-content">
-                            <h3 class="tour-title">
-                                <i class="fas fa-tree me-2"></i>Broken Forest Study Tour
-                            </h3>
-                            <p class="tour-description">
-                                Understanding deforestation, biodiversity loss, and forest regeneration through direct observation. 
-                                The tour addresses three fundamental questions:
-                            </p>
-                            <div class="tour-questions">
-                                <ol>
-                                    <li>What is a forest?</li>
-                                    <li>What is the state of India's forests?</li>
-                                    <li>How many saplings does it take to replace a single tree?</li>
-                                </ol>
-                            </div>
-                        </div>
+            <div class="comparison-grid">
+                <div class="comparison-card degraded">
+                    <h5>Degraded Areas</h5>
+                    <p>What forest loss looks like, how ecosystems collapse, what is lost beyond trees.</p>
+                </div>
+
+                <div class="comparison-card regeneration">
+                    <h5>Regeneration Zones</h5>
+                    <p>How forests recover over time, what interventions help, what timelines are realistic.</p>
+                </div>
+
+                <div class="comparison-card comparison">
+                    <h5>Comparison Points</h5>
+                    <p>Side-by-side observation of healthy versus damaged forest systems.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 50px; font-size: 1.1rem; text-align: center;">The Broken Forest Tour uses these zones as primary teaching resource — confronting visitors with reality rather than idealized nature imagery.</p>
+        </div>
+    </section>
+
+    <!-- Cultural Landscape -->
+    <section class="cultural-section">
+        <div class="container cultural-content">
+            <h2 class="section-title">Where Belief and Conservation Intersect</h2>
+            <p class="section-intro">The land surrounding Kanthavara includes:</p>
+            
+            <div class="cultural-grid">
+                <div class="cultural-item">
+                    <div style="font-size: 3rem;">🛕</div>
+                    <h5>Temples</h5>
+                </div>
+                <div class="cultural-item">
+                    <div style="font-size: 3rem;">🌳</div>
+                    <h5>Sacred trees</h5>
+                </div>
+                <div class="cultural-item">
+                    <div style="font-size: 3rem;">🌿</div>
+                    <h5>Sacred groves (Naga Bana)</h5>
+                </div>
+                <div class="cultural-item">
+                    <div style="font-size: 3rem;">⛩️</div>
+                    <h5>Daiva/Bhoota shrines</h5>
+                </div>
+            </div>
+
+            <p style="margin-top: 40px; font-size: 1.1rem; max-width: 900px; margin-left: auto; margin-right: auto;">These spaces have traditionally remained protected through cultural practice rather than legislation. Communities preserved biodiversity through belief systems that placed limits on exploitation.</p>
+            <p style="margin-top: 30px; font-style: italic; max-width: 900px; margin-left: auto; margin-right: auto;">This is not presented as spiritual tourism. It is historical documentation of how conservation functioned before formal environmental movements — and what might be learned from that relationship between belief, land, and life.</p>
+        </div>
+    </section>
+
+    <!-- Viewpoints -->
+    <section class="content-section light">
+        <div class="container">
+            <h2 class="section-title">Viewpoints & Observation Areas</h2>
+            
+            <div class="viewpoints-grid">
+                <div class="viewpoint-card">
+                    <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800" alt="Forest viewpoint">
+                    <div class="viewpoint-overlay">
+                        <h5>Francis Miyawaki Viewpoint</h5>
+                        <p>Named for the Miyawaki method of rapid forest regeneration. Observation point for understanding dense planting techniques.</p>
                     </div>
-                    
-                    <div class="study-tour-card">
-                        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=800&h=250&fit=crop" 
-                             alt="Bamboo Ecosystem" 
-                             class="tour-image">
-                        <div class="tour-content">
-                            <h3 class="tour-title">
-                                <i class="fas fa-leaf me-2"></i>Bamboo Ecosystems Tour
-                            </h3>
-                            <p class="tour-description">
-                                Sustainable applications, growth patterns, and ecological significance of bamboo within forest systems.
-                            </p>
-                        </div>
+                </div>
+
+                <div class="viewpoint-card">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800" alt="Star gazing">
+                    <div class="viewpoint-overlay">
+                        <h5>Star Gazing Deck</h5>
+                        <p>Night sky observation area away from light pollution.</p>
                     </div>
-                    
-                    <div class="study-tour-card">
-                        <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800&h=250&fit=crop" 
-                             alt="Ecology and Ethics" 
-                             class="tour-image">
-                        <div class="tour-content">
-                            <h3 class="tour-title">
-                                <i class="fas fa-globe-americas me-2"></i>Ecology & Ethics Program
-                            </h3>
-                            <p class="tour-description">
-                                Environmental responsibility, carrying capacity, and the relationship between human activity and ecosystem health.
-                            </p>
-                        </div>
+                </div>
+
+                <div class="viewpoint-card">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800" alt="Sunrise point">
+                    <div class="viewpoint-overlay">
+                        <h5>Sunrise Points</h5>
+                        <p>Eastern-facing positions for dawn observation and early-morning birding.</p>
                     </div>
-                    
-                    <div class="text-center mt-4">
-                        <button class="btn btn-primary-custom btn-lg">
-                            <i class="fas fa-book-open me-2"></i>View All Study Tours
-                        </button>
+                </div>
+
+                <div class="viewpoint-card">
+                    <img src="https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=800" alt="Wildlife observation">
+                    <div class="viewpoint-overlay">
+                        <h5>Wildlife Observation Posts</h5>
+                        <p>Positioned along known movement corridors for patient, ethical wildlife watching.</p>
                     </div>
                 </div>
             </div>
