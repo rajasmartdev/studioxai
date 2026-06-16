@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yummpy's — Maggi Reimagined</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink:    #0F0E0C;
+      --paper:  #F5F2EB;
+      --bone:   #EAE5D8;
+      --orange: #E8540A;
+      --gold:   #C8960A;
+      --sage:   #3D5A3E;
+      --mist:   #9B9385;
+      --white:  #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4,h5 { font-family: 'Syne', sans-serif; }
+
+    /* ── NAV ── */
+    .navbar {
+      background: var(--paper);
+      border-bottom: 1px solid rgba(15,14,12,0.1);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .navbar-brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--ink) !important;
+      letter-spacing: -0.5px;
+    }
+    .brand-dot { color: var(--orange); }
+    .nav-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--mist) !important;
+      padding: 0.4rem 0.9rem !important;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--ink) !important; }
+    .btn-order {
+      background: var(--orange);
+      color: #fff !important;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.5rem 1.4rem !important;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-order:hover { background: #c4420A; transform: translateY(-1px); }
+    .navbar-toggler { border: 1px solid rgba(15,14,12,0.15); border-radius: 2px; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+    .hero-left {
+      background: var(--ink);
+      padding: 60px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .hero-left::before {
+      content: '';
+      position: absolute;
+      top: -40px; left: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--orange); display: block; }
+    .hero-h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.0;
+      color: #fff;
+      letter-spacing: -1.5px;
+    }
+    .hero-h1 em {
+      color: var(--orange);
+      font-style: normal;
+    }
+    .hero-desc {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.97rem;
+      line-height: 1.7;
+      margin: 1.8rem 0 2.4rem;
+      max-width: 380px;
+    }
+    .btn-primary-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .btn-primary-hero:hover { background: #c4420a; color: #fff; }
+    .btn-primary-hero i { font-size: 1rem; }
+    .hero-nums {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-num-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+    }
+    .hero-num-val span { color: var(--orange); }
+    .hero-num-lbl {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .hero-right {
+      background: var(--bone);
+      display: flex;
+      flex-direction: column;
+    }
+    .hero-img-block {
+      flex: 1;
+      background: linear-gradient(160deg, #f0ead8, #e4ddc8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-img-block::after {
+      content: 'EST. 2016';
+      position: absolute;
+      bottom: 24px; right: 24px;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--mist);
+    }
+    .hero-tags-row {
+      padding: 20px 24px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(15,14,12,0.08);
+    }
+    .tag-pill {
+      background: var(--ink);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+    }
+    .tag-pill.outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid rgba(15,14,12,0.2);
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--orange);
+      padding: 0.6rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 2rem;
+      white-space: nowrap;
+      width: max-content;
+      animation: tick 20s linear infinite;
+    }
+    .ticker-item {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .ticker-sep { color: rgba(255,255,255,0.4); font-size: 1rem; }
+    @keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* ── SECTION DEFAULTS ── */
+    .sec { padding: 100px 0; }
+    .sec-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-bottom: 0.5rem;
+    }
+    .sec-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1px;
+      color: var(--ink);
+    }
+    .sec-title .o { color: var(--orange); }
+    .sec-body {
+      color: var(--mist);
+      font-size: 0.97rem;
+      line-height: 1.75;
+      max-width: 440px;
+    }
+    .rule { width: 40px; height: 2px; background: var(--orange); margin: 1.2rem 0; }
+
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid rgba(15,14,12,0.1);
+    }
+    .about-col { padding: 3rem; }
+    .about-col:first-child { border-right: 1px solid rgba(15,14,12,0.1); }
+    .about-quote {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--ink);
+      border-left: 3px solid var(--orange);
+      padding-left: 1.2rem;
+      margin: 1.5rem 0;
+    }
+    .about-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(15,14,12,0.1);
+    }
+    .about-stat {
+      padding: 1.5rem 2rem;
+      border-right: 1px solid rgba(15,14,12,0.08);
+    }
+    .about-stat:last-child { border-right: none; }
+    .stat-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -1px;
+    }
+    .stat-val sup { font-size: 1rem; color: var(--orange); }
+    .stat-lbl { font-size: 0.78rem; color: var(--mist); font-weight: 500; margin-top: 2px; }
+
+    /* ── MENU ── */
+    .menu-sec { background: var(--paper); }
+    .menu-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; }
+    .menu-filter { display: flex; gap: 0.5rem; }
+    .mf-btn {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      border: 1px solid rgba(15,14,12,0.15);
+      background: transparent;
+      color: var(--mist);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mf-btn.active, .mf-btn:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+    .menu-list { border: 1px solid rgba(15,14,12,0.1); background: var(--white); }
+    .menu-row {
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid rgba(15,14,12,0.06);
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .menu-row:last-child { border-bottom: none; }
+    .menu-row:hover { background: var(--paper); }
+    .menu-emoji-box {
+      width: 56px; height: 56px;
+      background: var(--bone);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .menu-row-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+    .menu-row-desc { font-size: 0.82rem; color: var(--mist); margin-top: 2px; }
+    .menu-row-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      background: var(--bone);
+      color: var(--mist);
+      margin-left: 8px;
+    }
+    .menu-row-badge.veg { background: #e6f0e6; color: #2a5a2a; }
+    .menu-row-badge.non { background: #fdecea; color: #8a2020; }
+    .menu-row-right { text-align: right; flex-shrink: 0; }
+    .menu-price {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .menu-price-sub { font-size: 0.72rem; color: var(--mist); }
+    .menu-arr { color: var(--orange); font-size: 1rem; margin-top: 4px; }
+
+    /* ── WHY ── */
+    .why-sec { background: var(--ink); }
+    .why-sec .sec-title { color: #fff; }
+    .why-sec .sec-num { color: rgba(255,255,255,0.3); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border: 1px solid rgba(255,255,255,0.07);
+      margin-top: 3rem;
+    }
+    .why-cell {
+      padding: 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: background 0.25s;
+    }
+    .why-cell:nth-child(2n) { border-right: none; }
+    .why-cell:nth-child(3), .why-cell:nth-child(4) { border-bottom: none; }
+    .why-cell:hover { background: rgba(255,255,255,0.03); }
+    .why-icon-wrap {
+      width: 52px; height: 52px;
+      border: 1px solid rgba(232,84,10,0.3);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.4rem;
+    }
+    .why-cell h5 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.6rem;
+    }
+    .why-cell p { font-size: 0.88rem; color: rgba(255,255,255,0.4); line-height: 1.7; }
+    .why-cta-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 0;
+    }
+    .why-cta-left {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-top: none;
+      padding: 2.5rem;
+    }
+    .why-cta-right {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-top: none;
+      border-left: none;
+      background: var(--orange);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .why-cta-right h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+    .why-cta-right p { color: rgba(255,255,255,0.7); font-size: 0.88rem; margin-bottom: 1.4rem; }
+    .btn-cta-wh {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2px;
+      text-decoration: none;
+      align-self: flex-start;
+      transition: opacity 0.2s;
+    }
+    .btn-cta-wh:hover { opacity: 0.88; color: var(--orange); }
+
+    /* ── JOURNEY ── */
+    .journey-sec { background: var(--bone); }
+    .journey-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(15,14,12,0.1);
+      border: 1px solid rgba(15,14,12,0.1);
+      margin-top: 3rem;
+    }
+    .step-box {
+      background: var(--paper);
+      padding: 2rem;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .step-box:hover { background: var(--white); }
+    .step-n {
+      font-family: 'Syne', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(15,14,12,0.06);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .step-ico { font-size: 1.6rem; margin-bottom: 0.8rem; }
+    .step-box h6 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+    .step-box p { font-size: 0.82rem; color: var(--mist); line-height: 1.6; }
+    .step-arr {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      color: var(--orange);
+      font-size: 0.9rem;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-sec { background: var(--white); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(15,14,12,0.08);
+      border: 1px solid rgba(15,14,12,0.08);
+      margin-top: 3rem;
+    }
+    .review-box {
+      background: var(--white);
+      padding: 2rem 2.2rem;
+      position: relative;
+    }
+    .review-stars { color: var(--gold); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 1rem; }
+    .review-txt {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--ink);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    .review-footer { display: flex; align-items: center; gap: 0.8rem; }
+    .rev-av {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--bone);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+    .rev-name { font-weight: 600; font-size: 0.88rem; color: var(--ink); }
+    .rev-role { font-size: 0.75rem; color: var(--mist); }
+
+    /* ── GALLERY ── */
+    .gallery-sec { background: var(--paper); }
+    .g-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 200px 200px;
+      gap: 8px;
+      margin-top: 2rem;
+    }
+    .g-cell {
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .g-cell:hover { transform: scale(0.97); }
+    .g-cell:nth-child(1) { background: #2c1a06; grid-column: span 2; font-size: 6rem; }
+    .g-cell:nth-child(2) { background: #1a1a0a; }
+    .g-cell:nth-child(3) { background: #200808; }
+    .g-cell:nth-child(4) { background: #0e1e0e; }
+    .g-cell:nth-child(5) { background: #160a1c; }
+    .g-cell:nth-child(6) { background: #1a100a; }
+    .g-insta {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.88rem;
+      color: var(--mist);
+    }
+    .g-insta a { color: var(--orange); text-decoration: none; font-weight: 600; }
+
+    /* ── CONTACT ── */
+    .contact-sec { background: var(--paper); padding-top: 0; }
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--ink);
+    }
+    .contact-left {
+      padding: 4rem;
+      background: var(--orange);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .contact-left h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .cd-icon {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .cd-label { font-size: 0.72rem; color: rgba(255,255,255,0.55); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .cd-val { font-size: 0.92rem; color: #fff; font-weight: 600; margin-top: 2px; }
+    .cd-val a { color: #fff; text-decoration: none; }
+    .contact-social { display: flex; gap: 0.6rem; margin-top: 2.5rem; }
+    .csoc {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .csoc:hover { background: rgba(255,255,255,0.3); color: #fff; }
+
+    .contact-right { padding: 4rem; }
+    .contact-right h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1.8rem;
+    }
+    .cf-group { margin-bottom: 1.2rem; }
+    .cf-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.4rem;
+    }
+    .cf-input, .cf-select, .cf-textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      padding: 0.7rem 1rem;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .cf-input::placeholder, .cf-textarea::placeholder { color: rgba(255,255,255,0.2); }
+    .cf-input:focus, .cf-select:focus, .cf-textarea:focus { border-color: var(--orange); }
+    .cf-select { appearance: none; cursor: pointer; }
+    .cf-select option { background: #1a1a18; color: #fff; }
+    .cf-textarea { resize: none; height: 100px; }
+    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .btn-send {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.8rem 2rem;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    .btn-send:hover { background: #c4420a; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 3rem 0 1.5rem;
+    }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; margin-bottom: 2.5rem; }
+    .footer-brand-block .fb-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .footer-brand-block .fb-name span { color: var(--orange); }
+    .footer-brand-block p { color: rgba(255,255,255,0.3); font-size: 0.83rem; margin-top: 0.5rem; max-width: 220px; line-height: 1.6; }
+    .footer-cols { display: flex; gap: 4rem; flex-wrap: wrap; }
+    .footer-col-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 1rem;
+    }
+    .footer-lnk { display: block; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.88rem; font-weight: 500; margin-bottom: 0.5rem; transition: color 0.2s; }
+    .footer-lnk:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+    .fc { color: rgba(255,255,255,0.2); font-size: 0.8rem; }
+    .fc a { color: rgba(255,255,255,0.3); text-decoration: none; }
+
+    /* ── SCROLL BTN ── */
+    #stb {
+      position: fixed;
+      bottom: 1.8rem; right: 1.8rem;
+      width: 44px; height: 44px;
+      background: var(--ink);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 2px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      cursor: pointer;
+      z-index: 9999;
+      transition: background 0.2s;
+    }
+    #stb:hover { background: var(--orange); border-color: var(--orange); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 991px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 60px 32px; min-height: 80vh; }
+      .hero-right { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-col:first-child { border-right: none; border-bottom: 1px solid rgba(15,14,12,0.1); }
+      .contact-wrap { grid-template-columns: 1fr; }
+      .contact-left { padding: 2.5rem; }
+      .contact-right { padding: 2.5rem; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-cell:nth-child(2n) { border-right: none; }
+      .why-cell:nth-child(3) { border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .why-cta-row { grid-template-columns: 1fr; }
+      .why-cta-left { border-right: none; }
+      .why-cta-right { border-left: 1px solid rgba(255,255,255,0.07); }
+      .journey-steps { grid-template-columns: repeat(2, 1fr); }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .g-grid { grid-template-columns: repeat(2, 1fr); }
+      .g-cell:nth-child(1) { grid-column: span 2; }
+    }
+    @media (max-width: 575px) {
+      .hero-left { padding: 48px 24px; }
+      .about-stat-row { grid-template-columns: 1fr; }
+      .about-stat { border-right: none; border-bottom: 1px solid rgba(15,14,12,0.08); }
+      .journey-steps { grid-template-columns: 1fr; }
+      .cf-row { grid-template-columns: 1fr; }
+      .footer-cols { gap: 2rem; }
+      .g-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 150px 150px 150px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand" href="#">Yummpy<span class="brand-dot">'s</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <i class="bi bi-list" style="font-size:1.3rem;"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">Story</a></li>
+        <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#franchise">Franchise</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-order nav-link">Get in Touch</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Hyderabad's Favourite Maggi</div>
+    <h1 class="hero-h1">Not Just<br/>Maggi.<br/><em>Maggi Done</em><br/>Right.</h1>
+    <p class="hero-desc">Born from a love of late-night noodles and big flavours. Since 2016, we've been reimagining everyone's favourite comfort food — one bowl at a time.</p>
+    <a href="#menu" class="btn-primary-hero">
+      Explore the Menu <i class="bi bi-arrow-right"></i>
+    </a>
+    <div class="hero-nums">
+      <div>
+        <div class="hero-num-val">8<span>+</span></div>
+        <div class="hero-num-lbl">Years Serving</div>
+      </div>
+      <div>
+        <div class="hero-num-val">20<span>+</span></div>
+        <div class="hero-num-lbl">Unique Recipes</div>
+      </div>
+      <div>
+        <div class="hero-num-val">100K<span>+</span></div>
+        <div class="hero-num-lbl">Bowls Served</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-block">🍜</div>
+    <div class="hero-tags-row">
+      <span class="tag-pill">Tasty</span>
+      <span class="tag-pill">Hygienic</span>
+      <span class="tag-pill">Pocket-Friendly</span>
+      <span class="tag-pill outline">Fried Maggi</span>
+      <span class="tag-pill outline">Cheese Maggi</span>
+      <span class="tag-pill outline">Schezwan</span>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Fried Maggi <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Chicken Cheese Maggi <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Schezwan Maggi <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Butter Garlic Fries <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Peri Peri Maggi <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Masala Fries <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Egg Maggi <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Fried Maggi <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Chicken Cheese Maggi <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Schezwan Maggi <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Butter Garlic Fries <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Peri Peri Maggi <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Masala Fries <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">Egg Maggi <span class="ticker-sep">·</span></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about sec" id="about">
+  <div class="container-fluid px-4">
+    <div class="sec-num">01 — Our Story</div>
+    <h2 class="sec-title" style="max-width:560px;">Where comfort food becomes<br/><span class="o">an experience.</span></h2>
+    <div class="rule"></div>
+    <div class="about-grid mt-4">
+      <div class="about-col">
+        <p class="sec-body">Remember that late night in the hostel, surviving on one thing that never let you down? Maggi. It's everyone's comfort food — a taste of home no matter where you are.</p>
+        <div class="about-quote">"We decided to create novel, lip-smacking dishes using Maggi — adding a twist of flavour, and a whole lot of love."</div>
+        <p class="sec-body" style="max-width:100%">We've worked with experienced chefs to craft new and fresh flavours since 2016. Every bowl is made with high-quality ingredients, hygienically prepared, and served fast — because you shouldn't have to wait long for something this good.</p>
+      </div>
+      <div class="about-col" style="background:var(--paper);display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:280px;">
+        <div style="font-size:8rem;line-height:1;">🍜</div>
+        <p style="font-family:'Syne',sans-serif;font-size:0.65rem;font-weight:800;letter-spacing:3px;color:var(--mist);text-transform:uppercase;margin-top:1rem;">Est. Hyderabad, 2016</p>
+      </div>
+    </div>
+    <div class="about-stat-row">
+      <div class="about-stat">
+        <div class="stat-val">8<sup>+</sup></div>
+        <div class="stat-lbl">Years in the game</div>
+      </div>
+      <div class="about-stat">
+        <div class="stat-val">20<sup>+</sup></div>
+        <div class="stat-lbl">Unique maggi flavours</div>
+      </div>
+      <div class="about-stat">
+        <div class="stat-val">100K<sup>+</sup></div>
+        <div class="stat-lbl">Happy bowls served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-sec sec" id="menu">
+  <div class="container-fluid px-4">
+    <div class="menu-header">
+      <div>
+        <div class="sec-num">02 — Menu</div>
+        <h2 class="sec-title">Yummpy's <span class="o">Yummy</span> Menu</h2>
+      </div>
+      <div class="menu-filter">
+        <button class="mf-btn active" onclick="filterMenu(this,'all')">All</button>
+        <button class="mf-btn" onclick="filterMenu(this,'veg')">Veg</button>
+        <button class="mf-btn" onclick="filterMenu(this,'nonveg')">Non-Veg</button>
+        <button class="mf-btn" onclick="filterMenu(this,'fries')">Fries</button>
+      </div>
+    </div>
+    <div class="menu-list" id="menuList">
+      <div class="menu-row" data-cat="veg">
+        <div class="menu-emoji-box">🍜</div>
+        <div>
+          <div class="menu-row-title">Classic Masala Maggi <span class="menu-row-badge veg">Veg</span></div>
+          <div class="menu-row-desc">The OG. Simple, spicy, soul-warming.</div>
+        </div>
+        <div class="menu-row-right">
+          <div class="menu-price">₹50<span style="font-size:0.7rem;font-weight:400;color:var(--mist)"> up</span></div>
+          <div class="menu-arr"><i class="bi bi-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="menu-row" data-cat="veg nonveg">
+        <div class="menu-emoji-box">🔥</div>
+        <div>
+          <div class="menu-row-title">Fried Maggi <span class="menu-row-badge">Veg / NV</span></div>
+          <div class="menu-row-desc">Our signature. Crispy, saucy, totally addictive.</div>
+        </div>
+        <div class="menu-row-right">
+          <div class="menu-price">₹70<span style="font-size:0.7rem;font-weight:400;color:var(--mist)"> up</span></div>
+          <div class="menu-arr"><i class="bi bi-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="menu-row" data-cat="nonveg">
+        <div class="menu-emoji-box">🧀</div>
+        <div>
+          <div class="menu-row-title">Chicken Cheese Maggi <span class="menu-row-badge non">Non-Veg</span></div>
+          <div class="menu-row-desc">Tender chicken, melted cheese — a match made in heaven.</div>
+        </div>
+        <div class="menu-row-right">
+          <div class="menu-price">₹90<span style="font-size:0.7rem;font-weight:400;color:var(--mist)"> up</span></div>
+          <div class="menu-arr"><i class="bi bi-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="menu-row" data-cat="veg">
+        <div class="menu-emoji-box">🌶️</div>
+        <div>
+          <div class="menu-row-title">Schezwan Maggi <span class="menu-row-badge veg">Veg</span></div>
+          <div class="menu-row-desc">Chinese-inspired, Maggi-perfected, dangerously spicy.</div>
+        </div>
+        <div class="menu-row-right">
+          <div class="menu-price">₹65<span style="font-size:0.7rem;font-weight:400;color:var(--mist)"> up</span></div>
+          <div class="menu-arr"><i class="bi bi-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="menu-row" data-cat="veg">
+        <div class="menu-emoji-box">🧄</div>
+        <div>
+          <div class="menu-row-title">Peri Peri Maggi <span class="menu-row-badge veg">Veg</span></div>
+          <div class="menu-row-desc">Smoky, tangy peri peri meets everyone's favourite noodle.</div>
+        </div>
+        <div class="menu-row-right">
+          <div class="menu-price">₹70<span style="font-size:0.7rem;font-weight:400;color:var(--mist)"> up</span></div>
+          <div class="menu-arr"><i class="bi bi-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="menu-row" data-cat="nonveg">
+        <div class="menu-emoji-box">🥚</div>
+        <div>
+          <div class="menu-row-title">Egg Maggi <span class="menu-row-badge">Egg</span></div>
+          <div class="menu-row-desc">Protein-packed comfort food for any time of day.</div>
+        </div>
+        <div class="menu-row-right">
+          <div class="menu-price">₹70<span style="font-size:0.7rem;font-weight:400;color:var(--mist)"> up</span></div>
+          <div class="menu-arr"><i class="bi bi-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="menu-row" data-cat="fries">
+        <div class="menu-emoji-box">🧄</div>
+        <div>
+          <div class="menu-row-title">Butter Garlic Fries <span class="menu-row-badge veg">Veg</span></div>
+          <div class="menu-row-desc">Golden fries tossed in rich butter-garlic. Addictive.</div>
+        </div>
+        <div class="menu-row-right">
+          <div class="menu-price">₹60<span style="font-size:0.7rem;font-weight:400;color:var(--mist)"> up</span></div>
+          <div class="menu-arr"><i class="bi bi-arrow-right"></i></div>
+        </div>
+      </div>
+      <div class="menu-row" data-cat="fries">
+        <div class="menu-emoji-box">🍟</div>
+        <div>
+          <div class="menu-row-title">Masala Fries <span class="menu-row-badge veg">Veg</span></div>
+          <div class="menu-row-desc">Classic fries with a desi masala twist. Gets you every time.</div>
+        </div>
+        <div class="menu-row-right">
+          <div class="menu-price">₹50<span style="font-size:0.7rem;font-weight:400;color:var(--mist)"> up</span></div>
+          <div class="menu-arr"><i class="bi bi-arrow-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-sec sec">
+  <div class="container-fluid px-4">
+    <div class="sec-num" style="color:rgba(255,255,255,0.3)">03 — Why Yummpy's</div>
+    <h2 class="sec-title" style="color:#fff;max-width:520px;">We sweat the details<br/><span class="o">so you don't have to.</span></h2>
+    <div class="why-grid">
+      <div class="why-cell">
+        <div class="why-icon-wrap">🌿</div>
+        <h5>Always Hygienic</h5>
+        <p>Prepared in clean, well-maintained kitchens by trained staff every single day. Your health is our highest priority — always.</p>
+      </div>
+      <div class="why-cell">
+        <div class="why-icon-wrap">💸</div>
+        <h5>Pocket Friendly</h5>
+        <p>Great food shouldn't break the bank. We've worked hard to keep prices low without compromising on quality or taste.</p>
+      </div>
+      <div class="why-cell">
+        <div class="why-icon-wrap">⚡</div>
+        <h5>Fast & Fresh</h5>
+        <p>Hot, made-to-order food served quickly. Whether you're on a lunch break or a late-night craving run, we've got you.</p>
+      </div>
+      <div class="why-cell">
+        <div class="why-icon-wrap">🎨</div>
+        <h5>Unique Recipes</h5>
+        <p>We worked with chefs to craft flavours you won't find anywhere else. Each bowl is a new take on an old favourite.</p>
+      </div>
+    </div>
+    <div class="why-cta-row">
+      <div class="why-cta-left">
+        <p style="color:rgba(255,255,255,0.3);font-size:0.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.5rem">Franchise</p>
+        <p style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:rgba(255,255,255,0.5);line-height:1.3">Join the Yummpy's family and own your outlet.</p>
+      </div>
+      <div class="why-cta-right" id="franchise">
+        <h4>Become a Franchise Partner</h4>
+        <p>We provide complete training, support, and a proven business model. 6 simple steps to launch your own Yummpy's outlet.</p>
+        <a href="#contact" class="btn-cta-wh">Start the Conversation <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRANCHISE STEPS -->
+<section class="journey-sec sec">
+  <div class="container-fluid px-4">
+    <div class="sec-num">04 — Franchise Journey</div>
+    <h2 class="sec-title">6 Steps to Open <span class="o">Your Outlet</span></h2>
+    <div class="journey-steps">
+      <div class="step-box">
+        <div class="step-n">01</div>
+        <div class="step-ico">💭</div>
+        <h6>Think It Through</h6>
+        <p>Evaluate your budget, location, and commitment. Make sure it's the right fit for you.</p>
+        <div class="step-arr"><i class="bi bi-arrow-right"></i></div>
+      </div>
+      <div class="step-box">
+        <div class="step-n">02</div>
+        <div class="step-ico">🤝</div>
+        <h6>Initial Discussion</h6>
+        <p>Reach out to us and have a conversation about expectations, support, and next steps.</p>
+        <div class="step-arr"><i class="bi bi-arrow-right"></i></div>
+      </div>
+      <div class="step-box">
+        <div class="step-n">03</div>
+        <div class="step-ico">📍</div>
+        <h6>Finalise Location</h6>
+        <p>Together we identify and approve the best location for your Yummpy's outlet.</p>
+        <div class="step-arr"><i class="bi bi-arrow-right"></i></div>
+      </div>
+      <div class="step-box">
+        <div class="step-n">04</div>
+        <div class="step-ico">📋</div>
+        <h6>Licences & Registration</h6>
+        <p>We guide you through FSSAI, GST, and other regulatory requirements seamlessly.</p>
+        <div class="step-arr"><i class="bi bi-arrow-right"></i></div>
+      </div>
+      <div class="step-box">
+        <div class="step-n">05</div>
+        <div class="step-ico">🏗️</div>
+        <h6>Setup & Training</h6>
+        <p>Kitchen setup, branding, and staff training handled with our complete support.</p>
+        <div class="step-arr"><i class="bi bi-arrow-right"></i></div>
+      </div>
+      <div class="step-box">
+        <div class="step-n">06</div>
+        <div class="step-ico">🚀</div>
+        <h6>Grand Opening</h6>
+        <p>Sign the agreement, open your doors, and start serving Hyderabad's favourite Maggi!</p>
+        <div class="step-arr"><i class="bi bi-arrow-right"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-sec sec">
+  <div class="container-fluid px-4">
+    <div class="sec-num">05 — Reviews</div>
+    <h2 class="sec-title">What Our <span class="o">Customers Say</span></h2>
+    <div class="reviews-grid">
+      <div class="review-box">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-txt">"Quick service with a smile, tasty food, and reasonably priced. Their butter garlic fries and fried Maggi are absolutely brilliant — will certainly be going back!"</p>
+        <div class="review-footer">
+          <div class="rev-av">NR</div>
+          <div><div class="rev-name">Nithika Reddy</div><div class="rev-role">Regular Customer</div></div>
+        </div>
+      </div>
+      <div class="review-box">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-txt">"A place for everyone — even for people who never liked Maggi. The fried Maggi is the best I've ever had. Quick, tasty and value for money!"</p>
+        <div class="review-footer">
+          <div class="rev-av">KS</div>
+          <div><div class="rev-name">Karan Shah</div><div class="rev-role">Regular Customer</div></div>
+        </div>
+      </div>
+      <div class="review-box">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-txt">"They take Maggi to a whole new level. I was very surprised at how unique they made it. Prices are not too high either. Great hangout spot in the evenings!"</p>
+        <div class="review-footer">
+          <div class="rev-av">ST</div>
+          <div><div class="rev-name">Sana Tiwari</div><div class="rev-role">Customer</div></div>
+        </div>
+      </div>
+      <div class="review-box">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-txt">"When I found a place that makes Maggi taste like a whole new level — the variety and taste is awesome. Chicken cheese Maggi is my personal all-time favourite!"</p>
+        <div class="review-footer">
+          <div class="rev-av">AU</div>
+          <div><div class="rev-name">Akib Ullah</div><div class="rev-role">Customer</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-sec sec" id="gallery">
+  <div class="container-fluid px-4">
+    <div class="sec-num">06 — Gallery</div>
+    <h2 class="sec-title">Food That <span class="o">Speaks For Itself</span></h2>
+    <div class="g-grid">
+      <div class="g-cell">🍜</div>
+      <div class="g-cell">🧀</div>
+      <div class="g-cell">🔥</div>
+      <div class="g-cell">🌶️</div>
+      <div class="g-cell">🧄</div>
+      <div class="g-cell">🍟</div>
+    </div>
+    <p class="g-insta">Follow us on Instagram <a href="https://www.instagram.com/yummpys/" target="_blank">@yummpys</a> for daily food drops</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="container-fluid px-4">
+    <div class="contact-wrap">
+      <div class="contact-left">
+        <div>
+          <h2>Let's Talk<br/>Maggi &<br/>More.</h2>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;margin-top:1rem;line-height:1.7;">Customer query, franchise inquiry, or just craving a chat — we're always happy to connect.</p>
+        </div>
+        <div>
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="bi bi-telephone"></i></div>
+            <div>
+              <div class="cd-label">Phone</div>
+              <div class="cd-val"><a href="tel:+919391938118">+91 93919 38118</a></div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="bi bi-envelope"></i></div>
+            <div>
+              <div class="cd-label">Email</div>
+              <div class="cd-val"><a href="mailto:franchise@yummpys.com">franchise@yummpys.com</a></div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><i class="bi bi-geo-alt"></i></div>
+            <div>
+              <div class="cd-label">Based In</div>
+              <div class="cd-val">Hyderabad, Telangana</div>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://www.facebook.com/yummpys/" target="_blank" class="csoc"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/yummpys/" target="_blank" class="csoc"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.twitter.com/yummpys/" target="_blank" class="csoc"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <h4>Send a Message</h4>
+        <div class="cf-row">
+          <div class="cf-group">
+            <label class="cf-label">Name</label>
+            <input class="cf-input" type="text" placeholder="Your name"/>
+          </div>
+          <div class="cf-group">
+            <label class="cf-label">Phone</label>
+            <input class="cf-input" type="tel" placeholder="+91 XXXXX XXXXX"/>
+          </div>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label">Email</label>
+          <input class="cf-input" type="email" placeholder="you@email.com"/>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label">I'm reaching out about</label>
+          <select class="cf-select cf-input">
+            <option>General Enquiry</option>
+            <option>Franchise Opportunity</option>
+            <option>Feedback / Review</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label">Message</label>
+          <textarea class="cf-textarea" placeholder="Tell us what's on your mind…"></textarea>
+        </div>
+        <button class="btn-send">Send Message <i class="bi bi-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container-fluid px-4">
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <div class="fb-name">Yummpy<span>'s</span></div>
+        <p>Tasty, hygienic and pocket-friendly food since 2016. Hyderabad's favourite Maggi destination.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <a href="#" class="footer-lnk">Home</a>
+          <a href="#about" class="footer-lnk">Our Story</a>
+          <a href="#menu" class="footer-lnk">Menu</a>
+          <a href="#gallery" class="footer-lnk">Gallery</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Business</div>
+          <a href="#franchise" class="footer-lnk">Franchise Info</a>
+          <a href="#contact" class="footer-lnk">Contact Us</a>
+          <a href="mailto:franchise@yummpys.com" class="footer-lnk">Email Us</a>
+          <a href="tel:+919391938118" class="footer-lnk">Call Us</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Social</div>
+          <a href="https://www.instagram.com/yummpys/" target="_blank" class="footer-lnk">Instagram</a>
+          <a href="https://www.facebook.com/yummpys/" target="_blank" class="footer-lnk">Facebook</a>
+          <a href="https://www.twitter.com/yummpys/" target="_blank" class="footer-lnk">Twitter / X</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="fc">© 2024 Yummpy's. All rights reserved.</span>
+      <span class="fc">Made with ❤️ from Hyderabad</span>
+    </div>
+  </div>
+</footer>
+
+<button id="stb" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.addEventListener('scroll', () => {
+    const b = document.getElementById('stb');
+    b.style.display = window.scrollY > 500 ? 'flex' : 'none';
+  });
+
+  function filterMenu(btn, cat) {
+    document.querySelectorAll('.mf-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.menu-row').forEach(row => {
+      if (cat === 'all') { row.style.display = 'grid'; return; }
+      const cats = (row.dataset.cat || '').split(' ');
+      row.style.display = cats.includes(cat) ? 'grid' : 'none';
+    });
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
