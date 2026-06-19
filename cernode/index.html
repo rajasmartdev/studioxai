@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#1D2733"/><path fill="#2BB3BF" fill-rule="evenodd" d="M256 152 a104 104 0 1 0 0 208 a104 104 0 1 0 0 -208 Z M256 219 a37 37 0 1 0 0 74 a37 37 0 1 0 0 -74 Z"/></svg></template>
+<div style="font-family:'Sora',sans-serif;color:#1D2733">
+
+  <!-- ============ NAV ============ -->
+  <div style="position:sticky;top:0;z-index:50;background:rgba(251,251,249,.9);backdrop-filter:blur(10px);border-bottom:1px solid #E2E2DD">
+    <div class="wrap" style="height:80px;display:flex;align-items:center;justify-content:space-between">
+      <a href="index.html" style="display:flex;align-items:center"><img src="brand/cernode-logo-primary.png" style="height:23px;display:block" alt="Cernode"></a>
+      <div style="display:flex;align-items:center;gap:28px">
+        <a class="navlink" href="products.html">Products</a>
+        <a class="navlink" href="technology.html">Technology</a>
+        <a class="navlink" href="resources.html">Resources</a>
+        <a class="navlink" href="newsroom.html">Newsroom</a>
+        <a class="navlink" href="about.html">About</a>
+        <a class="lk" href="contact.html">Contact sales <span class="ar">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HOME ============ -->
+ 
+  <div>
+    <!-- hero -->
+    <section style="background:#FBFBF9;position:relative;overflow:hidden">
+      <div style="position:absolute;right:-180px;top:330px;width:560px;height:560px;border:1.5px solid #2BB3BF;border-radius:50%;display:flex;align-items:center;justify-content:center;pointer-events:none">
+        <div style="width:184px;height:184px;background:#2BB3BF;border-radius:50%"></div>
+      </div>
+      <div class="wrap" style="padding:128px 56px 0;position:relative">
+        <h1 style="margin:0;font-size:96px;line-height:.98;font-weight:700;letter-spacing:-.045em;max-width:13ch">Precision electrodes for clinical neurodiagnostics.</h1>
+        <p style="margin:40px 0 0;max-width:48ch;font-size:19px;line-height:1.55;color:#52555a">Concentric and monopolar EMG needles and a hydrogel surface family for EEG, evoked potentials and nerve conduction. One specification system, one shared color code.</p>
+        <div style="display:flex;gap:16px;margin-top:44px">
+          <a class="btn btn-solid" href="products.html">Explore the products</a>
+          <a class="btn btn-ghost" href="contact.html">Contact sales</a>
+        </div>
+        <div style="height:130px"></div>
+      </div>
+      <!-- facts band -->
+      <div style="background:#1D2733;color:#F2F4F5">
+        <div class="wrap" style="display:grid;grid-template-columns:repeat(3,1fr)">
+          <div style="padding:46px 0">
+            <div style="font-size:30px;font-weight:600;letter-spacing:-.02em">Three lines</div>
+            <div class="mono" style="font-size:11px;letter-spacing:.04em;color:#8b97a1;margin-top:10px">EMG concentric, monopolar, hydrogel surface</div>
+          </div>
+          <div style="padding:46px 0 46px 48px;border-left:1px solid rgba(255,255,255,.16)">
+            <div style="font-size:30px;font-weight:600;letter-spacing:-.02em">Clinician safety</div>
+            <div class="mono" style="font-size:11px;letter-spacing:.04em;color:#8b97a1;margin-top:10px">Needle holders and retractors to prevent accidental needle-stick injuries</div>
+          </div>
+          <div style="padding:46px 0 46px 48px;border-left:1px solid rgba(255,255,255,.16)">
+            <div style="font-size:30px;font-weight:600;letter-spacing:-.02em">Patient comfort</div>
+            <div class="mono" style="font-size:11px;letter-spacing:.04em;color:#8b97a1;margin-top:10px">Next-generation adhesives, dual-facet needle geometry, hydrophilic coating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- product lines (editorial rows) -->
+    <section class="wrap" style="padding:130px 56px 0">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:54px">
+        <div style="max-width:60%">
+          <div class="kick" style="margin-bottom:22px">Products</div>
+          <h2 style="margin:0;font-size:60px;font-weight:700;letter-spacing:-.035em;line-height:1.0">The everyday contact points</h2>
+        </div>
+        <a class="lk" href="products.html">All products <span class="ar">&rarr;</span></a>
+      </div>
+
+      <a class="prow" href="products.html">
+        <div class="pname">Concentric EMG Needles</div>
+        <div style="font-size:15px;line-height:1.6;color:#52555a">Steel and tungsten core, five lengths, each carrying a small defined recording area. <span class="mono" style="color:#8b8d90;font-size:12px">BPC · TUC</span></div>
+        <div class="par">&rarr;</div>
+      </a>
+      <a class="prow" href="products.html">
+        <div class="pname">Monopolar EMG Needles</div>
+        <div style="font-size:15px;line-height:1.6;color:#52555a">PTFE-coated with a conical tip. Order prewired with a fixed lead, or detachable for a reusable cable. <span class="mono" style="color:#8b8d90;font-size:12px">CNM · FX / DT</span></div>
+        <div class="par">&rarr;</div>
+      </a>
+      <a class="prow" href="products.html">
+        <div class="pname">Hydrogel Surface Electrodes</div>
+        <div style="font-size:15px;line-height:1.6;color:#52555a">Ag/AgCl on a qualified hydrogel for EEG, evoked potentials, nerve conduction and surface EMG. <span class="mono" style="color:#8b8d90;font-size:12px">CHE</span></div>
+        <div class="par">&rarr;</div>
+      </a>
+    </section>
+
+    <!-- technology statement (full-bleed ink) -->
+    <section style="background:#1D2733;color:#F2F4F5;margin-top:130px">
+      <div class="wrap" style="padding:120px 56px">
+        <div class="kick" style="margin-bottom:26px">Technology</div>
+        <h2 style="margin:0;font-size:72px;font-weight:700;letter-spacing:-.04em;line-height:1.0;max-width:15ch">Changing the paradigm for neurodiagnostic electrodes.</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:80px">
+          <div style="border-top:2px solid #2BB3BF;padding-top:22px">
+            <div style="font-size:21px;font-weight:600;letter-spacing:-.01em;margin-bottom:13px">Proprietary technology</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#AEB7BF">Next generation adhesives, hydrophilic and high-insulation coatings, developed in house across the needle and surface lines.</p>
+          </div>
+          <div style="border-top:2px solid #2BB3BF;padding-top:22px">
+            <div style="font-size:21px;font-weight:600;letter-spacing:-.01em;margin-bottom:13px">Patient comfort</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#AEB7BF">Lubricious coatings and dual-facet needle geometry to limit insertion and removal trauma through a study.</p>
+          </div>
+          <div style="border-top:2px solid #2BB3BF;padding-top:22px">
+            <div style="font-size:21px;font-weight:600;letter-spacing:-.01em;margin-bottom:13px">Clinician safety</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.65;color:#AEB7BF">Detachable hubs help prevent accidental needle-stick injuries.</p>
+          </div>
+        </div>
+        <div style="margin-top:64px"><a class="lk" href="technology.html" style="color:#F2F4F5">Explore the technology <span class="ar">&rarr;</span></a></div>
+      </div>
+    </section>
+
+    <!-- audience ctas -->
+    <section class="wrap" style="padding:120px 56px 0">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div style="border:1px solid #E2E2DD;background:#fff;padding:46px 48px;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div class="kick" style="margin-bottom:18px">For clinicians</div>
+            <h3 style="margin:0;font-size:32px;font-weight:700;letter-spacing:-.025em;line-height:1.04;max-width:16ch">Request clinical samples</h3>
+            <p style="margin:16px 0 0;font-size:15px;line-height:1.6;color:#52555a;max-width:42ch">Trial the lines in your lab. A verifiable health-system email is required.</p>
+          </div>
+          <div style="margin-top:30px"><a class="btn btn-solid" href="samples.html">Request samples</a></div>
+        </div>
+        <div style="border:1px solid #E2E2DD;background:#fff;padding:46px 48px;display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div class="kick" style="margin-bottom:18px">For partners</div>
+            <h3 style="margin:0;font-size:32px;font-weight:700;letter-spacing:-.025em;line-height:1.04;max-width:16ch">Become a distributor</h3>
+            <p style="margin:16px 0 0;font-size:15px;line-height:1.6;color:#52555a;max-width:42ch">Carry the full Cernode line across your territory, on one specification system.</p>
+          </div>
+          <div style="margin-top:30px"><a class="btn btn-ghost" href="distributor.html">Partner with us</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- catalog cta -->
+    <section class="wrap" style="padding:120px 56px 130px">
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:end;border-top:1px solid #1D2733;padding-top:54px">
+        <div>
+          <h2 style="margin:0;font-size:52px;font-weight:700;letter-spacing:-.035em;line-height:1.0;max-width:16ch">Every specification, in one catalog.</h2>
+        </div>
+        <div>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#52555a;max-width:42ch">SKUs, recording areas, connectors and ordering reference for every Cernode line.</p>
+          <div style="display:flex;gap:16px;margin-top:30px">
+            <a class="btn btn-solid" href="Cernode Catalog 2026.html" target="_blank">View the catalog</a>
+            <a class="btn btn-ghost" href="contact.html">Contact sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#1D2733;color:#F2F4F5">
+    <div class="wrap" style="padding:90px 56px 44px">
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:56px">
+        <div>
+          <img src="brand/cernode-logo-white.png" style="height:24px;display:block;margin-bottom:24px" alt="Cernode">
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#AEB7BF;max-width:32ch">Precision electrodes for clinical neurodiagnostics. A product line of Alera Medtech.</p>
+        </div>
+        <div>
+          <div class="kick" style="margin-bottom:20px">Explore</div>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <a href="products.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Products</a>
+            <a href="technology.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Technology</a>
+            <a href="resources.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Resources</a>
+            <a href="newsroom.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Newsroom</a>
+            <a href="about.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">About</a>
+            <a href="Cernode Catalog 2026.html" target="_blank" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">2026 Catalog</a>
+          </div>
+        </div>
+        <div>
+          <div class="kick" style="margin-bottom:20px">Contact</div>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <a href="contact.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Contact sales</a>
+            <a href="samples.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Request samples</a>
+            <a href="distributor.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Become a distributor</a>
+            <span class="mono" style="color:#C7CDD2;font-size:12.5px">cernode.sales<span>@</span>aleramedtech.com</span>
+          </div>
+        </div>
+        <div>
+          <div class="kick" style="margin-bottom:20px">Manufactured for</div>
+          <div class="mono" style="font-size:12.5px;line-height:1.85;color:#C7CDD2">Alera Medtech LLC<br>159 W Mason Ave<br>Buckley, WA 98321 USA</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding-top:24px;gap:24px;flex-wrap:wrap">
+        <div style="display:flex;gap:22px">
+          <a href="https://www.linkedin.com/company/alera-medtech" target="_blank" rel="noopener" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none" style-hover="color:#fff">LinkedIn</a>
+          <a href="https://x.com/cernode" target="_blank" rel="noopener" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none" style-hover="color:#fff">X</a>
+          <a href="https://www.instagram.com/cernode" target="_blank" rel="noopener" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none" style-hover="color:#fff">Instagram</a>
+        </div>
+        <div style="display:flex;gap:22px;flex-wrap:wrap">
+          <a href="privacy.html" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none;" style-hover="color:#fff">Privacy Notice</a>
+          <a href="cookies.html" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none;" style-hover="color:#fff">Cookie Notice</a>
+          <a href="terms.html" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none;" style-hover="color:#fff">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div style="padding-top:16px">
+        <span class="mono" style="font-size:10.5px;color:#7d8893">© 2026 Alera Medtech LLC · www.cernode.com</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 'home', sEmail: '', sEmailErr: '' };
+  go(p){
+    this.setState({ page: p });
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+  checkEmail(e){
+    const v = (e && e.target ? e.target.value : '') || '';
+    const blocked = /@(gmail|googlemail|yahoo|ymail|outlook|hotmail|live|msn|icloud|me|mac|aol|aim|proton|protonmail|gmx|mail|inbox|zoho|yandex|qq|163|126|comcast|verizon|att|sbcglobal)\./i;
+    let err = '';
+    if (v && v.indexOf('@') > -1 && blocked.test(v)) err = 'Please use your health-system or institutional email, not a personal address.';
+    this.setState({ sEmail: v, sEmailErr: err });
+  }
+  renderVals(){
+    const p = this.state.page;
+    const col = id => (p === id ? '#1D2733' : '#6E7680');
+    const und = id => (p === id ? '#2BB3BF' : 'transparent');
+    return {
+      page: p,
+      isHome: p === 'home',
+      isProducts: p === 'products',
+      isTech: p === 'technology',
+      isAbout: p === 'about',
+      isContact: p === 'contact',
+      goHome: () => this.go('home'),
+      goProducts: () => this.go('products'),
+      goTech: () => this.go('technology'),
+      goAbout: () => this.go('about'),
+      goContact: () => this.go('contact'),
+      cProducts: col('products'), uProducts: und('products'),
+      cTech: col('technology'), uTech: und('technology'),
+      cResources: col('resources'), uResources: und('resources'),
+      cNewsroom: col('newsroom'), uNewsroom: und('newsroom'),
+      cAbout: col('about'), uAbout: und('about'),
+      isResources: p === 'resources',
+      isNewsroom: p === 'newsroom',
+      isSamples: p === 'samples',
+      isDistributor: p === 'distributor',
+      goResources: () => this.go('resources'),
+      goNewsroom: () => this.go('newsroom'),
+      goSamples: () => this.go('samples'),
+      goDistributor: () => this.go('distributor'),
+      sEmail: this.state.sEmail,
+      sEmailErr: this.state.sEmailErr,
+      onSampleEmail: (e) => this.checkEmail(e),
+      isPrivacy: p === 'privacy',
+      isCookies: p === 'cookies',
+      isTerms: p === 'terms',
+      goPrivacy: () => this.go('privacy'),
+      goCookies: () => this.go('cookies'),
+      goTerms: () => this.go('terms'),
+    };
+  }
+}
+</script>
+</body>
+</html>

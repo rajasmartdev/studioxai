@@ -1,0 +1,26 @@
+*{box-sizing:border-box}
+html,body{margin:0;background:#FBFBF9}
+::selection{background:#2BB3BF;color:#0E2A2E}
+.wrap{max-width:1280px;margin:0 auto;padding:0 56px}
+.mono{font-family:'IBM Plex Mono',monospace}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#2BB3BF}
+.navlink{font-size:15px;font-weight:500;text-decoration:none;cursor:pointer;padding:5px 0;border-bottom:2px solid transparent;transition:color .15s;color: rgb(110, 118, 128);}
+.navlink:hover{color:#1D2733 !important}
+.active{ color: rgb(29, 39, 51);border-bottom-color: rgb(43, 179, 191);}
+.lk{display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:#1D2733;text-decoration:none;cursor:pointer;border-bottom:2px solid #2BB3BF;padding-bottom:3px;transition:color .15s}
+.lk:hover{color:#2BB3BF}
+.lk .ar{transition:transform .2s}
+.lk:hover .ar{transform:translateX(5px)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:background .15s,border-color .15s,color .15s}
+.btn-solid{color:#F2F4F5;background:#1D2733;padding:15px 26px}
+.btn-solid:hover{background:#2BB3BF;color:#0E2A2E}
+.btn-ghost{color:#1D2733;background:transparent;border-color:#1D2733;padding:13.5px 24px}
+.btn-ghost:hover{border-color:#2BB3BF;color:#2BB3BF}
+.prow{display:grid;grid-template-columns:1.3fr 1.6fr 50px;align-items:center;gap:24px;border-top:1px solid #E2E2DD;padding:42px 0;text-decoration:none;color:#1D2733;cursor:pointer;transition:padding .2s}
+.prow:last-child{border-bottom:1px solid #E2E2DD}
+.prow .pidx{font-size:40px;font-weight:700;letter-spacing:-.03em;color:#C2C6C2;transition:color .2s}
+.prow .pname{font-size:30px;font-weight:600;letter-spacing:-.025em;transition:color .2s}
+.prow .par{justify-self:end;color:#C2C6C2;font-size:22px;transition:transform .2s,color .2s}
+.prow:hover{padding-left:14px}
+.prow:hover .pidx{color:#2BB3BF}
+.prow:hover .par{transform:translateX(6px);color:#2BB3BF}

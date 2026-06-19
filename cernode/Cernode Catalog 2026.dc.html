@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  .pg{width:794px;height:1123px;background:#FBFBF9;color:#1D2733;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.10),0 24px 56px -30px rgba(0,0,0,.30);position:relative}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  @media print{
+    @page{size:794px 1123px;margin:0}
+    html,body{background:#fff}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .sheet-wrap{padding:0 !important;gap:0 !important;background:#fff !important;min-height:0 !important}
+    .pg{box-shadow:none !important;break-after:page;break-inside:avoid}
+    .pg:last-of-type{break-after:auto}
+  }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#1D2733"/><path fill="#2BB3BF" fill-rule="evenodd" d="M256 152 a104 104 0 1 0 0 208 a104 104 0 1 0 0 -208 Z M256 219 a37 37 0 1 0 0 74 a37 37 0 1 0 0 -74 Z"/></svg></template>
+
+<div class="sheet-wrap" style="min-height:100vh;background:#D9DAD5;padding:48px 0;display:flex;flex-direction:column;align-items:center;gap:44px;font-family:'Sora',sans-serif">
+
+  <!-- ============ PAGE 1 · COVER ============ -->
+  <div class="pg" style="background:#1D2733;color:#F2F4F5">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:66px 66px;background-position:58px 0"></div>
+    <div style="position:relative;padding:56px 58px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-top:2px solid #2BB3BF;padding-top:16px">
+        <img src="brand/cernode-logo-reversed.png" style="height:26px;display:block" alt="Cernode">
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7d8893">No. 2026 / 01</span>
+      </div>
+    </div>
+    <div style="position:relative;padding:80px 58px 0">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:30px">
+        <span style="width:7px;height:7px;background:#2BB3BF;border-radius:50%"></span>
+        <span class="mono" style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#2BB3BF">Product Catalog · Edition 2026</span>
+      </div>
+      <h1 style="margin:0;font-size:80px;line-height:.96;font-weight:700;letter-spacing:-.04em">Product<br>Catalog<span style="color:#2BB3BF">.</span></h1>
+      <p style="margin:34px 0 0;max-width:470px;font-size:14.5px;line-height:1.62;color:#AEB7BF">Concentric and monopolar EMG needles, and a hydrogel surface family for EEG, evoked potentials and nerve conduction. One specification system, one shared color code.</p>
+    </div>
+    <div style="position:relative;flex:1;padding:46px 58px 0;display:flex">
+      <div style="flex:1;border:1px solid rgba(255,255,255,.16);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden">
+        <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.1)"></div>
+        <div style="position:absolute;top:50%;left:0;right:0;height:1px;background:rgba(255,255,255,.1)"></div>
+        <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border:1px solid #2BB3BF"></div>
+        <div style="position:relative;text-align:center">
+          <div class="mono" style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#6d7882;margin-top:74px">Product photography</div>
+          <div class="mono" style="font-size:10px;line-height:1.5;letter-spacing:.06em;color:#525d67;margin-top:7px">FIG. 01 / Cernode electrode line</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;padding:26px 58px 54px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,.16);padding-top:15px">
+        <div class="mono" style="font-size:10px;line-height:1.7;color:#7d8893">Manufactured for Alera Medtech LLC<br>159 W Mason Ave, Buckley, WA 98321 USA</div>
+        <div class="mono" style="font-size:11px;letter-spacing:.1em;color:#F2F4F5;text-transform:uppercase">www.cernode.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PAGE 2 · CONTENTS ============ -->
+  <div class="pg">
+    <div style="background:#1D2733;color:#F2F4F5;padding:20px 58px;display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="brand/cernode-symbol-teal.png" style="width:16px;height:16px;display:block" alt="">
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEB7BF">Inside this catalog</span>
+      </div>
+      <span class="mono" style="font-size:11px;letter-spacing:.1em;color:#2BB3BF">02</span>
+    </div>
+
+    <div style="padding:54px 58px 0">
+      <div class="mono" style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#2BB3BF;margin-bottom:20px">About the line</div>
+      <p style="margin:0;max-width:30ch;font-size:25px;line-height:1.32;font-weight:500;letter-spacing:-.02em;color:#1D2733">Cernode is the electrode line from Alera Medtech, built around the everyday contact points of clinical neurodiagnostics.</p>
+      <p style="margin:22px 0 0;max-width:64ch;font-size:13.5px;line-height:1.65;color:#52555a">Concentric and monopolar needles for electromyography, and a hydrogel surface family for EEG, evoked potentials and nerve conduction studies. The lines run on one specification system and a shared color code, which keeps selection quick and reordering simple for the stockroom.</p>
+    </div>
+
+    <div style="padding:46px 58px 0;flex:1;display:grid;grid-template-columns:1.25fr 1fr;gap:54px">
+      <!-- contents -->
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+          <span class="mono" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Contents</span>
+          <span style="flex:1;height:1px;background:#1D2733"></span>
+        </div>
+        <a style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px solid #E4E4DE;text-decoration:none;color:#1D2733">
+          <span class="mono" style="font-size:12px;color:#2BB3BF;width:26px">01</span>
+          <span style="font-size:18px;font-weight:600;letter-spacing:-.01em">Concentric EMG Needles</span>
+          <span style="flex:1;border-bottom:1px dotted #C7C7C0;transform:translateY(-4px)"></span>
+          <span class="mono" style="font-size:13px;font-weight:500">03</span>
+        </a>
+        <a style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px solid #E4E4DE;text-decoration:none;color:#1D2733">
+          <span class="mono" style="font-size:12px;color:#2BB3BF;width:26px">02</span>
+          <span style="font-size:18px;font-weight:600;letter-spacing:-.01em">Monopolar EMG Needles</span>
+          <span style="flex:1;border-bottom:1px dotted #C7C7C0;transform:translateY(-4px)"></span>
+          <span class="mono" style="font-size:13px;font-weight:500">04</span>
+        </a>
+        <a style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px solid #E4E4DE;text-decoration:none;color:#1D2733">
+          <span class="mono" style="font-size:12px;color:#2BB3BF;width:26px">03</span>
+          <span style="font-size:18px;font-weight:600;letter-spacing:-.01em">Hydrogel Surface Electrodes</span>
+          <span style="flex:1;border-bottom:1px dotted #C7C7C0;transform:translateY(-4px)"></span>
+          <span class="mono" style="font-size:13px;font-weight:500">06</span>
+        </a>
+        <a style="display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px solid #E4E4DE;text-decoration:none;color:#1D2733">
+          <span style="width:26px;display:flex;align-self:center"><span style="width:7px;height:7px;background:#2BB3BF;border-radius:50%"></span></span>
+          <span style="font-size:18px;font-weight:600;letter-spacing:-.01em">How to Order</span>
+          <span style="flex:1;border-bottom:1px dotted #C7C7C0;transform:translateY(-4px)"></span>
+          <span class="mono" style="font-size:13px;font-weight:500">08</span>
+        </a>
+        <p class="mono" style="margin:26px 0 0;font-size:10.5px;line-height:1.7;color:#8b8d90">The HNE hypodermic and subdermal IONM lines join this catalog in the December 2026 edition.</p>
+      </div>
+
+      <!-- color index + notes -->
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+          <span class="mono" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Color index</span>
+          <span style="flex:1;height:1px;background:#1D2733"></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:11px">
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:13px;height:13px;background:#46A86A"></span><span class="mono" style="font-size:11px;flex:1">Green</span><span class="mono" style="font-size:10px;color:#8b8d90">28 G · 25 mm</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:13px;height:13px;background:#E8C24A"></span><span class="mono" style="font-size:11px;flex:1">Yellow</span><span class="mono" style="font-size:10px;color:#8b8d90">26 G · 28 mm</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:13px;height:13px;background:#D24B43"></span><span class="mono" style="font-size:11px;flex:1">Red</span><span class="mono" style="font-size:10px;color:#8b8d90">26 G · 38 mm</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:13px;height:13px;background:#2F77C9"></span><span class="mono" style="font-size:11px;flex:1">Blue</span><span class="mono" style="font-size:10px;color:#8b8d90">26 G · 50 mm</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:13px;height:13px;background:#8A929B"></span><span class="mono" style="font-size:11px;flex:1">Gray</span><span class="mono" style="font-size:10px;color:#8b8d90">25 G · 65 mm</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:13px;height:13px;background:#E0813C"></span><span class="mono" style="font-size:11px;flex:1">Orange</span><span class="mono" style="font-size:10px;color:#8b8d90">28 G · 37 mm</span></div>
+          <div style="display:flex;align-items:center;gap:10px"><span style="width:13px;height:13px;background:#7E63C4"></span><span class="mono" style="font-size:11px;flex:1">Violet</span><span class="mono" style="font-size:10px;color:#8b8d90">26 G · 75 mm</span></div>
+        </div>
+        <p class="mono" style="margin:24px 0 0;font-size:10.5px;line-height:1.7;color:#8b8d90">Needle color identifies length and gauge. Connectors are DIN 1.5 mm (42802 touch-proof) or 3.5 mm snap unless noted.</p>
+      </div>
+    </div>
+
+    <div style="padding:0 58px 50px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #E4E4DE;padding-top:14px">
+        <span class="mono" style="font-size:9.5px;color:#8b8d90">Manufactured for Alera Medtech LLC · www.cernode.com</span>
+        <span class="mono" style="font-size:9.5px;color:#1D2733;font-weight:500">Cernode · 02</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PAGE 3 · CONCENTRIC ============ -->
+  <div class="pg">
+    <div style="background:#1D2733;color:#F2F4F5;padding:20px 58px;display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="brand/cernode-symbol-teal.png" style="width:16px;height:16px;display:block" alt="">
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEB7BF">Concentric EMG Needles</span>
+      </div>
+      <span class="mono" style="font-size:11px;letter-spacing:.1em;color:#2BB3BF">03</span>
+    </div>
+
+    <div style="padding:46px 58px 0;flex:1;display:flex;flex-direction:column">
+      <div style="display:flex;align-items:flex-start;gap:22px">
+        <div style="font-size:46px;line-height:.8;font-weight:700;letter-spacing:-.04em;color:#2BB3BF">01</div>
+        <div style="flex:1">
+          <h2 style="margin:0;font-size:34px;font-weight:700;letter-spacing:-.035em;line-height:1.0">Concentric EMG Needles</h2>
+          <p style="margin:15px 0 0;max-width:64ch;font-size:13px;line-height:1.62;color:#52555a">Single-use concentric needle electrodes for electromyography. The recording electrode sits inside the cannula and is referenced to it, so each needle carries a small, defined recording area. A stainless steel core and a tungsten core are offered across five lengths, color-coded by gauge and length.</p>
+        </div>
+        <div style="flex:none;width:176px;align-self:stretch;min-height:118px;border:1px solid #E4E4DE;background:#F3F3EF;position:relative;overflow:hidden">
+          <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#E8E8E2"></div>
+          <div style="position:absolute;top:50%;left:0;right:0;height:1px;background:#E8E8E2"></div>
+          <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;border:1px solid #2BB3BF"></div>
+          <div style="position:absolute;top:10px;left:10px;width:12px;height:12px;border-top:1.5px solid #C7C7C0;border-left:1.5px solid #C7C7C0"></div>
+          <div style="position:absolute;top:10px;right:10px;width:12px;height:12px;border-top:1.5px solid #C7C7C0;border-right:1.5px solid #C7C7C0"></div>
+          <div style="position:absolute;bottom:10px;right:10px;width:12px;height:12px;border-bottom:1.5px solid #C7C7C0;border-right:1.5px solid #C7C7C0"></div>
+          <div class="mono" style="position:absolute;left:11px;bottom:9px;font-size:8.5px;letter-spacing:.06em;color:#9a9c9f">FIG. 02 / Concentric needle</div>
+        </div>
+      </div>
+
+      <div style="margin-top:38px;background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Steel core / BPC series</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">5 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Length</span><span>Gauge</span><span>Rec. area mm²</span><span>Qty/box</span><span>Color</span>
+      </div>
+      <div class="mono" style="font-size:12px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>BPC-25</span><span>25 mm</span><span>28 G</span><span>0.02</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#46A86A"></span>Green</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>BPC-28</span><span>28 mm</span><span>26 G</span><span>0.07</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#E8C24A"></span>Yellow</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">03</span><span>BPC-38</span><span>38 mm</span><span>26 G</span><span>0.07</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#D24B43"></span>Red</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">04</span><span>BPC-50</span><span>50 mm</span><span>26 G</span><span>0.07</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#2F77C9"></span>Blue</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">05</span><span>BPC-65</span><span>65 mm</span><span>25 G</span><span>0.07</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#8A929B"></span>Gray</span></div>
+      </div>
+
+      <div style="margin-top:26px;background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Tungsten core / TUC series</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">5 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Length</span><span>Gauge</span><span>Rec. area mm²</span><span>Qty/box</span><span>Color</span>
+      </div>
+      <div class="mono" style="font-size:12px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>TUC-25</span><span>25 mm</span><span>28 G</span><span>0.02</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#46A86A"></span>Green</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>TUC-28</span><span>28 mm</span><span>26 G</span><span>0.07</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#E8C24A"></span>Yellow</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">03</span><span>TUC-38</span><span>38 mm</span><span>26 G</span><span>0.07</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#D24B43"></span>Red</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">04</span><span>TUC-50</span><span>50 mm</span><span>26 G</span><span>0.07</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#2F77C9"></span>Blue</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.5fr 1fr 1fr 1.4fr .9fr 1.4fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">05</span><span>TUC-65</span><span>65 mm</span><span>25 G</span><span>0.07</span><span>25</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#8A929B"></span>Gray</span></div>
+      </div>
+
+      <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #E4E4DE;padding:14px 0 0">
+        <span class="mono" style="font-size:9.5px;line-height:1.6;color:#8b8d90">Connectors DIN 1.5 mm (42802 touch-proof) unless noted.</span>
+        <span class="mono" style="font-size:9.5px;color:#1D2733;font-weight:500">Cernode · 03</span>
+      </div>
+    </div>
+  </div>
+  <!-- ============ PAGE 4 · MONOPOLAR (PREWIRED) ============ -->
+  <div class="pg">
+    <div style="background:#1D2733;color:#F2F4F5;padding:20px 58px;display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="brand/cernode-symbol-teal.png" style="width:16px;height:16px;display:block" alt="">
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEB7BF">Monopolar EMG Needles</span>
+      </div>
+      <span class="mono" style="font-size:11px;letter-spacing:.1em;color:#2BB3BF">04</span>
+    </div>
+
+    <div style="padding:46px 58px 0;flex:1;display:flex;flex-direction:column">
+      <div style="display:flex;align-items:flex-start;gap:22px">
+        <div style="font-size:46px;line-height:.8;font-weight:700;letter-spacing:-.04em;color:#2BB3BF">02</div>
+        <div style="flex:1">
+          <h2 style="margin:0;font-size:34px;font-weight:700;letter-spacing:-.035em;line-height:1.0">Monopolar EMG Needles</h2>
+          <p style="margin:15px 0 0;max-width:64ch;font-size:13px;line-height:1.62;color:#52555a">PTFE-coated stainless steel monopolar needles with a conical exposed tip, in six length and gauge combinations. Order them prewired with a fixed 0.75 m touch-proof lead, or detachable to run with a reusable Cernode cable. Color marks length and gauge.</p>
+        </div>
+        <div style="flex:none;width:176px;align-self:stretch;min-height:118px;border:1px solid #E4E4DE;background:#F3F3EF;position:relative;overflow:hidden">
+          <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#E8E8E2"></div>
+          <div style="position:absolute;top:50%;left:0;right:0;height:1px;background:#E8E8E2"></div>
+          <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;border:1px solid #2BB3BF"></div>
+          <div style="position:absolute;top:10px;left:10px;width:12px;height:12px;border-top:1.5px solid #C7C7C0;border-left:1.5px solid #C7C7C0"></div>
+          <div style="position:absolute;top:10px;right:10px;width:12px;height:12px;border-top:1.5px solid #C7C7C0;border-right:1.5px solid #C7C7C0"></div>
+          <div style="position:absolute;bottom:10px;right:10px;width:12px;height:12px;border-bottom:1.5px solid #C7C7C0;border-right:1.5px solid #C7C7C0"></div>
+          <div class="mono" style="position:absolute;left:11px;bottom:9px;font-size:8.5px;letter-spacing:.06em;color:#9a9c9f">FIG. 03 / Monopolar needle</div>
+        </div>
+      </div>
+
+      <!-- ordering options -->
+      <div style="margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="border:1px solid #E4E4DE;padding:16px 18px">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:9px"><span style="width:7px;height:7px;background:#2BB3BF;border-radius:50%"></span><span class="mono" style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600">Prewired · FX</span></div>
+          <p class="mono" style="margin:0;font-size:10.5px;line-height:1.6;color:#6E7680">0.75 m fixed lead, 1.5 mm DIN 42802 touch-proof.</p>
+        </div>
+        <div style="border:1px solid #E4E4DE;padding:16px 18px">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:9px"><span style="width:7px;height:7px;background:#2BB3BF;border-radius:50%"></span><span class="mono" style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600">Detachable · DT</span></div>
+          <p class="mono" style="margin:0;font-size:10.5px;line-height:1.6;color:#6E7680">Gold 1.0 mm orientation-free coaxial hub, cable ordered separately.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:30px;background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Prewired / fixed 0.75 m lead</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">6 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Length</span><span>Gauge</span><span>Qty/box</span><span>Qty/case</span><span>Color</span>
+      </div>
+      <div class="mono" style="font-size:12px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>CNM-25-28-FX</span><span>25 mm</span><span>28 G (0.36 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#D24B43"></span>Red</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>CNM-25-26-FX</span><span>25 mm</span><span>26 G (0.46 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#E8C24A"></span>Yellow</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">03</span><span>CNM-37-28-FX</span><span>37 mm</span><span>28 G (0.36 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#E0813C"></span>Orange</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">04</span><span>CNM-37-26-FX</span><span>37 mm</span><span>26 G (0.46 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#46A86A"></span>Green</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">05</span><span>CNM-50-26-FX</span><span>50 mm</span><span>26 G (0.46 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#2F77C9"></span>Blue</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">06</span><span>CNM-75-26-FX</span><span>75 mm</span><span>26 G (0.46 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#7E63C4"></span>Violet</span></div>
+      </div>
+
+      <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #E4E4DE;padding:14px 0 0">
+        <span class="mono" style="font-size:9.5px;line-height:1.6;color:#8b8d90">Detachable variant and reusable cables continue on page 05.</span>
+        <span class="mono" style="font-size:9.5px;color:#1D2733;font-weight:500">Cernode · 04</span>
+      </div>
+    </div>
+  </div>
+  <!-- ============ PAGE 5 · MONOPOLAR (DETACHABLE + CABLES) ============ -->
+  <div class="pg">
+    <div style="background:#1D2733;color:#F2F4F5;padding:20px 58px;display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="brand/cernode-symbol-teal.png" style="width:16px;height:16px;display:block" alt="">
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEB7BF">Monopolar EMG Needles</span>
+      </div>
+      <span class="mono" style="font-size:11px;letter-spacing:.1em;color:#2BB3BF">05</span>
+    </div>
+
+    <div style="padding:46px 58px 0;flex:1;display:flex;flex-direction:column">
+      <div class="mono" style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#2BB3BF;margin-bottom:14px">Section 02 / continued</div>
+
+      <div style="background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Detachable / gold 1.0 mm coaxial hub</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">6 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Length</span><span>Gauge</span><span>Qty/box</span><span>Qty/case</span><span>Color</span>
+      </div>
+      <div class="mono" style="font-size:12px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>CNM-25-28-DT</span><span>25 mm</span><span>28 G (0.36 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#D24B43"></span>Red</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>CNM-25-26-DT</span><span>25 mm</span><span>26 G (0.46 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#E8C24A"></span>Yellow</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">03</span><span>CNM-37-28-DT</span><span>37 mm</span><span>28 G (0.36 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#E0813C"></span>Orange</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">04</span><span>CNM-37-26-DT</span><span>37 mm</span><span>26 G (0.46 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#46A86A"></span>Green</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">05</span><span>CNM-50-26-DT</span><span>50 mm</span><span>26 G (0.46 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#2F77C9"></span>Blue</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.7fr 1fr 1.5fr .9fr .9fr 1.3fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">06</span><span>CNM-75-26-DT</span><span>75 mm</span><span>26 G (0.46 mm)</span><span>50</span><span>500</span><span style="display:flex;align-items:center;gap:7px"><span style="width:9px;height:9px;background:#7E63C4"></span>Violet</span></div>
+      </div>
+
+      <div style="margin-top:30px;background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Reusable cables</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">2 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.5fr 2.6fr 2.4fr .6fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Description</span><span>Connector</span><span>Qty</span>
+      </div>
+      <div class="mono" style="font-size:11.5px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.5fr 2.6fr 2.4fr .6fr;gap:0 14px;padding:11px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>CNM-CBL-U06</span><span style="line-height:1.45;color:#52555a">Reusable monopolar EMG cable, unshielded, 0.6 m</span><span style="line-height:1.45;color:#52555a">1.5 mm DIN touch-proof, 1.0 mm needle socket</span><span>1</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.5fr 2.6fr 2.4fr .6fr;gap:0 14px;padding:11px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>CNM-CBL-S10</span><span style="line-height:1.45;color:#52555a">Reusable monopolar EMG cable, shielded, 1.0 m</span><span style="line-height:1.45;color:#52555a">5-pole DIN, 1.0 mm needle socket</span><span>1</span></div>
+      </div>
+
+      <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #E4E4DE;padding:14px 0 0">
+        <span class="mono" style="font-size:9.5px;line-height:1.6;color:#8b8d90">Detachable needles require a reusable Cernode cable, ordered separately.</span>
+        <span class="mono" style="font-size:9.5px;color:#1D2733;font-weight:500">Cernode · 05</span>
+      </div>
+    </div>
+  </div>
+  <!-- ============ PAGE 6 · HYDROGEL (CUPS + NCS) ============ -->
+  <div class="pg">
+    <div style="background:#1D2733;color:#F2F4F5;padding:20px 58px;display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="brand/cernode-symbol-teal.png" style="width:16px;height:16px;display:block" alt="">
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEB7BF">Hydrogel Surface Electrodes</span>
+      </div>
+      <span class="mono" style="font-size:11px;letter-spacing:.1em;color:#2BB3BF">06</span>
+    </div>
+
+    <div style="padding:46px 58px 0;flex:1;display:flex;flex-direction:column">
+      <div style="display:flex;align-items:flex-start;gap:22px">
+        <div style="font-size:46px;line-height:.8;font-weight:700;letter-spacing:-.04em;color:#2BB3BF">03</div>
+        <div style="flex:1">
+          <h2 style="margin:0;font-size:34px;font-weight:700;letter-spacing:-.035em;line-height:1.0">Hydrogel Surface Electrodes</h2>
+          <p style="margin:15px 0 0;max-width:66ch;font-size:13px;line-height:1.6;color:#52555a">Ag/AgCl surface electrodes on a qualified hydrogel, for EEG, evoked potentials, nerve conduction studies and surface EMG. The family runs from cup electrodes and nerve conduction pad sets through large recording pads, ground and stimulation pads, and extended-wear and pediatric options. All are supplied non-sterile for single-patient use, with DIN 1.5 mm or 3.5 mm snap connectors.</p>
+        </div>
+        <div style="flex:none;width:176px;align-self:stretch;min-height:118px;border:1px solid #E4E4DE;background:#F3F3EF;position:relative;overflow:hidden">
+          <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#E8E8E2"></div>
+          <div style="position:absolute;top:50%;left:0;right:0;height:1px;background:#E8E8E2"></div>
+          <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30px;height:30px;border:1px solid #2BB3BF"></div>
+          <div style="position:absolute;top:10px;left:10px;width:12px;height:12px;border-top:1.5px solid #C7C7C0;border-left:1.5px solid #C7C7C0"></div>
+          <div style="position:absolute;top:10px;right:10px;width:12px;height:12px;border-top:1.5px solid #C7C7C0;border-right:1.5px solid #C7C7C0"></div>
+          <div style="position:absolute;bottom:10px;right:10px;width:12px;height:12px;border-bottom:1.5px solid #C7C7C0;border-right:1.5px solid #C7C7C0"></div>
+          <div class="mono" style="position:absolute;left:11px;bottom:9px;font-size:8.5px;letter-spacing:.06em;color:#9a9c9f">FIG. 04 / Surface electrode</div>
+        </div>
+      </div>
+
+      <div style="margin-top:34px;background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">EEG cup electrodes</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">4 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Description</span><span>Size</span><span>Connector</span><span>Application</span><span>Box</span>
+      </div>
+      <div class="mono" style="font-size:11.5px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>CHE-E10-15</span><span style="color:#52555a">EEG cup, 10 mm Ag/AgCl</span><span>10 mm</span><span>DIN 1.5 mm</span><span>EEG, EP</span><span>30</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>CHE-E10-SN</span><span style="color:#52555a">EEG cup, 10 mm Ag/AgCl</span><span>10 mm</span><span>Snap 3.5 mm</span><span>EEG, EP</span><span>30</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">03</span><span>CHE-E08-15</span><span style="color:#52555a">EEG cup, 8 mm Ag/AgCl</span><span>8 mm</span><span>DIN 1.5 mm</span><span>EEG, EP</span><span>30</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">04</span><span>CHE-E08-SN</span><span style="color:#52555a">EEG cup, 8 mm Ag/AgCl</span><span>8 mm</span><span>Snap 3.5 mm</span><span>EEG, EP</span><span>30</span></div>
+      </div>
+
+      <div style="margin-top:26px;background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Nerve conduction pad sets</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">4 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Description</span><span>Size</span><span>Connector</span><span>Application</span><span>Box</span>
+      </div>
+      <div class="mono" style="font-size:11.5px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>CHE-N12-3</span><span style="color:#52555a">NCS pads, 12 mm sq, set of 3, card-mounted</span><span>12 mm sq</span><span>DIN 1.5 mm</span><span>NCS, EMG</span><span>50</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>CHE-N12-4</span><span style="color:#52555a">NCS pads, 12 mm sq, set of 4, card-mounted</span><span>12 mm sq</span><span>DIN 1.5 mm</span><span>NCS, EMG</span><span>50</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">03</span><span>CHE-N12-5</span><span style="color:#52555a">NCS pads, 12 mm sq, set of 5, card-mounted</span><span>12 mm sq</span><span>DIN 1.5 mm</span><span>NCS, EMG</span><span>50</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1fr 1.4fr 1.2fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">04</span><span>CHE-N12-6</span><span style="color:#52555a">NCS pads, 12 mm sq, set of 6, card-mounted</span><span>12 mm sq</span><span>DIN 1.5 mm</span><span>NCS, EMG</span><span>50</span></div>
+      </div>
+
+      <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #E4E4DE;padding:14px 0 0">
+        <span class="mono" style="font-size:9.5px;line-height:1.6;color:#8b8d90">Supplied non-sterile for single-patient use.</span>
+        <span class="mono" style="font-size:9.5px;color:#1D2733;font-weight:500">Cernode · 06</span>
+      </div>
+    </div>
+  </div>
+  <!-- ============ PAGE 7 · HYDROGEL (PADS / GROUND / EXTENDED) ============ -->
+  <div class="pg">
+    <div style="background:#1D2733;color:#F2F4F5;padding:20px 58px;display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="brand/cernode-symbol-teal.png" style="width:16px;height:16px;display:block" alt="">
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEB7BF">Hydrogel Surface Electrodes</span>
+      </div>
+      <span class="mono" style="font-size:11px;letter-spacing:.1em;color:#2BB3BF">07</span>
+    </div>
+
+    <div style="padding:46px 58px 0;flex:1;display:flex;flex-direction:column">
+      <div class="mono" style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#2BB3BF;margin-bottom:18px">Section 03 / continued</div>
+
+      <div style="background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Large recording pads</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">4 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Description</span><span>Size</span><span>Connector</span><span>Application</span><span>Box</span>
+      </div>
+      <div class="mono" style="font-size:11.5px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>CHE-L15-15</span><span style="color:#52555a">Large rectangular pad, flat-pack</span><span>15 x 20 mm</span><span>DIN 1.5 mm</span><span>EMG, EP</span><span>50</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>CHE-L15-SN</span><span style="color:#52555a">Large rectangular pad, flat-pack</span><span>15 x 20 mm</span><span>Snap 3.5 mm</span><span>EMG, EP</span><span>50</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">03</span><span>CHE-L20-15</span><span style="color:#52555a">Large rectangular pad, flat-pack</span><span>20 x 22 mm</span><span>DIN 1.5 mm</span><span>EMG, EP</span><span>50</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">04</span><span>CHE-L20-SN</span><span style="color:#52555a">Large rectangular pad, flat-pack</span><span>20 x 22 mm</span><span>Snap 3.5 mm</span><span>EMG, EP</span><span>50</span></div>
+      </div>
+
+      <div style="margin-top:24px;background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Ground and stimulation pads</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">2 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Description</span><span>Size</span><span>Connector</span><span>Application</span><span>Box</span>
+      </div>
+      <div class="mono" style="font-size:11.5px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>CHE-S40-15</span><span style="color:#52555a">Ground / stimulation pad, large flat-pack</span><span>40 x 35 mm</span><span>DIN 1.5 mm</span><span>Ground, stim</span><span>30</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>CHE-S40-SN</span><span style="color:#52555a">Ground / stimulation pad, large flat-pack</span><span>40 x 35 mm</span><span>Snap 3.5 mm</span><span>Ground, stim</span><span>30</span></div>
+      </div>
+
+      <div style="margin-top:24px;background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Extended-wear and pediatric</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">3 SKU</span>
+      </div>
+      <div class="mono" style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:12px 16px 8px;border-bottom:1.5px solid #1D2733;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;font-weight:500">
+        <span>#</span><span>SKU</span><span>Description</span><span>Size</span><span>Connector</span><span>Application</span><span>Box</span>
+      </div>
+      <div class="mono" style="font-size:11.5px;color:#1D2733;font-weight:500">
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">01</span><span>CHE-LT10-15</span><span style="color:#52555a">Long-term ambulatory EEG cup, extended-wear gel</span><span>10 mm</span><span>DIN 1.5 mm</span><span>Amb. EEG</span><span>30</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center;background:#F4F4F0"><span style="color:#2BB3BF">02</span><span>CHE-LT08-15</span><span style="color:#52555a">Long-term ambulatory EEG cup, extended-wear gel</span><span>8 mm</span><span>DIN 1.5 mm</span><span>Amb. EEG</span><span>30</span></div>
+        <div style="display:grid;grid-template-columns:34px 1.4fr 2.5fr 1.2fr 1.4fr 1.1fr .8fr;gap:0 14px;padding:10px 16px;border-bottom:1px solid #EAEAE4;align-items:center"><span style="color:#2BB3BF">03</span><span>CHE-P08-15</span><span style="color:#52555a">Pediatric EEG cup, low-tack gel</span><span>8 mm</span><span>DIN 1.5 mm</span><span>Ped. EEG, EP</span><span>30</span></div>
+      </div>
+
+      <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #E4E4DE;padding:14px 0 0">
+        <span class="mono" style="font-size:9.5px;line-height:1.6;color:#8b8d90">Supplied non-sterile for single-patient use.</span>
+        <span class="mono" style="font-size:9.5px;color:#1D2733;font-weight:500">Cernode · 07</span>
+      </div>
+    </div>
+  </div>
+  <!-- ============ PAGE 8 · ORDERING ============ -->
+  <div class="pg">
+    <div style="background:#1D2733;color:#F2F4F5;padding:20px 58px;display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="brand/cernode-symbol-teal.png" style="width:16px;height:16px;display:block" alt="">
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#AEB7BF">How to Order</span>
+      </div>
+      <span class="mono" style="font-size:11px;letter-spacing:.1em;color:#2BB3BF">08</span>
+    </div>
+
+    <div style="padding:46px 58px 0;flex:1;display:flex;flex-direction:column">
+      <div class="mono" style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#2BB3BF;margin-bottom:16px">Reference</div>
+      <h2 style="margin:0;font-size:34px;font-weight:700;letter-spacing:-.035em;line-height:1.0">How to Order</h2>
+      <p style="margin:15px 0 0;max-width:70ch;font-size:13px;line-height:1.62;color:#52555a">Every Cernode part number reads the same way, so a code at the bench maps straight to a line on the order. Decode a number below, then send it to your Alera Medtech contact with the box or case quantity.</p>
+
+      <div style="margin-top:34px;background:#1D2733;color:#F2F4F5;padding:9px 16px;display:flex;justify-content:space-between;align-items:center">
+        <span class="mono" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Anatomy of a part number</span>
+        <span class="mono" style="font-size:9.5px;letter-spacing:.1em;color:#7d8893">2 examples</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:34px;padding:24px 2px 0">
+        <div>
+          <div class="mono" style="font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#8b8d90;margin-bottom:12px">Monopolar needle</div>
+          <div style="display:flex;align-items:stretch;gap:7px">
+            <div style="border:1px solid #1D2733;padding:9px 0;text-align:center;flex:1"><div style="font-family:'Sora',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em">CNM</div><div class="mono" style="font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;margin-top:3px">Family</div></div><div class="mono" style="display:flex;align-items:center;color:#2BB3BF;font-size:14px;font-weight:600">-</div><div style="border:1px solid #1D2733;padding:9px 0;text-align:center;flex:1"><div style="font-family:'Sora',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em">37</div><div class="mono" style="font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;margin-top:3px">Length mm</div></div><div class="mono" style="display:flex;align-items:center;color:#2BB3BF;font-size:14px;font-weight:600">-</div><div style="border:1px solid #1D2733;padding:9px 0;text-align:center;flex:1"><div style="font-family:'Sora',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em">26</div><div class="mono" style="font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;margin-top:3px">Gauge G</div></div><div class="mono" style="display:flex;align-items:center;color:#2BB3BF;font-size:14px;font-weight:600">-</div><div style="border:1px solid #1D2733;padding:9px 0;text-align:center;flex:1"><div style="font-family:'Sora',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em">FX</div><div class="mono" style="font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;margin-top:3px">Termination</div></div>
+          </div>
+          <p class="mono" style="margin:13px 0 0;font-size:10px;line-height:1.6;color:#6E7680">FX is a prewired fixed lead, DT a detachable hub. Color follows length and gauge.</p>
+        </div>
+        <div>
+          <div class="mono" style="font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#8b8d90;margin-bottom:12px">Concentric needle</div>
+          <div style="display:flex;align-items:stretch;gap:7px">
+            <div style="border:1px solid #1D2733;padding:9px 0;text-align:center;flex:1"><div style="font-family:'Sora',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em">BPC</div><div class="mono" style="font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;margin-top:3px">Family</div></div><div class="mono" style="display:flex;align-items:center;color:#2BB3BF;font-size:14px;font-weight:600">-</div><div style="border:1px solid #1D2733;padding:9px 0;text-align:center;flex:1"><div style="font-family:'Sora',sans-serif;font-size:19px;font-weight:700;letter-spacing:-.02em">38</div><div class="mono" style="font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;color:#8b8d90;margin-top:3px">Length mm</div></div>
+          </div>
+          <p class="mono" style="margin:13px 0 0;font-size:10px;line-height:1.6;color:#6E7680">BPC is a steel core, TUC a tungsten core. Recording area follows the series.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:36px;display:grid;grid-template-columns:1fr 1.05fr;gap:44px;flex:1">
+        <div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px">
+            <span class="mono" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Placing an order</span>
+            <span style="flex:1;height:1px;background:#1D2733"></span>
+          </div>
+          <div style="padding:12px 0;border-bottom:1px solid #E4E4DE"><div class="mono" style="font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:5px">Orders</div><div class="mono" style="font-size:12.5px;line-height:1.5;color:#1D2733">cernode.sales<span>@</span>aleramedtech.com</div></div>
+          <div style="padding:12px 0;border-bottom:1px solid #E4E4DE"><div class="mono" style="font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:5px">Telephone</div><div class="mono" style="font-size:12.5px;line-height:1.5;color:#1D2733">+1 360 000 0000</div></div>
+          <div style="padding:12px 0;border-bottom:1px solid #E4E4DE"><div class="mono" style="font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:5px">Online</div><div class="mono" style="font-size:12.5px;line-height:1.5;color:#1D2733">www.cernode.com</div></div>
+          <div style="padding:12px 0;border-bottom:1px solid #E4E4DE"><div class="mono" style="font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:5px">Ship from</div><div class="mono" style="font-size:12.5px;line-height:1.5;color:#1D2733">Alera Medtech LLC<br>159 W Mason Ave, Buckley, WA 98321 USA</div></div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+            <span class="mono" style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600">Packaging &amp; connectors</span>
+            <span style="flex:1;height:1px;background:#1D2733"></span>
+          </div>
+          <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #EAEAE4"><span style="width:6px;height:6px;background:#2BB3BF;margin-top:5px;flex:none"></span><span class="mono" style="font-size:11px;line-height:1.55;color:#52555a">Needles ship by box and by case; quantities are listed per line.</span></div>
+          <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #EAEAE4"><span style="width:6px;height:6px;background:#2BB3BF;margin-top:5px;flex:none"></span><span class="mono" style="font-size:11px;line-height:1.55;color:#52555a">Connectors are DIN 1.5 mm (42802 touch-proof) or 3.5 mm snap.</span></div>
+          <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #EAEAE4"><span style="width:6px;height:6px;background:#2BB3BF;margin-top:5px;flex:none"></span><span class="mono" style="font-size:11px;line-height:1.55;color:#52555a">Electrodes are non-sterile, for single-patient use.</span></div>
+          <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid #EAEAE4"><span style="width:6px;height:6px;background:#2BB3BF;margin-top:5px;flex:none"></span><span class="mono" style="font-size:11px;line-height:1.55;color:#52555a">Specifications are for ordering reference; see product labeling for use.</span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #E4E4DE;padding:14px 0 0">
+        <span class="mono" style="font-size:9.5px;line-height:1.6;color:#8b8d90">Confirm current ordering contacts and codes with Alera Medtech before placing an order.</span>
+        <span class="mono" style="font-size:9.5px;color:#1D2733;font-weight:500">Cernode · 08</span>
+      </div>
+    </div>
+  </div>
+  <!-- ============ PAGE 9 · BACK MATTER ============ -->
+  <div class="pg" style="background:#1D2733;color:#F2F4F5">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:66px 66px;background-position:58px 0"></div>
+
+    <div style="position:relative;padding:56px 58px 0">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-top:2px solid #2BB3BF;padding-top:16px">
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7d8893">Cernode · Product Catalog 2026</span>
+        <span class="mono" style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7d8893">No. 2026 / 09</span>
+      </div>
+    </div>
+
+    <div style="position:relative;padding:70px 58px 0">
+      <img src="brand/cernode-symbol-teal.png" style="width:46px;height:46px;display:block;margin-bottom:28px" alt="">
+      <h2 style="margin:0;font-size:44px;line-height:1.05;font-weight:700;letter-spacing:-.035em;max-width:17ch">Changing the paradigm for neurodiagnostic electrodes.</h2>
+      <p style="margin:24px 0 0;max-width:62ch;font-size:15px;line-height:1.6;color:#C7CDD2">Cernode pairs one specification system with proprietary electrode technology, built to make neurodiagnostic testing more comfortable for patients and safer for the clinicians who run it.</p>
+    </div>
+
+    <div style="position:relative;padding:46px 58px 0">
+      <div style="border-top:1px solid rgba(255,255,255,.18);display:grid;grid-template-columns:repeat(3,1fr);gap:38px;padding-top:26px">
+        <div>
+          <div style="font-size:16.5px;font-weight:600;letter-spacing:-.01em;color:#2BB3BF;margin-bottom:12px">Proprietary technology</div>
+          <p style="margin:0;font-size:12px;line-height:1.65;color:#AEB7BF">Next generation adhesives, hydrophilic coatings, high-insulation base coatings, and the shared coding are developed in house across the needle and surface lines.</p>
+        </div>
+        <div>
+          <div style="font-size:16.5px;font-weight:600;letter-spacing:-.01em;color:#2BB3BF;margin-bottom:12px">Patient comfort</div>
+          <p style="margin:0;font-size:12px;line-height:1.65;color:#AEB7BF">Next generation adhesives to alleviate patient trauma during removal; a hydrophilic lubricious coating and dual-facet needle geometry to limit insertion and removal trauma through the course of a study.</p>
+        </div>
+        <div>
+          <div style="font-size:16.5px;font-weight:600;letter-spacing:-.01em;color:#2BB3BF;margin-bottom:12px">Clinician safety</div>
+          <p style="margin:0;font-size:12px;line-height:1.65;color:#AEB7BF">Detachable hubs help prevent accidental needle-stick injuries.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;flex:1"></div>
+
+    <div style="position:relative;padding:0 58px 0">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;border-top:1px solid rgba(255,255,255,.16);padding-top:26px">
+        <div>
+          <div class="mono" style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#2BB3BF;margin-bottom:14px">Manufactured for</div>
+          <img src="brand/cernode-logo-reversed.png" style="height:22px;display:block;margin-bottom:16px" alt="Cernode">
+          <div class="mono" style="font-size:11px;line-height:1.8;color:#C7CDD2">Alera Medtech LLC<br>159 W Mason Ave, Buckley, WA 98321 USA<br><span style="color:#F2F4F5">www.cernode.com</span></div>
+        </div>
+        <div>
+          <div class="mono" style="font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#2BB3BF;margin-bottom:14px">Important</div>
+          <p class="mono" style="margin:0;font-size:10.5px;line-height:1.7;color:#AEB7BF">Specifications in this catalog are provided for ordering reference. Indications, contraindications and instructions for use are supplied in the labeling for each product. Specifications may change without notice.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:relative;padding:24px 58px 54px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,.16);padding-top:14px">
+        <span class="mono" style="font-size:9.5px;color:#7d8893">© 2026 Alera Medtech LLC. Cernode is a product line of Alera Medtech.</span>
+        <span class="mono" style="font-size:9.5px;color:#2BB3BF">CER-CAT-2026 V2 June 2026</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

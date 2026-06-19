@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#1D2733"/><path fill="#2BB3BF" fill-rule="evenodd" d="M256 152 a104 104 0 1 0 0 208 a104 104 0 1 0 0 -208 Z M256 219 a37 37 0 1 0 0 74 a37 37 0 1 0 0 -74 Z"/></svg></template>
+<div style="font-family:'Sora',sans-serif;color:#1D2733">
+
+  <!-- ============ NAV ============ -->
+  <div style="position:sticky;top:0;z-index:50;background:rgba(251,251,249,.9);backdrop-filter:blur(10px);border-bottom:1px solid #E2E2DD">
+    <div class="wrap" style="height:80px;display:flex;align-items:center;justify-content:space-between">
+      <a href="index.html" style="display:flex;align-items:center"><img src="brand/cernode-logo-primary.png" style="height:23px;display:block" alt="Cernode"></a>
+      <div style="display:flex;align-items:center;gap:28px">
+        <a class="navlink" href="products.html">Products</a>
+        <a class="navlink" href="technology.html">Technology</a>
+        <a class="navlink" href="resources.html">Resources</a>
+        <a class="navlink" href="newsroom.html">Newsroom</a>
+        <a class="navlink" href="about.html">About</a>
+        <a class="lk" href="contact.html">Contact sales <span class="ar">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+
+    <div>
+    <section class="wrap" style="padding:110px 56px 0">
+      <div class="kick" style="margin-bottom:30px">Samples &middot; for clinicians</div>
+      <h1 style="margin:0;font-size:80px;line-height:.98;font-weight:700;letter-spacing:-.04em;max-width:13ch">Request clinical samples.</h1>
+      <p style="margin:40px 0 0;max-width:60ch;font-size:18px;line-height:1.55;color:#52555a">Samples are provided to practicing clinicians and neurodiagnostic labs for evaluation. A verifiable health-system or institutional email is required.</p>
+    </section>
+    <section class="wrap" style="padding:74px 56px 130px">
+      <div style="border-top:1px solid #1D2733;padding-top:54px;display:grid;grid-template-columns:1.4fr 1fr;gap:72px;align-items:start">
+        <div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+            <div>
+              <label class="mono" style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:10px">Full name</label>
+              <input type="text" style="width:100%;font-family:'Sora',sans-serif;font-size:16px;color:#1D2733;background:#fff;border:1px solid #D8D8D2;padding:14px 15px;outline:none" style-focus="border-color:#2BB3BF">
+            </div>
+            <div>
+              <label class="mono" style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:10px">Role / credentials</label>
+              <input type="text" style="width:100%;font-family:'Sora',sans-serif;font-size:16px;color:#1D2733;background:#fff;border:1px solid #D8D8D2;padding:14px 15px;outline:none" style-focus="border-color:#2BB3BF">
+            </div>
+          </div>
+          <div style="margin-top:24px">
+            <label class="mono" style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:10px">Institution / health system</label>
+            <input type="text" style="width:100%;font-family:'Sora',sans-serif;font-size:16px;color:#1D2733;background:#fff;border:1px solid #D8D8D2;padding:14px 15px;outline:none" style-focus="border-color:#2BB3BF">
+          </div>
+          <div style="margin-top:24px">
+            <label class="mono" style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:10px">Health-system email</label>
+            <input type="email" value="{{ sEmail }}" onChange="{{ onSampleEmail }}" placeholder="name@healthsystem.org" style="width:100%;font-family:'Sora',sans-serif;font-size:16px;color:#1D2733;background:#fff;border:1px solid #D8D8D2;padding:14px 15px;outline:none" style-focus="border-color:#2BB3BF">
+            <div class="mono" style="font-size:10.5px;color:#D24B43;margin-top:8px;min-height:14px">{{ sEmailErr }}</div>
+            <div class="mono" style="font-size:10px;line-height:1.5;color:#8b8d90;margin-top:2px">Use your institutional address. Personal email (gmail, outlook, icloud, etc.) cannot be accepted.</div>
+          </div>
+          <div style="margin-top:28px">
+            <label class="mono" style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:6px">Product selection</label>
+            <p class="mono" style="font-size:10px;line-height:1.5;color:#8b8d90;margin:0">Select the exact products or devices you would like to evaluate, or browse the full catalog for reference.</p>
+            <a class="lk" href="Cernode Catalog 2026.html" target="_blank" style="font-size:12px;margin-top:10px">Browse the full catalog <span class="ar">&rarr;</span></a>
+            <div style="margin-top:15px"><div class="mono" style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9c9f;margin-bottom:9px">Concentric EMG &middot; BPC steel</div><div style="display:flex;flex-wrap:wrap;gap:9px"><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">BPC-25</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">BPC-28</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">BPC-38</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">BPC-50</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">BPC-65</span></div></div>
+            <div style="margin-top:15px"><div class="mono" style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9c9f;margin-bottom:9px">Concentric EMG &middot; TUC tungsten</div><div style="display:flex;flex-wrap:wrap;gap:9px"><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">TUC-25</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">TUC-28</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">TUC-38</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">TUC-50</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">TUC-65</span></div></div>
+            <div style="margin-top:15px"><div class="mono" style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9c9f;margin-bottom:9px">Monopolar EMG &middot; CNM (specify FX prewired or DT detachable)</div><div style="display:flex;flex-wrap:wrap;gap:9px"><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CNM-25-28</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CNM-25-26</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CNM-37-28</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CNM-37-26</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CNM-50-26</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CNM-75-26</span></div></div>
+            <div style="margin-top:15px"><div class="mono" style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#9a9c9f;margin-bottom:9px">Hydrogel surface &middot; CHE</div><div style="display:flex;flex-wrap:wrap;gap:9px"><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CHE-E10</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CHE-E08</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CHE-N12</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CHE-L15</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CHE-L20</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CHE-S40</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CHE-LT10</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CHE-LT08</span><span class="mono" style="font-size:11.5px;border:1px solid #D8D8D2;padding:8px 12px;cursor:pointer;color:#52555a" style-hover="border-color:#2BB3BF;color:#1D2733">CHE-P08</span></div></div>
+          </div>
+          <div style="margin-top:24px">
+            <label class="mono" style="display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:10px">Shipping address</label>
+            <textarea rows="3" style="width:100%;font-family:'Sora',sans-serif;font-size:16px;line-height:1.5;color:#1D2733;background:#fff;border:1px solid #D8D8D2;padding:14px 15px;outline:none;resize:vertical" style-focus="border-color:#2BB3BF"></textarea>
+          </div>
+          <div style="display:flex;align-items:center;gap:22px;margin-top:28px">
+            <button type="button" class="btn btn-solid">Submit request</button>
+            <span class="mono" style="font-size:10.5px;color:#8b8d90">Requests are reviewed for eligibility before fulfillment.</span>
+          </div>
+        </div>
+        <div style="border-left:1px solid #E2E2DD;padding-left:56px">
+          <div class="kick" style="margin-bottom:22px">Who can request</div>
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;gap:12px"><span style="width:7px;height:7px;background:#2BB3BF;border-radius:50%;margin-top:7px;flex:none"></span><p style="margin:0;font-size:14px;line-height:1.6;color:#52555a">Practicing clinicians, neurophysiologists and neurodiagnostic technologists.</p></div>
+            <div style="display:flex;gap:12px"><span style="width:7px;height:7px;background:#2BB3BF;border-radius:50%;margin-top:7px;flex:none"></span><p style="margin:0;font-size:14px;line-height:1.6;color:#52555a">Hospital, clinic, university or research-lab affiliation with a matching email domain.</p></div>
+            <div style="display:flex;gap:12px"><span style="width:7px;height:7px;background:#2BB3BF;border-radius:50%;margin-top:7px;flex:none"></span><p style="margin:0;font-size:14px;line-height:1.6;color:#52555a">Samples are for single-patient evaluation use.</p></div>
+          </div>
+          <div style="margin-top:30px;border-top:1px solid #E2E2DD;padding-top:22px">
+            <div class="mono" style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8b8d90;margin-bottom:7px">Not a clinician?</div>
+            <a class="lk" href="distributor.html">Distributor inquiries <span class="ar">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+<!-- ============ FOOTER ============ -->
+  <footer style="background:#1D2733;color:#F2F4F5">
+    <div class="wrap" style="padding:90px 56px 44px">
+      <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:56px">
+        <div>
+          <img src="brand/cernode-logo-white.png" style="height:24px;display:block;margin-bottom:24px" alt="Cernode">
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#AEB7BF;max-width:32ch">Precision electrodes for clinical neurodiagnostics. A product line of Alera Medtech.</p>
+        </div>
+        <div>
+          <div class="kick" style="margin-bottom:20px">Explore</div>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <a href="products.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Products</a>
+            <a href="technology.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Technology</a>
+            <a href="resources.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Resources</a>
+            <a href="newsroom.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Newsroom</a>
+            <a href="about.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">About</a>
+            <a href="Cernode Catalog 2026.html" target="_blank" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">2026 Catalog</a>
+          </div>
+        </div>
+        <div>
+          <div class="kick" style="margin-bottom:20px">Contact</div>
+          <div style="display:flex;flex-direction:column;gap:13px">
+            <a href="contact.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Contact sales</a>
+            <a href="samples.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Request samples</a>
+            <a href="distributor.html" style="text-decoration:none;color:#C7CDD2;font-size:14.5px" style-hover="color:#fff">Become a distributor</a>
+            <span class="mono" style="color:#C7CDD2;font-size:12.5px">cernode.sales<span>@</span>aleramedtech.com</span>
+          </div>
+        </div>
+        <div>
+          <div class="kick" style="margin-bottom:20px">Manufactured for</div>
+          <div class="mono" style="font-size:12.5px;line-height:1.85;color:#C7CDD2">Alera Medtech LLC<br>159 W Mason Ave<br>Buckley, WA 98321 USA</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding-top:24px;gap:24px;flex-wrap:wrap">
+        <div style="display:flex;gap:22px">
+          <a href="https://www.linkedin.com/company/alera-medtech" target="_blank" rel="noopener" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none" style-hover="color:#fff">LinkedIn</a>
+          <a href="https://x.com/cernode" target="_blank" rel="noopener" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none" style-hover="color:#fff">X</a>
+          <a href="https://www.instagram.com/cernode" target="_blank" rel="noopener" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none" style-hover="color:#fff">Instagram</a>
+        </div>
+        <div style="display:flex;gap:22px;flex-wrap:wrap">
+          <a href="privacy.html" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none;" style-hover="color:#fff">Privacy Notice</a>
+          <a href="cookies.html" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none;" style-hover="color:#fff">Cookie Notice</a>
+          <a href="terms.html" class="mono" style="font-size:11px;letter-spacing:.06em;color:#C7CDD2;text-decoration:none;" style-hover="color:#fff">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div style="padding-top:16px">
+        <span class="mono" style="font-size:10.5px;color:#7d8893">© 2026 Alera Medtech LLC · www.cernode.com</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 'home', sEmail: '', sEmailErr: '' };
+  go(p){
+    this.setState({ page: p });
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+  checkEmail(e){
+    const v = (e && e.target ? e.target.value : '') || '';
+    const blocked = /@(gmail|googlemail|yahoo|ymail|outlook|hotmail|live|msn|icloud|me|mac|aol|aim|proton|protonmail|gmx|mail|inbox|zoho|yandex|qq|163|126|comcast|verizon|att|sbcglobal)\./i;
+    let err = '';
+    if (v && v.indexOf('@') > -1 && blocked.test(v)) err = 'Please use your health-system or institutional email, not a personal address.';
+    this.setState({ sEmail: v, sEmailErr: err });
+  }
+  renderVals(){
+    const p = this.state.page;
+    const col = id => (p === id ? '#1D2733' : '#6E7680');
+    const und = id => (p === id ? '#2BB3BF' : 'transparent');
+    return {
+      page: p,
+      isHome: p === 'home',
+      isProducts: p === 'products',
+      isTech: p === 'technology',
+      isAbout: p === 'about',
+      isContact: p === 'contact',
+      goHome: () => this.go('home'),
+      goProducts: () => this.go('products'),
+      goTech: () => this.go('technology'),
+      goAbout: () => this.go('about'),
+      goContact: () => this.go('contact'),
+      cProducts: col('products'), uProducts: und('products'),
+      cTech: col('technology'), uTech: und('technology'),
+      cResources: col('resources'), uResources: und('resources'),
+      cNewsroom: col('newsroom'), uNewsroom: und('newsroom'),
+      cAbout: col('about'), uAbout: und('about'),
+      isResources: p === 'resources',
+      isNewsroom: p === 'newsroom',
+      isSamples: p === 'samples',
+      isDistributor: p === 'distributor',
+      goResources: () => this.go('resources'),
+      goNewsroom: () => this.go('newsroom'),
+      goSamples: () => this.go('samples'),
+      goDistributor: () => this.go('distributor'),
+      sEmail: this.state.sEmail,
+      sEmailErr: this.state.sEmailErr,
+      onSampleEmail: (e) => this.checkEmail(e),
+      isPrivacy: p === 'privacy',
+      isCookies: p === 'cookies',
+      isTerms: p === 'terms',
+      goPrivacy: () => this.go('privacy'),
+      goCookies: () => this.go('cookies'),
+      goTerms: () => this.go('terms'),
+    };
+  }
+}
+</script>
+</body>
+</html>
+
