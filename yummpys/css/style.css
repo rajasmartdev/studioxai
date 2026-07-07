@@ -5206,7 +5206,7 @@ roister-hero-section-2
 -----------*/
 .roister-hero-section-2 {
   overflow: hidden;
-  padding-top: 160px; }
+  }
   @media (max-width: 991.97px) {
     .roister-hero-section-2 {
       padding-top: 130px; } }
@@ -5420,8 +5420,8 @@ roister-hm2-fav-cat-section
     width: 221px;
     top: 6%;
     right: -35px; }
-  .roister-hm2-fav-cat-section .cat-row .col-12:nth-child(even) .roister-single-category {
-    height: 373px; }
+  /* .roister-hm2-fav-cat-section .cat-row .col-12:nth-child(even) .roister-single-category {
+    height: 373px; } */
 
 /*---------
 roister-hm2-upcoming-event-section
