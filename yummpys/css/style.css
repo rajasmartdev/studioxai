@@ -1520,7 +1520,7 @@ animation rotate-center
     justify-content: center; }
     @media (max-width: 1599.97px) {
       .roister-header-area-1 .header-btm .positioned-logo, .roister-header-area-2 .header-btm .positioned-logo {
-        width: 260px; padding-left: 150px;} }
+        width: 260px; padding-left: 200px;} }
     @media (max-width: 1399.97px) {
       .roister-header-area-1 .header-btm .positioned-logo, .roister-header-area-2 .header-btm .positioned-logo {
         width: 220px;
@@ -5308,7 +5308,11 @@ roister-hero-section-2
 roister-hm2-cta-section
 -----------*/
 .roister-hm2-cta-section {
-  position: relative; }
+  position: relative;
+  background: url('../img/Texture\ BG.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
   .roister-hm2-cta-section .cta-shape {
     width: 244px;
     -ms-flex-negative: 0;
@@ -5575,7 +5579,12 @@ roister-hm2-upcoming-event-section
 roister-hm2-best-menus-section
 -----------*/
 .roister-hm2-best-menus-section {
-  position: relative; }
+  position: relative;
+  background: url('../img/Texture\ BG.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+ }
   .roister-hm2-best-menus-section .shape-1 {
     width: 164px;
     height: 223px;
