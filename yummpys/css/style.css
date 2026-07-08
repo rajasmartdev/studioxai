@@ -5711,7 +5711,8 @@ roister-hm2-reservation-form
     width: 1290px;
     height: 1290px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: #111111;
+    opacity: 0.8;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -5767,7 +5768,8 @@ roister-hm2-reservation-form
       font-weight: 500;
       line-height: normal;
       width: 100%;
-      background-color: var(--primary-color);
+      background-color: #111111;
+      opacity: 0.8;
       border-bottom: 1px dashed var(--white-color); }
       .roister-hm2-reservation-form .reservation-form-wraper .input-wraper .input::-webkit-input-placeholder {
         color: var(--white-color); }
