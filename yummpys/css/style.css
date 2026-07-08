@@ -1520,7 +1520,7 @@ animation rotate-center
     justify-content: center; }
     @media (max-width: 1599.97px) {
       .roister-header-area-1 .header-btm .positioned-logo, .roister-header-area-2 .header-btm .positioned-logo {
-        width: 260px; } }
+        width: 260px; padding-left: 150px;} }
     @media (max-width: 1399.97px) {
       .roister-header-area-1 .header-btm .positioned-logo, .roister-header-area-2 .header-btm .positioned-logo {
         width: 220px;
@@ -5415,11 +5415,13 @@ roister-hm2-fav-cat-section
   .roister-hm2-fav-cat-section .shape-1 {
     width: 335px;
     top: -13%;
-    left: 0; }
+    left: 0;
+  opacity: 0.2; }
   .roister-hm2-fav-cat-section .shape-2 {
     width: 221px;
     top: 6%;
-    right: -35px; }
+    right: -35px;
+  opacity: 0.2; }
   /* .roister-hm2-fav-cat-section .cat-row .col-12:nth-child(even) .roister-single-category {
     height: 373px; } */
 
