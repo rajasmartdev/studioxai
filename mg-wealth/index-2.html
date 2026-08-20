@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MG Wealth Advisors — Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --ink:#201F19;
+    --ink-soft:#5C5A4E;
+    --ink-faint:#98957F;
+    --gold:#A9814C;
+    --gold-deep:#7C5B31;
+    --hairline:rgba(32,31,25,.16);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{height:100%;margin:0;}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Libre Franklin',sans-serif;
+  }
+
+  .page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    border-top:1px solid var(--ink);
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:0.6rem clamp(1.25rem,5vw,3.5rem);
+    border-bottom:1px solid var(--hairline);
+    opacity:0;
+    animation:fade-in .8s ease-out .1s forwards;
+  }
+  .masthead img{
+    height:84px;
+    width:auto;
+  }
+  .masthead .tag{
+    font-size:.7rem;
+    font-weight:600;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    text-align:right;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px 40px;
+  }
+
+  .eyebrow{
+    font-size:.74rem;
+    font-weight:600;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    margin:0 0 1.4rem;
+    opacity:0;
+    animation:fade-up .7s ease-out .3s forwards;
+  }
+
+  h1.headline{
+    margin:0;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:-.01em;
+    line-height:.92;
+    font-size:clamp(3.6rem, 13vw, 10.5rem);
+    color:var(--ink);
+  }
+  h1.headline .line{
+    display:block;
+    overflow:hidden;
+  }
+  h1.headline .line span{
+    display:inline-block;
+    transform:translateY(105%);
+    animation:reveal-up .85s cubic-bezier(.22,.61,.36,1) forwards;
+  }
+  h1.headline .line:nth-child(1) span{ animation-delay:.45s; }
+  h1.headline .line:nth-child(2) span{ animation-delay:.6s; color:var(--gold-deep); }
+
+  @keyframes reveal-up{
+    to{ transform:translateY(0); }
+  }
+
+  .rule{
+    width:56px;
+    height:2px;
+    background:var(--gold);
+    margin:2.2rem 0 1.6rem;
+    transform-origin:center;
+    transform:scaleX(0);
+    animation:grow-rule .7s ease-out 1.05s forwards;
+  }
+  @keyframes grow-rule{ to{ transform:scaleX(1); } }
+
+  .subcopy{
+    font-weight:300;
+    font-size:1.05rem;
+    line-height:1.7;
+    color:var(--ink-soft);
+    max-width:480px;
+    margin:0;
+    opacity:0;
+    animation:fade-up .8s ease-out 1.2s forwards;
+  }
+
+  .status{
+    margin-top:2.4rem;
+    display:inline-flex;
+    align-items:center;
+    gap:.6rem;
+    padding:.55rem 1.2rem;
+    border:1px solid var(--hairline);
+    opacity:0;
+    animation:fade-up .8s ease-out 1.4s forwards;
+  }
+  .status-dot{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--gold);
+    animation:pulse-dot 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse-dot{
+    0%,100%{ opacity:.35; }
+    50%{ opacity:1; }
+  }
+  .status span.txt{
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  @keyframes fade-up{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  @keyframes fade-in{
+    from{ opacity:0; }
+    to{ opacity:1; }
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--hairline);
+    padding:1.4rem clamp(1.25rem,5vw,3.5rem);
+  }
+  .footer-inner{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:.75rem;
+  }
+  .footer-inner p{
+    margin:0;
+    font-size:.74rem;
+    font-weight:500;
+    letter-spacing:.06em;
+    color:var(--ink-faint);
+  }
+
+  @media (max-width:576px){
+    .masthead{ flex-direction:column; align-items:flex-start; gap:.75rem; }
+    .masthead .tag{ text-align:left; }
+    .footer-inner{ flex-direction:column; text-align:center; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .masthead, .eyebrow, h1.headline .line span, .rule, .subcopy, .status{
+      animation:none !important;
+      opacity:1 !important;
+      transform:none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="masthead">
+    <img src="logo.png" alt="MG Wealth Advisors">
+    <span class="tag">Private Wealth Management</span>
+  </div>
+
+  <main class="hero">
+    <p class="eyebrow">Our new site is</p>
+    <h1 class="headline">
+      <span class="line"><span>Coming</span></span>
+      <span class="line"><span>Soon.</span></span>
+    </h1>
+    <div class="rule"></div>
+    <p class="subcopy">
+      MG Wealth Advisors is preparing a digital experience that reflects
+      the same discipline and care we bring to every client relationship.
+    </p>
+    <div class="status">
+      <span class="status-dot"></span>
+      <span class="txt">In development</span>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 MG Wealth Advisors. All rights reserved.</p>
+      <p>Fiduciary Advisory Services</p>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
