@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description"
+    content="Alera Medtech redesigns everyday medical devices for neurology and vascular access, including DPNCheck nerve conduction testing, Cernode electrodes and SureSet.">
+<title>Alera Medtech | Neurology and vascular access devices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800;900&family=Red+Hat+Mono:wght@500;600&family=Red+Hat+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --blue: #0B5FFF;
+        --blue-dk: #0847C4;
+        --ink: #0B1F3A;
+        --body: #4A5A70;
+        --paper: #FFFFFF;
+        --mist: #F4F8FB;
+        --rule: #E2E9F0;
+        --tint: #E8F0FF;
+        --teal: #0FA3A3;
+        --tealtint: #E3F6F6;
+        --grid: linear-gradient(rgba(11,95,255,.065) 1px, transparent 1px) 0 0 / 24px 24px, linear-gradient(90deg, rgba(11,95,255,.065) 1px, transparent 1px) 0 0 / 24px 24px;
+        --ecg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='60' viewBox='0 0 240 60'%3E%3Cpath d='M0 30H80L90 30L100 10L112 52L122 4L132 30H240' fill='none' stroke='%230FA3A3' stroke-opacity='.6' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E");
+        --disp: "Red Hat Display", "Red Hat Text", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+        --text: "Red Hat Text", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+        --mono: "Red Hat Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html { scroll-behavior: smooth }
+    body { font-family: var(--text); color: var(--body); background: var(--paper); font-size: 16.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden }
+    img { max-width: 100% }
+    h1, h2, h3, h4 { font-family: var(--disp); color: var(--ink); font-weight: 800; letter-spacing: -.03em; line-height: 1.08 }
+    h1 { font-size: clamp(2.3rem, 6vw, 4.6rem); font-weight: 900 }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem) }
+    h3 { font-size: 1.1rem; line-height: 1.25; letter-spacing: -.01em; font-weight: 700 }
+    h4 { font-size: .98rem; font-weight: 700 }
+    a { color: var(--blue); text-decoration: none }
+    a:hover { text-decoration: underline; text-underline-offset: 3px }
+    :focus-visible { outline: 3px solid var(--teal); outline-offset: 2px }
+
+    .wrap { margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); max-width: 1240px; width: 100% }
+    .eyebrow { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); font-weight: 600; display: inline-flex; align-items: center; gap: 8px }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--teal); flex: 0 0 auto }
+    .eyebrow.mute { color: #66788E }
+    .eyebrow.mute::before { background: #B8C6D6 }
+    .lede { font-size: 1.06rem; max-width: 78ch }
+    .small { font-size: .94rem; line-height: 1.55 }
+
+    /* tighten inline spacing from the markup */
+    h2[style] { margin: 20px 0 8px !important }
+    .eyebrow + h2[style] { margin: 8px 0 10px !important }
+    .wrap > h2:first-child[style] { margin-top: 0 !important }
+    h3[style] { margin: 6px 0 4px !important }
+    h4[style] { margin: 18px 0 8px !important }
+    p[style], .lede[style] { margin-top: 10px !important; margin-bottom: 0 !important }
+    p.small[style] { margin-bottom: 0 !important }
+
+    /* HEADER: top strip + folder-tab navigation */
+    header { position: sticky; top: 0; z-index: 60; background: var(--paper); border-top: 4px solid var(--blue); border-image: linear-gradient(90deg, var(--blue), var(--teal)) 1; border-bottom: 1px solid var(--ink) }
+    header .wrap.bar { display: flex; align-items: flex-end; gap: 24px; height: auto; padding-top: 12px; padding-bottom: 0; position: relative }
+    .mark { height: 28px; width: auto; display: block; margin-bottom: 12px }
+    nav { display: flex; gap: 2px; margin-left: auto; align-items: flex-end }
+    nav button { font: inherit; font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--body); background: var(--mist); border: 1px solid var(--rule); border-bottom: 0; padding: 10px 13px 9px; cursor: pointer; border-radius: 3px 3px 0 0; margin-bottom: -1px; transition: background .15s, color .15s }
+    nav button:hover { background: var(--tint); color: var(--ink) }
+    nav button[aria-current="page"] { background: var(--ink); color: #fff; border-color: var(--ink) }
+    .menu-btn { display: none; margin-left: auto; margin-bottom: 10px; background: var(--paper); border: 1px solid var(--ink); border-radius: 3px; width: 40px; height: 40px; cursor: pointer; color: var(--ink); align-items: center; justify-content: center }
+
+    .page { display: none }
+    .page.on { display: block; animation: fade .3s ease }
+    @keyframes fade { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: none } }
+
+    section { padding: 40px 0 }
+    section.tight { padding: 28px 0 }
+    .mist { background: var(--grid), var(--mist); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule) }
+
+    /* HERO: graph paper + ECG trace */
+    .hero { padding: 40px 0 78px; background: var(--grid), var(--paper); border-bottom: 1px solid var(--rule) }
+    .hero h1 { margin: 12px 0 14px; max-width: 16ch }
+    .hero h1 em { font-style: normal; color: var(--blue); box-shadow: inset 0 -.16em 0 var(--tealtint) }
+    .hero .lede { max-width: 70ch }
+    .hero .btn { margin-top: 0 }
+
+    .statrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 26px; border-top: 3px solid var(--ink) }
+    .statrow > div { padding: 14px 18px 4px 0; margin-right: 18px; border-right: 1px dashed #B8C6D6 }
+    .statrow > div:last-child { border-right: 0; margin-right: 0 }
+    .stat { font-family: var(--disp); font-size: 2.3rem; font-weight: 900; color: var(--blue); letter-spacing: -.04em; line-height: 1 }
+    .statlab { font-size: .9rem; margin-top: 6px; line-height: 1.4; color: var(--ink) }
+    .cite { font-family: var(--mono); font-size: .6rem; font-weight: 600; vertical-align: super; color: #fff; background: var(--ink); border-radius: 2px; padding: 1px 5px; margin-left: 3px; cursor: pointer }
+    .cite:hover { background: var(--blue) }
+
+    .regstrip { display: flex; flex-wrap: wrap; gap: 6px 0; margin-top: 14px; padding: 8px 0; border-top: 1px dashed #9FB0C3; border-bottom: 1px dashed #9FB0C3; font-family: var(--mono); font-size: .74rem }
+    .regstrip div { padding: 0 16px 0 0; margin-right: 16px; border-right: 1px dotted #9FB0C3; color: var(--ink) }
+    .regstrip div:last-child { border-right: 0; margin-right: 0; padding-right: 0 }
+    .regstrip b { font-weight: 600; display: block; font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: #7B8CA0; margin-bottom: 1px }
+    .rx { color: #C0322B !important; font-weight: 600 }
+
+    .grid { display: grid; gap: 14px }
+    .g2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr)) }
+    .g3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)) }
+    .grid > article { position: relative; background: var(--paper); padding: 24px 22px 20px; border: 1px solid #C9D6E2; border-radius: 2px; transition: box-shadow .2s, border-color .2s }
+    .grid > article::before, .grid > article::after { content: ""; position: absolute; width: 14px; height: 14px; border: 0 solid var(--blue); transition: all .2s }
+    .grid > article::before { left: -1px; top: -1px; border-top-width: 3px; border-left-width: 3px }
+    .grid > article::after { right: -1px; bottom: -1px; border-bottom-width: 3px; border-right-width: 3px }
+    .grid > article:hover { border-color: var(--ink); box-shadow: 5px 5px 0 var(--tint) }
+    .grid > article:hover::before, .grid > article:hover::after { width: 26px; height: 26px; border-color: var(--teal) }
+
+    /* PRODUCT CARDS: label tab on top edge */
+    .prod { position: relative; background: var(--paper); border: 1px solid var(--ink); border-radius: 2px; padding: 28px 26px 22px; margin: 22px 0 14px; box-shadow: 6px 6px 0 var(--tint) }
+    .prod[style] { border-left: 1px solid var(--ink) !important; box-shadow: 6px 6px 0 var(--tealtint) }
+    .prod > .eyebrow, .prod .catheter-product-content-v2 > .eyebrow { position: absolute; top: -12px; left: 20px; background: var(--ink); color: #fff; padding: 3px 12px; border-radius: 2px; margin: 0 !important; z-index: 1 }
+    .prod .eyebrow::before { display: none }
+    .prod > .eyebrow[style] { background: var(--teal); color: #fff !important }
+    .prod h3 { margin-bottom: 8px; font-size: 1.3rem; font-weight: 800 }
+    .mist .prod { background: var(--paper) }
+
+    ul.feat { list-style: none; margin: 12px 0 0 }
+    ul.feat li { padding-left: 24px; position: relative; margin-bottom: 5px; font-size: .97rem }
+    ul.feat li::before { content: ""; position: absolute; left: 0; top: .5em; width: 10px; height: 10px; border: 2px solid var(--blue); border-radius: 1px; transform: rotate(45deg) scale(.8) }
+    ul.feat li::after { content: ""; position: absolute; left: 4px; top: calc(.5em + 4px); width: 2px; height: 2px; background: var(--teal) }
+
+    .cta { background:  linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px) 0 0 / 24px 24px, linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px) 0 0 / 24px 24px, var(--ink); color: #C7D5E8; padding: 40px 0 72px }
+    .cta h2 { color: #fff; max-width: 22ch }
+    .cta .eyebrow { color: #7EF0E6 }
+    .btn { display: inline-block; background: var(--blue); color: #fff; padding: 12px 24px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; font-size: .8rem; margin-top: 16px; border-radius: 2px; box-shadow: 4px 4px 0 var(--ink); transition: transform .12s, box-shadow .12s }
+    .btn:hover { text-decoration: none; transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink) }
+    .hero .btn { box-shadow: 4px 4px 0 var(--teal) }
+    .hero .btn:hover { box-shadow: 2px 2px 0 var(--teal) }
+    .cta .btn { background: #fff; color: var(--ink); box-shadow: 4px 4px 0 var(--teal) }
+    .cta .btn:hover { box-shadow: 2px 2px 0 var(--teal) }
+
+    table { width: 100%; border-collapse: collapse; font-size: .93rem; background: #fff; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink) }
+    th { text-align: left; font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); padding: 10px 12px; border-bottom: 1px solid var(--ink); font-weight: 600 }
+    td { padding: 11px 12px; border-bottom: 1px dotted #9FB0C3; vertical-align: top }
+    tr:last-child td { border-bottom: 0 }
+    td.num { font-family: var(--mono); font-size: .78rem; color: var(--ink); white-space: nowrap }
+
+    .refs li { margin-bottom: 8px; padding-left: 38px; position: relative; list-style: none; font-size: .91rem; line-height: 1.5 }
+    .refs li span.n { position: absolute; left: 0; top: 1px; font-family: var(--mono); font-size: .68rem; color: var(--blue); font-weight: 600; border: 1px solid var(--blue); border-radius: 2px; padding: 0 5px; line-height: 1.6; min-width: 26px; text-align: center; background: #fff }
+
+    .note { background: var(--tint); border: 1px dashed var(--blue); border-radius: 2px; padding: 14px 18px; font-size: .96rem; margin-top: 14px }
+    .note b { color: var(--ink) }
+
+    /* FOOTER */
+    footer { background: var(--grid), var(--mist); border-top: 4px solid var(--ink); color: var(--body); padding: 34px 0 20px; font-size: .92rem }
+    footer h4 { color: var(--ink); font-size: .68rem; font-family: var(--mono); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; font-weight: 600 }
+    footer a { color: var(--blue) }
+    footer p { line-height: 1.75 }
+    .fgrid { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 24px }
+    .fmark { height: 24px; margin: 0 0 10px }
+    .legal { border-top: 1px dashed #9FB0C3; margin-top: 24px; padding-top: 16px; font-size: .82rem; line-height: 1.6; color: #55677C }
+    .legal p { margin-top: 10px }
+    .legal strong { color: var(--ink) }
+
+    /* FORM */
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 640px }
+    label { display: block; font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--ink); margin-bottom: 4px }
+    .consent label { font-family: var(--text); text-transform: none; letter-spacing: 0; font-size: .89rem }
+    input, select, textarea { width: 100%; font: inherit; font-size: .96rem; padding: 10px 12px; border: 1px solid var(--ink); border-radius: 2px; background: #fff; color: var(--ink); transition: box-shadow .15s }
+    input:focus, select:focus, textarea:focus { outline: none; box-shadow: 4px 4px 0 var(--tint); border-color: var(--blue) }
+    .full { grid-column: 1/-1 }
+    .consent { display: flex; gap: 10px; align-items: flex-start; font-size: .89rem; line-height: 1.5 }
+    .consent input { width: 17px; height: 17px; margin-top: 3px; flex: 0 0 auto }
+    form .btn { margin-top: 0; border: 0 }
+
+    .team-image { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 2px; margin: 8px 0 12px; border-bottom: 4px solid var(--teal) }
+    .brk { padding: 0 }
+
+    /* Catheter layout */
+    .catheter-product-layout-v2 { display: grid; grid-template-columns: 1.4fr .6fr; gap: 24px; align-items: center }
+    .catheter-product-content-v2 { min-width: 0 }
+    .catheter-product-image-v2 { width: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center; background: var(--grid), var(--mist); border: 1px solid #C9D6E2; border-radius: 2px; padding: 14px; overflow: hidden }
+    .catheter-product-image-v2 img { display: block; width: 100%; max-width: 300px; height: 210px; object-fit: contain }
+    .catheter-product-layout-v2 .regstrip { margin-top: 12px }
+
+    /* Contact */
+    .alera-contact-row { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 28px; align-items: start }
+    .alera-contact-left, .alera-contact-right { min-width: 0 }
+    .alera-contact-left form { max-width: 100%; width: 100% }
+    .alera-contact-right { padding: 22px; background: #fff; border: 1px solid var(--ink); border-radius: 2px; box-shadow: 6px 6px 0 var(--tint) }
+    .alera-email-card { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #9FB0C3; text-decoration: none }
+    .alera-email-card:hover { text-decoration: none }
+    .alera-email-icon { display: flex; flex: 0 0 44px; width: 44px; height: 44px; align-items: center; justify-content: center; color: #fff; background: var(--blue); border-radius: 2px }
+    .alera-email-content { display: flex; flex-direction: column; gap: 3px; min-width: 0 }
+    .alera-email-content strong { color: var(--ink); font-size: 14px; font-family: var(--disp); font-weight: 700 }
+    .alera-email-content > span:not(.alera-email-address) { color: var(--body); font-size: 14px; line-height: 1.4 }
+    .alera-email-address { color: var(--blue); font-family: var(--mono); font-size: 12px; font-weight: 600; overflow-wrap: anywhere }
+    .alera-contact-note { margin-top: 16px; padding: 14px; background: var(--mist); border: 1px dashed #9FB0C3; border-radius: 2px }
+    .alera-contact-note strong { color: var(--ink); font-size: 14px; font-family: var(--disp); font-weight: 700 }
+
+    /* POLICY */
+    .policy-page-v2 { padding: 32px 0 44px; background: var(--paper) }
+    .policy-wrap-v2 { width: min(820px, calc(100% - 32px)); margin: 0 auto }
+    .policy-heading-v2 { margin-bottom: 18px; padding-bottom: 14px; border-bottom: 3px solid var(--ink) }
+    .policy-heading-v2 h1 { margin: 0 0 6px; font-size: clamp(28px, 4vw, 42px) }
+    .policy-heading-v2 p { margin: 0; color: var(--body); font-size: 14px; font-family: var(--mono) }
+    .policy-content-v2 h2 { margin: 20px 0 6px; font-size: 19px; line-height: 1.4 }
+    .policy-content-v2 p, .policy-content-v2 li { font-size: 15.5px; line-height: 1.7; color: var(--body) }
+    .policy-content-v2 p { margin: 0 0 10px }
+    .policy-content-v2 ul { padding-left: 22px; margin: 6px 0 12px }
+    .policy-content-v2 li { padding-left: 4px; margin-bottom: 4px }
+    .policy-content-v2 a { color: var(--blue); text-decoration: underline; overflow-wrap: anywhere }
+
+    /* RESPONSIVE */
+    @media (max-width: 1060px) {
+        header .wrap.bar { align-items: center; padding-top: 10px; padding-bottom: 10px }
+        .mark { margin-bottom: 0 }
+        .menu-btn { display: inline-flex; margin-bottom: 0 }
+        nav { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; background: #fff; border: 1px solid var(--ink); border-top: 0; padding: 4px clamp(16px, 4vw, 56px) 10px; margin: 0; box-shadow: 0 14px 28px rgba(11,31,58,.14) }
+        nav.open { display: flex }
+        nav button { text-align: left; border: 0; border-bottom: 1px dashed #B8C6D6; border-radius: 0; margin: 0; background: transparent; padding: 12px 4px; font-size: .78rem }
+        nav button[aria-current="page"] { background: var(--ink); padding-left: 12px }
+    }
+    @media (max-width: 900px) {
+        .alera-contact-row { grid-template-columns: minmax(0, 1fr); gap: 22px }
+        .fgrid { grid-template-columns: 1fr 1fr }
+    }
+    @media (max-width: 768px) {
+        body { font-size: 16px }
+        .catheter-product-layout-v2 { grid-template-columns: 1fr; gap: 14px }
+        .catheter-product-image-v2 { grid-row: 1; min-height: 170px }
+        .catheter-product-image-v2 img { height: 170px }
+        section { padding: 30px 0 }
+        section.tight { padding: 22px 0 }
+        .hero { padding: 28px 0 70px }
+        .cta { padding: 32px 0 66px }
+        .prod { padding: 26px 16px 20px }
+        .statrow { grid-template-columns: 1fr 1fr; row-gap: 8px }
+        .statrow > div:nth-child(2n) { border-right: 0; margin-right: 0 }
+        table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch }
+        form { grid-template-columns: 1fr }
+    }
+    @media (max-width: 480px) {
+        .fgrid { grid-template-columns: 1fr; gap: 18px }
+        .stat { font-size: 1.7rem }
+        .regstrip div { margin-right: 12px; padding-right: 12px }
+        .alera-contact-right { padding: 16px }
+        .alera-email-icon { flex-basis: 40px; width: 40px; height: 40px }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        * { animation: none !important; transition: none !important }
+        html { scroll-behavior: auto }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="wrap bar">
+        <a href="#" onclick="go('home');return false" aria-label="Alera Medtech, home">
+            <!-- LOGO: replace this src with your original base64 logo (data:image/png;base64,...) -->
+            <img class="mark" src="assets/logo.png" alt="Alera Medtech"></a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+        <nav id="nav">
+            <button onclick="go('home')" data-p="home">Home</button>
+            <button onclick="go('products')" data-p="products">Products</button>
+            <button onclick="go('clinical')" data-p="clinical">Clinical evidence</button>
+            <button onclick="go('reg')" data-p="reg">Regulatory</button>
+            <button onclick="go('ifu')" data-p="ifu">Labeling and IFU</button>
+            <button onclick="go('about')" data-p="about">About</button>
+            <button onclick="go('team')" data-p="team">Team</button>
+            <button onclick="go('contact')" data-p="contact">Contact</button>
+        </nav>
+    </div>
+</header>
+
+<!-- HOME -->
+<div class="page on" id="p-home">
+    <section class="hero">
+        <div class="wrap">
+            <span class="eyebrow">Neurology and vascular access</span>
+            <h1>Legacy devices. <em>Reimagined.</em></h1>
+            <p class="lede">Alera Medtech redesigns the devices neurologists, vascular teams and nursing staff
+                reach for every shift. Categories where the product on the shelf has not changed in a long time,
+                and where the people using it have learned to work around it.</p>
+            <p style="margin-top:22px"><a class="btn" href="#" onclick="go('products');return false">See the product
+                    range</a></p>
+            <div class="statrow">
+                <div>
+                    <div class="stat">350M</div>
+                    <div class="statlab">Peripheral IV catheters purchased in the United States each year<span
+                            class="cite" onclick="go('clinical')">1</span></div>
+                </div>
+                <div>
+                    <div class="stat">35 to 50%</div>
+                    <div class="statlab">Published peripheral IV catheter failure rate<span class="cite"
+                            onclick="go('clinical')">2</span></div>
+                </div>
+                <div>
+                    <div class="stat">2</div>
+                    <div class="statlab">Specialties we work in. Neurology and vascular access</div>
+                </div>
+                <div>
+                    <div class="stat">Boston</div>
+                    <div class="statlab">Headquartered in Greater Boston, with sites in the United States, the UAE and
+                        India</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mist">
+        <div class="wrap">
+            <span class="eyebrow">Our approach</span>
+            <h2 style="margin:14px 0 20px;max-width:40ch">Devices redesigned around the clinician's hand and the
+                patient's skin.</h2>
+            <p class="lede">We work in categories that are high volume, low margin and quietly overdue. Modern
+                materials, tighter tolerances, and a design process that starts by watching the device get used
+                rather than by reading its spec sheet.</p>
+            <div class="grid g2" style="margin-top:38px">
+                <article>
+                    <h3>Where we choose to work</h3>
+                    <p class="small" style="margin-top:10px">Device categories
+                        that sit underneath daily care in neurology and vascular access, are bought in volume, and have
+                        seen little product change.</p>
+                </article>
+                <article>
+                    <h3>How we design</h3>
+                    <p class="small" style="margin-top:10px">Usability first. Grip,
+                        one-handed application, signal stability under real ward and operating room conditions, and
+                        packaging that opens the way the room expects.</p>
+                </article>
+                <article>
+                    <h3>How we manufacture</h3>
+                    <p class="small" style="margin-top:10px">A United States
+                        manufacturing partner and our own Indian operation in Pune, both working to a single quality
+                        system, so scale does not arrive at the cost of consistency.</p>
+                </article>
+                <article>
+                    <h3>How we price</h3>
+                    <p class="small" style="margin-top:10px">Priced so that a health
+                        system can standardize on the better device rather than reserve it for selected units.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <span class="eyebrow">Featured product</span>
+            <h2 style="margin:14px 0 20px">DPNCheck<sup style="font-size:.5em">&reg;</sup></h2>
+            <p class="lede">A handheld, quantitative point-of-care nerve conduction test. It measures sural
+                sensory nerve conduction velocity and sensory nerve action potential amplitude and returns a result
+                in the room, which makes an objective measurement available in settings that do not have access to a
+                nerve conduction laboratory.</p>
+            <ul class="feat">
+                <li>Measures sural sensory nerve conduction velocity and sensory nerve action potential amplitude</li>
+                <li>Used in primary care, endocrinology and neurology settings</li>
+                <li>Results are compared against normal limits configured at the site. Interpretation is made by the
+                    clinician</li>
+            </ul>
+            <div class="regstrip">
+                <div><b>Class</b>II</div>
+                <div><b>Regulation</b>21 CFR 882.1550</div>
+                <div><b>Product code</b>JXE, IKN</div>
+                <div><b>Clearance</b>K041320</div>
+                <div><b>Status</b><span class="rx">Prescription device</span></div>
+                <div><b>Labeling</b><a href="#" onclick="go('ifu');return false">Instructions for use</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="wrap">
+            <span class="eyebrow">Get in touch</span>
+            <h2 style="margin:14px 0 16px">Talk to someone who knows the product.</h2>
+            <p>Clinicians, health systems, distributors and purchasing teams. We reply within two business days.</p>
+            <a class="btn" href="#" onclick="go('contact');return false">Contact the team</a>
+        </div>
+    </section>
+</div>
+
+<!-- PRODUCTS -->
+<div class="page" id="p-products">
+    <section class="hero">
+        <div class="wrap">
+            <span class="eyebrow">Product portfolio</span>
+            <h1>What we make.</h1>
+            <p class="lede">Two specialties. Every product below carries its regulatory classification where one
+                is established, and a link to its released instructions for use.</p>
+        </div>
+    </section>
+
+    <section class="tight">
+        <div class="wrap">
+            <span class="eyebrow">Specialty 01</span>
+            <h2 style="margin:12px 0 26px">Neurology</h2>
+
+            <div class="prod">
+                <span class="eyebrow">Point-of-care nerve conduction</span>
+                <h3><a href="https://dpncheck.com"
+   target="_blank"
+   rel="noopener noreferrer">
+  DPN
+</a><sup style="font-size:.55em">&reg;</sup></h3>
+                <p class="small">Handheld quantitative nerve conduction test for the sural nerve. Measures sensory
+                    nerve conduction velocity and sensory nerve action potential amplitude at the point of care.</p>
+                <ul class="feat">
+                    <li>Objective, quantitative sural nerve measurement in the room</li>
+                    <li>Normal limits configured at the site. An age and height adjusted limit set is the default</li>
+                    <li>Results are reported against the configured limits. The clinician makes the interpretation</li>
+                </ul>
+                <div class="regstrip">
+                    <div><b>Class</b>II</div>
+                    <div><b>Regulation</b>21 CFR 882.1550</div>
+                    <div><b>Product code</b>JXE, IKN</div>
+                    <div><b>Clearance</b>K041320</div>
+                    <div><b>Status</b><span class="rx">Prescription device</span></div>
+                    <div><b>Evidence</b><a href="#" onclick="go('clinical');return false">Clinical studies</a></div>
+                </div>
+            </div>
+
+            <div class="prod" style="border-left:3px solid var(--teal)">
+                <span class="eyebrow" style="color:var(--teal)">Cernode electrode range</span>
+                <h3>Cernode<sup style="font-size:.55em">&trade;</sup> needle, concentric, monopolar and surface
+                    electrodes</h3>
+                <p class="small">The electrode families used in diagnostic electromyography, intraoperative
+                    neurophysiological monitoring and electroencephalography.</p>
+                <ul class="feat">
+                    <li>Hypodermic needle electrodes for diagnostic electromyography</li>
+                    <li>Single fiber, concentric and monopolar needle electrodes</li>
+                    <li>Surface electrodes for EEG and surface EMG, in adult and pediatric sizes</li>
+                    <li>Intraoperative neurophysiological monitoring electrodes and accessories</li>
+                </ul>
+                <div class="regstrip">
+                    <div><b>Status</b><span class="rx">Prescription device</span></div>
+                    <div><b>Specifications</b><a href="#" onclick="go('contact');return false">Request the catalog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tight mist">
+        <div class="wrap">
+            <span class="eyebrow">Specialty 02</span>
+            <h2 style="margin:12px 0 12px">Catheter securement</h2>
+            <p class="lede" style="margin-bottom:26px">One securement platform in four configurations, each
+                matched to the catheter it holds. All four are adhesive skin-attachment anchoring devices applied
+                without additional tape or sutures.</p>
+
+            <!-- PRODUCT 1: FOLEY CATHETER -->
+<div class="prod">
+    <div class="catheter-product-layout-v2">
+        <div class="catheter-product-content-v2">
+            <span class="eyebrow">Indwelling urinary catheters</span>
+
+            <h3>
+                SureSet<sup style="font-size:.55em">&trade;</sup>
+                Foley Catheter Securement Device
+            </h3>
+
+            <p class="small">
+                Holds an indwelling urinary catheter in a fixed position
+                at the leg. Applied with one hand. A transparent window
+                allows the site to be assessed without removing the device.
+            </p>
+
+            <div class="regstrip">
+                <div><b>Model</b>SSFL</div>
+                <div><b>Class</b>I</div>
+                <div><b>Regulation</b>21 CFR 876.5130</div>
+                <div><b>Product code</b>EYJ</div>
+                <div><b>HCPCS</b>A4333</div>
+                <div>
+                    <b>Labeling</b>
+                    <a href="#" onclick="go('ifu');return false">
+                        Instructions for use
+                    </a>
+                </div>
+                <div>
+                    <b>Site</b>
+                    <a href="https://sureset-secure.com"
+                       target="_blank" rel="noopener noreferrer">
+                        sureset-secure.com
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="catheter-product-image-v2">
+            <img
+                src="assets/image11.png"
+                alt="SureSet Foley Catheter Securement Device"
+                loading="lazy">
+        </div>
+    </div>
+</div>
+
+
+<!-- PRODUCT 2: DIALYSIS CATHETER -->
+<div class="prod">
+    <div class="catheter-product-layout-v2">
+        <div class="catheter-product-content-v2">
+            <span class="eyebrow">Dialysis catheters</span>
+
+            <h3>Dialysis Catheter Securement Device</h3>
+
+            <p class="small">
+                Secures a dialysis catheter and its extension tubing
+                at the exit site, with the same adhesive skin-attachment
+                approach as the rest of the platform.
+            </p>
+
+            <div class="regstrip">
+                <div>
+                    <b>Labeling</b>
+                    <a href="#" onclick="go('ifu');return false">
+                        Instructions for use
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="catheter-product-image-v2">
+            <img
+                src="assets/image9.png"
+                alt="Dialysis Catheter Securement Device"
+                loading="lazy">
+        </div>
+    </div>
+</div>
+
+
+<!-- PRODUCT 3: LOOP IV -->
+<div class="prod">
+    <div class="catheter-product-layout-v2">
+        <div class="catheter-product-content-v2">
+            <span class="eyebrow">Peripheral intravenous lines</span>
+
+            <h3>Loop IV Securement Device, adult and pediatric</h3>
+
+            <p class="small">
+                Secures a peripheral intravenous catheter and routes
+                the extension set through a retaining loop. Supplied
+                in adult and pediatric sizes.
+            </p>
+
+            <div class="regstrip">
+                <div>
+                    <b>Sizes</b>Adult, pediatric
+                </div>
+                <div>
+                    <b>Labeling</b>
+                    <a href="#" onclick="go('ifu');return false">
+                        Instructions for use
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="catheter-product-image-v2">
+            <img
+                src="assets/image10.png"
+                alt="Loop IV Securement Device"
+                loading="lazy">
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+</div>
+
+<!-- CLINICAL -->
+<div class="page" id="p-clinical">
+    <section class="hero">
+        <div class="wrap">
+            <span class="eyebrow">Clinical evidence</span>
+            <h1>What the studies show.</h1>
+            <p class="lede">DPNCheck and its predecessor device NC-stat have been studied in independent
+                peer-reviewed research published since 2006. Every figure on this page carries a numbered citation,
+                and every citation names the reference standard the figure was measured against.</p>
+        </div>
+    </section>
+
+    <section class="tight">
+        <div class="wrap">
+            <h2 style="margin-bottom:12px">How results are reported</h2>
+            <p class="lede">DPNCheck reports sural sensory nerve action potential amplitude and sensory
+                nerve conduction velocity. Results are compared against normal limits that the site configures at
+                setup. The default is an age and height adjusted limit set drawn from the published normative
+                monograph, and fixed and custom limit sets are also available.<span class="cite">3</span> Results
+                outside the configured limits are reported as abnormal. Interpretation is made by the clinician.</p>
+            <div class="note"><b>Why no single threshold appears on this page.</b><br>
+                Because the normal limits are configurable and the default set adjusts for age and height, no single
+                pair of values is correct for every patient. Read your configured limits from your own software
+                settings and from the normative monograph supplied with the device.</div>
+        </div>
+    </section>
+
+    <section class="mist tight">
+        <div class="wrap">
+            <h2 style="margin-bottom:10px">Reported performance</h2>
+            <p class="small" style="max-width:64ch;margin-bottom:26px">Reference standards differ between
+                studies, so each row names the comparator the figure was measured against. Figures are not
+                interchangeable across rows.</p>
+            <table>
+                <tr>
+                    <th>Finding</th>
+                    <th>Value</th>
+                    <th>Reference standard</th>
+                    <th>Source</th>
+                </tr>
+                <tr>
+                    <td>Sensitivity and specificity at a sensory nerve action potential threshold of 6 microvolts</td>
+                    <td class="num">88% / 94%</td>
+                    <td>Age and height standardized reference nerve conduction study values</td>
+                    <td class="num">Ref 4</td>
+                </tr>
+                <tr>
+                    <td>Sensitivity and specificity at a conduction velocity threshold of 48 metres per second</td>
+                    <td class="num">82% / 94%</td>
+                    <td>Age and height standardized reference nerve conduction study values</td>
+                    <td class="num">Ref 4</td>
+                </tr>
+                <tr>
+                    <td>Reliability at individual measurement time points</td>
+                    <td class="num">Moderate to good</td>
+                    <td>Intraclass correlation, repeated measurement</td>
+                    <td class="num">Ref 5</td>
+                </tr>
+                <tr>
+                    <td>Reliability under a repeated measures design</td>
+                    <td class="num">Moderate</td>
+                    <td>Intraclass correlation, repeated measurement</td>
+                    <td class="num">Ref 5</td>
+                </tr>
+            </table>
+            <div class="note"><b>On monitoring change over time.</b><br>
+                The authors of reference 5 concluded that their reliability results question the suitability of the
+                device for monitoring the progression of diabetic peripheral neuropathy, and called for a longer,
+                pre-specified, fully crossed study. Alera publishes that conclusion alongside the reliability figures
+                because it bears directly on how the device should and should not be used.</div>
+        </div>
+    </section>
+
+    <section class="tight">
+        <div class="wrap">
+            <h2 style="margin-bottom:10px">References</h2>
+            <p class="small" style="margin-bottom:22px">Grouped by what each study examined. Studies that used
+                the device as an outcome measure in a therapy trial are listed separately, because they tell you
+                about the therapy rather than about the device.</p>
+
+            <h4 style="margin:26px 0 14px">Epidemiology and burden</h4>
+            <ul class="refs">
+                <li><span class="n">1</span>Standards of Care for Peripheral Intravenous Catheters: Evidence-Based
+                    Expert Consensus. Journal of the Association for Vascular Access. 2026;31(1). States that the
+                    United States purchases an estimated 350 million peripheral intravenous catheters annually.</li>
+                <li><span class="n">2</span>Helm RE, Klausner JD, Klemperer JD, Flint LM, et al. Accepted but
+                    unacceptable: peripheral IV catheter failure. Journal of Infusion Nursing. 2015;38(3):189-203.
+                    doi:10.1097/NAN.0000000000000100. Reports an overall failure rate of 35 to 50 percent.</li>
+            </ul>
+
+            <h4 style="margin:32px 0 14px">Device measurement, accuracy and reliability</h4>
+            <ul class="refs">
+                <li><span class="n">3</span>DPNCheck Normative Data Monograph, PN2203866 Rev D. Normal
+                    limits derived by quantile regression. Defines the age and height adjusted, age only,
+                    standardized fixed and custom limit options.</li>
+                <li><span class="n">4</span>Lee JA, Halpern EM, Lovblom LE, Yeung E, Bril V, Perkins BA. Reliability
+                    and validity of a point-of-care sural nerve conduction device for identification of diabetic
+                    neuropathy. PLOS ONE. 2014.</li>
+                <li><span class="n">5</span>Grabowska A, et al. Reliability of a novel point of care device for
+                    monitoring diabetic peripheral neuropathy. Scientific Reports. 2023. Reported reliability as
+                    moderate to good at individual time points and moderate under a repeated measures design, and
+                    concluded that further study is needed before the device is used to monitor progression over time.
+                </li>
+                <li><span class="n">6</span>Perkins BA, et al. Validation of a novel point-of-care nerve conduction
+                    device for the detection of diabetic sensorimotor polyneuropathy. Diabetes Care. 2006.
+                    Studied the predecessor device NC-stat, not the DPNCheck-branded unit.</li>
+                <li><span class="n">7</span>Shibata Y, et al. Validity and reliability of a point-of-care nerve
+                    conduction device in diabetes patients. Journal of Diabetes Investigation. 2019.</li>
+                <li><span class="n">8</span>Pafili K, et al. NC-stat (DPNCheck) for the diagnosis of diabetic
+                    polyneuropathy. Expert Review of Medical Devices. 2017.</li>
+                <li><span class="n">9</span>Brown JJ, et al. A comparison of screening tools for the early detection
+                    of peripheral neuropathy in adults with and without type 2 diabetes. Journal of Diabetes
+                    Research. 2017.</li>
+                <li><span class="n">10</span>Vogt L, et al. Assessment of diabetic polyneuropathy in Zanzibar:
+                    comparison between traditional methods and an automated point-of-care nerve conduction device.
+                    Journal of Clinical and Translational Endocrinology. 2017.</li>
+                <li><span class="n">11</span>Hayashi Y, et al. Simplified electrophysiological approach combining a
+                    point-of-care nerve conduction device and an electrocardiogram. Journal of Diabetes
+                    Investigation. 2024.</li>
+                <li><span class="n">12</span>Sharma S, et al. Assessment of diabetic neuropathy using a
+                    point-of-care nerve conduction device. Journal of Diabetes Science and Technology. 2014.</li>
+            </ul>
+
+            <h4 style="margin:32px 0 14px">Studies that used the device as an outcome measure</h4>
+            <p class="small" style="margin-bottom:14px">These trials studied a therapy or another diagnostic
+                method and used the device to measure nerve function as one endpoint. They are relevant context.
+                They are not evidence of the device's accuracy.</p>
+            <ul class="refs">
+                <li><span class="n">13</span>Hoerder S, et al. Acupuncture in diabetic peripheral neuropathy:
+                    neurological outcomes of a randomized trial. World Journal of Diabetes. 2023.</li>
+                <li><span class="n">14</span>Didangelos T, et al. Vitamin B12 supplementation in diabetic
+                    neuropathy: a one-year randomized, double-blind, placebo-controlled trial. Nutrients. 2021.</li>
+                <li><span class="n">15</span>Didangelos T, et al. Superoxide dismutase, alpha lipoic acid, vitamin
+                    B12 and carnitine for 12 months in patients with diabetic neuropathy. Nutrients. 2020.</li>
+                <li><span class="n">16</span>Hansen CS, et al. Efficacy of long-term remote ischemic conditioning on
+                    vascular and neuronal function in type 2 diabetes patients with peripheral arterial disease.
+                    Journal of the American Heart Association. 2019.</li>
+                <li><span class="n">17</span>Lim JZM, et al. Corneal confocal microscopy predicts cardiovascular and
+                    cerebrovascular events in patients with type 1 diabetes and foot ulcers. Diagnostics. 2023.</li>
+            </ul>
+            <p class="small" style="margin-top:24px">Requests for the full bibliography, including studies not
+                listed here, can be sent to
+                <a href="mailto:regaffairs@aleramedtech.com">regaffairs@aleramedtech.com</a>.
+            </p>
+        </div>
+    </section>
+</div>
+
+<!-- REGULATORY -->
+<div class="page" id="p-reg">
+    <section class="hero">
+        <div class="wrap">
+            <span class="eyebrow">Regulatory</span>
+            <h1>Classifications and clearances.</h1>
+            <p class="lede">The regulatory identity of the products described on this site.</p>
+        </div>
+    </section>
+    <section class="tight">
+        <div class="wrap">
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Class</th>
+                    <th>Regulation</th>
+                    <th>Product code</th>
+                    <th>Clearance</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>DPNCheck</td>
+                    <td class="num">II</td>
+                    <td class="num">21 CFR 882.1550</td>
+                    <td class="num">JXE, IKN</td>
+                    <td class="num">K041320</td>
+                    <td class="num rx">Prescription device</td>
+                </tr>
+                <tr>
+                    <td>SureSet Foley Catheter Securement Device, model SSFL</td>
+                    <td class="num">I</td>
+                    <td class="num">21 CFR 876.5130</td>
+                    <td class="num">EYJ</td>
+                    <td class="num">n/a</td>
+                    <td class="num">Professional use</td>
+                </tr>
+            </table>
+
+            <h2 style="margin:44px 0 14px">Prescription statement</h2>
+            <p class="lede">DPNCheck is a prescription device. Federal law restricts this device to sale
+                by or on the order of a licensed healthcare practitioner.</p>
+
+            <h2 style="margin:44px 0 14px">Establishment registration</h2>
+            <p class="lede">Alera Medtech LLC is registered with the United States Food and Drug Administration
+                under establishment registration number 3042840696, in the roles of specification developer, complaint
+                file establishment and distributor.</p>
+            <p class="lede" style="margin-top:14px">Manufacturer identification for each device appears on the
+                device label and in the instructions for use supplied with the device.</p>
+
+            <h2 style="margin:44px 0 14px">Coding reference</h2>
+            <p class="lede">The SureSet Foley Catheter Securement Device, model SSFL, holds a coding verification
+                from the Pricing, Data Analysis and Coding contractor for HCPCS code A4333, urinary catheter anchoring
+                device, adhesive skin attachment, each. Coding verification confirms the code that describes the
+                product. It is not a statement about coverage, payment or reimbursement, which are determined by each
+                payer under its own policies.</p>
+
+            <h2 style="margin:44px 0 14px">Market availability</h2>
+            <p class="lede">Product availability differs by market. Not every product described on this site is
+                available in every country in which Alera Medtech has an office, and regulatory status in one
+                jurisdiction does not imply status in another. For the current market list for a specific product,
+                contact regulatory affairs.</p>
+
+            <h2 style="margin:44px 0 14px">Reporting a problem</h2>
+            <p class="lede">To report a product complaint or an adverse event involving an Alera Medtech device,
+                contact regulatory affairs with the product name, model or catalog number, lot number where available,
+                and a description of what occurred.</p>
+            <p style="margin-top:16px"><a href="mailto:regaffairs@aleramedtech.com">regaffairs@aleramedtech.com</a></p>
+        </div>
+    </section>
+</div>
+
+<!-- IFU -->
+<div class="page" id="p-ifu">
+    <section class="hero">
+        <div class="wrap">
+            <span class="eyebrow">Labeling</span>
+            <h1>Instructions for use.</h1>
+            <p class="lede">Released instructions for use for the catheter securement platform. Always read the
+                instructions supplied with the device. If the copy you hold differs from the one published here,
+                contact regulatory affairs before use.</p>
+        </div>
+    </section>
+    <section class="tight">
+        <div class="wrap">
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Configuration</th>
+                    <th>Language</th>
+                    <th>File</th>
+                </tr>
+                <tr>
+                    <td>SureSet Foley Catheter Securement Device</td>
+                    <td class="num">Model SSFL</td>
+                    <td class="num">English (US)</td>
+                    <td class="num"><a href="assets/AL-049722-LB-1C-AT-100-L01 SureSet Foley Labeling _ IFU_(AT-100-L01).pdf" target="_blank" >Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Dialysis Catheter Securement Device</td>
+                    <td class="num">n/a</td>
+                    <td class="num">English (US)</td>
+                    <td class="num"><a href="assets/AL-049763-LB-1D-AT-100-L02 SureSet Dialysis Catheter Securement Device Labeling _ IFU_(AT-100-L02).pdf" target="_blank" >Download PDF</a></td>
+                </tr>
+                <!-- <tr>
+                    <td>Loop IV Securement Device</td>
+                    <td class="num">Adult</td>
+                    <td class="num">English (US)</td>
+                    <td class="num"><a href="#" target="_blank" >Download PDF</a></td>
+                </tr>
+                <tr>
+                    <td>Loop IV Securement Device</td>
+                    <td class="num">Pediatric</td>
+                    <td class="num">English (US)</td>
+                    <td class="num"><a href="#" target="_blank" >Download PDF</a></td>
+                </tr> -->
+            </table>
+            <div class="note"><b>Ordering a printed copy.</b><br>
+                A paper copy of any instructions for use is available at no charge. Email
+                <a href="mailto:regaffairs@aleramedtech.com">regaffairs@aleramedtech.com</a> with the product name and
+                configuration, and a postal address.
+            </div>
+            <p class="small" style="margin-top:22px">Instructions for use for DPNCheck and for the Cernode
+                electrode range are supplied with the product. Request a copy from
+                <a href="mailto:regaffairs@aleramedtech.com">regulatory affairs</a>.
+            </p>
+        </div>
+    </section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="p-about">
+    <section class="hero">
+        <div class="wrap">
+            <span class="eyebrow">About</span>
+            <h1>Innovation with purpose.</h1>
+            <p class="lede">Alera Medtech works on devices that sit underneath daily care in neurology and
+                vascular access. Needle and surface electrodes, intraoperative monitoring, point-of-care nerve
+                conduction, catheter securement. High volume, routine, and largely unchanged for years.</p>
+        </div>
+    </section>
+    <section class="tight">
+        <div class="wrap">
+            <h2 style="margin-bottom:16px">The problem we work on</h2>
+            <p class="lede">These devices are bought by the case and used without much thought, which is exactly
+                why they are worth redesigning. A small improvement in a device used ten thousand times a week
+                compounds. Our work is modern engineering and materials applied to products the market has stopped
+                paying attention to, protected by intellectual property that reflects an actual functional advance
+                rather than a filing exercise.</p>
+            <h2 style="margin:44px 0 16px">What we hold ourselves to</h2>
+            <div class="grid g2">
+                <article>
+                    <h3>Simplicity</h3>
+                    <p class="small" style="margin-top:8px">A device should be obvious in
+                        the hand. If it needs explaining at the bedside, it is not finished.</p>
+                </article>
+                <article>
+                    <h3>Patient first</h3>
+                    <p class="small" style="margin-top:8px">Safety and comfort decide the
+                        design when they conflict with cost or speed.</p>
+                </article>
+                <article>
+                    <h3>Intellectual property with substance</h3>
+                    <p class="small" style="margin-top:8px">We
+                        file on functional advances, not on decoration.</p>
+                </article>
+                <article>
+                    <h3>Access</h3>
+                    <p class="small" style="margin-top:8px">A better device that a health system
+                        cannot afford to standardize on has not improved anything.</p>
+                </article>
+            </div>
+            <h2 style="margin:44px 0 16px">How we work with clinicians</h2>
+            <p class="lede">We design with the people who use these devices, and we publish what the evidence
+                actually says, including where it is limited. Clinicians, researchers and health systems interested
+                in evaluation or collaboration are welcome to get in touch.</p>
+        </div>
+    </section>
+</div>
+
+<!-- TEAM -->
+<div class="page" id="p-team">
+    <section class="hero">
+        <div class="wrap">
+            <span class="eyebrow">Team</span>
+            <h1>The people behind Alera.</h1>
+            <p class="lede">Leadership from medical device operators, engineers and clinicians who have taken
+                products from concept to clinic before.</p>
+        </div>
+    </section>
+    <section class="tight">
+        <div class="wrap">
+            <div class="grid g3">
+                <article><span class="eyebrow mute">Chairman</span>
+                    <div class="brk"></div><img class="team-image" src="assets/image8.png" alt="Team member name"
+                        loading="lazy">
+                    <h3 style="margin:8px 0 6px">M. Z. Ahmad</h3>
+                    <p class="small">Founder of Arkoza Group, a Toronto-based family office investing in healthcare,
+                        information technology and real estate.</p>
+                </article>
+                <article><span class="eyebrow mute">Co-Chairman</span>
+                    <div class="brk"></div>
+                    <img class="team-image" src="assets/image4.png" alt="Team member name" loading="lazy">
+                    <h3 style="margin:8px 0 6px">Satish Vankayalapati</h3>
+                    <p class="small">Co-founder of medical device and healthcare companies. Previously President of
+                        Capri Capital Partners and Partner at McKinsey &amp; Company.</p>
+                </article>
+                <article><span class="eyebrow mute">Chief Executive</span>
+                    <div class="brk"></div><img class="team-image" src="assets/image6.png" alt="Team member name"
+                        loading="lazy">
+                    <h3 style="margin:8px 0 6px">Robert Rudelius</h3>
+                    <p class="small">Managing Partner of UrbanX Global. Founded Noble Ventures, an advisory firm
+                        serving medtech and information technology companies. Previously Chief Executive of Media DVX
+                        and
+                        President and Chief Operating Officer of Control Data Systems.</p>
+                </article>
+                <article><span class="eyebrow mute">EVP, Population Health and Global Clinical Partnerships</span>
+                    <img class="team-image" src="assets/image2.png" alt="Team member name" loading="lazy">
+                    <h3 style="margin:8px 0 6px">Sue Bell, RN, BN</h3>
+                    <p class="small">Registered nurse and healthcare executive. Previously Senior Vice President,
+                        Population Health and Chief Commercial Officer for DPNCheck at NeuroMetrix.</p>
+                </article>
+                <article><span class="eyebrow mute">EVP, Engineering and Product Development</span>
+                    <img class="team-image" src="assets/image3.png" alt="Team member name" loading="lazy">
+                    <h3 style="margin:8px 0 6px">Bob Rioux</h3>
+                    <p class="small">Medical device development, with issued United States patents spanning
+                        gynecology, orthopedics, oncology and wound care. Previously Boston Scientific, Hologic and
+                        AngioDynamics.</p>
+                </article>
+                <article><span class="eyebrow mute">EVP, Business Development</span>
+                    <div class="brk"></div>
+                    <img class="team-image" src="assets/image7.png" alt="Team member name" loading="lazy">
+                    <h3 style="margin:8px 0 6px">Christopher G. LaFarge</h3>
+                    <p class="small">Early-stage life science and medical device leadership. Previously Chief
+                        Operating Officer of Bach Pharma. MBA, Yale School of Management.</p>
+                </article>
+                <article><span class="eyebrow mute">EVP, Regulatory and Quality Management</span>
+                    <img class="team-image" src="assets/image1.png" alt="Team member name" loading="lazy">
+                    <h3 style="margin:8px 0 6px">Carla Sivak</h3>
+                    <p class="small">Quality, regulatory and clinical research leadership at Johnson &amp; Johnson,
+                        Edwards Lifesciences, Philips Healthcare and C.R. Bard. Former vascular access registered
+                        nurse.</p>
+                </article>
+                <article><span class="eyebrow mute">Country General Manager, India</span>
+                    <div class="brk"></div>
+                    <img class="team-image" src="assets/image5.png" alt="Team member name" loading="lazy">
+                    <h3 style="margin:8px 0 6px">Sneha Pandit</h3>
+                    <p class="small">Leads Alera's Pune manufacturing and operations, covering production planning,
+                        quality systems and regulatory coordination.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="p-contact">
+    <section class="hero">
+        <div class="wrap">
+            <span class="eyebrow">Contact</span>
+            <h1>Where to find us.</h1>
+            <p class="lede">Clinicians, health systems, distributors and purchasing teams. We reply within two
+                business days.</p>
+
+        </div>
+
+
+    </section>
+
+    <section class="tight">
+        <div class="wrap">
+            <div class="grid g2">
+                <article><span class="eyebrow">Global headquarters</span>
+                    <h3 style="margin:10px 0 8px">Auburndale, Massachusetts, USA</h3>
+                    <p class="small">Alera Medtech LLC<br>103 Fox Road, Suite 611<br>Waltham, MA 02451, USA<br>
+                        <a href="tel:+18887025372">+1 888 702 5372</a>
+                    </p>
+                </article>
+                <article><span class="eyebrow">India, manufacturing and operations</span>
+                    <h3 style="margin:10px 0 8px">Pune, Maharashtra</h3>
+                    <p class="small">Alera Medtech Private Limited<br>Office No. 302, The Capital Bldg, B 5/1A,<br>
+                        Baner Pashan Link Road, Pune - 411045, India</p>
+                </article>
+                <article><span class="eyebrow">India, registered office</span>
+                    <h3 style="margin:10px 0 8px">Hyderabad, Telangana</h3>
+                    <p class="small">Alera Medtech Private Limited<br>25C Hardware Park, Sy. No. 1/1<br>
+                        Raviryal, Hyderabad, Telangana 500005, India</p>
+                </article>
+                <article><span class="eyebrow">Middle East and North Africa</span>
+                    <h3 style="margin:10px 0 8px">Dubai, UAE</h3>
+                    <p class="small">2408 One Lake Plaza, 24th Floor<br>Cluster T, Jumeirah Lake Towers<br>
+                        Dubai, UAE</p>
+                </article>
+                <article><span class="eyebrow">Regulatory affairs</span>
+                    <h3 style="margin:10px 0 8px">Product, labeling and vigilance</h3>
+                    <p class="small">Classification, clearance, instructions for use, complaints and adverse event
+                        reports.<br><a href="mailto:regaffairs@aleramedtech.com">regaffairs@aleramedtech.com</a></p>
+                </article>
+                <article><span class="eyebrow">Distributors and partners</span>
+                    <h3 style="margin:10px 0 8px">Commercial enquiries</h3>
+                    <p class="small">Distribution, evaluation samples and partnership discussions. Use the form below
+                        and select the distributor option.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+<section class="mist tight">
+  <div class="wrap">
+
+    <div class="alera-contact-row">
+
+      <!-- LEFT SIDE: CONTACT FORM -->
+      <div class="alera-contact-left">
+
+        <h2 style="margin-bottom:20px">Send a message</h2>
+
+        <form onsubmit="return false">
+
+          <div>
+            <label for="fn">First name</label>
+            <input id="fn">
+          </div>
+
+          <div>
+            <label for="ln">Last name</label>
+            <input id="ln">
+          </div>
+
+          <div>
+            <label for="em">Work email</label>
+            <input id="em" type="email">
+          </div>
+
+          <div>
+            <label for="ph">Phone</label>
+            <input id="ph" type="tel">
+          </div>
+
+          <div class="full">
+            <label for="og">Organization</label>
+            <input id="og">
+          </div>
+
+          <div class="full">
+            <label for="sb">Subject</label>
+            <select id="sb">
+              <option>General enquiry</option>
+              <option>DPNCheck, clinical or product question</option>
+              <option>Catheter securement products</option>
+              <option>Cernode electrode range</option>
+              <option>Evaluation samples</option>
+              <option>Distributor or partnership</option>
+              <option>Regulatory, labeling or product complaint</option>
+              <option>Media</option>
+            </select>
+          </div>
+
+          <div class="full">
+            <label for="ms">Message</label>
+            <textarea id="ms" rows="5"></textarea>
+          </div>
+
+          <div class="full consent">
+            <input type="checkbox" id="cs">
+
+            <label for="cs" style="font-weight:400;margin:0">
+              I agree that Alera Medtech may use the details
+              above to respond to my enquiry, and I have read the
+              <a href="/privacy.html">privacy notice</a>.
+              Details are held for 24 months. To request access,
+              correction or deletion, email
+              <a href="mailto:info@aleramedtech.com">
+                info@aleramedtech.com
+              </a>.
+            </label>
+          </div>
+
+          <div class="full">
+            <button class="btn" style="border:0;cursor:pointer">
+              Send message
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+      <!-- END LEFT SIDE -->
+
+
+      <!-- RIGHT SIDE: CONTACT EMAILS -->
+      <aside class="alera-contact-right">
+
+        <span class="eyebrow">CONTACT INFORMATION</span>
+
+        <h3 style="margin:12px 0 10px;font-size:1.5rem">
+          Get in touch
+        </h3>
+
+        <p class="small" style="margin-bottom:20px">
+          Contact the appropriate team for your enquiry.
+        </p>
+
+
+        <!-- GENERAL ENQUIRIES -->
+        <a class="alera-email-card"
+           href="mailto:info@aleramedtech.com">
+
+          <span class="alera-email-icon" aria-hidden="true">
+            <svg width="23" height="23" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round"
+                 stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="m3 7 9 6 9-6"/>
+            </svg>
+          </span>
+
+          <span class="alera-email-content">
+            <strong>General enquiries</strong>
+            <span>Products and business enquiries</span>
+            <span class="alera-email-address">
+              info@aleramedtech.com
+              <span aria-hidden="true">↗</span>
+            </span>
+          </span>
+
+        </a>
+
+
+        <!-- REGULATORY AFFAIRS -->
+        <a class="alera-email-card"
+           href="mailto:regaffairs@aleramedtech.com">
+
+          <span class="alera-email-icon" aria-hidden="true">
+            <svg width="23" height="23" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round"
+                 stroke-linejoin="round">
+              <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+
+          <span class="alera-email-content">
+            <strong>Regulatory affairs</strong>
+            <span>Product complaints, labeling and safety reports</span>
+            <span class="alera-email-address">
+              regaffairs@aleramedtech.com
+              <span aria-hidden="true">↗</span>
+            </span>
+          </span>
+
+        </a>
+
+
+        <!-- REGULATORY NOTE -->
+        <div class="alera-contact-note">
+          <strong>Reporting a product issue?</strong>
+
+          <p class="small" style="margin-top:8px">
+            For suspected adverse events or product complaints,
+            please contact Regulatory Affairs directly by email
+            so that your enquiry reaches the appropriate team.
+          </p>
+
+          <a href="mailto:regaffairs@aleramedtech.com"
+             style="display:inline-block;margin-top:10px;font-weight:600">
+            Email Regulatory Affairs →
+          </a>
+        </div>
+
+      </aside>
+      <!-- END RIGHT SIDE -->
+
+    </div>
+    <!-- END CONTACT ROW -->
+
+
+    <!-- ORIGINAL WARNING -->
+    <p class="small" style="margin-top:20px">
+      If you are reporting a suspected adverse event or a product
+      complaint, please email
+      <a href="mailto:regaffairs@aleramedtech.com">
+        regaffairs@aleramedtech.com
+      </a>
+      directly rather than using this form, so that it reaches
+      regulatory affairs without delay.
+    </p>
+
+  </div>
+</section>
+
+</div>
+
+<!-- PRIVACY POLICY -->
+<div class="page" id="p-privacy">
+  <section class="policy-page-v2">
+    <div class="policy-wrap-v2">
+
+      <div class="policy-heading-v2">
+        <h1>Privacy Policy</h1>
+        <p>Last updated: October 2026</p>
+      </div>
+
+      <div class="policy-content-v2">
+
+        <p>
+          Alera Medtech respects your privacy and is committed to
+          protecting the personal information you provide through
+          our website.
+        </p>
+
+        <h2>1. Information We Collect</h2>
+        <p>
+          We may collect information such as your name, email address,
+          phone number, company name, and any other details you submit
+          through our contact forms or email communications.
+        </p>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>We may use your information to:</p>
+        <ul>
+          <li>Respond to your questions and requests.</li>
+          <li>Provide information about our products and services.</li>
+          <li>Communicate about business and regulatory matters.</li>
+          <li>Improve our website and user experience.</li>
+          <li>Meet applicable legal and regulatory requirements.</li>
+        </ul>
+
+        <h2>3. Sharing of Information</h2>
+        <p>
+          We do not sell your personal information. We may share
+          information with authorized service providers or relevant
+          authorities when necessary for business operations or to
+          comply with applicable law.
+        </p>
+
+        <h2>4. Data Security</h2>
+        <p>
+          We take reasonable measures to protect personal information
+          against unauthorized access, loss, misuse, or disclosure.
+          However, no method of electronic storage or online
+          transmission is completely secure.
+        </p>
+
+        <h2>5. Cookies</h2>
+        <p>
+          Our website may use cookies or similar technologies to
+          support website functionality and understand website usage.
+          You can manage cookies through your browser settings.
+        </p>
+
+        <h2>6. Third-Party Websites</h2>
+        <p>
+          Our website may contain links to third-party websites.
+          Alera Medtech is not responsible for their content or
+          privacy practices.
+        </p>
+
+        <h2>7. Your Privacy Rights</h2>
+        <p>
+          Depending on applicable law, you may have the right to
+          request access to, correction of, or deletion of your
+          personal information.
+        </p>
+
+        <h2>8. Contact Us</h2>
+        <p>
+          For general questions or privacy-related inquiries,
+          contact us at
+          <a href="mailto:info@aleramedtech.com">
+            info@aleramedtech.com
+          </a>.
+        </p>
+        <p>
+          For regulatory inquiries, email
+          <a href="mailto:regaffairs@aleramedtech.com">
+            regaffairs@aleramedtech.com
+          </a>.
+        </p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time.
+          Updates will be published on this page.
+        </p>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- TERMS OF USE -->
+<div class="page" id="p-terms">
+  <section class="policy-page-v2">
+    <div class="policy-wrap-v2">
+
+      <div class="policy-heading-v2">
+        <h1>Terms of Use</h1>
+        <p>Last updated: October 2026</p>
+      </div>
+
+      <div class="policy-content-v2">
+
+        <p>
+          These Terms of Use govern your access to and use of the
+          Alera Medtech website. By using this website, you agree
+          to these terms.
+        </p>
+
+        <h2>1. Use of This Website</h2>
+        <p>
+          You agree to use this website only for lawful purposes.
+          You must not attempt to interfere with its operation,
+          gain unauthorized access, or misuse its content.
+        </p>
+
+        <h2>2. Website Information</h2>
+        <p>
+          The information on this website is provided for general
+          informational purposes. We make reasonable efforts to
+          maintain accurate information but do not guarantee that
+          all content is complete, current, or error-free.
+        </p>
+
+        <h2>3. Products and Services</h2>
+        <p>
+          Product information, specifications, availability, and
+          intended uses may vary by market and may change without
+          prior notice. Not all products described on this website
+          are available in every country.
+        </p>
+
+        <h2>4. Medical and Regulatory Information</h2>
+        <p>
+          Website content is not a substitute for professional
+          medical advice, diagnosis, or treatment. Products must
+          be used in accordance with their applicable instructions,
+          labeling, and regulatory requirements.
+        </p>
+
+        <h2>5. Intellectual Property</h2>
+        <p>
+          Unless otherwise stated, the text, images, logos, graphics,
+          and other content on this website belong to Alera Medtech
+          or their respective rights holders. Reproduction or
+          distribution without permission is prohibited where
+          applicable law requires authorization.
+        </p>
+
+        <h2>6. Third-Party Links</h2>
+        <p>
+          This website may contain links to external websites for
+          convenience. Alera Medtech does not control and is not
+          responsible for the content or practices of those websites.
+        </p>
+
+        <h2>7. Disclaimer</h2>
+        <p>
+          To the extent permitted by applicable law, Alera Medtech
+          disclaims warranties regarding the availability, accuracy,
+          and completeness of website content. Use of the website
+          is at your own discretion and risk.
+        </p>
+
+        <h2>8. Limitation of Liability</h2>
+        <p>
+          To the extent permitted by applicable law, Alera Medtech
+          shall not be liable for losses or damages arising from
+          your use of, or inability to use, this website or reliance
+          on its content.
+        </p>
+
+        <h2>9. Changes to These Terms</h2>
+        <p>
+          We may revise these Terms of Use from time to time.
+          Updated terms will be published on this page.
+        </p>
+
+        <h2>10. Contact Us</h2>
+        <p>
+          For questions about these terms, contact
+          <a href="mailto:info@aleramedtech.com">
+            info@aleramedtech.com
+          </a>.
+        </p>
+        <p>
+          For regulatory inquiries, email
+          <a href="mailto:regaffairs@aleramedtech.com">
+            regaffairs@aleramedtech.com
+          </a>.
+        </p>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+    <div class="wrap">
+        <div class="fgrid">
+            <div>
+                <!-- LOGO: replace this src with your original base64 logo (data:image/png;base64,...) -->
+                <img class="mark fmark" src="assets/logo.png" alt="Alera Medtech">
+                <p style="max-width:38ch;font-size:.84rem">Alera Medtech designs neurology and vascular access
+                    devices around the way they are actually used, with attention to materials, safety features and
+                    ergonomics.</p>
+            </div>
+            <div>
+                <h4>Products</h4>
+                <p><a href="#" onclick="go('products');return false">Sureset Foley</a><br>
+                    <a href="#" onclick="go('products');return false">Sureset Dialysis</a><br>
+                    <a href="#" onclick="go('products');return false">Sureset Loop</a>
+                </p>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <p><a href="#" onclick="go('about');return false">About</a><br>
+                    <a href="#" onclick="go('team');return false">Team</a><br>
+                    <a href="#" onclick="go('contact');return false">Contact</a>
+                </p>
+            </div>
+            <div>
+                <h4>Compliance</h4>
+                <p><a href="#" onclick="go('reg');return false">Regulatory</a><br>
+                    <a href="#" onclick="go('ifu');return false">Labeling and IFU</a><br>
+                    <a href="#" onclick="go('privacy');return false">Privacy notice</a><br>
+                    <a href="#" onclick="go('terms');return false">Terms of use</a>
+                </p>
+            </div>
+        </div>
+            <div class="legal">
+      <div class="fgrid">
+        <div>
+          &copy; 2026 Alera Medtech LLC. All rights reserved.
+        </div>
+        <div>
+          <strong>Alera MedTech LLC</strong><br>
+          103 Fox Road, Suite 611<br>
+          Waltham, MA 02451, USA
+        </div>
+        <div>
+          <strong>Alera MedTech Pvt Ltd — Registered Office</strong><br>
+          25C Hardware Park, Sy. No. 1/1 Raviryal,<br>
+          Hyderabad, Telangana 500005
+        </div>
+        <div>
+          <strong>Alera MedTech Pvt Ltd — Manufacturing Address</strong><br>
+          Office No. 302, The Capital Bldg, B 5/1A,<br>
+          Baner Pashan Link Road, Pune - 411045
+        </div>
+      </div>
+
+      <p style="margin-top:22px">
+        DPN is a prescription device. Federal law restricts this device
+        to sale by or on the order of a licensed healthcare practitioner.
+      </p>
+      <p>
+        Product availability differs by market. For regulatory enquiries,
+        contact <a href="mailto:regaffairs@aleramedtech.com">regaffairs@aleramedtech.com</a>.
+      </p>
+    </div>
+  </div>
+</footer>
+<script>
+    function go(p) {
+        document.querySelectorAll('.page').forEach(function (e) { e.classList.remove('on') });
+        document.getElementById('p-' + p).classList.add('on');
+        document.querySelectorAll('#nav button').forEach(function (b) {
+            if (b.dataset.p === p) { b.setAttribute('aria-current', 'page') } else { b.removeAttribute('aria-current') }
+        });
+        window.scrollTo(0, 0);
+        document.getElementById('nav').classList.remove('open');
+        document.getElementById('menuBtn').setAttribute('aria-expanded', 'false');
+    }
+    document.querySelector('#nav button').setAttribute('aria-current', 'page');
+    document.getElementById('menuBtn').addEventListener('click', function () {
+        var o = document.getElementById('nav').classList.toggle('open');
+        this.setAttribute('aria-expanded', o ? 'true' : 'false');
+    });
+</script>
+</body>
+</html>
