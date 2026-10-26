@@ -6,9 +6,11 @@
 <meta name="description"
     content="Alera Medtech redesigns everyday medical devices for neurology and vascular access, including DPNCheck nerve conduction testing, Cernode electrodes and SureSet.">
 <title>Alera Medtech | Neurology and vascular access devices</title>
+
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800;900&family=Red+Hat+Mono:wght@500;600&family=Red+Hat+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
     :root {
         --blue: #0B5FFF;
@@ -20,228 +22,393 @@
         --rule: #E2E9F0;
         --tint: #E8F0FF;
         --teal: #0FA3A3;
-        --tealtint: #E3F6F6;
-        --grid: linear-gradient(rgba(11,95,255,.065) 1px, transparent 1px) 0 0 / 24px 24px, linear-gradient(90deg, rgba(11,95,255,.065) 1px, transparent 1px) 0 0 / 24px 24px;
-        --ecg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='60' viewBox='0 0 240 60'%3E%3Cpath d='M0 30H80L90 30L100 10L112 52L122 4L132 30H240' fill='none' stroke='%230FA3A3' stroke-opacity='.6' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E");
-        --disp: "Red Hat Display", "Red Hat Text", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-        --text: "Red Hat Text", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-        --mono: "Red Hat Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        --radius: 14px;
+        --shadow: 0 1px 2px rgba(11,31,58,.04), 0 8px 24px rgba(11,31,58,.06);
+        --disp: "Source Serif 4", Georgia, "Times New Roman", serif;
+        --text: "Source Sans 3", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+        --mono: "Source Sans 3", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
     }
+ 
     * { box-sizing: border-box; margin: 0; padding: 0 }
     html { scroll-behavior: smooth }
-    body { font-family: var(--text); color: var(--body); background: var(--paper); font-size: 16.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden }
-    img { max-width: 100% }
-    h1, h2, h3, h4 { font-family: var(--disp); color: var(--ink); font-weight: 800; letter-spacing: -.03em; line-height: 1.08 }
-    h1 { font-size: clamp(2.3rem, 6vw, 4.6rem); font-weight: 900 }
-    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem) }
-    h3 { font-size: 1.1rem; line-height: 1.25; letter-spacing: -.01em; font-weight: 700 }
-    h4 { font-size: .98rem; font-weight: 700 }
+ 
+    body {
+        font-family: var(--text);
+        color: var(--body);
+        background: var(--paper);
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased
+    }
+ 
+    h1, h2, h3, h4 {
+        font-family: var(--disp);
+        color: var(--ink);
+        font-weight: 700;
+        letter-spacing: -.015em;
+        line-height: 1.15
+    }
+    h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem) }
+    h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); letter-spacing: -.012em }
+    h3 { font-size: 1.2rem; letter-spacing: -.005em; line-height: 1.3; font-weight: 600 }
+    h4 { font-size: .98rem; letter-spacing: 0; font-weight: 600 }
+ 
     a { color: var(--blue); text-decoration: none }
-    a:hover { text-decoration: underline; text-underline-offset: 3px }
-    :focus-visible { outline: 3px solid var(--teal); outline-offset: 2px }
-
-    .wrap { margin: 0 auto; padding: 0 clamp(16px, 4vw, 56px); max-width: 1240px; width: 100% }
-    .eyebrow { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); font-weight: 600; display: inline-flex; align-items: center; gap: 8px }
-    .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--teal); flex: 0 0 auto }
-    .eyebrow.mute { color: #66788E }
-    .eyebrow.mute::before { background: #B8C6D6 }
-    .lede { font-size: 1.06rem; max-width: 78ch }
-    .small { font-size: .94rem; line-height: 1.55 }
-
-    /* tighten inline spacing from the markup */
-    h2[style] { margin: 20px 0 8px !important }
-    .eyebrow + h2[style] { margin: 8px 0 10px !important }
-    .wrap > h2:first-child[style] { margin-top: 0 !important }
-    h3[style] { margin: 6px 0 4px !important }
-    h4[style] { margin: 18px 0 8px !important }
-    p[style], .lede[style] { margin-top: 10px !important; margin-bottom: 0 !important }
-    p.small[style] { margin-bottom: 0 !important }
-
-    /* HEADER: top strip + folder-tab navigation */
-    header { position: sticky; top: 0; z-index: 60; background: var(--paper); border-top: 4px solid var(--blue); border-image: linear-gradient(90deg, var(--blue), var(--teal)) 1; border-bottom: 1px solid var(--ink) }
-    header .wrap.bar { display: flex; align-items: flex-end; gap: 24px; height: auto; padding-top: 12px; padding-bottom: 0; position: relative }
-    .mark { height: 28px; width: auto; display: block; margin-bottom: 12px }
-    nav { display: flex; gap: 2px; margin-left: auto; align-items: flex-end }
-    nav button { font: inherit; font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--body); background: var(--mist); border: 1px solid var(--rule); border-bottom: 0; padding: 10px 13px 9px; cursor: pointer; border-radius: 3px 3px 0 0; margin-bottom: -1px; transition: background .15s, color .15s }
-    nav button:hover { background: var(--tint); color: var(--ink) }
-    nav button[aria-current="page"] { background: var(--ink); color: #fff; border-color: var(--ink) }
-    .menu-btn { display: none; margin-left: auto; margin-bottom: 10px; background: var(--paper); border: 1px solid var(--ink); border-radius: 3px; width: 40px; height: 40px; cursor: pointer; color: var(--ink); align-items: center; justify-content: center }
-
+    a:hover { text-decoration: underline }
+    :focus-visible { outline: 2.5px solid var(--blue); outline-offset: 3px; border-radius: 6px }
+ 
+    .wrap { margin: 0 auto; padding: 0 clamp(20px, 6vw, 100px); max-width: 1440px }
+ 
+    .eyebrow {
+        font-family: var(--mono);
+        font-size: .82rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--teal);
+        font-weight: 600
+    }
+    .eyebrow.mute { color: #8A99AD }
+ 
+    .lede { font-size: 1.15rem; color: var(--body) }
+    .small { font-size: .95rem; line-height: 1.65 }
+ 
+    /* HEADER */
+    header {
+        position: sticky; top: 0; z-index: 40;
+        background: rgba(255,255,255,.88);
+        backdrop-filter: saturate(160%) blur(14px);
+        border-bottom: 1px solid var(--rule)
+    }
+    .bar { display: flex; align-items: center; gap: 34px; height: 64px }
+    .mark { height: 28px; width: auto; display: block }
+ 
+    nav { display: flex; gap: 2px; flex-wrap: wrap; margin-left: auto }
+    nav button {
+        font: inherit;
+        font-family: var(--text);
+        font-size: .92rem;
+        font-weight: 600;
+        color: var(--body);
+        background: none;
+        border: 0;
+        padding: 9px 14px;
+        cursor: pointer;
+        border-radius: 999px;
+        transition: background .2s, color .2s
+    }
+    nav button:hover { color: var(--ink); background: var(--mist) }
+    nav button[aria-current="page"] { color: var(--blue); background: var(--tint) }
+ 
     .page { display: none }
-    .page.on { display: block; animation: fade .3s ease }
+    .page.on { display: block; animation: fade .35s ease }
     @keyframes fade { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: none } }
-
-    section { padding: 40px 0 }
-    section.tight { padding: 28px 0 }
-    .mist { background: var(--grid), var(--mist); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule) }
-
-    /* HERO: graph paper + ECG trace */
-    .hero { padding: 40px 0 78px; background: var(--grid), var(--paper); border-bottom: 1px solid var(--rule) }
-    .hero h1 { margin: 12px 0 14px; max-width: 16ch }
-    .hero h1 em { font-style: normal; color: var(--blue); box-shadow: inset 0 -.16em 0 var(--tealtint) }
+ 
+    section { padding: 48px 0 }
+    section.tight { padding: 32px 0 }
+    .mist { background: var(--mist) }
+ 
+    .hero {
+        padding: 56px 0 40px;
+        background:
+            radial-gradient(900px 420px at 88% -10%, rgba(15,163,163,.14), transparent 60%),
+            radial-gradient(800px 420px at 0% 0%, rgba(11,95,255,.10), transparent 60%),
+            var(--paper)
+    }
+    .hero h1 { margin: 16px 0 22px; max-width: 16ch }
+    .hero h1 em { font-style: normal; color: var(--blue) }
     .hero .lede { max-width: 70ch }
-    .hero .btn { margin-top: 0 }
-
-    .statrow { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 26px; border-top: 3px solid var(--ink) }
-    .statrow > div { padding: 14px 18px 4px 0; margin-right: 18px; border-right: 1px dashed #B8C6D6 }
-    .statrow > div:last-child { border-right: 0; margin-right: 0 }
-    .stat { font-family: var(--disp); font-size: 2.3rem; font-weight: 900; color: var(--blue); letter-spacing: -.04em; line-height: 1 }
-    .statlab { font-size: .9rem; margin-top: 6px; line-height: 1.4; color: var(--ink) }
-    .cite { font-family: var(--mono); font-size: .6rem; font-weight: 600; vertical-align: super; color: #fff; background: var(--ink); border-radius: 2px; padding: 1px 5px; margin-left: 3px; cursor: pointer }
-    .cite:hover { background: var(--blue) }
-
-    .regstrip { display: flex; flex-wrap: wrap; gap: 6px 0; margin-top: 14px; padding: 8px 0; border-top: 1px dashed #9FB0C3; border-bottom: 1px dashed #9FB0C3; font-family: var(--mono); font-size: .74rem }
-    .regstrip div { padding: 0 16px 0 0; margin-right: 16px; border-right: 1px dotted #9FB0C3; color: var(--ink) }
-    .regstrip div:last-child { border-right: 0; margin-right: 0; padding-right: 0 }
-    .regstrip b { font-weight: 600; display: block; font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: #7B8CA0; margin-bottom: 1px }
+ 
+    .statrow {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 12px;
+        margin-top: 32px
+    }
+    .statrow > div {
+        background: var(--paper);
+        padding: 18px 20px;
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow)
+    }
+    .stat {
+        font-family: var(--disp);
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: var(--ink);
+        letter-spacing: -.02em;
+        line-height: 1;
+        font-variant-numeric: lining-nums tabular-nums
+    }
+    .statlab { font-size: .92rem; margin-top: 10px; line-height: 1.5 }
+ 
+    .cite {
+        font-family: var(--mono);
+        font-size: .68rem;
+        font-weight: 600;
+        vertical-align: super;
+        color: var(--blue);
+        background: var(--tint);
+        border-radius: 4px;
+        padding: 1px 5px;
+        margin-left: 3px;
+        cursor: pointer
+    }
+    .cite:hover { background: var(--blue); color: #fff }
+ 
+    .regstrip {
+        display: flex; flex-wrap: wrap;
+        border: 1px solid var(--rule);
+        border-radius: 12px;
+        background: var(--mist);
+        margin-top: 14px;
+        font-family: var(--mono);
+        font-size: .82rem;
+        letter-spacing: 0
+    }
+    .regstrip div { padding: 10px 15px; border-right: 1px solid var(--rule); color: #5B6B80 }
+    .regstrip div:last-child { border-right: 0 }
+    .regstrip b {
+        font-weight: 600; display: block; font-size: .7rem;
+        letter-spacing: .08em; text-transform: uppercase;
+        color: #8A99AD; margin-bottom: 2px
+    }
     .rx { color: #C0322B !important; font-weight: 600 }
-
+ 
     .grid { display: grid; gap: 14px }
     .g2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr)) }
-    .g3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)) }
-    .grid > article { position: relative; background: var(--paper); padding: 24px 22px 20px; border: 1px solid #C9D6E2; border-radius: 2px; transition: box-shadow .2s, border-color .2s }
-    .grid > article::before, .grid > article::after { content: ""; position: absolute; width: 14px; height: 14px; border: 0 solid var(--blue); transition: all .2s }
-    .grid > article::before { left: -1px; top: -1px; border-top-width: 3px; border-left-width: 3px }
-    .grid > article::after { right: -1px; bottom: -1px; border-bottom-width: 3px; border-right-width: 3px }
-    .grid > article:hover { border-color: var(--ink); box-shadow: 5px 5px 0 var(--tint) }
-    .grid > article:hover::before, .grid > article:hover::after { width: 26px; height: 26px; border-color: var(--teal) }
-
-    /* PRODUCT CARDS: label tab on top edge */
-    .prod { position: relative; background: var(--paper); border: 1px solid var(--ink); border-radius: 2px; padding: 28px 26px 22px; margin: 22px 0 14px; box-shadow: 6px 6px 0 var(--tint) }
-    .prod[style] { border-left: 1px solid var(--ink) !important; box-shadow: 6px 6px 0 var(--tealtint) }
-    .prod > .eyebrow, .prod .catheter-product-content-v2 > .eyebrow { position: absolute; top: -12px; left: 20px; background: var(--ink); color: #fff; padding: 3px 12px; border-radius: 2px; margin: 0 !important; z-index: 1 }
-    .prod .eyebrow::before { display: none }
-    .prod > .eyebrow[style] { background: var(--teal); color: #fff !important }
-    .prod h3 { margin-bottom: 8px; font-size: 1.3rem; font-weight: 800 }
-    .mist .prod { background: var(--paper) }
-
+    .g3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 268px), 1fr)) }
+    .grid > article {
+        background: var(--paper);
+        padding: 22px 22px;
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition: transform .2s, box-shadow .2s
+    }
+    .grid > article:hover { transform: translateY(-2px); box-shadow: 0 2px 4px rgba(11,31,58,.05), 0 14px 32px rgba(11,31,58,.10) }
+ 
+    .prod {
+        background: var(--paper);
+        border: 1px solid var(--rule);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        padding: 24px 26px;
+        margin-bottom: 14px
+    }
+    .prod .eyebrow { display: block; margin-bottom: 12px }
+    .prod h3 { margin-bottom: 12px; font-size: 1.35rem }
+ 
     ul.feat { list-style: none; margin: 12px 0 0 }
-    ul.feat li { padding-left: 24px; position: relative; margin-bottom: 5px; font-size: .97rem }
-    ul.feat li::before { content: ""; position: absolute; left: 0; top: .5em; width: 10px; height: 10px; border: 2px solid var(--blue); border-radius: 1px; transform: rotate(45deg) scale(.8) }
-    ul.feat li::after { content: ""; position: absolute; left: 4px; top: calc(.5em + 4px); width: 2px; height: 2px; background: var(--teal) }
-
-    .cta { background:  linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px) 0 0 / 24px 24px, linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px) 0 0 / 24px 24px, var(--ink); color: #C7D5E8; padding: 40px 0 72px }
-    .cta h2 { color: #fff; max-width: 22ch }
-    .cta .eyebrow { color: #7EF0E6 }
-    .btn { display: inline-block; background: var(--blue); color: #fff; padding: 12px 24px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; font-size: .8rem; margin-top: 16px; border-radius: 2px; box-shadow: 4px 4px 0 var(--ink); transition: transform .12s, box-shadow .12s }
-    .btn:hover { text-decoration: none; transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink) }
-    .hero .btn { box-shadow: 4px 4px 0 var(--teal) }
-    .hero .btn:hover { box-shadow: 2px 2px 0 var(--teal) }
-    .cta .btn { background: #fff; color: var(--ink); box-shadow: 4px 4px 0 var(--teal) }
-    .cta .btn:hover { box-shadow: 2px 2px 0 var(--teal) }
-
-    table { width: 100%; border-collapse: collapse; font-size: .93rem; background: #fff; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink) }
-    th { text-align: left; font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); padding: 10px 12px; border-bottom: 1px solid var(--ink); font-weight: 600 }
-    td { padding: 11px 12px; border-bottom: 1px dotted #9FB0C3; vertical-align: top }
+    ul.feat li { padding-left: 24px; position: relative; margin-bottom: 6px; font-size: 1rem }
+    ul.feat li::before {
+        content: ""; position: absolute; left: 0; top: .5em;
+        width: 12px; height: 12px; border-radius: 50%;
+        background: var(--tint);
+        border: 3px solid var(--teal)
+    }
+ 
+    .cta {
+        background: linear-gradient(135deg, #0B1F3A 0%, #0D3B66 100%);
+        color: #C9D6E8;
+        padding: 48px 0
+    }
+    .cta h2 { color: #fff; max-width: 20ch }
+    .cta .eyebrow { color: #5EE0DC }
+ 
+    .btn {
+        display: inline-block;
+        background: var(--blue);
+        color: #fff;
+        padding: 14px 28px;
+        font-family: var(--text);
+        font-weight: 700;
+        font-size: 1rem;
+        margin-top: 24px;
+        border-radius: 999px;
+        box-shadow: 0 6px 18px rgba(11,95,255,.28);
+        transition: background .2s, transform .2s
+    }
+    .btn:hover { background: var(--blue-dk); text-decoration: none; transform: translateY(-1px) }
+ 
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: .95rem;
+        background: var(--paper);
+        border: 1px solid var(--rule);
+        border-radius: var(--radius);
+        overflow: hidden
+    }
+    th {
+        text-align: left;
+        font-family: var(--mono);
+        font-size: .76rem;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: #6B7C91;
+        background: var(--mist);
+        padding: 13px 14px;
+        border-bottom: 1px solid var(--rule);
+        font-weight: 600
+    }
+    td { padding: 15px 14px; border-bottom: 1px solid var(--rule); vertical-align: top }
     tr:last-child td { border-bottom: 0 }
-    td.num { font-family: var(--mono); font-size: .78rem; color: var(--ink); white-space: nowrap }
-
-    .refs li { margin-bottom: 8px; padding-left: 38px; position: relative; list-style: none; font-size: .91rem; line-height: 1.5 }
-    .refs li span.n { position: absolute; left: 0; top: 1px; font-family: var(--mono); font-size: .68rem; color: var(--blue); font-weight: 600; border: 1px solid var(--blue); border-radius: 2px; padding: 0 5px; line-height: 1.6; min-width: 26px; text-align: center; background: #fff }
-
-    .note { background: var(--tint); border: 1px dashed var(--blue); border-radius: 2px; padding: 14px 18px; font-size: .96rem; margin-top: 14px }
+    td.num { font-family: var(--mono); font-size: .88rem; color: #5B6B80; white-space: nowrap; font-variant-numeric: tabular-nums }
+ 
+    .refs li {
+        margin-bottom: 12px; padding-left: 38px; position: relative;
+        list-style: none; font-size: .95rem; line-height: 1.65
+    }
+    .refs li span.n {
+        position: absolute; left: 0; top: 1px;
+        font-family: var(--mono); font-size: .8rem; color: var(--blue); font-weight: 600;
+        background: var(--tint); border-radius: 6px; padding: 0 6px; line-height: 1.7
+    }
+ 
+    .note {
+        background: var(--tint);
+        border-left: 4px solid var(--blue);
+        border-radius: 0 12px 12px 0;
+        padding: 14px 18px;
+        font-size: .98rem;
+        margin-top: 14px
+    }
     .note b { color: var(--ink) }
-
+ 
     /* FOOTER */
-    footer { background: var(--grid), var(--mist); border-top: 4px solid var(--ink); color: var(--body); padding: 34px 0 20px; font-size: .92rem }
-    footer h4 { color: var(--ink); font-size: .68rem; font-family: var(--mono); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; font-weight: 600 }
-    footer a { color: var(--blue) }
-    footer p { line-height: 1.75 }
-    .fgrid { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 24px }
-    .fmark { height: 24px; margin: 0 0 10px }
-    .legal { border-top: 1px dashed #9FB0C3; margin-top: 24px; padding-top: 16px; font-size: .82rem; line-height: 1.6; color: #55677C }
-    .legal p { margin-top: 10px }
-    .legal strong { color: var(--ink) }
-
+    footer { background: #0B1F3A; color: #8FA0B8; padding: 40px 0 24px; font-size: .92rem }
+    footer h4 {
+        color: #fff; font-size: .78rem; font-family: var(--mono);
+        letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; font-weight: 600
+    }
+    footer a { color: #BCCADF }
+    .fgrid { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 28px }
+    .fmark { height: 24px; filter: brightness(0) invert(1); opacity: .92; margin-bottom: 16px }
+    .legal {
+        border-top: 1px solid #20395A; margin-top: 26px; padding-top: 18px;
+        font-size: .85rem; line-height: 1.7; color: #7A8BA3
+    }
+ 
     /* FORM */
     form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 640px }
-    label { display: block; font-family: var(--mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; color: var(--ink); margin-bottom: 4px }
-    .consent label { font-family: var(--text); text-transform: none; letter-spacing: 0; font-size: .89rem }
-    input, select, textarea { width: 100%; font: inherit; font-size: .96rem; padding: 10px 12px; border: 1px solid var(--ink); border-radius: 2px; background: #fff; color: var(--ink); transition: box-shadow .15s }
-    input:focus, select:focus, textarea:focus { outline: none; box-shadow: 4px 4px 0 var(--tint); border-color: var(--blue) }
+    label { display: block; font-size: .88rem; font-weight: 600; color: var(--ink); margin-bottom: 6px }
+    input, select, textarea {
+        width: 100%; font: inherit; font-size: 1rem;
+        padding: 12px 14px;
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+        background: #fff; color: var(--ink);
+        transition: border-color .2s, box-shadow .2s
+    }
+    input:focus, select:focus, textarea:focus {
+        outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(11,95,255,.12)
+    }
     .full { grid-column: 1/-1 }
-    .consent { display: flex; gap: 10px; align-items: flex-start; font-size: .89rem; line-height: 1.5 }
+    .consent { display: flex; gap: 11px; align-items: flex-start; font-size: .92rem; line-height: 1.55 }
     .consent input { width: 17px; height: 17px; margin-top: 3px; flex: 0 0 auto }
-    form .btn { margin-top: 0; border: 0 }
-
-    .team-image { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 2px; margin: 8px 0 12px; border-bottom: 4px solid var(--teal) }
-    .brk { padding: 0 }
-
-    /* Catheter layout */
-    .catheter-product-layout-v2 { display: grid; grid-template-columns: 1.4fr .6fr; gap: 24px; align-items: center }
+ 
+    .team-image {
+        display: block; width: 100%; aspect-ratio: 4 / 4;
+        object-fit: cover; border-radius: 12px; margin-bottom: 12px
+    }
+    .brk { padding: 4px }
+ 
+    /* Catheter product layout */
+    .catheter-product-layout-v2 { display: grid; grid-template-columns: 1.3fr .7fr; gap: 24px; align-items: center }
     .catheter-product-content-v2 { min-width: 0 }
-    .catheter-product-image-v2 { width: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center; background: var(--grid), var(--mist); border: 1px solid #C9D6E2; border-radius: 2px; padding: 14px; overflow: hidden }
-    .catheter-product-image-v2 img { display: block; width: 100%; max-width: 300px; height: 210px; object-fit: contain }
-    .catheter-product-layout-v2 .regstrip { margin-top: 12px }
-
-    /* Contact */
+    .catheter-product-image-v2 {
+        width: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center;
+        background: var(--mist); border: 1px solid var(--rule); border-radius: 14px;
+        padding: 14px 0; overflow: hidden
+    }
+    .catheter-product-image-v2 img { display: block; width: 100%; max-width: 340px; height: 210px; object-fit: contain }
+    .catheter-product-layout-v2 .regstrip { margin-top: 14px }
+ 
+    @media (max-width: 768px) {
+        .catheter-product-layout-v2 { grid-template-columns: 1fr; gap: 20px }
+        .catheter-product-image-v2 { grid-row: 1; min-height: 220px; padding: 18px }
+        .catheter-product-image-v2 img { height: 220px }
+    }
+ 
+    /* Contact section */
     .alera-contact-row { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 28px; align-items: start }
     .alera-contact-left, .alera-contact-right { min-width: 0 }
     .alera-contact-left form { max-width: 100%; width: 100% }
-    .alera-contact-right { padding: 22px; background: #fff; border: 1px solid var(--ink); border-radius: 2px; box-shadow: 6px 6px 0 var(--tint) }
-    .alera-email-card { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px dashed #9FB0C3; text-decoration: none }
+    .alera-contact-right {
+        padding: 22px; background: #fff; border: 1px solid var(--rule);
+        border-radius: 18px; box-shadow: var(--shadow)
+    }
+    .alera-email-card { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); text-decoration: none }
     .alera-email-card:hover { text-decoration: none }
-    .alera-email-icon { display: flex; flex: 0 0 44px; width: 44px; height: 44px; align-items: center; justify-content: center; color: #fff; background: var(--blue); border-radius: 2px }
-    .alera-email-content { display: flex; flex-direction: column; gap: 3px; min-width: 0 }
-    .alera-email-content strong { color: var(--ink); font-size: 14px; font-family: var(--disp); font-weight: 700 }
-    .alera-email-content > span:not(.alera-email-address) { color: var(--body); font-size: 14px; line-height: 1.4 }
-    .alera-email-address { color: var(--blue); font-family: var(--mono); font-size: 12px; font-weight: 600; overflow-wrap: anywhere }
-    .alera-contact-note { margin-top: 16px; padding: 14px; background: var(--mist); border: 1px dashed #9FB0C3; border-radius: 2px }
-    .alera-contact-note strong { color: var(--ink); font-size: 14px; font-family: var(--disp); font-weight: 700 }
-
-    /* POLICY */
-    .policy-page-v2 { padding: 32px 0 44px; background: var(--paper) }
-    .policy-wrap-v2 { width: min(820px, calc(100% - 32px)); margin: 0 auto }
-    .policy-heading-v2 { margin-bottom: 18px; padding-bottom: 14px; border-bottom: 3px solid var(--ink) }
-    .policy-heading-v2 h1 { margin: 0 0 6px; font-size: clamp(28px, 4vw, 42px) }
-    .policy-heading-v2 p { margin: 0; color: var(--body); font-size: 14px; font-family: var(--mono) }
-    .policy-content-v2 h2 { margin: 20px 0 6px; font-size: 19px; line-height: 1.4 }
-    .policy-content-v2 p, .policy-content-v2 li { font-size: 15.5px; line-height: 1.7; color: var(--body) }
-    .policy-content-v2 p { margin: 0 0 10px }
-    .policy-content-v2 ul { padding-left: 22px; margin: 6px 0 12px }
-    .policy-content-v2 li { padding-left: 4px; margin-bottom: 4px }
-    .policy-content-v2 a { color: var(--blue); text-decoration: underline; overflow-wrap: anywhere }
-
-    /* RESPONSIVE */
-    @media (max-width: 1060px) {
-        header .wrap.bar { align-items: center; padding-top: 10px; padding-bottom: 10px }
-        .mark { margin-bottom: 0 }
-        .menu-btn { display: inline-flex; margin-bottom: 0 }
-        nav { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; align-items: stretch; gap: 0; background: #fff; border: 1px solid var(--ink); border-top: 0; padding: 4px clamp(16px, 4vw, 56px) 10px; margin: 0; box-shadow: 0 14px 28px rgba(11,31,58,.14) }
-        nav.open { display: flex }
-        nav button { text-align: left; border: 0; border-bottom: 1px dashed #B8C6D6; border-radius: 0; margin: 0; background: transparent; padding: 12px 4px; font-size: .78rem }
-        nav button[aria-current="page"] { background: var(--ink); padding-left: 12px }
+    .alera-email-icon {
+        display: flex; flex: 0 0 46px; width: 46px; height: 46px;
+        align-items: center; justify-content: center;
+        color: var(--blue); background: var(--tint); border-radius: 12px
     }
+    .alera-email-content { display: flex; flex-direction: column; gap: 6px; min-width: 0 }
+    .alera-email-content strong { color: var(--ink); font-size: 1rem; font-family: var(--disp) }
+    .alera-email-content > span:not(.alera-email-address) { color: var(--body); font-size: .92rem; line-height: 1.5 }
+    .alera-email-address { color: var(--blue); font-size: .92rem; font-weight: 600; overflow-wrap: anywhere }
+    .alera-contact-note { margin-top: 16px; padding: 14px; background: var(--mist); border-radius: 12px }
+    .alera-contact-note strong { color: var(--ink); font-size: 1rem; font-family: var(--disp) }
+ 
     @media (max-width: 900px) {
-        .alera-contact-row { grid-template-columns: minmax(0, 1fr); gap: 22px }
-        .fgrid { grid-template-columns: 1fr 1fr }
-    }
-    @media (max-width: 768px) {
-        body { font-size: 16px }
-        .catheter-product-layout-v2 { grid-template-columns: 1fr; gap: 14px }
-        .catheter-product-image-v2 { grid-row: 1; min-height: 170px }
-        .catheter-product-image-v2 img { height: 170px }
-        section { padding: 30px 0 }
-        section.tight { padding: 22px 0 }
-        .hero { padding: 28px 0 70px }
-        .cta { padding: 32px 0 66px }
-        .prod { padding: 26px 16px 20px }
-        .statrow { grid-template-columns: 1fr 1fr; row-gap: 8px }
-        .statrow > div:nth-child(2n) { border-right: 0; margin-right: 0 }
-        table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch }
-        form { grid-template-columns: 1fr }
+        .alera-contact-row { grid-template-columns: minmax(0, 1fr); gap: 32px }
     }
     @media (max-width: 480px) {
-        .fgrid { grid-template-columns: 1fr; gap: 18px }
-        .stat { font-size: 1.7rem }
-        .regstrip div { margin-right: 12px; padding-right: 12px }
-        .alera-contact-right { padding: 16px }
+        .alera-contact-right { padding: 18px }
+        .alera-email-card { gap: 10px }
         .alera-email-icon { flex-basis: 40px; width: 40px; height: 40px }
     }
+ 
+    @media (max-width: 760px) {
+        .fgrid { grid-template-columns: 1fr 1fr }
+        form { grid-template-columns: 1fr }
+        .bar { height: auto; padding: 12px 0; flex-wrap: wrap; gap: 12px }
+        nav { margin-left: 0; width: 100% }
+        section { padding: 36px 0 }
+        .hero { padding: 40px 0 32px }
+        .prod { padding: 20px 16px }
+        table { display: block; overflow-x: auto }
+    }
+ 
+    /* PRIVACY POLICY & TERMS */
+    .policy-page-v2 { padding: 40px 0 48px; background: var(--paper); min-height: 60vh }
+    .policy-wrap-v2 { width: min(860px, calc(100% - 40px)); margin: 0 auto }
+    .policy-heading-v2 { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--rule) }
+    .policy-heading-v2 h1 { margin: 0 0 8px; font-size: clamp(30px, 4vw, 44px); line-height: 1.15 }
+    .policy-heading-v2 p { margin: 0; color: var(--body); font-size: 14px }
+    .policy-content-v2 h2 { margin: 22px 0 8px; font-size: 20px; line-height: 1.4; font-weight: 700 }
+    .policy-content-v2 p, .policy-content-v2 li { font-size: 16px; line-height: 1.85; color: var(--body) }
+    .policy-content-v2 p { margin: 0 0 10px }
+    .policy-content-v2 ul { padding-left: 22px; margin: 6px 0 12px }
+    .policy-content-v2 li { padding-left: 4px; margin-bottom: 6px }
+    .policy-content-v2 a { color: var(--blue); text-decoration: underline; overflow-wrap: anywhere }
+    @media (max-width: 600px) {
+        .policy-page-v2 { padding: 40px 0 56px }
+        .policy-wrap-v2 { width: calc(100% - 32px) }
+        .policy-content-v2 h2 { font-size: 18px }
+        .policy-content-v2 p, .policy-content-v2 li { font-size: 15px }
+    }
+ 
     @media (prefers-reduced-motion: reduce) {
         * { animation: none !important; transition: none !important }
         html { scroll-behavior: auto }
     }
+ 
+    /* spacing overrides for inline margins in the markup */
+    h2[style] { margin: 28px 0 10px !important }
+    .eyebrow + h2[style] { margin: 8px 0 12px !important }
+    .wrap > h2:first-child[style] { margin-top: 0 !important }
+    h3[style] { margin: 6px 0 4px !important }
+    h4[style] { margin: 20px 0 10px !important }
+    p[style] { margin-top: 10px !important; margin-bottom: 0 !important }
+    p.small[style] { margin-bottom: 12px !important }
+    .lede[style] { margin-bottom: 14px !important }
+    .grid[style] { margin-top: 20px !important }
+    .grid p.small[style] { margin-bottom: 0 !important }
 </style>
 </head>
 <body>
@@ -251,7 +418,6 @@
         <a href="#" onclick="go('home');return false" aria-label="Alera Medtech, home">
             <!-- LOGO: replace this src with your original base64 logo (data:image/png;base64,...) -->
             <img class="mark" src="assets/logo.png" alt="Alera Medtech"></a>
-        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
         <nav id="nav">
             <button onclick="go('home')" data-p="home">Home</button>
             <button onclick="go('products')" data-p="products">Products</button>
@@ -396,6 +562,14 @@
 </a><sup style="font-size:.55em">&reg;</sup></h3>
                 <p class="small">Handheld quantitative nerve conduction test for the sural nerve. Measures sensory
                     nerve conduction velocity and sensory nerve action potential amplitude at the point of care.</p>
+
+                    <p style="margin-top: 16px;">
+  <a href="https://dpncheck.com/"
+     target="_blank"
+     rel="noopener noreferrer">
+    Visit DPNCheck Website &rarr;
+  </a>
+</p>
                 <ul class="feat">
                     <li>Objective, quantitative sural nerve measurement in the room</li>
                     <li>Normal limits configured at the site. An age and height adjusted limit set is the default</li>
@@ -1484,14 +1658,8 @@
             if (b.dataset.p === p) { b.setAttribute('aria-current', 'page') } else { b.removeAttribute('aria-current') }
         });
         window.scrollTo(0, 0);
-        document.getElementById('nav').classList.remove('open');
-        document.getElementById('menuBtn').setAttribute('aria-expanded', 'false');
     }
     document.querySelector('#nav button').setAttribute('aria-current', 'page');
-    document.getElementById('menuBtn').addEventListener('click', function () {
-        var o = document.getElementById('nav').classList.toggle('open');
-        this.setAttribute('aria-expanded', o ? 'true' : 'false');
-    });
 </script>
 </body>
 </html>
