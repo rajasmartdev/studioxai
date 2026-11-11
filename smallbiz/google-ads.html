@@ -33,7 +33,7 @@ section{padding:72px 0}
 .phone{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;line-height:1.15}
 .phone small{display:block;font-size:.7rem;color:var(--muted)}
 .phone b{font-family:var(--fd);font-weight:600}
-.phone i{color:var(--brand);font-style:normal;font-size:1.3rem}
+.phone i{color:var(--brand);font-style:normal;font-size:2.3rem}
 /* hero */
 .hero{background:linear-gradient(135deg,#FFF0EB 0%,#FFF7F4 55%,#fff 100%);padding:64px 0 72px}
 .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:.85rem;font-weight:500;color:var(--ink);margin-bottom:22px}
@@ -59,6 +59,9 @@ section{padding:72px 0}
 .form-msg{display:none;color:#b42318;font-size:.85rem;text-align:center}
 /* proof bar */
 .proof{padding:34px 0 28px;background:#fff;border-bottom:1px solid var(--line)}
+.proof-row{display:flex;width:100%;justify-content:space-between;text-align:center}
+.stat{flex:1}
+.stat+.stat{border-left:1px solid var(--line)}
 .stat b{display:block;font-family:var(--fd);font-size:2.2rem;line-height:1}
 .stat span{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
 .logos img{height:28px;filter:grayscale(1);opacity:.7}
@@ -111,6 +114,12 @@ footer a:hover{color:var(--brand)}
  .mbar .btn{padding:12px 10px;font-size:.95rem;box-shadow:none}
  body{padding-bottom:78px}}
 @media(max-width:767px){section{padding:44px 0}.hero{padding:40px 0 48px}.form-card{padding:24px}.hero h1{font-size:2.4rem}.sec-title{font-size:1.9rem}.logos img{height:22px}}
+/* exact icons */
+.icon-sq{box-shadow:0 10px 24px rgba(255,107,53,.28)}
+.icon-sq svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.checks li::before,.svc-list li::before{content:"";border:0;border-radius:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E") center/contain no-repeat;width:22px;height:22px;top:2px;left:0}
+.svc-list li{padding-left:32px}.checks li{padding-left:32px}
+.cta .checks li::before{filter:brightness(0) invert(1)}
 </style>
 </head>
 <body>
@@ -118,7 +127,7 @@ footer a:hover{color:var(--brand)}
 <!-- 1. HEADER (sticky) -->
 <header class="site-header py-2">
   <div class="container d-flex align-items-center justify-content-between gap-3">
-    <a href="#" class="text-decoration-none"><img src="assets/logo.webp" alt="Small Biz Enter" height="52"></a>
+    <a href="google-ads.html" class="text-decoration-none"><img src="assets/logo.webp" alt="Small Biz Enter" height="52"></a>
     <nav class="d-none d-xl-flex align-items-center gap-4">
       <a class="nav-link" href="#included">Services</a>
       <a class="nav-link" href="#how">How it works</a>
@@ -188,9 +197,8 @@ footer a:hover{color:var(--brand)}
 
 <!-- 3. PROOF BAR -->
 <section class="proof">
-  <div class="container position-relative d-flex flex-wrap align-items-center justify-content-between gap-4">
-    
-    <div class="d-flex gap-4">
+  <div class="container">
+    <div class="proof-row">
       <div class="stat"><b>15+</b><span>Years experience</span></div>
       <div class="stat"><b>800+</b><span>Businesses served</span></div>
       <div class="stat"><b>$2M+</b><span>Revenue generated</span></div>
@@ -207,10 +215,10 @@ footer a:hover{color:var(--brand)}
       <p class="sec-sub">When ads bring the wrong calls, it’s hard to know what to change.</p>
     </div>
     <div class="row g-3">
-      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq">⊗</span><h3>Calls for the wrong jobs</h3><p>Enquiries about work you don’t do or don’t want to take on.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq">☺</span><h3>Clicks from the wrong people</h3><p>Spend going to job seekers, students and DIYers, not customers.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq">⌖</span><h3>Suburbs you don’t service</h3><p>Budget spread beyond the areas you can actually get to.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq">◉</span><h3>No idea which ads work</h3><p>Calls and forms come in, but you can’t tell what drove them.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg></span><h3>Calls for the wrong jobs</h3><p>Enquiries about work you don’t do or don’t want to take on.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><h3>Clicks from the wrong people</h3><p>Spend going to job seekers, students and DIYers, not customers.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg></span><h3>Suburbs you don’t service</h3><p>Budget spread beyond the areas you can actually get to.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg></span><h3>No idea which ads work</h3><p>Calls and forms come in, but you can’t tell what drove them.</p></div></div>
     </div>
     <p class="text-center mt-4 mb-0"><a class="tlink" href="#enquire" data-event="cta_problems">Get a free review of your account →</a></p>
   </div>
@@ -225,11 +233,11 @@ footer a:hover{color:var(--brand)}
       <p class="sec-sub">A click isn’t the goal. A booked job is. Here’s how we set up and manage campaigns for trades.</p>
     </div>
     <div class="row g-4">
-      <div class="col-lg-4"><div class="card-x"><span class="icon-sq">⌖</span><h3>Local campaign structure</h3><p>Reach people searching for the work you want, in the areas you cover.</p>
+      <div class="col-lg-4"><div class="card-x"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span><h3>Local campaign structure</h3><p>Reach people searching for the work you want, in the areas you cover.</p>
         <ul class="svc-list"><li>Service and suburb campaign structure</li><li>Emergency vs planned-service intent</li><li>Location exclusions and service-area control</li></ul></div></div>
-      <div class="col-lg-4"><div class="card-x"><span class="icon-sq">▽</span><h3>Less wasted spend</h3><p>Keep budget on genuine customers, not on irrelevant searches.</p>
+      <div class="col-lg-4"><div class="card-x"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></span><h3>Less wasted spend</h3><p>Keep budget on genuine customers, not on irrelevant searches.</p>
         <ul class="svc-list"><li>Negative keywords for jobs, training, DIY and unrelated services</li><li>Business-hours and after-hours bidding where relevant</li><li>Regular search-term reviews</li></ul></div></div>
-      <div class="col-lg-4"><div class="card-x"><span class="icon-sq">∿</span><h3>Tracking &amp; lead quality</h3><p>Build a clearer picture of which campaigns lead to real work.</p>
+      <div class="col-lg-4"><div class="card-x"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></span><h3>Tracking &amp; lead quality</h3><p>Build a clearer picture of which campaigns lead to real work.</p>
         <ul class="svc-list"><li>Call and form tracking</li><li>Qualified-lead feedback from your office staff or CRM</li><li>Service-specific landing page alignment</li></ul></div></div>
     </div>
     <div class="text-center mt-4">
@@ -278,12 +286,11 @@ footer a:hover{color:var(--brand)}
       <p class="sec-sub">See the challenge, the changes made and the business outcome in context.</p>
     </div>
     <div class="row g-4">
-      <div class="col-lg-4"><div class="tcard"><span class="ytag">CASE STUDY · PENDING APPROVAL</span><h3 class="h5">Local service case study</h3>
-        <p class="mb-1"><b>Service area:</b> [suburbs / region]</p><p class="mb-1"><b>Starting point:</b> [cost per lead and lead-quality issue]</p>
-        <p class="mb-1"><b>Campaign changes:</b> [what we changed]</p><p class="mb-0"><b>Lead-quality result:</b> [verified outcome, with client permission]</p></div></div>
-      <div class="col-lg-4"><div class="tcard"><span class="ytag">TESTIMONIAL · PENDING APPROVAL</span><div class="stars mb-2">★★★★★</div><p>“Approved trades client testimonial goes here.”</p>
+      <div class="col-lg-4"><div class="tcard"><!--<span class="ytag">TESTIMONIAL · PENDING APPROVAL</span>--><div class="stars mb-2">★★★★★</div><p>“Approved trades client testimonial goes here.”</p>
         <div class="d-flex align-items-center gap-2"><span class="avatar">AB</span><div><b style="color:var(--ink)">Client name</b><br><small>Role, Business</small></div></div></div></div>
-      <div class="col-lg-4"><div class="tcard"><span class="ytag">TESTIMONIAL · PENDING APPROVAL</span><div class="stars mb-2">★★★★★</div><p>“Second approved testimonial goes here.”</p>
+      <div class="col-lg-4"><div class="tcard"><!--<span class="ytag">TESTIMONIAL · PENDING APPROVAL</span>--><div class="stars mb-2">★★★★★</div><p>“Approved trades client testimonial goes here.”</p>
+        <div class="d-flex align-items-center gap-2"><span class="avatar">AB</span><div><b style="color:var(--ink)">Client name</b><br><small>Role, Business</small></div></div></div></div>
+      <div class="col-lg-4"><div class="tcard"><!--<span class="ytag">TESTIMONIAL · PENDING APPROVAL</span>--><div class="stars mb-2">★★★★★</div><p>“Second approved testimonial goes here.”</p>
         <div class="d-flex align-items-center gap-2"><span class="avatar">CD</span><div><b style="color:var(--ink)">Client name</b><br><small>Role, Business</small></div></div></div></div>
     </div>
     <div class="text-center mt-4"><a href="#enquire" class="btn btn-brand" data-event="cta_testimonials">Request a Trades Account Review →</a></div>
@@ -351,7 +358,7 @@ footer a:hover{color:var(--brand)}
 <footer>
   <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
     <span>© 2026 Small Biz Enter. All rights reserved.</span>
-    <span><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a></span>
+    <span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></span>
   </div>
 </footer>
 
