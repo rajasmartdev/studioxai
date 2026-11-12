@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you | Small Biz Enter</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+:root{
+  --v2-primary:#FF6B35;--v2-accent:#E85D2C;--v2-success:#10B981;--v2-bg-pure:#FFFFFF;--v2-bg-soft:#FFF7F4;
+  --v2-bg-glass:rgba(255,255,255,.7);--v2-text-dark:#100602;--v2-text-muted:#100602;
+  --brand:var(--v2-primary);--brand-dark:var(--v2-accent);--soft:var(--v2-bg-soft);--line:#FFDED4;--ok:var(--v2-success);
+  --ink:var(--v2-text-dark);--fd:'Outfit',sans-serif;
+  --bs-body-font-family:'Plus Jakarta Sans',system-ui,sans-serif;--bs-body-color:#4a3d38;--bs-link-color:var(--brand);
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--bs-body-font-family);color:#4a3d38;line-height:1.65;background:#fff}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
+section{padding:72px 0}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.125em}
+.eyebrow{display:block;color:var(--brand);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+.sec-title{font-size:42px;line-height:1.15}
+.sec-sub{max-width:720px;margin:14px auto 0;font-size:1.05rem}
+.alt{background:var(--soft)}
+/* buttons */
+.btn-brand{background:var(--brand);border:0;color:#fff;border-radius:100px;padding:16px 30px;font-family:var(--fd);font-weight:600;box-shadow:0 12px 28px rgba(255,107,53,.32);display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.2s}
+.btn-brand:hover,.btn-brand:focus{background:var(--brand-dark);color:#fff;transform:translateY(-1px)}
+.btn-outline-brand{background:#fff;border:2px solid var(--line);color:var(--ink);border-radius:100px;padding:14px 28px;font-family:var(--fd);font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.2s}
+.btn-outline-brand:hover{border-color:var(--brand);color:var(--ink);background:#fff}
+.btn-outline-brand .ic{color:var(--brand)}
+.btn-sm-x{padding:14px 26px;font-size:.95rem}
+.tlink{display:inline-flex;align-items:center;gap:8px;color:var(--brand);font-family:var(--fd);font-weight:600;text-decoration:none;border-bottom:2px solid var(--line);padding-bottom:2px}
+.tlink:hover{color:var(--brand-dark);border-color:var(--brand)}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:'Courier New',monospace;font-size:1.6rem;color:#444;text-decoration:none;line-height:1;display:inline-flex;align-items:flex-end;gap:6px}
+.logo b{color:#D6453A;font-weight:400}.logo small{font-size:.5rem;border:1px solid #888;padding:1px 4px;color:#444}
+.hnav{display:flex;align-items:center;gap:30px}
+.hnav a.l{color:var(--ink);font-weight:600;font-size:.95rem;text-decoration:none}.hnav a.l:hover{color:var(--brand)}
+.hphone{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;line-height:1.15}
+.hphone .ic{color:var(--brand);font-size:1.3rem}.hphone small{display:block;font-size:.7rem;color:#4a3d38}.hphone strong{font-family:var(--fd);font-size:1.05rem}
+@media(max-width:1099px){.hnav .l{display:none}}
+@media(max-width:991px){.hphone small,.hphone strong,.hnav .btn-brand{display:none}.hphone .ic{font-size:1.5rem}}
+/* hero */
+.hero{background:linear-gradient(135deg,#FFF0EB 0%,#FFF7F4 55%,#fff 100%);position:relative;overflow:hidden;padding:80px 0 88px}
+.hero::before{content:"";position:absolute;right:-120px;top:-160px;width:520px;height:520px;border-radius:50%;background:rgba(255,107,53,.08)}
+.hero .container{position:relative}
+.chip{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:10px 20px;font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:26px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+.hero h1{font-size:58px;line-height:1.08;font-weight:700}.hero h1 span{color:var(--brand)}
+.hero .lead{font-size:1.15rem;max-width:520px;margin:22px 0 26px}
+.ticks{list-style:none;padding:0;margin:0 0 30px}
+.ticks li{display:flex;align-items:center;gap:12px;margin-bottom:12px;color:var(--ink);font-weight:500}
+.ticks .ic{color:var(--ok);font-size:1.25rem}
+.note{display:flex;align-items:center;gap:8px;font-size:.88rem;margin-top:18px}.note .ic{color:var(--ok)}
+/* form */
+.form-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:0 30px 60px -20px rgba(255,107,53,.28)}
+.form-card .tag{position:absolute;top:-14px;left:30px;background:var(--brand);color:#fff;font-size:.75rem;font-weight:600;border-radius:100px;padding:6px 16px}
+.form-card h2{font-size:1.75rem;margin-bottom:6px}.form-card .sub{font-size:.9rem;margin-bottom:22px}
+.form-card label{font-size:.8rem;font-weight:600;color:var(--ink);margin-bottom:6px}.form-card label small{font-weight:400;color:#8a7a74}
+.form-control,.form-select{background-color:var(--soft);border:1px solid var(--line);border-radius:14px;padding:13px 16px;font-size:.92rem;color:var(--ink)}
+.form-control::placeholder{color:#9a8b85}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-size:18px}
+.form-control:focus,.form-select:focus{border-color:var(--brand);box-shadow:0 0 0 .2rem rgba(255,107,53,.18);background-color:#fff}
+.fine{font-size:.78rem;text-align:center;margin:14px 0 0;color:#6b5d57}.fine a{color:var(--brand)}
+.form-msg{display:none;margin-top:12px;padding:10px 14px;border-radius:12px;background:#FDECEA;color:#B42318;font-size:.85rem}
+/* cards */
+.card-x{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px 26px;height:100%;box-shadow:0 10px 30px -18px rgba(255,107,53,.25)}
+.icon-sq{width:54px;height:54px;border-radius:16px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;box-shadow:0 10px 20px -8px rgba(255,107,53,.5)}
+.card-x h3{font-size:1.15rem;margin-bottom:8px}.card-x p{margin:0;font-size:.93rem}
+.svc-list{list-style:none;padding:18px 0 0;margin:18px 0 0;border-top:1px solid var(--line)}
+.svc-list li{display:flex;gap:10px;align-items:center;margin-bottom:9px;font-size:.92rem;color:var(--ink);font-weight:500}.svc-list .ic{color:var(--ok)}
+.ptag{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 18px;font-size:.85rem;font-weight:600;color:var(--ink);margin:4px}
+.step{display:flex;gap:22px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px 26px;margin-bottom:16px}
+.step .n{font-family:var(--fd);font-weight:800;font-size:2.6rem;line-height:1;color:#F9B9A0}
+.step h3{font-size:1.1rem;margin:0 0 4px}.step p{margin:0;font-size:.92rem}
+.expect{border:1px solid var(--line);border-radius:24px;padding:24px 26px;background:#fff;margin:26px 0}
+.expect h4{font-size:1rem;margin-bottom:14px}.expect .ticks{margin:0}.expect .ticks li{font-size:.92rem;align-items:flex-start;margin-bottom:10px}
+/* faq */
+.accordion{--bs-accordion-bg:transparent;--bs-accordion-border-color:transparent;--bs-accordion-btn-focus-box-shadow:none}
+.accordion-item{background:#fff;border:1px solid var(--line)!important;border-radius:18px!important;margin-bottom:14px;overflow:hidden}
+.accordion-button{background:#fff!important;color:var(--ink)!important;font-family:var(--fd);font-weight:600;font-size:.98rem;padding:20px 24px;box-shadow:none!important}
+.accordion-button::after{background-image:none!important;content:"+";color:var(--brand);font-size:1.6rem;line-height:1;width:auto;height:auto;transform:none!important}
+.accordion-button:not(.collapsed)::after{content:"\2013"}
+.accordion-body{padding:0 24px 20px;font-size:.92rem}
+/* cta */
+section.cta{background:linear-gradient(135deg,#FF6B35,#E85D2C);color:#fff;position:relative;overflow:hidden}
+section.cta::before{content:"";position:absolute;left:-120px;bottom:-200px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.1)}
+section.cta .container{position:relative}
+.cta h2,.cta .eyebrow{color:#fff}.cta p{color:#FFEDE6;font-size:1.05rem}.cta .ticks li{color:#fff;font-weight:600}.cta .ticks .ic{color:#fff}
+.cta .form-card{padding:30px}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:.88rem;background:#fff}
+footer a{color:var(--ink);text-decoration:none;font-weight:600;margin-left:20px}footer a:hover{color:var(--brand)}
+.mbar{display:none}
+/* thank you */
+.ty-hero{background:linear-gradient(135deg,#FFF0EB 0%,#FFF7F4 55%,#fff 100%);position:relative;overflow:hidden;text-align:center;padding:70px 0 80px}
+.ty-hero::before{content:"";position:absolute;right:-140px;top:-180px;width:520px;height:520px;border-radius:50%;background:rgba(255,107,53,.08)}
+.ty-tick{width:76px;height:76px;border-radius:50%;background:var(--ok);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:2.2rem;box-shadow:0 14px 30px -8px rgba(16,185,129,.6);margin-bottom:26px;position:relative}
+.ty-hero h1{font-size:46px;position:relative}.ty-hero h1 span{color:var(--brand)}.ty-hero p{max-width:520px;margin:16px auto 24px;font-size:1.1rem;position:relative}
+.ty-box{display:inline-flex;align-items:center;gap:14px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px 22px;box-shadow:0 14px 30px -18px rgba(255,107,53,.4);position:relative}
+.ty-box .icon-sq{width:44px;height:44px;border-radius:12px;font-size:1.2rem;margin:0}.ty-box strong{display:block;color:var(--ink);font-family:var(--fd)}.ty-box span{font-size:.85rem}
+.callcard{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px 32px}
+.callcard h3{font-size:1.25rem;margin-bottom:4px}.callcard p{margin:0}
+@media(max-width:991px){
+  section{padding:44px 0}.sec-title{font-size:30px}.hero h1{font-size:38px}.hero{padding:44px 0 56px}.ty-hero h1{font-size:34px}
+  .form-card{padding:26px 22px}.chip{font-size:.8rem}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;padding:10px 14px;background:#fff;border-top:1px solid var(--line);z-index:60}
+  .mbar .btn-brand,.mbar .btn-outline-brand{padding:13px 10px;font-size:.92rem}
+  body.has-mbar{padding-bottom:78px}.callcard .btn-brand{width:100%}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-checkc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+<symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+</defs></svg>
+
+<header class="site-header"><div class="container"><a class="logo" href="#top" aria-label="Small Biz Enter"><img src="assets/logo.webp" alt="Small Biz Enter" height="52"></a><a class="hphone" href="tel:+61410393639" aria-label="Call +61 410 393 639"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span><small>Call us</small><strong>+61 410 393 639</strong></span></a></div></header>
+<section class="ty-hero"><div class="container"><div class="ty-tick"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></div><h1>Thank you. <span>We’ve got your details.</span></h1><p>A member of our team will review your enquiry and get back to you within 1 business day.</p>
+<div class="ty-box"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></div><div><strong>Your enquiry has been sent</strong><span>We’ll contact you using the phone number or email you provided.</span></div></div></div></section>
+<section><div class="container" style="max-width:760px"><div class="text-center mb-5"><span class="eyebrow">What happens next</span><h2 class="sec-title">Here’s what to expect</h2></div>
+<div class="step"><div class="n">01</div><div><h3>We review your enquiry</h3><p>We look at what you told us about your business, your goals and your current Google Ads setup.</p></div></div><div class="step"><div class="n">02</div><div><h3>We get in touch</h3><p>We’ll call or email you to understand your situation and answer any questions.</p></div></div><div class="step"><div class="n">03</div><div><h3>We talk through your account</h3><p>We explain what we see in plain language and where a review could help, with no pressure to commit.</p></div></div></div></section>
+<section class="alt" style="padding:44px 0"><div class="container"><div class="callcard"><div><h3>Need to speak to us sooner?</h3><p>Call us on <strong class="text-dark">+61 410 393 639</strong> and we’ll help straight away.</p></div><a class="btn btn-brand" href="tel:+61410393639"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> Call +61 410 393 639</a></div></div></section>
+<section><div class="container"><div class="text-center mb-5"><span class="eyebrow">While you wait</span><h2 class="sec-title">Get to know us a little better</h2></div>
+<div class="row g-4">
+<div class="col-md-4"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></div><h3>Our Google Ads service</h3><p class="mb-3">See how we manage Google Ads for Australian small businesses.</p><a class="tlink" href="google-ads.html">Read more <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
+<div class="col-md-4"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-grid"/></svg></div><h3>All our services</h3><p class="mb-3">SEO, social media, branding, video, websites and more.</p><a class="tlink" href="services.html">View all services <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
+<div class="col-md-4"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-home"/></svg></div><h3>Back to our website</h3><p class="mb-3">Learn more about Small Biz Enter and how we work.</p><a class="tlink" href="index.html">Visit smallbizenter.com.au <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div>
+</div></div></section>
+<footer><div class="container d-flex flex-wrap justify-content-between gap-2"><span>© 2026 Small Biz Enter. All rights reserved.</span><span><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a></span></div></footer>
+<script>
+(function(){
+  var ok=false;try{ok=sessionStorage.getItem("sbe_lead")==="1";sessionStorage.removeItem("sbe_lead");}catch(e){}
+  if(!ok)return; // refresh or direct visit: do not count a lead
+  window.dataLayer=window.dataLayer||[];dataLayer.push({event:"generate_lead"});
+  if(typeof gtag==="function"){gtag("event","generate_lead");/* gtag("event","conversion",{send_to:"AW-XXXXXXXXX/XXXXXXXXXXX"}); */}
+})();
+</script>
+</body></html>
