@@ -3,410 +3,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Google Ads for Australian Trades & Home Services | Small Biz Enter</title>
-<meta name="description" content="Google Ads for Australian trades and home services. Get more qualified local enquiries and fewer wasted clicks. Request a free trades account review.">
-<!-- TEAM DECISION: add <meta name="robots" content="noindex"> if this ad page should not compete with the main Google Ads page -->
+<title>Google Ads Management for Australian Small Businesses | Small Biz Enter</title>
+<meta name="description" content="Practical, hands-on Google Ads management for Australian small businesses. Get a free Google Ads review.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--v2-primary:#FF6B35;--v2-accent:#E85D2C;--brand:#FF6B35;--brand-dark:#E85D2C;--ok:#10B981;--ink:#100602;--muted:#100602;--soft:#FFF7F4;--line:#FFDED4;--fd:'Outfit',sans-serif;
---bs-body-font-family:'Plus Jakarta Sans',system-ui,sans-serif;--bs-body-color:var(--muted);--bs-link-color:var(--brand)}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+:root{
+  --v2-primary:#FF6B35;--v2-accent:#E85D2C;--v2-success:#10B981;--v2-bg-pure:#FFFFFF;--v2-bg-soft:#FFF7F4;
+  --v2-bg-glass:rgba(255,255,255,.7);--v2-text-dark:#100602;--v2-text-muted:#100602;
+  --brand:var(--v2-primary);--brand-dark:var(--v2-accent);--soft:var(--v2-bg-soft);--line:#FFDED4;--ok:var(--v2-success);
+  --ink:var(--v2-text-dark);--fd:'Outfit',sans-serif;
+  --bs-body-font-family:'Plus Jakarta Sans',system-ui,sans-serif;--bs-body-color:#4a3d38;--bs-link-color:var(--brand);
+}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:var(--bs-body-font-family);color:var(--muted);line-height:1.6}
-h1,h2,h3,h4,h5{font-family:var(--fd);color:var(--ink);font-weight:700;letter-spacing:-.02em}
+body{font-family:var(--bs-body-font-family);color:#4a3d38;line-height:1.65;background:#fff}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:700;letter-spacing:-.02em;color:var(--ink)}
 section{padding:72px 0}
-.eyebrow{display:block;color:var(--brand);font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
-.sec-title{font-size:clamp(1.9rem,3.2vw,2.6rem);line-height:1.15}
-.sec-sub{max-width:760px;margin:14px auto 0;font-size:1.05rem}
+.ic{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.125em}
+.eyebrow{display:block;color:var(--brand);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+.sec-title{font-size:42px;line-height:1.15}
+.sec-sub{max-width:720px;margin:14px auto 0;font-size:1.05rem}
 .alt{background:var(--soft)}
 /* buttons */
-.btn-brand{background:var(--brand);border:1px solid var(--brand);color:#fff;border-radius:100px;padding:16px 30px;font-family:var(--fd);font-weight:600;box-shadow:0 12px 28px rgba(255,107,53,.32)}
-.btn-brand:hover,.btn-brand:focus{background:var(--brand-dark);border-color:var(--brand-dark);color:#fff}
-.btn-outline-brand{border:1.5px solid var(--line);color:var(--ink);border-radius:100px;padding:16px 30px;font-family:var(--fd);font-weight:600;background:#fff}
-.btn-outline-brand:hover{border-color:var(--brand);color:var(--brand);background:#fff}
-.btn-sm-h{padding:12px 22px;font-size:.95rem}
-.tlink{color:var(--brand);font-family:var(--fd);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--line)}
+.btn-brand{background:var(--brand);border:0;color:#fff;border-radius:100px;padding:16px 30px;font-family:var(--fd);font-weight:600;box-shadow:0 12px 28px rgba(255,107,53,.32);display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.2s}
+.btn-brand:hover,.btn-brand:focus{background:var(--brand-dark);color:#fff;transform:translateY(-1px)}
+.btn-outline-brand{background:#fff;border:2px solid var(--line);color:var(--ink);border-radius:100px;padding:14px 28px;font-family:var(--fd);font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:.2s}
+.btn-outline-brand:hover{border-color:var(--brand);color:var(--ink);background:#fff}
+.btn-outline-brand .ic{color:var(--brand)}
+.btn-sm-x{padding:14px 26px;font-size:.95rem}
+.tlink{display:inline-flex;align-items:center;gap:8px;color:var(--brand);font-family:var(--fd);font-weight:600;text-decoration:none;border-bottom:2px solid var(--line);padding-bottom:2px}
 .tlink:hover{color:var(--brand-dark);border-color:var(--brand)}
 /* header */
 .site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-.site-header .nav-link{color:var(--ink);font-weight:600;font-size:.95rem;padding:0}
-.phone{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;line-height:1.15}
-.phone small{display:block;font-size:.7rem;color:var(--muted)}
-.phone b{font-family:var(--fd);font-weight:600}
-.phone i{color:var(--brand);font-style:normal;font-size:2.3rem}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font-family:'Courier New',monospace;font-size:1.6rem;color:#444;text-decoration:none;line-height:1;display:inline-flex;align-items:flex-end;gap:6px}
+.logo b{color:#D6453A;font-weight:400}.logo small{font-size:.5rem;border:1px solid #888;padding:1px 4px;color:#444}
+.hnav{display:flex;align-items:center;gap:30px}
+.hnav a.l{color:var(--ink);font-weight:600;font-size:.95rem;text-decoration:none}.hnav a.l:hover{color:var(--brand)}
+.hphone{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;line-height:1.15}
+.hphone .ic{color:var(--brand);font-size:1.3rem}.hphone small{display:block;font-size:.7rem;color:#4a3d38}.hphone strong{font-family:var(--fd);font-size:1.05rem}
+@media(max-width:1099px){.hnav .l{display:none}}
+@media(max-width:991px){.hphone small,.hphone strong,.hnav .btn-brand{display:none}.hphone .ic{font-size:1.5rem}}
 /* hero */
-.hero{background:linear-gradient(135deg,#FFF0EB 0%,#FFF7F4 55%,#fff 100%);padding:64px 0 72px}
-.chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:.85rem;font-weight:500;color:var(--ink);margin-bottom:22px}
-.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--brand)}
-.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.08}
-.hero h1 span{color:var(--brand)}
-.hero p.lead{font-size:1.1rem;max-width:520px;margin:20px 0}
-.checks{list-style:none;padding:0;margin:0 0 26px}
-.checks li{position:relative;padding-left:30px;margin-bottom:10px;color:var(--ink);font-weight:500}
-.checks li::before{content:"✓";position:absolute;left:0;top:2px;width:20px;height:20px;border:1.5px solid var(--ok);border-radius:50%;color:var(--ok);font-size:.7rem;font-weight:800;text-align:center;line-height:17px}
-.dots{display:flex;flex-wrap:wrap;gap:6px 18px;margin:14px 0 0;font-size:.82rem}
-.dots span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--brand);margin-right:6px;vertical-align:middle}
-.assure{font-size:.88rem;margin:16px 0 0}
+.hero{background:linear-gradient(135deg,#FFF0EB 0%,#FFF7F4 55%,#fff 100%);position:relative;overflow:hidden;padding:80px 0 88px}
+.hero::before{content:"";position:absolute;right:-120px;top:-160px;width:520px;height:520px;border-radius:50%;background:rgba(255,107,53,.08)}
+.hero .container{position:relative}
+.chip{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:10px 20px;font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:26px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+.hero h1{font-size:58px;line-height:1.08;font-weight:700}.hero h1 span{color:var(--brand)}
+.hero .lead{font-size:1.15rem;max-width:520px;margin:22px 0 26px}
+.ticks{list-style:none;padding:0;margin:0 0 30px}
+.ticks li{display:flex;align-items:center;gap:12px;margin-bottom:12px;color:var(--ink);font-weight:500}
+.ticks .ic{color:var(--ok);font-size:1.25rem}
+.note{display:flex;align-items:center;gap:8px;font-size:.88rem;margin-top:18px}.note .ic{color:var(--ok)}
+/* form */
 .form-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:0 30px 60px -20px rgba(255,107,53,.28)}
-.form-card h2{font-size:1.6rem;margin-bottom:4px}
-.tag{position:absolute;top:-14px;left:28px;background:var(--brand);color:#fff;border-radius:100px;padding:6px 16px;font-size:.78rem;font-weight:600}
-.form-card label{font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:4px}
-.form-card label small{font-weight:400;color:var(--muted);opacity:.7}
-.form-control,.form-select{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:.7rem .9rem;color:var(--ink);font-size:.92rem}
-.form-control:focus,.form-select:focus{border-color:var(--brand);box-shadow:0 0 0 .2rem rgba(255,107,53,.2)}
-.fine{font-size:.78rem;text-align:center}
-.fine a{color:var(--brand)}
-.form-msg{display:none;color:#b42318;font-size:.85rem;text-align:center}
-/* proof bar */
-.proof{padding:34px 0 28px;background:#fff;border-bottom:1px solid var(--line)}
-.proof-row{display:flex;width:100%;justify-content:space-between;text-align:center}
-.stat{flex:1}
-.stat+.stat{border-left:1px solid var(--line)}
-.stat b{display:block;font-family:var(--fd);font-size:2.2rem;line-height:1}
-.stat span{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
-.logos img{height:28px;filter:grayscale(1);opacity:.7}
+.form-card .tag{position:absolute;top:-14px;left:30px;background:var(--brand);color:#fff;font-size:.75rem;font-weight:600;border-radius:100px;padding:6px 16px}
+.form-card h2{font-size:1.75rem;margin-bottom:6px}.form-card .sub{font-size:.9rem;margin-bottom:22px}
+.form-card label{font-size:.8rem;font-weight:600;color:var(--ink);margin-bottom:6px}.form-card label small{font-weight:400;color:#8a7a74}
+.form-control,.form-select{background-color:var(--soft);border:1px solid var(--line);border-radius:14px;padding:13px 16px;font-size:.92rem;color:var(--ink)}
+.form-control::placeholder{color:#9a8b85}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF6B35' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-size:18px}
+.form-control:focus,.form-select:focus{border-color:var(--brand);box-shadow:0 0 0 .2rem rgba(255,107,53,.18);background-color:#fff}
+.fine{font-size:.78rem;text-align:center;margin:14px 0 0;color:#6b5d57}.fine a{color:var(--brand)}
+.form-msg{display:none;margin-top:12px;padding:10px 14px;border-radius:12px;background:#FDECEA;color:#B42318;font-size:.85rem}
 /* cards */
-.card-x{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;height:100%}
-.card-x.tight{padding:22px}
-.icon-sq{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:16px;background:var(--brand);color:#fff;font-size:1.5rem;margin-bottom:16px}
-.card-x h3{font-size:1.15rem;margin-bottom:6px}
-.card-x p{margin:0;font-size:.95rem}
-.svc-list{list-style:none;padding:16px 0 0;margin:16px 0 0;border-top:1px solid var(--line)}
-.svc-list li{padding-left:28px;position:relative;margin-bottom:8px;color:var(--ink);font-size:.93rem;font-weight:500}
-.svc-list li::before{content:"✓";position:absolute;left:0;top:2px;width:18px;height:18px;border:1.5px solid var(--ok);border-radius:50%;color:var(--ok);font-size:.62rem;font-weight:800;text-align:center;line-height:15px}
-.pill{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:100px;padding:6px 16px;font-size:.88rem;color:var(--ink);font-weight:500;margin:4px}
-.box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
-.box h3{font-size:1rem;margin-bottom:14px}
-.box .checks{margin:0;font-size:.93rem}
-.step{display:flex;gap:18px;align-items:flex-start}
-.step .no{font-family:var(--fd);font-weight:800;font-size:2.2rem;line-height:1;color:#F8BCA5}
-.step h3{margin-bottom:4px}
-/* testimonials */
-.tcard{border:1.5px dashed #F0BFA9;border-radius:24px;padding:26px;background:#fff;height:100%}
-.tcard{position:relative;padding-top:34px}
-.ytag{position:absolute;top:-12px;left:20px;background:#FFF1B8;color:#6B5200;border-radius:100px;padding:4px 12px;font-size:.65rem;font-weight:700;letter-spacing:.06em;white-space:nowrap}
-.stars{color:#F5B301;letter-spacing:2px}
-.avatar{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#FFDED4;color:var(--brand);font-weight:700;font-size:.8rem}
+.card-x{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px 26px;height:100%;box-shadow:0 10px 30px -18px rgba(255,107,53,.25)}
+.icon-sq{width:54px;height:54px;border-radius:16px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;box-shadow:0 10px 20px -8px rgba(255,107,53,.5)}
+.card-x h3{font-size:1.15rem;margin-bottom:8px}.card-x p{margin:0;font-size:.93rem}
+.svc-list{list-style:none;padding:18px 0 0;margin:18px 0 0;border-top:1px solid var(--line)}
+.svc-list li{display:flex;gap:10px;align-items:center;margin-bottom:9px;font-size:.92rem;color:var(--ink);font-weight:500}.svc-list .ic{color:var(--ok)}
+.ptag{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 18px;font-size:.85rem;font-weight:600;color:var(--ink);margin:4px}
+.step{display:flex;gap:22px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px 26px;margin-bottom:16px}
+.step .n{font-family:var(--fd);font-weight:800;font-size:2.6rem;line-height:1;color:#F9B9A0}
+.step h3{font-size:1.1rem;margin:0 0 4px}.step p{margin:0;font-size:.92rem}
+.expect{border:1px solid var(--line);border-radius:24px;padding:24px 26px;background:#fff;margin:26px 0}
+.expect h4{font-size:1rem;margin-bottom:14px}.expect .ticks{margin:0}.expect .ticks li{font-size:.92rem;align-items:flex-start;margin-bottom:10px}
 /* faq */
-.accordion{--bs-accordion-border-color:transparent;--bs-accordion-bg:transparent;--bs-accordion-btn-focus-box-shadow:none;--bs-accordion-active-bg:#fff;--bs-accordion-active-color:var(--ink)}
-.accordion-item{background:#fff;border:1px solid var(--line);border-radius:18px!important;margin-bottom:14px;overflow:hidden}
-.accordion-button{background:#fff;color:var(--ink);font-family:var(--fd);font-weight:600;font-size:.98rem;padding:1.1rem 1.3rem;box-shadow:none}
-.accordion-button:not(.collapsed){color:var(--ink);background:#fff;box-shadow:none}
-.accordion-button::after{background-image:none;content:"+";color:var(--brand);font-size:1.5rem;font-weight:400;line-height:1;width:auto;height:auto;transform:none}
-.accordion-button:not(.collapsed)::after{content:"–";transform:none}
-.accordion-body{padding:0 1.3rem 1.2rem;font-size:.93rem}
-/* final CTA */
-section.cta{background:linear-gradient(135deg,#FF6B35,#E85D2C);color:#fff}
-.cta h2,.cta .eyebrow{color:#fff}
-.cta p{color:#fff}
-.cta .checks li{color:#fff}
-.cta .checks li::before{border-color:#fff;color:#fff}
+.accordion{--bs-accordion-bg:transparent;--bs-accordion-border-color:transparent;--bs-accordion-btn-focus-box-shadow:none}
+.accordion-item{background:#fff;border:1px solid var(--line)!important;border-radius:18px!important;margin-bottom:14px;overflow:hidden}
+.accordion-button{background:#fff!important;color:var(--ink)!important;font-family:var(--fd);font-weight:600;font-size:.98rem;padding:20px 24px;box-shadow:none!important}
+.accordion-button::after{background-image:none!important;content:"+";color:var(--brand);font-size:1.6rem;line-height:1;width:auto;height:auto;transform:none!important}
+.accordion-button:not(.collapsed)::after{content:"\2013"}
+.accordion-body{padding:0 24px 20px;font-size:.92rem}
+/* cta */
+section.cta{background:linear-gradient(135deg,#FF6B35,#E85D2C);color:#fff;position:relative;overflow:hidden}
+section.cta::before{content:"";position:absolute;left:-120px;bottom:-200px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.1)}
+section.cta .container{position:relative}
+.cta h2,.cta .eyebrow{color:#fff}.cta p{color:#FFEDE6;font-size:1.05rem}.cta .ticks li{color:#fff;font-weight:600}.cta .ticks .ic{color:#fff}
 .cta .form-card{padding:30px}
-.cta .form-card p{color:var(--muted)}
-.cta .form-card .fine{color:var(--muted)}
-footer{background:#fff;border-top:1px solid var(--line);padding:26px 0;font-size:.9rem}
-footer a{color:var(--ink);text-decoration:none;margin-left:18px}
-footer a:hover{color:var(--brand)}
-/* mobile bar */
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:.88rem;background:#fff}
+footer a{color:var(--ink);text-decoration:none;font-weight:600;margin-left:20px}footer a:hover{color:var(--brand)}
 .mbar{display:none}
-@media(max-width:900px){
- .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;padding:10px 14px;background:#fff;border-top:1px solid var(--line);z-index:60}
- .mbar .btn{padding:12px 10px;font-size:.95rem;box-shadow:none}
- body{padding-bottom:78px}}
-@media(max-width:767px){section{padding:44px 0}.hero{padding:40px 0 48px}.form-card{padding:24px}.hero h1{font-size:2.4rem}.sec-title{font-size:1.9rem}.logos img{height:22px}}
-/* exact icons */
-.icon-sq{box-shadow:0 10px 24px rgba(255,107,53,.28)}
-.icon-sq svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.checks li::before,.svc-list li::before{content:"";border:0;border-radius:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2310B981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E") center/contain no-repeat;width:22px;height:22px;top:2px;left:0}
-.svc-list li{padding-left:32px}.checks li{padding-left:32px}
-.cta .checks li::before{filter:brightness(0) invert(1)}
+/* thank you */
+.ty-hero{background:linear-gradient(135deg,#FFF0EB 0%,#FFF7F4 55%,#fff 100%);position:relative;overflow:hidden;text-align:center;padding:70px 0 80px}
+.ty-hero::before{content:"";position:absolute;right:-140px;top:-180px;width:520px;height:520px;border-radius:50%;background:rgba(255,107,53,.08)}
+.ty-tick{width:76px;height:76px;border-radius:50%;background:var(--ok);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:2.2rem;box-shadow:0 14px 30px -8px rgba(16,185,129,.6);margin-bottom:26px;position:relative}
+.ty-hero h1{font-size:46px;position:relative}.ty-hero h1 span{color:var(--brand)}.ty-hero p{max-width:520px;margin:16px auto 24px;font-size:1.1rem;position:relative}
+.ty-box{display:inline-flex;align-items:center;gap:14px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px 22px;box-shadow:0 14px 30px -18px rgba(255,107,53,.4);position:relative}
+.ty-box .icon-sq{width:44px;height:44px;border-radius:12px;font-size:1.2rem;margin:0}.ty-box strong{display:block;color:var(--ink);font-family:var(--fd)}.ty-box span{font-size:.85rem}
+.callcard{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px 32px}
+.callcard h3{font-size:1.25rem;margin-bottom:4px}.callcard p{margin:0}
+@media(max-width:991px){
+  section{padding:44px 0}.sec-title{font-size:30px}.hero h1{font-size:38px}.hero{padding:44px 0 56px}.ty-hero h1{font-size:34px}
+  .form-card{padding:26px 22px}.chip{font-size:.8rem}
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;padding:10px 14px;background:#fff;border-top:1px solid var(--line);z-index:60}
+  .mbar .btn-brand,.mbar .btn-outline-brand{padding:13px 10px;font-size:.92rem}
+  body.has-mbar{padding-bottom:78px}.callcard .btn-brand{width:100%}
+}
 </style>
 </head>
-<body>
+<body class="has-mbar" id="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-checkc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+<symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+</defs></svg>
 
-<!-- 1. HEADER (sticky) -->
-<header class="site-header py-2">
-  <div class="container d-flex align-items-center justify-content-between gap-3">
-    <a href="google-ads.html" class="text-decoration-none"><img src="assets/logo.webp" alt="Small Biz Enter" height="52"></a>
-    <nav class="d-none d-xl-flex align-items-center gap-4">
-      <a class="nav-link" href="#included">Services</a>
-      <a class="nav-link" href="#how">How it works</a>
-      <a class="nav-link" href="#faq">FAQs</a>
-    </nav>
-    <div class="d-flex align-items-center gap-3">
-      <a class="phone" href="tel:+61410393639" data-event="click_to_call" aria-label="Call +61 410 393 639"><i>✆</i><span class="d-none d-md-block"><small>Call us</small><b>+61 410 393 639</b></span></a>
-      <a class="btn btn-brand btn-sm-h d-none d-md-inline-block" href="#enquire" data-event="cta_header">Request a Trades Account Review →</a>
-    </div>
-  </div>
-</header>
+<header class="site-header"><div class="container"><a class="logo" href="#top" aria-label="Small Biz Enter"><span>Small</span><b>Biz</b><small>Enter</small></a>
+<nav class="hnav"><a class="l" href="#included">Services</a><a class="l" href="#how">How it works</a><a class="l" href="#faq">FAQs</a>
+<a class="hphone" href="tel:+61410393639" data-event="click_to_call" aria-label="Call +61 410 393 639"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg><span><small>Call us</small><strong>+61 410 393 639</strong></span></a>
+<a class="btn btn-brand btn-sm-x" href="#enquire" data-event="cta_header">Get a Free Google Ads Review <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></nav></div></header>
 
-<!-- 2. HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <span class="chip">Google Ads for Australian trades &amp; home services</span>
-        <h1>More <span>qualified local enquiries</span> from Google. Fewer wasted clicks.</h1>
-        <p class="lead">Campaigns built around the services, suburbs and job types you actually want, so you’re not paying for every irrelevant click.</p>
-        <ul class="checks">
-          <li>Focus on booked jobs, not just clicks</li>
-          <li>Calls and forms tracked, so you can see what’s working</li>
-          <li>Regular search-term reviews to cut irrelevant spend</li>
-        </ul>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="#enquire" class="btn btn-brand" data-event="cta_hero_button">Request a Trades Account Review →</a>
-          <a href="tel:+61410393639" class="btn btn-outline-brand" data-event="click_to_call">✆ Call 0410 393 639</a>
-        </div>
-        <p class="assure">No lock-in. We’ll review your account and tell you honestly where we can help.</p>
-        <p class="dots"><span>Calls</span><span>Forms</span><span>Service areas</span><span>High-intent search</span><span>Landing pages</span></p>
-      </div>
-      <div class="col-lg-6" id="enquire">
-        <div class="form-card">
-          <span class="tag">Free · No obligation</span>
-          <h2>Get your free trades account review</h2>
-          <p class="mb-4">Tell us a little about your business. We’ll take it from there.</p>
-          <form data-form="hero" data-event="cta_hero_form" novalidate>
-            <div class="row g-3">
-              <div class="col-sm-6"><label for="n1">Your name *</label><input id="n1" name="name" class="form-control" placeholder="Your name" required></div>
-              <div class="col-sm-6"><label for="p1">Phone *</label><input id="p1" name="phone" type="tel" class="form-control" placeholder="+61 Phone number" required></div>
-              <div class="col-sm-6"><label for="e1">Email *</label><input id="e1" name="email" type="email" class="form-control" placeholder="you@business.com.au" required></div>
-              <div class="col-sm-6"><label for="b1">Business name *</label><input id="b1" name="business" class="form-control" placeholder="Company name" required></div>
-              <div class="col-sm-6"><label for="s1">Main service *</label>
-                <select id="s1" name="trade" class="form-select" required>
-                  <option value="" selected>Select your trade</option>
-                  <option>Electrician</option><option>Plumber</option><option>Air conditioning &amp; HVAC</option><option>Pest control</option><option>Roofing</option>
-                  <option>Builder</option><option>Landscaping</option><option>Pools</option><option>Solar</option><option>Other local services</option>
-                </select></div>
-              <div class="col-sm-6"><label for="a1">Service area *</label><input id="a1" name="service_area" class="form-control" placeholder="e.g. Western Sydney" required></div>
-              <div class="col-sm-6"><label for="w1">Website <small>(optional)</small></label><input id="w1" name="website" class="form-control" placeholder="yourwebsite.com.au"></div>
-              <div class="col-sm-6"><label for="m1">Monthly ad spend <small>(optional)</small></label>
-                <select id="m1" name="budget" class="form-select">
-                  <option value="" selected>Choose a range</option>
-                  <option>Under $1,000</option><option>$1,000 – $3,000</option>
-                  <option>$3,000 – $10,000</option><option>$10,000+</option>
-                </select></div>
-              <div class="col-12"><button type="submit" class="btn btn-brand w-100">Request a Trades Account Review →</button></div>
-              <div class="col-12"><p class="form-msg mb-1" role="alert"></p><p class="fine mb-0">We’ll get back to you within 1 business day. By submitting you agree we may contact you about your enquiry. <a href="/privacy">Privacy Policy</a></p></div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="hero"><div class="container"><div class="row align-items-center g-5">
+<div class="col-lg-6"><span class="chip"><i></i>Google Ads management for Australian businesses</span>
+<h1>Turn Google Ads spend into <span>better enquiries.</span></h1>
+<p class="lead">Practical, hands-on campaign management to help your business reach the right people, reduce wasted spend and make clearer decisions about what to improve.</p>
+<ul class="ticks"><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Focus on qualified enquiries and business goals</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Clear reporting that shows what’s working</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Ongoing campaign reviews and optimisation</li></ul>
+<div class="d-flex flex-wrap gap-3"><a href="#enquire" class="btn btn-brand btn-lg" data-event="cta_hero_button">Get a Free Google Ads Review <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="tel:+61410393639" class="btn btn-outline-brand btn-lg" data-event="click_to_call"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> Call 0410 393 639</a></div>
+<p class="note"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>No lock-in. We’ll review your account and tell you honestly where we can help.</p></div>
+<div class="col-lg-6" id="enquire"><div class="form-card"><span class="tag">Free · No obligation</span><h2>Get your free Google Ads review</h2><p class="sub">Tell us a little about your business. We’ll take it from there.</p><form class="lead-form" novalidate data-event="cta_hero_form"><div class="row g-3"><div class="col-sm-6"><label for="n1">Your name *</label><input id="n1" name="name" class="form-control" placeholder="Your name" required></div>
+<div class="col-sm-6"><label for="p1">Phone *</label><input id="p1" name="phone" type="tel" class="form-control" placeholder="+61 Phone number" required></div>
+<div class="col-sm-6"><label for="e1">Email *</label><input id="e1" name="email" type="email" class="form-control" placeholder="you@business.com.au" required></div>
+<div class="col-sm-6"><label for="b1">Business name *</label><input id="b1" name="business" class="form-control" placeholder="Company name" required></div>
+<div class="col-12"><label for="s1">What would you like help with? *</label><select id="s1" name="help" class="form-select" required><option value="" selected disabled>Select an option</option><option>Search campaigns</option><option>Shopping &amp; Performance Max</option><option>Tracking &amp; optimisation</option><option>Account review / second opinion</option></select></div>
+<div class="col-sm-6"><label for="w1">Website <small>(optional)</small></label><input id="w1" name="website" class="form-control" placeholder="yourwebsite.com.au"></div>
+<div class="col-sm-6"><label for="m1">Monthly ad budget <small>(optional)</small></label><select id="m1" name="budget" class="form-select"><option value="" selected>Choose a range</option><option>Under $1,000</option><option>$1,000 - $3,000</option><option>$3,000 - $10,000</option><option>$10,000+</option></select></div>
+<div class="col-12"><button type="submit" class="btn btn-brand btn-lg w-100">Get a Free Google Ads Review <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button></div></div>
+<input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="gclid"><input type="hidden" name="page_url"><div class="form-msg" role="alert">Sorry, something went wrong. Please check your details and try again, or call us on +61 410 393 639.</div>
+<p class="fine">We’ll get back to you within 1 business day. By submitting you agree we may contact you about your enquiry. <a href="/privacy">Privacy Policy</a></p></form></div></div>
+</div></div></section>
 
-<!-- 3. PROOF BAR -->
-<section class="proof">
-  <div class="container">
-    <div class="proof-row">
-      <div class="stat"><b>15+</b><span>Years experience</span></div>
-      <div class="stat"><b>800+</b><span>Businesses served</span></div>
-      <div class="stat"><b>$2M+</b><span>Revenue generated</span></div>
-    </div>
-  </div>
-</section>
+<!-- PROOF BAR: hidden until management approves the content. Uncomment when ready.
+<div class="border-bottom bg-white py-4"><div class="container d-flex flex-wrap align-items-center gap-4 justify-content-between">
+<div class="d-flex gap-4"><div><div class="h2 mb-0">15+</div><small class="text-uppercase">Years experience</small></div><div><div class="h2 mb-0">800+</div><small class="text-uppercase">Businesses served</small></div><div><div class="h2 mb-0">$2M+</div><small class="text-uppercase">Revenue generated</small></div></div>
+<div class="d-flex flex-wrap gap-4 align-items-center">(6 grey client logos here, reuse /logos from main site)</div></div></div>
+-->
 
-<!-- 4. SOUND FAMILIAR -->
-<section>
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">Sound familiar?</span>
-      <h2 class="sec-title">Paying for clicks that never turn into booked jobs?</h2>
-      <p class="sec-sub">When ads bring the wrong calls, it’s hard to know what to change.</p>
-    </div>
-    <div class="row g-3">
-      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg></span><h3>Calls for the wrong jobs</h3><p>Enquiries about work you don’t do or don’t want to take on.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><h3>Clicks from the wrong people</h3><p>Spend going to job seekers, students and DIYers, not customers.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg></span><h3>Suburbs you don’t service</h3><p>Budget spread beyond the areas you can actually get to.</p></div></div>
-      <div class="col-md-6 col-lg-3"><div class="card-x tight"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg></span><h3>No idea which ads work</h3><p>Calls and forms come in, but you can’t tell what drove them.</p></div></div>
-    </div>
-    <p class="text-center mt-4 mb-0"><a class="tlink" href="#enquire" data-event="cta_problems">Get a free review of your account →</a></p>
-  </div>
-</section>
+<section><div class="container"><div class="text-center mb-5"><span class="eyebrow">Sound familiar?</span><h2 class="sec-title">Are your Google Ads bringing in the right work?</h2><p class="sec-sub">When campaign activity doesn’t turn into business, it’s hard to know what to change.</p></div>
+<div class="row g-4"><div class="col-sm-6 col-lg-3"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-trend"/></svg></div><h3>Spend without enough leads</h3><p>The budget is spent, but enquiries are too few or inconsistent.</p></div></div><div class="col-sm-6 col-lg-3"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg></div><h3>Enquiries that don’t fit</h3><p>You hear from people who aren’t ready or right for your business.</p></div></div><div class="col-sm-6 col-lg-3"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></div><h3>Clicks with unclear value</h3><p>Activity in the account, but no clear link to real customers.</p></div></div><div class="col-sm-6 col-lg-3"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg></div><h3>No clear next move</h3><p>Unsure whether to adjust, rebuild or leave campaigns alone.</p></div></div></div>
+<div class="text-center mt-5"><a class="tlink" href="#enquire" data-event="cta_problems">Get a free review of your account <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></section>
 
-<!-- 5. WHAT WE CAN HELP WITH (+ Who we work with as tags) -->
-<section class="alt" id="included">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">What we can help with</span>
-      <h2 class="sec-title">Google Ads built around local job economics</h2>
-      <p class="sec-sub">A click isn’t the goal. A booked job is. Here’s how we set up and manage campaigns for trades.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-4"><div class="card-x"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span><h3>Local campaign structure</h3><p>Reach people searching for the work you want, in the areas you cover.</p>
-        <ul class="svc-list"><li>Service and suburb campaign structure</li><li>Emergency vs planned-service intent</li><li>Location exclusions and service-area control</li></ul></div></div>
-      <div class="col-lg-4"><div class="card-x"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></span><h3>Less wasted spend</h3><p>Keep budget on genuine customers, not on irrelevant searches.</p>
-        <ul class="svc-list"><li>Negative keywords for jobs, training, DIY and unrelated services</li><li>Business-hours and after-hours bidding where relevant</li><li>Regular search-term reviews</li></ul></div></div>
-      <div class="col-lg-4"><div class="card-x"><span class="icon-sq"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></span><h3>Tracking &amp; lead quality</h3><p>Build a clearer picture of which campaigns lead to real work.</p>
-        <ul class="svc-list"><li>Call and form tracking</li><li>Qualified-lead feedback from your office staff or CRM</li><li>Service-specific landing page alignment</li></ul></div></div>
-    </div>
-    <div class="text-center mt-4">
-      <strong class="me-2" style="color:var(--ink)">Built for:</strong>
-      <span class="pill">Electricians</span><span class="pill">Plumbers</span><span class="pill">Air conditioning &amp; HVAC</span><span class="pill">Pest control</span><span class="pill">Roofing</span><span class="pill">Builders</span><span class="pill">Landscaping</span><span class="pill">Pools</span><span class="pill">Solar</span><span class="pill">Other local services</span>
-      <div class="mt-4"><a href="#enquire" class="btn btn-brand" data-event="cta_services">Request a Trades Account Review →</a></div>
-    </div>
-  </div>
-</section>
+<section class="alt" id="included"><div class="container"><div class="text-center mb-5"><span class="eyebrow">What we can help with</span><h2 class="sec-title">Practical support across your Google Ads</h2><p class="sec-sub">Start with the part of your advertising that needs attention. We’ll agree on a plan that fits your goals and account.</p></div>
+<div class="row g-4"><div class="col-lg-4"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></div><h3>Search campaigns</h3><p>Reach people searching for the services or products you offer.</p><ul class="svc-list"><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Campaign and keyword structure</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Search terms and negative keywords</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Ad copy recommendations</li></ul></div></div><div class="col-lg-4"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg></div><h3>Shopping &amp; Performance Max</h3><p>Set up and manage product-focused campaigns around your catalogue and objectives.</p><ul class="svc-list"><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Feed and campaign review</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Asset and product group checks</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Performance monitoring</li></ul></div></div><div class="col-lg-4"><div class="card-x"><div class="icon-sq"><svg class="ic" aria-hidden="true"><use href="#i-activity"/></svg></div><h3>Tracking &amp; optimisation</h3><p>Build a more useful picture of which campaigns support your business.</p><ul class="svc-list"><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Conversion tracking review</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Regular account optimisation</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Landing page recommendations</li></ul></div></div></div>
+<div class="text-center mt-5"><span class="fw-semibold text-dark me-2">Built for:</span><span class="ptag">Trades &amp; home services</span><span class="ptag">Professional services</span><span class="ptag">Healthcare &amp; allied health</span><span class="ptag">Ecommerce &amp; retail</span></div>
+<div class="text-center mt-4"><a class="btn btn-brand btn-lg" href="#enquire" data-event="cta_services">Get a Free Google Ads Review <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></section>
 
-<!-- 6. KNOW WHAT'S HAPPENING + PROCESS (merged) -->
-<section id="how">
-  <div class="container">
-    <div class="row g-5 align-items-start">
-      <div class="col-lg-6">
-        <span class="eyebrow">A more useful way to manage ads</span>
-        <h2 class="sec-title mb-4">Know what’s happening and why.</h2>
-        <p>Your campaigns should bring in booked jobs, not just a report full of clicks. We take time to understand your services, job values and what a good enquiry looks like, then use that to guide every review and improvement.</p>
-        <p class="mb-4">We’ll explain what we see in plain language, agree on priorities with you and keep the work connected to the jobs that matter to your business.</p>
-        <div class="box mb-4">
-          <h3>What you can expect</h3>
-          <ul class="checks">
-            <li>Hands-on attention to campaign structure, locations and search terms</li>
-            <li>Recommendations tied to your services, suburbs and capacity</li>
-            <li>Honest conversations about what the data can and can’t tell us</li>
-            <li>Ongoing review as your jobs and service areas change</li>
-          </ul>
-        </div>
-        <a href="#enquire" class="tlink">Talk through your account →</a>
-      </div>
-      <div class="col-lg-6 d-grid gap-3">
-        <div class="card-x tight step"><span class="no">01</span><div><h3>Understand</h3><p>We learn about your services, service areas, job values and what a good enquiry looks like for you.</p></div></div>
-        <div class="card-x tight step"><span class="no">02</span><div><h3>Review &amp; plan</h3><p>We check your search terms, locations, call and form tracking and landing page, then agree on practical priorities.</p></div></div>
-        <div class="card-x tight step"><span class="no">03</span><div><h3>Manage &amp; improve</h3><p>We put the plan into action, review performance with you and explain what we recommend next.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="how"><div class="container"><div class="row g-5 align-items-start">
+<div class="col-lg-6"><span class="eyebrow">A more useful way to manage ads</span><h2 class="sec-title mb-4">Know what’s happening and why.</h2>
+<p>Your campaigns should support a business goal, not just generate a report full of clicks. We take time to understand what a good customer looks like for you, then use that context to guide reviews and improvements.</p>
+<p>We’ll explain what we see in plain language, agree on priorities with you and keep the work connected to the outcomes that matter to your business.</p>
+<div class="expect"><h4>What you can expect</h4><ul class="ticks"><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Hands-on attention to campaign structure and performance</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Recommendations tied to your services, customers and goals</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Transparent conversations about what the data can and can’t tell us</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Ongoing review as your campaigns and business change</li></ul></div>
+<a class="tlink" href="#enquire" data-event="cta_how">Talk through your account <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+<div class="col-lg-6"><div class="step"><div class="n">01</div><div><h3>Understand</h3><p>We learn about your business, customers, goals and what you want advertising to achieve.</p></div></div><div class="step"><div class="n">02</div><div><h3>Review &amp; plan</h3><p>We assess your account and tracking, identify opportunities and agree on practical priorities.</p></div></div><div class="step"><div class="n">03</div><div><h3>Manage &amp; improve</h3><p>We put the plan into action, review performance and explain what we recommend next.</p></div></div></div>
+</div></div></section>
 
-<!-- 7. WHAT OUR CLIENTS SAY (replace placeholders with approved content; delete the .ytag spans) -->
-<section class="alt">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">Real work, real words</span>
-      <h2 class="sec-title">What our clients say</h2>
-      <p class="sec-sub">See the challenge, the changes made and the business outcome in context.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-lg-4"><div class="tcard"><!--<span class="ytag">TESTIMONIAL · PENDING APPROVAL</span>--><div class="stars mb-2">★★★★★</div><p>“Approved trades client testimonial goes here.”</p>
-        <div class="d-flex align-items-center gap-2"><span class="avatar">AB</span><div><b style="color:var(--ink)">Client name</b><br><small>Role, Business</small></div></div></div></div>
-      <div class="col-lg-4"><div class="tcard"><!--<span class="ytag">TESTIMONIAL · PENDING APPROVAL</span>--><div class="stars mb-2">★★★★★</div><p>“Approved trades client testimonial goes here.”</p>
-        <div class="d-flex align-items-center gap-2"><span class="avatar">AB</span><div><b style="color:var(--ink)">Client name</b><br><small>Role, Business</small></div></div></div></div>
-      <div class="col-lg-4"><div class="tcard"><!--<span class="ytag">TESTIMONIAL · PENDING APPROVAL</span>--><div class="stars mb-2">★★★★★</div><p>“Second approved testimonial goes here.”</p>
-        <div class="d-flex align-items-center gap-2"><span class="avatar">CD</span><div><b style="color:var(--ink)">Client name</b><br><small>Role, Business</small></div></div></div></div>
-    </div>
-    <div class="text-center mt-4"><a href="#enquire" class="btn btn-brand" data-event="cta_testimonials">Request a Trades Account Review →</a></div>
-  </div>
-</section>
+<!-- CLIENT PROOF: hidden until real, approved content exists. Uncomment when ready (never publish placeholders).
+<section class="alt"><div class="container"><div class="text-center mb-5"><span class="eyebrow">Real work, real words</span><h2 class="sec-title">What our clients say</h2><p class="sec-sub">See the challenge, the changes made and the business outcome in context.</p></div>
+<div class="row g-4"><div class="col-lg-4"><div class="card-x"><h3>Client case study</h3><p><b>Starting point:</b> …<br><b>Work completed:</b> …<br><b>Timeframe:</b> …<br><b>Measured result:</b> …</p></div></div>
+<div class="col-lg-4"><div class="card-x"><div style="color:#F5B301">★★★★★</div><p>“Approved client testimonial.”</p><b>Client name</b><br><small>Role, Business</small></div></div>
+<div class="col-lg-4"><div class="card-x"><div style="color:#F5B301">★★★★★</div><p>“Second approved testimonial.”</p><b>Client name</b><br><small>Role, Business</small></div></div></div>
+<div class="text-center mt-5"><a class="btn btn-brand btn-lg" href="#enquire" data-event="cta_testimonials">Get a Free Google Ads Review</a></div></div></section>
+-->
 
-<!-- 8. FAQ -->
-<section class="alt" id="faq">
-  <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">Good questions</span>
-      <h2 class="sec-title">Google Ads for trades FAQs</h2>
-    </div>
-    <div class="row gx-4">
-      <div class="col-lg-6"><div class="accordion">
-          <div class="accordion-item"><h3 class="accordion-header m-0"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a1">How much should I spend on Google Ads?</button></h3>
-            <div id="a1" class="accordion-collapse collapse" data-desktop-open><div class="accordion-body">It depends on your trade, service area, competition and the value of your jobs, so there’s no single right number. We’ll review your situation and discuss a sensible starting budget with you, so you can test and learn without overspending. Your ad budget is separate from our management.</div></div></div>
-          <div class="accordion-item"><h3 class="accordion-header m-0"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a2">Can you target only the suburbs I service?</button></h3>
-            <div id="a2" class="accordion-collapse collapse" data-desktop-open><div class="accordion-body">Yes. We set locations around your service area and exclude areas you don’t cover, so your budget goes to people you can actually reach.</div></div></div>
-          <div class="accordion-item"><h3 class="accordion-header m-0"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a3">Can you take over my existing account, and will I keep ownership?</button></h3>
-            <div id="a3" class="accordion-collapse collapse"><div class="accordion-body">Yes. We usually start by reviewing your account structure, tracking and recent performance, then agree on priorities before making changes. Your Google Ads account should be yours: we work inside your own account and you keep full access.</div></div></div>
-        </div></div>
-      <div class="col-lg-6"><div class="accordion">
-          <div class="accordion-item"><h3 class="accordion-header m-0"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#b1">How long does it take to see results?</button></h3>
-            <div id="b1" class="accordion-collapse collapse" data-desktop-open><div class="accordion-body">You can often see early activity within the first weeks, but it usually takes time to gather data and refine campaigns. We review performance regularly and explain what we’re learning and what we recommend next. We don’t promise specific timeframes.</div></div></div>
-          <div class="accordion-item"><h3 class="accordion-header m-0"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#b2">Can you track phone calls as well as forms?</button></h3>
-            <div id="b2" class="accordion-collapse collapse"><div class="accordion-body">Yes. We can set up tracking for both calls and form enquiries from your ads, so you can see which campaigns lead to real enquiries. We confirm the best setup after reviewing your account.</div></div></div>
-          <div class="accordion-item"><h3 class="accordion-header m-0"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#b3">Will you guarantee a certain number of leads?</button></h3>
-            <div id="b3" class="accordion-collapse collapse"><div class="accordion-body">No. No honest agency can guarantee a lead count, because results depend on your market, budget, competition, offer and website. What we can promise is clear communication, sensible decisions and reporting that shows what’s working.</div></div></div>
-        </div></div>
-    </div>
-    <p class="text-center small mt-2 mb-2 d-none d-lg-block">Tap a question to open it.</p>
-    <p class="text-center mb-0"><a class="tlink" href="#enquire" data-event="cta_faq">Still have questions? Get a free review →</a></p>
-  </div>
-</section>
+<section class="alt" id="faq"><div class="container"><div class="text-center mb-5"><span class="eyebrow">Good questions</span><h2 class="sec-title">Google Ads management FAQs</h2></div>
+<div class="row gx-4"><div class="col-lg-6"><div class="accordion" id="faqA"><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f1" aria-expanded="false">How much should I spend on Google Ads?</button></h3><div id="f1" class="accordion-collapse collapse" data-bs-parent="#faqA"><div class="accordion-body">It depends on your industry, location, competition and goals, so there’s no single right number. We’ll review your situation and discuss a sensible starting budget with you, so you can test and learn without overspending. Your ad budget is separate from our management.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3" aria-expanded="false">Can you take over an existing account?</button></h3><div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqA"><div class="accordion-body">Yes. We usually start by reviewing your account structure, tracking and recent performance, then agree on priorities before making changes.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5" aria-expanded="false">Do I keep ownership of my Google Ads account?</button></h3><div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqA"><div class="accordion-body">Your Google Ads account should be yours. We work inside your own account and you keep full access.</div></div></div></div></div><div class="col-lg-6"><div class="accordion" id="faqB"><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2" aria-expanded="false">How long does it take to see results?</button></h3><div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqB"><div class="accordion-body">You can often see early activity within the first weeks, but it usually takes time to gather data and refine campaigns. We review performance regularly and explain what we’re learning and what we recommend next. We don’t promise specific timeframes.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4" aria-expanded="false">What’s included in management?</button></h3><div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqB"><div class="accordion-body">Depending on your goals: campaign and keyword structure, search terms and negative keyword reviews, ad copy recommendations, conversion tracking review, regular optimisation, landing page recommendations and clear reporting. We confirm the scope after reviewing your account.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f6" aria-expanded="false">Will you guarantee a certain number of leads?</button></h3><div id="f6" class="accordion-collapse collapse" data-bs-parent="#faqB"><div class="accordion-body">No. No honest agency can guarantee a lead count, because results depend on your market, budget, competition, offer and website. What we can promise is clear communication, sensible decisions and reporting that shows what’s working.</div></div></div></div></div></div>
+<p class="text-center small mt-3 mb-3">Tap a question to open it. On mobile all questions start closed.</p>
+<div class="text-center"><a class="tlink" href="#enquire" data-event="cta_faq">Still have questions? Get a free review <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></div></section>
 
-<!-- 9. FINAL CTA -->
-<section class="cta">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-6">
-        <span class="eyebrow">Take the next step</span>
-        <h2 class="sec-title mb-3">Already spending on Google Ads?</h2>
-        <p class="fs-5">We can review your search terms, service mix, locations, tracking and landing page before you spend more.</p>
-        <ul class="checks mb-0"><li>Free, no-pressure conversation</li><li>Honest advice on where we can help</li><li>We reply within 1 business day</li></ul>
-      </div>
-      <div class="col-lg-6">
-        <div class="form-card">
-          <h2 class="mb-1">Request my trades account review</h2>
-          <p class="mb-3">Leave your details and we’ll get back to you.</p>
-          <form class="row g-3" data-form="final" data-event="cta_final_form" novalidate>
-            <div class="col-12"><label for="n2">Your name *</label><input id="n2" name="name" class="form-control" placeholder="Your name" required></div>
-            <div class="col-sm-6"><label for="p2">Phone *</label><input id="p2" name="phone" type="tel" class="form-control" placeholder="+61 Phone number" required></div>
-            <div class="col-sm-6"><label for="e2">Email *</label><input id="e2" name="email" type="email" class="form-control" placeholder="you@business.com.au" required></div>
-            <div class="col-12"><button class="btn btn-brand w-100" type="submit">Request a Trades Account Review →</button></div>
-            <div class="col-12"><p class="form-msg mb-1" role="alert"></p><p class="fine mb-0">We’ll get back to you within 1 business day. <a href="/privacy">Privacy Policy</a></p></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="cta"><div class="container"><div class="row g-5 align-items-center">
+<div class="col-lg-6"><span class="eyebrow">Take the next step</span><h2 class="sec-title mb-3">Ready for a clearer view of your Google Ads?</h2><p>Tell us what you’re trying to achieve. We’ll discuss your current campaigns and where a review could help.</p>
+<ul class="ticks mt-4"><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Free, no-pressure conversation</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>Honest advice on where we can help</li><li><svg class="ic" aria-hidden="true"><use href="#i-checkc"/></svg>We reply within 1 business day</li></ul></div>
+<div class="col-lg-6"><div class="form-card"><h2>Request my Google Ads review</h2><p class="sub">Leave your details and we’ll get back to you.</p><form class="lead-form" novalidate data-event="cta_final_form"><div class="row g-3"><div class="col-12"><label for="n2">Your name *</label><input id="n2" name="name" class="form-control" placeholder="Your name" required></div>
+<div class="col-sm-6"><label for="p2">Phone *</label><input id="p2" name="phone" type="tel" class="form-control" placeholder="+61 Phone number" required></div>
+<div class="col-sm-6"><label for="e2">Email *</label><input id="e2" name="email" type="email" class="form-control" placeholder="you@business.com.au" required></div>
+<div class="col-12"><button type="submit" class="btn btn-brand btn-lg w-100">Get a Free Google Ads Review <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button></div></div>
+<input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term"><input type="hidden" name="utm_content"><input type="hidden" name="gclid"><input type="hidden" name="page_url"><div class="form-msg" role="alert">Sorry, something went wrong. Please check your details and try again, or call us on +61 410 393 639.</div>
+<p class="fine">We’ll get back to you within 1 business day. <a href="/privacy">Privacy Policy</a></p></form></div></div></div></div></section>
 
-<!-- 10. FOOTER -->
-<footer>
-  <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
-    <span>© 2026 Small Biz Enter. All rights reserved.</span>
-    <span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></span>
-  </div>
-</footer>
+<footer><div class="container d-flex flex-wrap justify-content-between gap-2"><span>© 2026 Small Biz Enter. All rights reserved.</span><span><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/contact">Contact</a></span></div></footer>
 
-<!-- 11. MOBILE STICKY BAR -->
-<div class="mbar">
-  <a class="btn btn-outline-brand" href="tel:+61410393639" data-event="cta_mobile_call">✆ Call</a>
-  <a class="btn btn-brand" href="#enquire" data-event="cta_mobile_review">Request a Review</a>
-</div>
+<div class="mbar"><a class="btn btn-outline-brand" href="tel:+61410393639" data-event="cta_mobile_call"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> Call</a><a class="btn btn-brand" href="#enquire" data-event="cta_mobile_review">Get a Free Review</a></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 (function(){
-  var dl = window.dataLayer = window.dataLayer || [];
-  // FAQ: first 3 open on desktop, all closed on mobile
-  if (window.matchMedia('(min-width:992px)').matches) {
-    document.querySelectorAll('[data-desktop-open]').forEach(function(el){
-      el.classList.add('show');
-      var b = document.querySelector('[data-bs-target="#'+el.id+'"]'); if (b) b.classList.remove('collapsed');
-    });
-  }
-  // Click tracking (one event name per CTA placement)
-  document.addEventListener('click', function(e){
-    var a = e.target.closest('[data-event]');
-    if (a && a.tagName !== 'FORM') dl.push({event: a.getAttribute('data-event')});
-  });
-  // Hidden fields: UTMs, gclid, page URL
-  var keys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'];
-  var qs = new URLSearchParams(location.search);
-  document.querySelectorAll('form[data-form]').forEach(function(f){
-    keys.concat(['page_url']).forEach(function(k){
-      var i = document.createElement('input'); i.type = 'hidden'; i.name = k;
-      i.value = k === 'page_url' ? location.href.split('#')[0] : (qs.get(k) || ''); f.appendChild(i);
-    });
-    f.addEventListener('submit', function(e){
-      e.preventDefault();
-      var msg = f.querySelector('.form-msg'); msg.style.display = 'none';
-      if (!f.checkValidity()) { f.reportValidity(); return; }
-      var btn = f.querySelector('button[type=submit]'); btn.disabled = true;
-      dl.push({event: f.getAttribute('data-event')});
-      // TODO: set FORM_ENDPOINT to your real form handler (CRM / email service)
-      var FORM_ENDPOINT = '/api/google-ads-trades-enquiry';
-      fetch(FORM_ENDPOINT, {method:'POST', body:new FormData(f)})
-        .then(function(r){ if (!r.ok) throw 0; try { sessionStorage.setItem('lead_submitted','1'); } catch(_){}
-          location.href = '/thank-you-google-ads-trades.html'; })
-        .catch(function(){ btn.disabled = false; msg.textContent = 'Sorry, we couldn’t send your details. Please try again or call +61 410 393 639.'; msg.style.display = 'block'; });
+  var ENDPOINT=""; // TODO: your form handler URL (POST). Leave empty to redirect without sending (demo only).
+  var THANKS="/thank-you-google-ads.html";
+  window.dataLayer=window.dataLayer||[];
+  // CTA + call tracking
+  document.addEventListener("click",function(e){var a=e.target.closest("[data-event]");if(a&&!a.matches("form"))dataLayer.push({event:a.dataset.event});});
+  // FAQ: first 3 questions open on desktop, all closed on mobile
+  if(window.matchMedia("(min-width:992px)").matches){["f1","f2","f3"].forEach(function(id){var p=document.getElementById(id);p.classList.add("show");p.parentNode.querySelector(".accordion-button").classList.remove("collapsed");});}
+  // Hidden fields from query string
+  var q=new URLSearchParams(location.search);
+  document.querySelectorAll(".lead-form").forEach(function(f){
+    ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid"].forEach(function(k){f.elements[k].value=q.get(k)||"";});
+    f.elements.page_url.value=location.href.split("#")[0];
+    f.addEventListener("submit",function(e){
+      e.preventDefault();var msg=f.querySelector(".form-msg");msg.style.display="none";
+      if(!f.checkValidity()){f.reportValidity();return;}
+      var go=function(){try{sessionStorage.setItem("sbe_lead","1");}catch(x){}dataLayer.push({event:f.dataset.event});location.href=THANKS;};
+      if(!ENDPOINT){go();return;}
+      fetch(ENDPOINT,{method:"POST",body:new FormData(f)}).then(function(r){if(!r.ok)throw 0;go();}).catch(function(){msg.style.display="block";});
     });
   });
 })();
 </script>
-</body>
-</html>
+</body></html>
