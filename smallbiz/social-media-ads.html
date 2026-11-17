@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Social Media Management | SmallBiz Enter</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --v2-primary:#FF6B35; --v2-accent:#E85D2C; --v2-success:#10B981;
+  --v2-bg-pure:#FFFFFF; --v2-bg-soft:#FFF7F4; --v2-bg-glass:rgba(255,255,255,.7);
+  --v2-text-dark:#100602; --v2-text-muted:#100602;
+  --bs-body-font-family:'Outfit',system-ui,sans-serif; --bs-body-color:var(--v2-text-dark);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;color:var(--v2-text-dark);background:var(--v2-bg-pure)}
+.muted{color:var(--v2-text-muted);opacity:.72}
+.text-primary-v{color:var(--v2-primary)}
+section{padding:80px 0}
+.bg-soft{background:var(--v2-bg-soft)}
+.btn-v{background:linear-gradient(135deg,var(--v2-primary),var(--v2-accent));color:#fff;border:0;border-radius:50px;padding:12px 28px;font-weight:600;box-shadow:0 8px 20px rgba(255,107,53,.3)}
+.btn-v:hover{color:#fff;filter:brightness(1.05)}
+.btn-v-outline{background:#fff;color:var(--v2-text-dark);border:1px solid rgba(255,107,53,.35);border-radius:50px;padding:12px 28px;font-weight:600}
+.btn-v-outline:hover{border-color:var(--v2-primary);color:var(--v2-accent)}
+.pill{display:inline-block;background:#FFE9E0;color:var(--v2-accent);border-radius:50px;padding:5px 16px;font-size:.78rem;font-weight:600;letter-spacing:.06em;margin-bottom:16px}
+.sec-title{font-weight:600;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.2}
+.sec-sub{max-width:640px;margin:14px auto 0}
+.ico{width:48px;height:48px;border-radius:12px;background:#FFE9E0;color:var(--v2-primary);display:inline-flex;align-items:center;justify-content:center;font-size:1.3rem;flex:none}
+
+/* Navbar */
+.navbar{background:var(--v2-bg-glass);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,107,53,.12)}
+.brand{font-weight:700;font-size:1.35rem;color:var(--v2-text-dark);text-decoration:none}
+.brand span{color:var(--v2-primary)}
+.nav-link{color:var(--v2-text-dark);font-weight:500;font-size:.95rem}
+.nav-link:hover,.nav-link.active{color:var(--v2-primary)}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--v2-bg-soft),#fff);padding:90px 0 70px}
+.hero h1{font-weight:700;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.12}
+.stat strong{display:block;font-size:2rem;font-weight:700;color:var(--v2-primary)}
+.stat small{font-size:.72rem;letter-spacing:.08em;font-weight:600;opacity:.7}
+.hero-card{background:#fff;border:1px solid rgba(255,107,53,.2);border-radius:24px;padding:48px 32px;text-align:center;box-shadow:0 24px 60px rgba(255,107,53,.18)}
+.hero-card .big{width:84px;height:84px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,var(--v2-primary),var(--v2-accent));color:#fff;font-size:2.2rem;display:flex;align-items:center;justify-content:center}
+.chip{display:inline-block;background:var(--v2-bg-soft);border:1px solid rgba(255,107,53,.25);border-radius:50px;padding:5px 14px;font-size:.85rem;font-weight:500;margin:4px 2px}
+
+/* About */
+.check li{list-style:none;margin-bottom:10px;font-weight:500}
+.check i{color:var(--v2-primary);margin-right:8px}
+.feat-card{background:#fff;border:1px solid rgba(255,107,53,.2);border-radius:20px;padding:28px;box-shadow:0 12px 32px rgba(255,107,53,.1)}
+.feat-card h6{font-weight:600}
+.about-points p{margin-bottom:12px}
+.about-points i{color:var(--v2-primary);margin-right:6px}
+
+/* Cards */
+.card-v{background:#fff;border:2px solid var(--v2-primary);border-radius:18px;padding:26px;height:100%}
+.card-v.soft{border:1px solid rgba(255,107,53,.2);box-shadow:0 8px 24px rgba(255,107,53,.08)}
+.card-v h5{font-weight:600;font-size:1.1rem;margin:14px 0 8px}
+.card-v p{font-size:.92rem;margin:0}
+
+/* Logos */
+.logos span{font-weight:700;font-size:1.15rem;opacity:.4;letter-spacing:.04em}
+
+/* Why choose */
+.photo{min-height:380px;border-radius:24px;background:linear-gradient(135deg,#FFD9C9,var(--v2-primary) 70%,var(--v2-accent));position:relative;overflow:hidden}
+.photo .badge-100{position:absolute;left:18px;bottom:18px;background:#fff;border-radius:16px;padding:12px 18px;box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.photo .badge-100 strong{display:block;color:var(--v2-primary);font-size:1.5rem;line-height:1}
+.why-item{display:flex;gap:16px;margin-bottom:22px}
+.why-item h6{font-weight:600;margin-bottom:4px}
+.why-item p{font-size:.92rem;margin:0}
+
+/* Results */
+.res-bar{background:#fff;border:1px solid rgba(16,185,129,.35);border-radius:14px;padding:14px 18px;font-size:.92rem;font-weight:500;display:flex;gap:10px;align-items:center}
+.res-bar i{color:var(--v2-success);font-size:1.2rem}
+
+/* Testimonial */
+.testi{max-width:760px;margin:0 auto;background:#fff;border:1px solid rgba(255,107,53,.2);border-radius:22px;padding:36px;box-shadow:0 14px 36px rgba(255,107,53,.1)}
+.avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--v2-primary),var(--v2-accent));color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center}
+.stars{color:#FFB400}
+
+/* FAQ */
+.accordion-item{border:1px solid rgba(255,107,53,.2)!important;border-radius:14px!important;margin-bottom:14px;overflow:hidden;background:#fff}
+.accordion-button{font-weight:600;background:#fff;color:var(--v2-text-dark);box-shadow:none!important}
+.accordion-button:not(.collapsed){background:var(--v2-bg-soft);color:var(--v2-accent)}
+.accordion-button:focus{box-shadow:0 0 0 3px rgba(255,107,53,.25)!important}
+.accordion-body{font-size:.94rem}
+
+/* CTA form */
+.cta-form{background:#fff;border:1px solid rgba(255,107,53,.2);border-radius:22px;padding:30px;box-shadow:0 18px 44px rgba(255,107,53,.14)}
+.form-label{font-weight:500;font-size:.88rem;margin-bottom:4px}
+.form-control,.form-select{border-radius:10px;border:1px solid rgba(255,107,53,.25);padding:10px 14px;background:var(--v2-bg-soft)}
+.form-control:focus,.form-select:focus{border-color:var(--v2-primary);box-shadow:0 0 0 3px rgba(255,107,53,.2)}
+
+/* Footer */
+footer{background:var(--v2-bg-soft);border-top:1px solid rgba(255,107,53,.15);padding:60px 0 24px}
+footer h6{font-weight:600;margin-bottom:16px}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:8px;font-size:.92rem}
+footer a{color:var(--v2-text-dark);text-decoration:none;opacity:.78}
+footer a:hover{color:var(--v2-primary);opacity:1}
+footer .copy{border-top:1px solid rgba(255,107,53,.18);margin-top:36px;padding-top:20px;font-size:.85rem}
+@media(max-width:991px){section{padding:56px 0}.hero{padding:60px 0 50px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top py-3">
+  <div class="container">
+    <a class="brand" href="#">SmallBiz <span>Enter</span></a>
+    <button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Toggle navigation"><i class="bi bi-list fs-2"></i></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav mx-auto gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Google Ads</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Facebook Ads</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Social Media Ads</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-v btn-sm px-4">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="pill">Social Media Management</span>
+        <h1 class="mb-3">Social Media Management That Keeps Your Brand <span class="text-primary-v">Visible and Engaged</span></h1>
+        <p class="muted fs-5 mb-4" style="max-width:560px">Show up consistently where your customers spend their time. We plan, create and manage your social presence so you can stay focused on running your business.</p>
+        <div class="d-flex flex-wrap gap-3 mb-5">
+          <a href="#contact" class="btn btn-v">Plan Your Social Strategy</a>
+          <a href="#services" class="btn btn-v-outline">Explore Our Social Services</a>
+        </div>
+        <div class="d-flex gap-4 gap-md-5">
+          <div class="stat"><strong>15+</strong><small>YEARS OF EXPERIENCE</small></div>
+          <div class="stat"><strong>800+</strong><small>BUSINESSES SERVED</small></div>
+          <div class="stat"><strong>$2M+</strong><small>REVENUE GENERATED</small></div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-card">
+          <div class="big"><i class="bi bi-share"></i></div>
+          <h5 class="fw-semibold mb-3">Social Media Management</h5>
+          <span class="chip">Instagram</span><span class="chip">Facebook</span><span class="chip">LinkedIn</span><span class="chip">YouTube</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="pill">About Our Social Media Service</span>
+        <h2 class="sec-title mb-3">A Social Presence That Reflects Your Brand — Every Week</h2>
+        <p class="muted">Social media works best when it is consistent, relevant and unmistakably you. But for most small business owners, finding the time to plan, create and post — let alone reply to comments and messages — is the hard part.</p>
+        <p class="muted mb-4">We take that load off your plate. We build a clear content strategy around your audience and goals, create on-brand content, manage your channels and review what is working, so your social presence grows steadily instead of stopping and starting.</p>
+        <div class="about-points mb-4">
+          <p><i class="bi bi-check-circle-fill"></i><strong>Strategy First</strong> – Content planned around your audience, goals and brand voice.</p>
+          <p><i class="bi bi-check-circle-fill"></i><strong>Consistent Publishing</strong> – A reliable content calendar so your pages never go quiet.</p>
+          <p><i class="bi bi-check-circle-fill"></i><strong>Real Engagement</strong> – Thoughtful community management, not just scheduled posts.</p>
+          <p><i class="bi bi-check-circle-fill"></i><strong>Joined-Up Marketing</strong> – Social that works alongside your ads, website and SEO.</p>
+        </div>
+        <a href="#contact" class="btn btn-v">Book a Free Strategy Call Today</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="feat-card">
+          <h6 class="mb-3">What our social media work covers</h6>
+          <ul class="check p-0 mb-4">
+            <li><i class="bi bi-check2-square"></i>Strategy &amp; content planning</li>
+            <li><i class="bi bi-check2-square"></i>Content creation &amp; design</li>
+            <li><i class="bi bi-check2-square"></i>Scheduling &amp; posting</li>
+            <li><i class="bi bi-check2-square"></i>Community management</li>
+            <li><i class="bi bi-check2-square"></i>Reporting &amp; insights</li>
+          </ul>
+          <p class="small muted mb-0 border-top pt-3">We're not just another agency. We're your behind-the-scenes powerhouse — helping you go from overlooked to unmissable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="pill">Why It Matters</span>
+      <h2 class="sec-title">Why Social Media Matters for Your Business</h2>
+      <p class="muted sec-sub">Customers check your social profiles before they call, visit or buy. An active, well-managed presence builds trust and keeps your business front of mind.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="card-v"><span class="ico"><i class="bi bi-shield-check"></i></span><h5>Build Trust &amp; Credibility</h5><p class="muted">An active, professional presence reassures customers that your business is real and reliable.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v"><span class="ico"><i class="bi bi-bullseye"></i></span><h5>Reach Your Audience Where They Are</h5><p class="muted">Connect with people on the platforms they already use every day.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v"><span class="ico"><i class="bi bi-lightbulb"></i></span><h5>Stay Top of Mind</h5><p class="muted">Regular, useful content keeps your brand familiar between purchases.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v"><span class="ico"><i class="bi bi-chat-dots"></i></span><h5>Start Conversations</h5><p class="muted">Comments and messages give customers an easy way to ask questions and enquire.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v"><span class="ico"><i class="bi bi-diagram-3"></i></span><h5>Support Your Other Channels</h5><p class="muted">Social content strengthens your ads, website and email marketing.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v"><span class="ico"><i class="bi bi-clock-history"></i></span><h5>Save Your Time</h5><p class="muted">Hand the planning, creating and posting to a team that does it every day.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section>
+  <div class="container text-center">
+    <span class="pill">Our Clients</span>
+    <h2 class="sec-title">Trusted by Small Businesses Across Industries</h2>
+    <p class="muted sec-sub mb-5">From local service providers to e-commerce brands, our clients come from every corner of the small business world. They trust us because we deliver — consistently, transparently, and with genuine care.</p>
+    <div class="logos d-flex flex-wrap justify-content-center gap-4 gap-md-5">
+      <span>FITHAVEN</span><span>BLOOM&amp;CO</span><span>URBAN EATS</span><span>GLOWLAB</span><span>NORTHSIDE</span><span>BRIGHTMART</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-soft">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="pill">What We Offer</span>
+      <h2 class="sec-title">Social Media Services to Grow Your Presence</h2>
+      <p class="muted sec-sub">We tailor what we manage to your business, your audience and the platforms that make sense for you — no one-size-fits-all packages.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="card-v soft"><span class="ico"><i class="bi bi-compass"></i></span><h5>Social Media Strategy</h5><p class="muted">A clear plan covering platforms, content themes, tone of voice and goals, built around your business.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v soft"><span class="ico"><i class="bi bi-calendar3"></i></span><h5>Content Calendar Planning</h5><p class="muted">Organised monthly planning so your posting stays consistent and ties in with promotions and events.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v soft"><span class="ico"><i class="bi bi-palette"></i></span><h5>Content Creation &amp; Design</h5><p class="muted">On-brand graphics, short-form video and captions designed to stop the scroll.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v soft"><span class="ico"><i class="bi bi-send"></i></span><h5>Scheduling &amp; Publishing</h5><p class="muted">Reliable posting across your chosen platforms at the times your audience is most active.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v soft"><span class="ico"><i class="bi bi-people"></i></span><h5>Community Management</h5><p class="muted">Monitoring and responding to comments and messages in your brand's voice.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-v soft"><span class="ico"><i class="bi bi-graph-up-arrow"></i></span><h5>Reporting &amp; Optimisation</h5><p class="muted">Regular performance reviews using platform insights to refine what we create next.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section>
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="pill">Why Choose SmallBiz Enter</span>
+      <h2 class="sec-title">We're Different. Here's the Proof.</h2>
+    </div>
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="photo" role="img" aria-label="Team collaborating at work (replace with photo)">
+          <div class="badge-100"><strong>100%</strong><small>Focused On Small Business</small></div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="why-item"><span class="ico"><i class="bi bi-shop"></i></span><div><h6>Small Business Specialists</h6><p class="muted">We don't serve Fortune 500s. We're 100% focused on helping entrepreneurs and small business owners like you.</p></div></div>
+        <div class="why-item"><span class="ico"><i class="bi bi-brush"></i></span><div><h6>Brand-True Content</h6><p class="muted">Everything we create is built around your brand, voice and audience — never generic filler.</p></div></div>
+        <div class="why-item"><span class="ico"><i class="bi bi-trophy"></i></span><div><h6>Results-First Mindset</h6><p class="muted">Every strategy we build is tied to real business outcomes — more leads, more sales, more growth.</p></div></div>
+        <div class="why-item"><span class="ico"><i class="bi bi-eye"></i></span><div><h6>Transparent Process</h6><p class="muted">No hidden fees, no surprise invoices. We explain what we recommend and why, before any work begins.</p></div></div>
+        <div class="why-item mb-0"><span class="ico"><i class="bi bi-arrows-angle-expand"></i></span><div><h6>Scalable Solutions</h6><p class="muted">Whether you have 5 customers or 5,000, our services grow with you every step of the way.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="pill">Expected Results &amp; Benefits</span>
+      <h2 class="sec-title">What Consistent Social Media Management Can Support</h2>
+      <p class="muted sec-sub">Results depend on your industry, audience, content and the platforms used. Done consistently, social media management can support:</p>
+    </div>
+    <div class="row g-4 mb-4">
+      <div class="col-sm-6 col-lg-3"><div class="card-v"><span class="ico"><i class="bi bi-stars"></i></span><h5>A Stronger Brand Presence</h5><p class="muted">A polished, consistent look and voice across your channels.</p></div></div>
+      <div class="col-sm-6 col-lg-3"><div class="card-v"><span class="ico"><i class="bi bi-heart"></i></span><h5>Higher Engagement</h5><p class="muted">More meaningful interaction with your followers and customers.</p></div></div>
+      <div class="col-sm-6 col-lg-3"><div class="card-v"><span class="ico"><i class="bi bi-envelope-open"></i></span><h5>More Enquiries</h5><p class="muted">More ways for customers to message, ask and enquire.</p></div></div>
+      <div class="col-sm-6 col-lg-3"><div class="card-v"><span class="ico"><i class="bi bi-hourglass-split"></i></span><h5>Time Back for You</h5><p class="muted">Your social handled so you can focus on your business.</p></div></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6"><div class="res-bar"><i class="bi bi-graph-up"></i><span><strong>Restaurants &amp; hospitality clients</strong> — Increased footfall and online orders by 80%+</span></div></div>
+      <div class="col-md-6"><div class="res-bar"><i class="bi bi-graph-up"></i><span><strong>Beauty, salon &amp; wellness clients</strong> — Boosted bookings by 90%+ through targeted campaigns</span></div></div>
+    </div>
+    <p class="small muted text-center mt-4 mb-0">Results are based on past client campaigns and vary by business, industry and market. They are not a guarantee of future outcomes.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section>
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="pill">What Our Clients Say</span>
+      <h2 class="sec-title">Real Businesses. Real Results. Real Words.</h2>
+    </div>
+    <div class="testi">
+      <div class="stars mb-3"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+      <p class="fs-5 mb-4">"I went from zero online presence to booking clients every week. Small Biz Enter didn't just build my website — they built my confidence. These guys genuinely care about your success."</p>
+      <div class="d-flex align-items-center gap-3"><div class="avatar">MT</div><div><strong>Marcus T.</strong><div class="small muted">Founder, FitHaven Training Studio</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-soft">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="pill">FAQ</span>
+      <h2 class="sec-title">Frequently Asked Questions About Social Media Management</h2>
+    </div>
+    <div class="row g-x-4">
+      <div class="col-lg-6">
+        <div class="accordion" id="faqA">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">Which social media platforms do you manage?</button></h3><div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqA"><div class="accordion-body muted">We commonly manage Instagram, Facebook, LinkedIn and YouTube. We recommend the platforms that suit your audience and goals rather than trying to be everywhere.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">Do you create the content as well?</button></h3><div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqA"><div class="accordion-body muted">Yes. We can create graphics, short videos and captions in line with your brand, and we work with your own photos and videos where you have them.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">How long before I see results?</button></h3><div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqA"><div class="accordion-body muted">Social media builds over time. Consistent publishing and engagement usually create momentum over a few months, and we review performance with you along the way. We don't promise specific follower or sales numbers.</div></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="accordion" id="faqB">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">What is included in social media management?</button></h3><div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqB"><div class="accordion-body muted">Scope can include strategy, content calendar planning, content creation and design, scheduling and publishing, community management and reporting. We confirm the exact scope after learning about your business.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f5">Will I get to approve posts before they go live?</button></h3><div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqB"><div class="accordion-body muted">Yes. We can agree an approval process that suits you, so you stay in control of what is published.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f6">Can social media work alongside my ads?</button></h3><div id="f6" class="accordion-collapse collapse" data-bs-parent="#faqB"><div class="accordion-body muted">Absolutely. Organic social builds trust and familiarity, while paid campaigns such as Facebook &amp; Meta Ads amplify reach. They work best together.</div></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="accordion" id="faqC">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f7">Do I need to be on every platform?</button></h3><div id="f7" class="accordion-collapse collapse" data-bs-parent="#faqC"><div class="accordion-body muted">No. We help you choose the platforms where your customers actually spend time and do those well.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / FORM -->
+<section id="contact">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="pill">Ready to Show Up?</span>
+        <h2 class="sec-title mb-3">Ready to Make Your Brand Impossible to Scroll Past?</h2>
+        <p class="muted">Tell us about your business and where you want to be seen. Share your details and our team will get in touch to discuss your social media goals.</p>
+      </div>
+      <div class="col-lg-6">
+        <form class="cta-form" onsubmit="return false">
+          <div class="row g-3">
+            <div class="col-md-6"><label class="form-label" for="fn">Full Name</label><input id="fn" class="form-control" placeholder="Your Name"></div>
+            <div class="col-md-6"><label class="form-label" for="ph">Phone Number</label>
+              <div class="input-group"><span class="input-group-text" style="background:var(--v2-bg-soft);border-color:rgba(255,107,53,.25)">+61</span><input id="ph" type="tel" class="form-control" placeholder="Phone Number"></div></div>
+            <div class="col-md-6"><label class="form-label" for="em">Email Address</label><input id="em" type="email" class="form-control" placeholder="Your Email"></div>
+            <div class="col-md-6"><label class="form-label" for="bn">Business Name</label><input id="bn" class="form-control" placeholder="Company Name"></div>
+            <div class="col-md-6"><label class="form-label" for="sv">Service Interested In</label>
+              <select id="sv" class="form-select"><option selected>Social Media Management</option><option>Digital Marketing</option><option>SEO</option><option>PPC Advertising</option></select></div>
+            <div class="col-md-6"><label class="form-label" for="dt">Preferred Meeting Date &amp; Time</label><input id="dt" type="datetime-local" class="form-control"></div>
+            <div class="col-12"><button class="btn btn-v w-100" type="submit">SUBMIT</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="brand d-inline-block mb-3" href="#">SmallBiz <span>Enter</span></a>
+        <p class="muted small" style="max-width:300px">Empowering small businesses with the digital tools, strategies, and expert support they need to grow — without the big-agency price tag. Your success is our mission.</p>
+      </div>
+      <div class="col-6 col-lg-2"><h6>Services</h6><ul><li><a href="#">Digital Marketing</a></li><li><a href="#">SEO</a></li><li><a href="#">Brand Identity &amp; Design</a></li><li><a href="#">Website Development</a></li><li><a href="#">PPC Advertising</a></li><li><a href="#">Mobile App Development</a></li></ul></div>
+      <div class="col-6 col-lg-2"><h6>Quick Links</h6><ul><li><a href="#">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact Us</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div>
+      <div class="col-lg-4"><h6>Contact</h6><ul>
+        <li><i class="bi bi-envelope text-primary-v me-2"></i><a href="mailto:smallbizenter@gmail.com">smallbizenter@gmail.com</a></li>
+        <li><i class="bi bi-telephone text-primary-v me-2"></i><a href="tel:+61410393639">+61 410 393 639</a></li>
+        <li><i class="bi bi-geo-alt text-primary-v me-2"></i>SmallBiz Enter, 263 Morris Road, Koppers Crossing, Vic - 3029</li></ul></div>
+    </div>
+    <div class="copy d-flex flex-wrap justify-content-between gap-2 muted">
+      <span>© 2026 SmallBizEnter. All Rights Reserved.</span><span>Built with purpose, powered by passion.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Production & Video Ads | SmallBiz Enter</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --v2-primary:#FF6B35;--v2-accent:#E85D2C;--v2-success:#10B981;
+  --v2-bg-pure:#FFFFFF;--v2-bg-soft:#FFF7F4;--v2-bg-glass:rgba(255,255,255,.7);
+  --v2-text-dark:#100602;--v2-text-muted:#100602;
+  --bs-primary:#FF6B35;--bs-body-font-family:'Outfit',system-ui,sans-serif;--bs-body-color:#100602;
+}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--v2-text-dark);background:var(--v2-bg-pure)}
+p{color:var(--v2-text-muted);opacity:.78}
+.section{padding:80px 0}
+.bg-soft{background:var(--v2-bg-soft)}
+.eyebrow{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--v2-primary);margin-bottom:12px}
+.sec-title{font-weight:700;font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.2}
+.sec-title .hl,.hero h1 .hl{color:var(--v2-primary)}
+.btn-brand{background:var(--v2-primary);border:2px solid var(--v2-primary);color:#fff;font-weight:600;border-radius:50px;padding:11px 26px}
+.btn-brand:hover{background:var(--v2-accent);border-color:var(--v2-accent);color:#fff}
+.btn-outline-brand{background:#fff;border:2px solid var(--v2-primary);color:var(--v2-primary);font-weight:600;border-radius:50px;padding:11px 26px}
+.btn-outline-brand:hover{background:var(--v2-primary);color:#fff}
+.icon-box{width:48px;height:48px;border-radius:12px;background:var(--v2-primary);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:1.3rem;flex:none}
+.card-b{background:#fff;border:2px solid var(--v2-primary);border-radius:18px;padding:24px;height:100%;box-shadow:0 8px 24px rgba(255,107,53,.10)}
+.card-b h5{font-size:1.05rem;font-weight:600;margin:14px 0 6px}
+.card-b p{font-size:.92rem;margin:0}
+/* nav */
+.navbar{background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #ffe1d6}
+.navbar-brand{font-weight:800;font-size:1.4rem;color:var(--v2-text-dark)!important}
+.navbar-brand span{color:var(--v2-primary)}
+.nav-link{font-weight:500;color:var(--v2-text-dark)!important;font-size:.95rem}
+.nav-link:hover{color:var(--v2-primary)!important}
+/* hero */
+.hero{background:linear-gradient(180deg,var(--v2-bg-soft),#ffe6dc);padding:80px 0 70px}
+.hero h1{font-weight:800;font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.12}
+.hero-card{background:var(--v2-bg-glass);border:2px solid var(--v2-primary);border-radius:22px;padding:34px;text-align:center;backdrop-filter:blur(8px);box-shadow:0 14px 40px rgba(255,107,53,.18)}
+.hero-card .icon-box{width:64px;height:64px;font-size:1.8rem;border-radius:16px}
+.pill{display:inline-block;background:#fff;border:1px solid #ffd0bd;color:var(--v2-accent);border-radius:50px;padding:4px 14px;font-size:.8rem;font-weight:500;margin:3px}
+.stat b{display:block;font-size:1.9rem;font-weight:800;color:var(--v2-primary);line-height:1}
+.stat small{font-size:.7rem;letter-spacing:.1em;font-weight:600;opacity:.7}
+/* about */
+.cover-box{background:#fff;border:2px solid var(--v2-primary);border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(255,107,53,.12)}
+.cover-box li{list-style:none;padding:7px 0;font-weight:500}
+.cover-box li i{color:var(--v2-primary);margin-right:10px}
+.check-list p{margin-bottom:10px;font-size:.95rem}
+.check-list i{color:var(--v2-success);margin-right:8px}
+/* logos */
+.logos span{font-weight:700;font-size:1.15rem;color:#100602;opacity:.45;letter-spacing:.04em}
+/* why choose */
+.why-img{border-radius:20px;min-height:380px;background:linear-gradient(135deg,#FF6B35,#E85D2C 60%,#100602);position:relative;overflow:hidden}
+.why-img .badge-focus{position:absolute;left:18px;bottom:18px;background:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.why-img .badge-focus b{color:var(--v2-primary);font-size:1.6rem;display:block;line-height:1}
+.why-img .badge-focus small{font-weight:500}
+.why-img i.bi-camera-reels{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:6rem;color:rgba(255,255,255,.35)}
+.why-item{display:flex;gap:14px;background:#fff;border:2px solid var(--v2-primary);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.why-item .icon-box{width:40px;height:40px;font-size:1.05rem;border-radius:10px}
+.why-item h6{font-weight:600;margin:0 0 2px}
+.why-item p{margin:0;font-size:.88rem}
+/* results */
+.res-strip{background:#fff;border:1px solid #ffd0bd;border-left:4px solid var(--v2-success);border-radius:12px;padding:14px 18px;height:100%}
+.res-strip b{display:block;font-weight:600}
+.res-strip span{font-size:.9rem;opacity:.8}
+.disc{font-size:.8rem;opacity:.7;text-align:center}
+/* testimonial */
+.t-card{background:#fff;border:2px solid var(--v2-primary);border-radius:20px;padding:34px;max-width:780px;margin:auto;box-shadow:0 10px 30px rgba(255,107,53,.12)}
+.avatar{width:46px;height:46px;border-radius:50%;background:var(--v2-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600}
+.stars{color:var(--v2-primary)}
+/* faq */
+.accordion-item{border:2px solid var(--v2-primary)!important;border-radius:14px!important;margin-bottom:14px;overflow:hidden;background:#fff}
+.accordion-button{font-weight:600;color:var(--v2-text-dark);background:#fff;box-shadow:none!important}
+.accordion-button:not(.collapsed){background:var(--v2-bg-soft);color:var(--v2-accent)}
+.accordion-button:focus{border-color:var(--v2-primary)}
+.accordion-body{font-size:.92rem;color:var(--v2-text-muted)}
+/* contact */
+.form-box{background:#fff;border:2px solid var(--v2-primary);border-radius:20px;padding:30px;box-shadow:0 14px 40px rgba(255,107,53,.15)}
+.form-label{font-weight:600;font-size:.85rem;margin-bottom:4px}
+.form-control,.form-select{border-radius:10px;border:1.5px solid #ffd0bd;padding:10px 14px;background:var(--v2-bg-soft)}
+.form-control:focus,.form-select:focus{border-color:var(--v2-primary);box-shadow:0 0 0 .2rem rgba(255,107,53,.2)}
+/* footer */
+footer{background:var(--v2-bg-soft);border-top:1px solid #ffe1d6;padding:60px 0 24px}
+footer h6{font-weight:700;margin-bottom:16px}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:9px;font-size:.92rem}
+footer a{color:var(--v2-text-dark);text-decoration:none;opacity:.8}
+footer a:hover{color:var(--v2-primary);opacity:1}
+footer li i{color:var(--v2-primary);margin-right:8px}
+.copy{border-top:1px solid #ffd0bd;margin-top:36px;padding-top:20px;font-size:.85rem}
+@media(max-width:767px){.section{padding:56px 0}.hero{padding:56px 0}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-xl sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">SmallBiz<span>Enter</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Google Ads</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Facebook Ads</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Social Media Ads</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-brand btn-sm px-4">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <h1>Video Production &amp; Video Ads That <span class="hl">Engage</span> and Convert</h1>
+        <p class="fs-5 mt-3 mb-4">We create high-quality, results-driven videos that showcase your brand, hold attention and support your marketing — across ads, social media and your website.</p>
+        <div class="d-flex flex-wrap gap-3 mb-5">
+          <a href="#contact" class="btn btn-brand">Plan Your Video</a>
+          <a href="#services" class="btn btn-outline-brand">Explore Our Video Services</a>
+        </div>
+        <div class="row g-3 text-center text-sm-start" style="max-width:480px">
+          <div class="col-4 stat"><b>15+</b><small>YEARS OF EXPERIENCE</small></div>
+          <div class="col-4 stat"><b>800+</b><small>BUSINESSES SERVED</small></div>
+          <div class="col-4 stat"><b>$2M+</b><small>REVENUE GENERATED</small></div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-card">
+          <span class="icon-box mb-3"><i class="bi bi-camera-video"></i></span>
+          <h5 class="fw-bold mb-3">Video Production &amp; Video Ads</h5>
+          <div>
+            <span class="pill">Brand Videos</span><span class="pill">Social Reels</span>
+            <span class="pill">Video Ads</span><span class="pill">Editing &amp; Motion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-7">
+        <span class="eyebrow">About Our Video Service</span>
+        <h2 class="sec-title mb-3">Video That Tells Your Story and Supports Your Marketing</h2>
+        <p>Video is one of the most engaging ways to show what your business does and why customers should choose you. From a short social reel to a polished brand film, the right video can make your message clearer and more memorable.</p>
+        <p>We plan, produce and edit videos with a clear purpose — whether that is to introduce your brand, promote an offer or run as a video ad — and format them for the platforms where your audience will watch.</p>
+        <div class="check-list my-4">
+          <p><i class="bi bi-check-circle-fill"></i><b>Purpose-Led</b> – Every video starts with a clear goal and audience.</p>
+          <p><i class="bi bi-check-circle-fill"></i><b>Made for Each Platform</b> – Formats and lengths suited to ads, social and your website.</p>
+          <p><i class="bi bi-check-circle-fill"></i><b>Planning to Final Edit</b> – One team from concept through to delivery.</p>
+          <p><i class="bi bi-check-circle-fill"></i><b>Built to Support Ads</b> – Creative designed to work inside your paid campaigns.</p>
+        </div>
+        <a href="#contact" class="btn btn-brand">Book a Free Strategy Call Today</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="cover-box">
+          <h5 class="fw-bold mb-3">What our video work covers</h5>
+          <ul class="p-0 mb-3">
+            <li><i class="bi bi-check-circle-fill"></i>Brand &amp; promo videos</li>
+            <li><i class="bi bi-check-circle-fill"></i>Short-form social content</li>
+            <li><i class="bi bi-check-circle-fill"></i>Video ad creatives</li>
+            <li><i class="bi bi-check-circle-fill"></i>Editing &amp; motion graphics</li>
+            <li><i class="bi bi-check-circle-fill"></i>Planning &amp; scripting</li>
+          </ul>
+          <p class="mb-0 small">We're not just another agency. We're your behind-the-scenes powerhouse — helping you go from overlooked to unmissable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VIDEO MATTERS -->
+<section class="section bg-soft">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width:680px">
+      <span class="eyebrow">Why It Matters</span>
+      <h2 class="sec-title mb-3">Why Video Matters for Your Business</h2>
+      <p>Video grabs attention quickly and explains your offer in a way text alone cannot. It is a powerful way to build trust and move people toward an enquiry.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-lightning-charge"></i></span><h5>Capture Attention Fast</h5><p>Motion and sound stop the scroll in crowded feeds.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-chat-square-text"></i></span><h5>Explain Your Offer Clearly</h5><p>Show and tell what you do in seconds, not paragraphs.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-heart"></i></span><h5>Build Trust</h5><p>Putting a face, voice and personality to your brand makes you feel more real.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-diagram-3"></i></span><h5>Fuel Every Channel</h5><p>One video can be adapted for ads, social, your website and email.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-graph-up-arrow"></i></span><h5>Strengthen Paid Campaigns</h5><p>Strong video creative can help your ads perform better.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-stars"></i></span><h5>Differentiate Your Brand</h5><p>Show your personality in ways competitors' static content can't.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="section">
+  <div class="container text-center">
+    <span class="eyebrow">Our Clients</span>
+    <h2 class="sec-title mb-3">Trusted by Small Businesses Across Industries</h2>
+    <p class="mx-auto mb-5" style="max-width:720px">From local service providers to e-commerce brands, our clients come from every corner of the small business world. They trust us because we deliver — consistently, transparently, and with genuine care.</p>
+    <div class="logos d-flex flex-wrap justify-content-center align-items-center gap-5">
+      <span>ADVANTAGE</span><span>PEAK&nbsp;FIT</span><span>NORTHSTAR</span><span>TYREPRO</span><span>URBAN&nbsp;GROW</span><span>BRIGHTLY</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section bg-soft" id="services">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width:680px">
+      <span class="eyebrow">What We Offer</span>
+      <h2 class="sec-title mb-3">Video Production &amp; Video Ad Services</h2>
+      <p>We tailor each project to your goals, your audience and your platforms — from quick social clips to polished brand videos.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-film"></i></span><h5>Brand &amp; Promotional Videos</h5><p>Videos that introduce your business, products or services and capture what makes you different.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-phone"></i></span><h5>Social Media Video &amp; Reels</h5><p>Short-form vertical content designed for Instagram, Facebook, TikTok and YouTube Shorts.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-bullseye"></i></span><h5>Video Ad Creatives</h5><p>Ad-ready video built for Meta, Google and YouTube campaigns, with clear hooks and calls to action.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-scissors"></i></span><h5>Video Editing</h5><p>Professional editing, colour, captions and sound to polish footage you already have.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-magic"></i></span><h5>Motion Graphics &amp; Animation</h5><p>Animated titles, graphics and explainers that bring your message to life.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card-b"><span class="icon-box"><i class="bi bi-journal-text"></i></span><h5>Concept, Script &amp; Planning</h5><p>Clear planning and scripting so every video has a purpose before filming begins.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5">
+        <div class="why-img">
+          <i class="bi bi-camera-reels"></i>
+          <div class="badge-focus"><b>100%</b><small>Focused On Small Business</small></div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <span class="eyebrow">Why Choose SmallBiz Enter</span>
+        <h2 class="sec-title mb-4">We're Different. Here's the Proof.</h2>
+        <div class="why-item"><span class="icon-box"><i class="bi bi-people"></i></span><div><h6>Small Business Specialists</h6><p>We don't serve Fortune 500s. We're 100% focused on helping entrepreneurs and small business owners like you.</p></div></div>
+        <div class="why-item"><span class="icon-box"><i class="bi bi-camera-video"></i></span><div><h6>Video With a Purpose</h6><p>We plan every video around a goal — awareness, enquiries or sales — not just good looks.</p></div></div>
+        <div class="why-item"><span class="icon-box"><i class="bi bi-graph-up"></i></span><div><h6>Results-First Mindset</h6><p>Every strategy we build is tied to real business outcomes — more leads, more sales, more growth.</p></div></div>
+        <div class="why-item"><span class="icon-box"><i class="bi bi-eye"></i></span><div><h6>Transparent Process</h6><p>No hidden fees, no surprise invoices. We explain what we recommend and why, before any work begins.</p></div></div>
+        <div class="why-item"><span class="icon-box"><i class="bi bi-arrows-angle-expand"></i></span><div><h6>Scalable Solutions</h6><p>Whether you have 5 customers or 5,000, our services grow with you every step of the way.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section bg-soft">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width:680px">
+      <span class="eyebrow">Expected Results &amp; Benefits</span>
+      <h2 class="sec-title mb-3">What Effective Video Can Support</h2>
+      <p>Video results vary with your offer, audience, distribution and budget. Well-planned video can support:</p>
+    </div>
+    <div class="row g-4 mb-4">
+      <div class="col-md-6 col-lg-3"><div class="card-b"><span class="icon-box"><i class="bi bi-megaphone"></i></span><h5>Greater Brand Awareness</h5><p>More people seeing and remembering your business.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card-b"><span class="icon-box"><i class="bi bi-hand-thumbs-up"></i></span><h5>Higher Engagement</h5><p>Content that holds attention and invites interaction.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card-b"><span class="icon-box"><i class="bi bi-bullseye"></i></span><h5>Stronger Ad Performance</h5><p>Creative that gives your campaigns a better chance to convert.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="card-b"><span class="icon-box"><i class="bi bi-recycle"></i></span><h5>Reusable Content</h5><p>Assets you can use across social, ads, web and email.</p></div></div>
+    </div>
+    <div class="row g-3 mb-3">
+      <div class="col-md-6"><div class="res-strip"><b>Automobile &amp; tyre clients</b><span>Improved conversions by 2X with Google &amp; Meta Ads</span></div></div>
+      <div class="col-md-6"><div class="res-strip"><b>E-commerce &amp; retail clients</b><span>Achieved 2X–4X revenue growth for online stores</span></div></div>
+    </div>
+    <p class="disc mb-0">Results are based on past client campaigns and vary by business, industry and market. They are not a guarantee of future outcomes.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width:680px">
+      <span class="eyebrow">What Our Clients Say</span>
+      <h2 class="sec-title">Real Businesses. Real Results. Real Words.</h2>
+    </div>
+    <div class="t-card">
+      <div class="stars mb-3"><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i></div>
+      <p class="fs-5 fst-italic" style="opacity:1">"I went from zero online presence to booking clients every week. Small Biz Enter didn't just build my website — they built my confidence. These guys genuinely care about your success."</p>
+      <div class="d-flex align-items-center gap-3 mt-4">
+        <div class="avatar">MT</div>
+        <div><b>Marcus T.</b><div class="small" style="opacity:.75">Founder, FitHaven Training Studio</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg-soft">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width:680px">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="sec-title">Frequently Asked Questions About Video Production &amp; Video Ads</h2>
+    </div>
+    <div class="row justify-content-center"><div class="col-lg-9">
+      <div class="accordion" id="faq">
+        <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">What types of videos do you produce?</button></h2><div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faq"><div class="accordion-body">We produce brand and promotional videos, short-form social content, video ads, and edited or animated content such as motion graphics. We recommend the right format for your goals.</div></div></div>
+        <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">Can you edit footage I already have?</button></h2><div id="f2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Yes. We can edit, caption, add music and graphics, and format your existing footage for different platforms.</div></div></div>
+        <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">Do you create video ads for Meta and Google?</button></h2><div id="f3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Yes. We create ad-ready video creative and can manage the campaigns through our Facebook &amp; Meta Ads and Google Ads services.</div></div></div>
+        <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">Do I need a script or an idea first?</button></h2><div id="f4" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">No. We can help with concept, scripting and planning so you know exactly what's being made before production starts.</div></div></div>
+        <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f5">How long does a video project take?</button></h2><div id="f5" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">It depends on the type and complexity of the video and how quickly feedback is shared. We agree a timeline with you during planning.</div></div></div>
+        <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f6">What formats will I receive?</button></h2><div id="f6" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">We deliver videos in the formats suited to where they'll be used — for example vertical for reels and Stories, and horizontal for web and YouTube.</div></div></div>
+        <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f7">Can video help my other marketing?</button></h2><div id="f7" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Definitely. Video can lift your social media, ads, website and email — and we can connect it all as part of one plan.</div></div></div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <span class="eyebrow">Ready to Be Seen?</span>
+        <h2 class="sec-title mb-3">Ready to Put Your Business on Screen?</h2>
+        <p class="fs-5">Tell us about your business and the story you want to tell. Share your details and our team will get in touch to discuss your video project.</p>
+      </div>
+      <div class="col-lg-6">
+        <form class="form-box" onsubmit="return false">
+          <div class="row g-3">
+            <div class="col-sm-6"><label class="form-label" for="n">Full Name</label><input id="n" class="form-control" placeholder="Your Name"></div>
+            <div class="col-sm-6"><label class="form-label" for="p">Phone Number</label>
+              <div class="input-group"><span class="input-group-text" style="background:var(--v2-bg-soft);border:1.5px solid #ffd0bd">+61</span><input id="p" type="tel" class="form-control" placeholder="Phone Number"></div></div>
+            <div class="col-sm-6"><label class="form-label" for="e">Email Address</label><input id="e" type="email" class="form-control" placeholder="Your Email"></div>
+            <div class="col-sm-6"><label class="form-label" for="b">Business Name</label><input id="b" class="form-control" placeholder="Company Name"></div>
+            <div class="col-sm-6"><label class="form-label" for="s">Service Interested In</label>
+              <select id="s" class="form-select"><option>Video Production &amp; Video Ads</option></select></div>
+            <div class="col-sm-6"><label class="form-label" for="d">Preferred Meeting Date &amp; Time</label><input id="d" type="datetime-local" class="form-control"></div>
+            <div class="col-12"><button class="btn btn-brand w-100" type="submit">SUBMIT</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="navbar-brand d-inline-block mb-3" href="#">SmallBiz<span>Enter</span></a>
+        <p class="small">Empowering small businesses with the digital tools, strategies, and expert support they need to grow — without the big-agency price tag. Your success is our mission.</p>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h6>Services</h6>
+        <ul><li><a href="#">Digital Marketing</a></li><li><a href="#">SEO</a></li><li><a href="#">Brand Identity &amp; Design</a></li><li><a href="#">Website Development</a></li><li><a href="#">PPC Advertising</a></li><li><a href="#">Mobile App Development</a></li></ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Quick Links</h6>
+        <ul><li><a href="#">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact Us</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul>
+      </div>
+      <div class="col-lg-3">
+        <h6>Contact</h6>
+        <ul>
+          <li><i class="bi bi-envelope"></i><a href="mailto:smallbizenter@gmail.com">smallbizenter@gmail.com</a></li>
+          <li><i class="bi bi-telephone"></i><a href="tel:+61410393639">+61 410 393 639</a></li>
+          <li><i class="bi bi-geo-alt"></i>SmallBiz Enter, 263 Morris Road, Koppers Crossing, Vic - 3029</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy d-flex flex-wrap justify-content-between gap-2">
+      <span>© 2026 SmallBizEnter. All Rights Reserved.</span>
+      <span>Built with purpose, powered by passion.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
