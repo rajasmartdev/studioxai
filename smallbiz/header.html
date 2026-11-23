@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Small Biz Enter – Navbar</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --v2-primary:#FF6B35;
+    --v2-accent:#E85D2C;
+    --v2-success:#10B981;
+    --v2-bg-pure:#FFFFFF;
+    --v2-bg-soft:#FFF7F4;
+    --v2-bg-glass:rgba(255,255,255,0.7);
+    --v2-text-dark:#100602;
+    --v2-text-muted:#100602;
+  }
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--v2-bg-pure);color:var(--v2-text-dark);margin:0}
+
+  .site-header{position:relative;background:var(--v2-bg-pure);padding:0 0 1.25rem}
+  .top-row{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 0 1.25rem;border-bottom:1px solid rgba(16,6,2,.15)}
+  .brand{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--v2-text-dark);text-decoration:none}
+  .btn-quote{border:2px solid var(--v2-primary);color:var(--v2-primary);background:transparent;font-weight:600;border-radius:999px;padding:.45rem 1.1rem;text-decoration:none;transition:background .2s,color .2s}
+  .btn-quote:hover,.btn-quote:focus-visible{background:var(--v2-primary);color:var(--v2-bg-pure)}
+
+  .nav-row{position:relative;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0 1rem;list-style:none;margin:0}
+  .nav-row > li > a, .nav-row > li > button{
+    background:none;border:0;padding:.25rem 0;font:inherit;font-weight:500;font-size:1.05rem;
+    color:var(--v2-text-dark);text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:.3rem;position:relative}
+  .nav-row > li > a:hover,.nav-row > li > button:hover{color:var(--v2-primary)}
+  .nav-row a.active{color:var(--v2-primary)}
+  .nav-row .chev{font-size:.7rem;transition:transform .2s}
+  .nav-row button[aria-expanded="true"] .chev{transform:rotate(180deg)}
+  .nav-row button[aria-expanded="true"]{color:var(--v2-primary)}
+  .nav-row :focus-visible, .btn-quote:focus-visible{outline:2px solid var(--v2-primary);outline-offset:3px;border-radius:4px}
+
+  /* Mega panel */
+  .mega{
+    position:absolute;left:0;right:0;top:100%;z-index:50;
+    background:var(--v2-bg-pure);border:1px solid rgba(16,6,2,.15);border-radius:14px;
+    box-shadow:0 18px 40px rgba(16,6,2,.12);padding:1.1rem;
+    display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .18s,transform .18s,visibility .18s}
+  .mega.open{opacity:1;visibility:visible;transform:none}
+  .mega::before{ /* caret pointing at Services */
+    content:"";position:absolute;top:-8px;left:var(--caret-x,50%);width:14px;height:14px;
+    background:var(--v2-bg-pure);border-left:1px solid rgba(16,6,2,.15);border-top:1px solid rgba(16,6,2,.15);
+    transform:translateX(-50%) rotate(45deg)}
+
+  .overview{background:var(--v2-bg-soft);border:1px solid rgba(255,107,53,.25);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column}
+  .overview .kicker{color:var(--v2-primary);font-weight:600;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase}
+  .overview h2{font-size:1.9rem;font-weight:700;line-height:1.15;margin:.9rem 0 .8rem}
+  .overview p{color:var(--v2-text-muted);opacity:.8;line-height:1.55;margin:0 0 1.5rem}
+  .overview .all{margin-top:auto;color:var(--v2-primary);font-weight:600;text-decoration:none;border-bottom:2px solid var(--v2-primary);align-self:flex-start;padding-bottom:2px}
+  .overview .all:hover{color:var(--v2-accent);border-color:var(--v2-accent)}
+
+  .services{padding:.5rem 1.5rem 0 2rem;margin-left:1.1rem;border-left:1px solid rgba(16,6,2,.15)}
+  .services .label{font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;opacity:.6;margin-bottom:1.1rem}
+  .services ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 2rem}
+  .services a{display:flex;gap:.6rem;align-items:flex-start;color:var(--v2-text-dark);text-decoration:none;font-weight:500;font-size:1.02rem;line-height:1.35}
+  .services a i{font-size:.8rem;margin-top:.35rem;color:var(--v2-text-dark);transition:color .15s,transform .15s}
+  .services a:hover{color:var(--v2-primary)}
+  .services a:hover i{color:var(--v2-primary);transform:translate(2px,-2px)}
+
+  /* Mobile */
+  .menu-toggle{display:none;background:none;border:1px solid rgba(16,6,2,.25);border-radius:8px;padding:.35rem .6rem;font-size:1.3rem;color:var(--v2-text-dark)}
+  @media (max-width:991.98px){
+    .menu-toggle{display:inline-block}
+    .top-row{gap:.75rem}
+    .top-row .btn-quote{margin-left:auto}
+    .nav-row{display:none;flex-direction:column;align-items:stretch;padding:.5rem 0}
+    .nav-row.show{display:flex}
+    .nav-row > li{border-bottom:1px solid rgba(16,6,2,.1)}
+    .nav-row > li > a,.nav-row > li > button{width:100%;justify-content:space-between;padding:.9rem 0}
+    .mega{position:static;display:none;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 1rem;grid-template-columns:1fr}
+    .mega.open{display:grid}
+    .mega::before{display:none}
+    .services{border-left:0;margin:1rem 0 0;padding:0}
+    .services ul{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container position-relative" id="headerWrap">
+    <div class="top-row">
+      <a href="#" class="brand"><img src="assets/logo.webp" alt="Small Biz Enter" height="52"></a>
+      <a href="#contact" class="btn-quote">Get a Quote</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <ul class="nav-row" id="mainNav">
+      <li><a href="#" class="active" aria-current="page">Home</a></li>
+      <li><a href="#" >Google Ads</a></li>
+      <li>
+        <button type="button" id="servicesBtn" aria-expanded="false" aria-controls="megaMenu">
+          Services <i class="bi bi-chevron-down chev"></i>
+        </button>
+      </li>
+      <li><a href="#">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="mega" id="megaMenu" role="region" aria-label="Services menu">
+      <div class="overview">
+        <span class="kicker">Services overview</span>
+        <h2>Full-Stack Growth Solutions</h2>
+        <p>We help small businesses compete, convert, and scale with tailored digital strategies across paid, organic, and technical channels.</p>
+        <a href="#" class="all">View all services <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="services">
+        <div class="label">Our services</div>
+        <ul>
+          <li><a href="#"><i class="bi bi-arrow-up-right"></i>SEO Services</a></li>
+          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Facebook &amp; Meta Ads</a></li>
+          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Social Media Management</a></li>
+          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Website Design &amp; Development</a></li>
+          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Brand Identity &amp; Graphic Design</a></li>
+          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Mobile App Development</a></li>
+          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Video Production &amp; Video Ads</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('servicesBtn');
+  const mega = document.getElementById('megaMenu');
+  const wrap = document.getElementById('headerWrap');
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+  const desktop = window.matchMedia('(min-width: 992px)');
+
+  function placeCaret(){
+    const b = btn.getBoundingClientRect(), w = wrap.getBoundingClientRect();
+    mega.style.setProperty('--caret-x', (b.left + b.width/2 - w.left) + 'px');
+  }
+  function setOpen(open){
+    mega.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    if(open) placeCaret();
+  }
+  btn.addEventListener('click', e => { e.stopPropagation(); setOpen(!mega.classList.contains('open')); });
+  document.addEventListener('click', e => { if(!mega.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape'){ setOpen(false); btn.focus(); } });
+
+  // hover to open on desktop
+  let t;
+  [btn, mega].forEach(el => {
+    el.addEventListener('mouseenter', () => { if(desktop.matches){ clearTimeout(t); setOpen(true); } });
+    el.addEventListener('mouseleave', () => { if(desktop.matches){ t = setTimeout(() => setOpen(false), 150); } });
+  });
+
+  toggle.addEventListener('click', () => {
+    const show = nav.classList.toggle('show');
+    toggle.setAttribute('aria-expanded', show);
+    if(!show) setOpen(false);
+  });
+  window.addEventListener('resize', () => { if(mega.classList.contains('open')) placeCaret(); });
+</script>
+</body>
+</html>
