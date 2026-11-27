@@ -1,171 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Small Biz Enter – Navbar</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --v2-primary:#FF6B35;
-    --v2-accent:#E85D2C;
-    --v2-success:#10B981;
-    --v2-bg-pure:#FFFFFF;
-    --v2-bg-soft:#FFF7F4;
-    --v2-bg-glass:rgba(255,255,255,0.7);
-    --v2-text-dark:#100602;
-    --v2-text-muted:#100602;
-  }
-  body{font-family:'Inter',system-ui,sans-serif;background:var(--v2-bg-pure);color:var(--v2-text-dark);margin:0}
+:root{
+  --v2-primary:#FF6B35;
+  --v2-accent:#E85D2C;
+  --v2-success:#10B981;
+  --v2-bg-pure:#FFFFFF;
+  --v2-bg-soft:#FFF7F4;
+  --v2-bg-glass:rgba(255,255,255,.7);
+  --v2-text-dark:#100602;
+  --v2-text-muted:#100602;
+  --sbe-line:rgba(16,6,2,.10);
+  --sbe-faint:rgba(16,6,2,.55);
+}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--v2-text-dark);background:var(--v2-bg-pure);}
+a{text-decoration:none;color:inherit}
 
-  .site-header{position:relative;background:var(--v2-bg-pure);padding:0 0 1.25rem}
-  .top-row{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 0 1.25rem;border-bottom:1px solid rgba(16,6,2,.15)}
-  .brand{font-weight:700;font-size:1.15rem;letter-spacing:.01em;color:var(--v2-text-dark);text-decoration:none}
-  .btn-quote{border:2px solid var(--v2-primary);color:var(--v2-primary);background:transparent;font-weight:600;border-radius:999px;padding:.45rem 1.1rem;text-decoration:none;transition:background .2s,color .2s}
-  .btn-quote:hover,.btn-quote:focus-visible{background:var(--v2-primary);color:var(--v2-bg-pure)}
+/* ---------- Header ---------- */
+.sbe-header{position:sticky;top:0;z-index:1030;background:var(--v2-bg-pure);border-bottom:1px solid var(--sbe-line);}
+.sbe-bar{display:flex;align-items:center;min-height:68px;gap:.5rem}
+.sbe-logo{font-weight:700;font-size:1.05rem;letter-spacing:-.01em;margin-right:auto;white-space:nowrap}
 
-  .nav-row{position:relative;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0 1rem;list-style:none;margin:0}
-  .nav-row > li > a, .nav-row > li > button{
-    background:none;border:0;padding:.25rem 0;font:inherit;font-weight:500;font-size:1.05rem;
-    color:var(--v2-text-dark);text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:.3rem;position:relative}
-  .nav-row > li > a:hover,.nav-row > li > button:hover{color:var(--v2-primary)}
-  .nav-row a.active{color:var(--v2-primary)}
-  .nav-row .chev{font-size:.7rem;transition:transform .2s}
-  .nav-row button[aria-expanded="true"] .chev{transform:rotate(180deg)}
-  .nav-row button[aria-expanded="true"]{color:var(--v2-primary)}
-  .nav-row :focus-visible, .btn-quote:focus-visible{outline:2px solid var(--v2-primary);outline-offset:3px;border-radius:4px}
+.sbe-call{display:inline-flex;align-items:center;justify-content:center;background:var(--v2-text-dark);color:#fff;
+  font-weight:600;font-size:.8rem;border-radius:999px;padding:.65rem 1.5rem;white-space:nowrap;border:0}
+.sbe-call:hover{color:#fff;background:#2a1a12}
+.sbe-call .long{display:none}
 
-  /* Mega panel */
-  .mega{
-    position:absolute;left:0;right:0;top:100%;z-index:50;
-    background:var(--v2-bg-pure);border:1px solid rgba(16,6,2,.15);border-radius:14px;
-    box-shadow:0 18px 40px rgba(16,6,2,.12);padding:1.1rem;
-    display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0;
-    opacity:0;visibility:hidden;transform:translateY(-6px);
-    transition:opacity .18s,transform .18s,visibility .18s}
-  .mega.open{opacity:1;visibility:visible;transform:none}
-  .mega::before{ /* caret pointing at Services */
-    content:"";position:absolute;top:-8px;left:var(--caret-x,50%);width:14px;height:14px;
-    background:var(--v2-bg-pure);border-left:1px solid rgba(16,6,2,.15);border-top:1px solid rgba(16,6,2,.15);
-    transform:translateX(-50%) rotate(45deg)}
+.sbe-menu-btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--v2-bg-pure);color:var(--v2-text-dark);
+  border:1.5px solid var(--v2-text-dark);border-radius:999px;font-weight:600;font-size:.72rem;padding:.5rem .9rem;min-height:44px}
+.sbe-menu-btn .ico-close{display:none}
+.sbe-menu-btn[aria-expanded="true"] .ico-open{display:none}
+.sbe-menu-btn[aria-expanded="true"] .ico-close{display:inline}
 
-  .overview{background:var(--v2-bg-soft);border:1px solid rgba(255,107,53,.25);border-radius:12px;padding:1.5rem;display:flex;flex-direction:column}
-  .overview .kicker{color:var(--v2-primary);font-weight:600;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase}
-  .overview h2{font-size:1.9rem;font-weight:700;line-height:1.15;margin:.9rem 0 .8rem}
-  .overview p{color:var(--v2-text-muted);opacity:.8;line-height:1.55;margin:0 0 1.5rem}
-  .overview .all{margin-top:auto;color:var(--v2-primary);font-weight:600;text-decoration:none;border-bottom:2px solid var(--v2-primary);align-self:flex-start;padding-bottom:2px}
-  .overview .all:hover{color:var(--v2-accent);border-color:var(--v2-accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--v2-primary);outline-offset:2px;border-radius:6px}
 
-  .services{padding:.5rem 1.5rem 0 2rem;margin-left:1.1rem;border-left:1px solid rgba(16,6,2,.15)}
-  .services .label{font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;opacity:.6;margin-bottom:1.1rem}
-  .services ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 2rem}
-  .services a{display:flex;gap:.6rem;align-items:flex-start;color:var(--v2-text-dark);text-decoration:none;font-weight:500;font-size:1.02rem;line-height:1.35}
-  .services a i{font-size:.8rem;margin-top:.35rem;color:var(--v2-text-dark);transition:color .15s,transform .15s}
-  .services a:hover{color:var(--v2-primary)}
-  .services a:hover i{color:var(--v2-primary);transform:translate(2px,-2px)}
+/* ---------- Desktop nav ---------- */
+.sbe-nav{display:none;align-items:center;gap:3rem;margin-left:auto;margin-right:1rem}
+.sbe-nav .sbe-link{font-size:1.3rem;font-weight:400;padding:.5rem 0;border-bottom:2px solid transparent;display:inline-block}
+.sbe-nav .sbe-link:hover{color:var(--v2-primary)}
+.sbe-accent{color:var(--v2-accent)!important;font-weight:400!important}
+.sbe-dd{display:flex;align-items:center;gap:.25rem}
+.sbe-dd .sbe-link{padding-right:0}
+.sbe-dd.open .sbe-link{border-bottom-color:var(--v2-text-dark);font-weight:700}
+.sbe-caret{background:none;border:0;padding:.35rem;display:inline-flex;transition:transform .2s;color:var(--v2-text-dark)}
+.sbe-dd.open .sbe-caret{transform:rotate(180deg)}
 
-  /* Mobile */
-  .menu-toggle{display:none;background:none;border:1px solid rgba(16,6,2,.25);border-radius:8px;padding:.35rem .6rem;font-size:1.3rem;color:var(--v2-text-dark)}
-  @media (max-width:991.98px){
-    .menu-toggle{display:inline-block}
-    .top-row{gap:.75rem}
-    .top-row .btn-quote{margin-left:auto}
-    .nav-row{display:none;flex-direction:column;align-items:stretch;padding:.5rem 0}
-    .nav-row.show{display:flex}
-    .nav-row > li{border-bottom:1px solid rgba(16,6,2,.1)}
-    .nav-row > li > a,.nav-row > li > button{width:100%;justify-content:space-between;padding:.9rem 0}
-    .mega{position:static;display:none;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 1rem;grid-template-columns:1fr}
-    .mega.open{display:grid}
-    .mega::before{display:none}
-    .services{border-left:0;margin:1rem 0 0;padding:0}
-    .services ul{grid-template-columns:1fr}
-  }
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ---------- Mega menu (desktop) ---------- */
+.sbe-mega{display:none;position:absolute;left:0;right:0;top:100%;padding:0 12px 12px}
+.sbe-mega.open{display:block}
+.sbe-mega-inner{background:var(--v2-bg-pure);border:1px solid var(--sbe-line);border-radius:18px;padding:1rem;
+  box-shadow:0 18px 40px rgba(16,6,2,.10);display:grid;grid-template-columns:230px 1fr 1fr;gap:1.5rem}
+.sbe-promo{background:var(--v2-bg-soft);border-radius:14px;padding:1.1rem}
+.sbe-promo h6{font-size:.85rem;font-weight:700;margin-bottom:.5rem}
+.sbe-promo p{font-size:.68rem;color:var(--sbe-faint);margin-bottom:1rem}
+.sbe-promo .btn-dark-pill{display:block;text-align:center;background:var(--v2-text-dark);color:#fff;font-size:.72rem;font-weight:600;border-radius:8px;padding:.6rem .5rem}
+.sbe-promo .btn-dark-pill:hover{background:#2a1a12;color:#fff}
+.sbe-promo small{display:block;text-align:center;font-size:.65rem;color:var(--sbe-faint);margin-top:.7rem}
+.sbe-col-label{font-size:.68rem;color:var(--sbe-faint);margin:.35rem 0 .9rem}
+.sbe-item{display:grid;grid-template-columns:14px 1fr;column-gap:.4rem;padding:.2rem 0;margin-bottom:.9rem}
+.sbe-item svg{margin-top:.2rem;color:var(--v2-text-dark)}
+.sbe-item strong{font-size:.8rem;font-weight:600;display:block}
+.sbe-item span{font-size:.66rem;color:var(--sbe-faint);display:block;margin-top:.15rem}
+.sbe-item:hover strong{color:var(--v2-primary)}
+.sbe-mega-foot{grid-column:1 / -1;border-top:1px solid var(--sbe-line);padding-top:.9rem;margin-top:-.2rem}
+.sbe-viewall{color:var(--v2-accent);font-weight:600;font-size:.75rem;display:inline-flex;align-items:center;gap:.5rem}
+
+/* ---------- Mobile panel ---------- */
+.sbe-mobile{display:none;position:absolute;left:0;right:0;top:100%;background:var(--v2-bg-pure);
+  height:calc(100dvh - var(--hh,68px));flex-direction:column;overflow:hidden}
+.sbe-mobile.open{display:flex}
+.sbe-mobile-scroll{flex:1;overflow-y:auto;padding:0 1.25rem}
+.sbe-row{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:48px;background:none;border:0;
+  border-bottom:1px solid var(--sbe-line);font-size:.85rem;font-weight:500;padding:0;text-align:left;color:var(--v2-text-dark)}
+.sbe-row.is-services{font-weight:700}
+.sbe-row .chev{transition:transform .2s}
+.sbe-row[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.sbe-sub{display:none;background:var(--v2-bg-soft);border-radius:12px;padding:.5rem .9rem;margin:.6rem 0}
+.sbe-sub.open{display:block}
+.sbe-sub .lbl{font-size:.65rem;color:var(--sbe-faint);padding:.6rem 0 .1rem}
+.sbe-sub a{display:flex;align-items:center;min-height:44px;font-size:.8rem}
+.sbe-sub a.viewall{color:var(--v2-accent);font-weight:600;border-top:1px solid var(--sbe-line);margin-top:.5rem}
+.sbe-mobile-cta{padding:1rem 1.25rem;border-top:1px solid var(--sbe-line);background:var(--v2-bg-pure)}
+.sbe-mobile-cta a{display:flex;align-items:center;justify-content:center;min-height:48px;border:1.5px solid var(--v2-text-dark);
+  border-radius:10px;font-size:.8rem;font-weight:600}
+
+/* ---------- Desktop breakpoint ---------- */
+@media (min-width:992px){
+  .sbe-nav{display:flex}
+  .sbe-menu-btn,.sbe-mobile{display:none!important}
+  .sbe-logo{margin-right:0}
+  .sbe-call .short{display:none}
+  .sbe-call .long{display:inline}
+  .sbe-call{font-size:1rem}
+  .sbe-bar{min-height:72px}
+}
+@media (max-width:991.98px){
+  .sbe-mega{display:none!important}
+}
+
+/* demo content only */
+.demo{padding:2rem 0}
+.demo .ph{background:#f4f1ee;border-radius:14px;min-height:260px;display:flex;align-items:center;justify-content:center;color:var(--sbe-faint);font-size:.8rem}
 </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container position-relative" id="headerWrap">
-    <div class="top-row">
-      <a href="#" class="brand"><img src="assets/logo.webp" alt="Small Biz Enter" height="52"></a>
-      <a href="#contact" class="btn-quote">Get a Quote</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
-        <i class="bi bi-list"></i>
+<header class="sbe-header" id="sbeHeader">
+  <div class="container position-relative">
+    <div class="sbe-bar">
+      <a class="sbe-logo" href="/">Small Biz Enter</a>
+
+      <!-- Desktop navigation -->
+      <nav class="sbe-nav" aria-label="Main">
+        <a class="sbe-link" href="/">Home</a>
+        <a class="sbe-link sbe-accent" href="/google-ads">Google Ads</a>
+        <div class="sbe-dd" id="svcDd">
+          <a class="sbe-link" href="/services">Services</a>
+          <button class="sbe-caret" id="svcCaret" type="button" aria-expanded="false" aria-controls="megaMenu" aria-label="Open services menu">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4.2l4 4 4-4"/></svg>
+          </button>
+        </div>
+        <a class="sbe-link" href="/about">About</a>
+        <a class="sbe-link" href="/contact">Contact</a>
+      </nav>
+
+      <a class="sbe-call" href="tel:+61410393639"><span class="short">Call</span><span class="long">Call +61 410 393 639</span></a>
+
+      <button class="sbe-menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobilePanel">
+        <svg class="ico-open" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 3.5h10M2 7h10M2 10.5h10"/></svg>
+        <svg class="ico-close" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 3l8 8M11 3l-8 8"/></svg>
+        <span class="lbl">Menu</span>
       </button>
     </div>
 
-    <ul class="nav-row" id="mainNav">
-      <li><a href="#" class="active" aria-current="page">Home</a></li>
-      <li><a href="#" >Google Ads</a></li>
-      <li>
-        <button type="button" id="servicesBtn" aria-expanded="false" aria-controls="megaMenu">
-          Services <i class="bi bi-chevron-down chev"></i>
-        </button>
-      </li>
-      <li><a href="#">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <!-- Desktop mega menu -->
+    <div class="sbe-mega" id="megaMenu">
+      <div class="sbe-mega-inner">
+        <div class="sbe-promo">
+          <h6>Not sure which service you need?</h6>
+          <p>Tell us about your business and we'll recommend where to start.</p>
+          <a class="btn-dark-pill" href="/book-a-call">Book a free strategy call</a>
+          <small>or call +61 410 393 639</small>
+        </div>
 
-    <div class="mega" id="megaMenu" role="region" aria-label="Services menu">
-      <div class="overview">
-        <span class="kicker">Services overview</span>
-        <h2>Full-Stack Growth Solutions</h2>
-        <p>We help small businesses compete, convert, and scale with tailored digital strategies across paid, organic, and technical channels.</p>
-        <a href="#" class="all">View all services <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="services">
-        <div class="label">Our services</div>
-        <ul>
-          <li><a href="#"><i class="bi bi-arrow-up-right"></i>SEO Services</a></li>
-          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Facebook &amp; Meta Ads</a></li>
-          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Social Media Management</a></li>
-          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Website Design &amp; Development</a></li>
-          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Brand Identity &amp; Graphic Design</a></li>
-          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Mobile App Development</a></li>
-          <li><a href="#"><i class="bi bi-arrow-up-right"></i>Video Production &amp; Video Ads</a></li>
-        </ul>
+        <div>
+          <div class="sbe-col-label">Get found and get leads</div>
+          <a class="sbe-item" href="/google-ads">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l6-6M4 3h5v5"/></svg>
+            <div><strong>Google Ads</strong><span>Paid search campaigns that reach people looking now.</span></div>
+          </a>
+          <a class="sbe-item" href="/facebook-meta-ads">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l6-6M4 3h5v5"/></svg>
+            <div><strong>Facebook &amp; Meta Ads</strong><span>Paid campaigns on Facebook and Instagram.</span></div>
+          </a>
+          <a class="sbe-item" href="/seo">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l6-6M4 3h5v5"/></svg>
+            <div><strong>SEO Services</strong><span>Be easier to find in organic search.</span></div>
+          </a>
+          <a class="sbe-item" href="/social-media">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l6-6M4 3h5v5"/></svg>
+            <div><strong>Social Media Management</strong><span>Planning, posting and community management.</span></div>
+          </a>
+        </div>
+
+        <div>
+          <div class="sbe-col-label">Build your brand and platforms</div>
+          <a class="sbe-item" href="/brand-identity">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l6-6M4 3h5v5"/></svg>
+            <div><strong>Brand Identity &amp; Graphic Design</strong><span>Logos, guidelines and marketing materials.</span></div>
+          </a>
+          <a class="sbe-item" href="/video">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l6-6M4 3h5v5"/></svg>
+            <div><strong>Video Production &amp; Video Ads</strong><span>Brand videos, reels and video ads.</span></div>
+          </a>
+          <a class="sbe-item" href="/website-design">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l6-6M4 3h5v5"/></svg>
+            <div><strong>Website Design &amp; Development</strong><span>Fast, mobile-friendly sites and online stores.</span></div>
+          </a>
+          <a class="sbe-item" href="/mobile-apps">
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l6-6M4 3h5v5"/></svg>
+            <div><strong>Mobile App Development</strong><span>iOS and Android apps, from idea to launch.</span></div>
+          </a>
+        </div>
+
+        <div class="sbe-mega-foot">
+          <a class="sbe-viewall" href="/services">View all services
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h13M10 2l4 4-4 4"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Mobile panel (no descriptions on phones) -->
+  <div class="sbe-mobile" id="mobilePanel">
+    <div class="sbe-mobile-scroll">
+      <a class="sbe-row" href="/">Home</a>
+      <a class="sbe-row sbe-accent" href="/google-ads">Google Ads</a>
+      <button class="sbe-row is-services" id="mSvcBtn" type="button" aria-expanded="false" aria-controls="mSvcList">
+        <span>Services</span>
+        <svg class="chev" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4.2l4 4 4-4"/></svg>
+      </button>
+      <div class="sbe-sub" id="mSvcList">
+        <div class="lbl">Get found and get leads</div>
+        <a href="/google-ads">Google Ads</a>
+        <a href="/facebook-meta-ads">Facebook &amp; Meta Ads</a>
+        <a href="/seo">SEO Services</a>
+        <a href="/social-media">Social Media Management</a>
+        <div class="lbl">Build your brand and platforms</div>
+        <a href="/brand-identity">Brand Identity &amp; Graphic Design</a>
+        <a href="/video">Video Production &amp; Video Ads</a>
+        <a href="/website-design">Website Design &amp; Development</a>
+        <a href="/mobile-apps">Mobile App Development</a>
+        <a class="viewall" href="/services">View all services</a>
+      </div>
+      <a class="sbe-row" href="/about">About</a>
+      <a class="sbe-row" href="/contact">Contact</a>
+    </div>
+    <div class="sbe-mobile-cta"><a href="/book-a-call">Book a free strategy call</a></div>
+  </div>
 </header>
 
+<!-- Demo content only – not part of the navbar -->
+<main class="container demo">
+  <div class="ph">Page content (example only). Not part of the menu.</div>
+  <div style="height:120vh"></div>
+</main>
+
 <script>
-  const btn = document.getElementById('servicesBtn');
-  const mega = document.getElementById('megaMenu');
-  const wrap = document.getElementById('headerWrap');
-  const toggle = document.getElementById('menuToggle');
-  const nav = document.getElementById('mainNav');
-  const desktop = window.matchMedia('(min-width: 992px)');
+(function(){
+  var header = document.getElementById('sbeHeader');
+  var dd = document.getElementById('svcDd');
+  var caret = document.getElementById('svcCaret');
+  var mega = document.getElementById('megaMenu');
+  var menuBtn = document.getElementById('menuBtn');
+  var panel = document.getElementById('mobilePanel');
+  var mBtn = document.getElementById('mSvcBtn');
+  var mList = document.getElementById('mSvcList');
+  var timer;
 
-  function placeCaret(){
-    const b = btn.getBoundingClientRect(), w = wrap.getBoundingClientRect();
-    mega.style.setProperty('--caret-x', (b.left + b.width/2 - w.left) + 'px');
-  }
-  function setOpen(open){
+  /* ---- Desktop mega menu ---- */
+  function setMega(open){
+    clearTimeout(timer);
     mega.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', open);
-    if(open) placeCaret();
+    dd.classList.toggle('open', open);
+    caret.setAttribute('aria-expanded', open);
   }
-  btn.addEventListener('click', e => { e.stopPropagation(); setOpen(!mega.classList.contains('open')); });
-  document.addEventListener('click', e => { if(!mega.contains(e.target)) setOpen(false); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape'){ setOpen(false); btn.focus(); } });
+  var isDesktop = function(){ return window.matchMedia('(min-width:992px)').matches; };
 
-  // hover to open on desktop
-  let t;
-  [btn, mega].forEach(el => {
-    el.addEventListener('mouseenter', () => { if(desktop.matches){ clearTimeout(t); setOpen(true); } });
-    el.addEventListener('mouseleave', () => { if(desktop.matches){ t = setTimeout(() => setOpen(false), 150); } });
+  dd.addEventListener('mouseenter', function(){ if(isDesktop()) setMega(true); });
+  header.addEventListener('mouseleave', function(){ if(isDesktop()){ timer = setTimeout(function(){ setMega(false); }, 120); } });
+  mega.addEventListener('mouseenter', function(){ clearTimeout(timer); });
+  document.querySelectorAll('.sbe-nav > .sbe-link').forEach(function(l){
+    l.addEventListener('mouseenter', function(){ setMega(false); });
+  });
+  caret.addEventListener('click', function(e){
+    e.stopPropagation();
+    setMega(caret.getAttribute('aria-expanded') !== 'true');
+  });
+  caret.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowDown'){ e.preventDefault(); setMega(true); mega.querySelector('a').focus(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!header.contains(e.target)) setMega(false);
+    else if(!dd.contains(e.target) && !mega.contains(e.target)) setMega(false);
+  });
+  mega.addEventListener('focusout', function(e){
+    if(!mega.contains(e.relatedTarget) && e.relatedTarget !== caret) setMega(false);
   });
 
-  toggle.addEventListener('click', () => {
-    const show = nav.classList.toggle('show');
-    toggle.setAttribute('aria-expanded', show);
-    if(!show) setOpen(false);
+  /* ---- Mobile panel ---- */
+  function setMenu(open){
+    panel.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.querySelector('.lbl').textContent = open ? 'Close' : 'Menu';
+    document.body.style.overflow = open ? 'hidden' : '';
+    if(open) header.style.setProperty('--hh', header.offsetHeight + 'px');
+  }
+  menuBtn.addEventListener('click', function(){ setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'); });
+  mBtn.addEventListener('click', function(){
+    var open = mBtn.getAttribute('aria-expanded') !== 'true';
+    mBtn.setAttribute('aria-expanded', open);
+    mList.classList.toggle('open', open);
   });
-  window.addEventListener('resize', () => { if(mega.classList.contains('open')) placeCaret(); });
+
+  /* ---- Esc closes everything ---- */
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+    if(mega.classList.contains('open')){ setMega(false); caret.focus(); }
+    if(panel.classList.contains('open')){ setMenu(false); menuBtn.focus(); }
+  });
+
+  window.addEventListener('resize', function(){
+    if(isDesktop()) setMenu(false); else setMega(false);
+  });
+})();
 </script>
 </body>
 </html>
